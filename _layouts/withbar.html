@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+
+    <div class="page-content">
+      <div class="wrapper row">
+
+        <div class="contentbar">
+        {{ content }}
+        </div>
+
+        <div class="sidebar">
+
+          <div class="author sidecard column">
+            <img src="/assets/img/site/author.jpg"/>
+            <h2>The Creator</h2>
+            <p>
+              <b>Computational astrophysicist</b> with affinity for <b>Artificial Intelligence</b> and <b>Natural Language Processing</b>.
+              Programmer, visual artist and science communicator based in Bogotá, Colombia, with knowledge in Spanish,
+              English, Portuguese, French and German Languages. I believe that programming is a tool that can be used to
+              link the <b>secret patterns</b> present in nature with the intense mists of <b>human expression</b>.
+            </p>
+          </div>
+
+          <div class="news sidecard">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

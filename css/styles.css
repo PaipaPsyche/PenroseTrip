@@ -1,0 +1,255 @@
+/*general*/
+
+html{
+  background: #1c1c1f;
+}
+
+
+.wrapper{
+
+  padding: 5px;
+
+}
+.trigger{
+  float: right;
+}
+
+
+
+/*sidebar*/
+.sidebar{
+  color: white;
+  float: right;
+  width: 25%;
+  margin: 10px;
+  min-width: 350px;
+}
+.sidecard{
+  background: rgba(0, 0, 5, 0.6);
+  padding: 5px;
+  margin: 0px;
+}
+/*author*/
+
+.author img{
+
+  overflow: hidden;
+  display: block;
+ margin-left: auto;
+ margin-right: auto;
+ width: 98%;
+
+
+}
+.author h2{
+  margin: 5px;
+
+}
+
+
+.author p{
+  margin: 5px;
+  color: lightgrey;
+  font-size: 13px;
+  text-align: justify;
+}
+/*content*/
+
+.contentbar{
+
+float: left;
+min-width: 350px;
+margin: 10px;
+width: 60%;
+}
+.page-content{
+  background: #1C1C1F  url("/assets/img/site/header.jpg") no-repeat center center;
+  background-size: cover;
+  border: black;
+  margin: -1px;
+  margin-right: 0px;
+  padding: 0px;
+  border: none;
+  transform: scale(1);
+  overflow: hidden;
+  color: white;
+  min-height: 400px;
+}
+
+
+
+/*posts*/
+
+
+.post-list{
+  max-width: 100%;
+}
+.post-item{
+  background: rgba(0, 0, 5, 0.6);
+  height: 120px;
+  margin:0px;
+  padding: 0px;
+  transition: 0.6s;
+}
+
+.post-item:hover{
+  background: rgba(0, 0, 5, 0.8);
+  transform: scale(1.01);
+}
+
+
+
+
+.post-item .post-meta{
+  padding: 5px;
+  color: grey;
+}
+.post-item .post-link{
+  padding: 5px;
+  height: 39px;
+  color: white;
+  text-decoration:none;
+  transition: 0.6s;
+  font-size: 25px;
+
+}
+
+.post-item .post-link:hover{
+  font-size: 29px;
+}
+
+.post-item .post-desc{
+  color: lightgrey;
+  padding: 4px;
+  font-size: 14px;
+  margin-top: 0px;
+  top:0px;
+}
+
+
+
+.post{
+  background: rgba(0, 0, 5, 0.5);
+  padding: 30px;
+  min-height: 360px;
+}
+.post-meta {
+    color: #d8d8d8;
+}
+pre, code {
+    font-size: 15px;
+    border: 1px solid #5d5d5d7d;
+    border-radius: 4px;
+    background-color: black;
+}
+
+/*footer*/
+.site-footer{
+  height: 100px;
+  background: #1C1C1F;
+  bottom: 0px;
+  border-top: 2px solid grey;
+
+}
+.footer-heading{
+  color: white;
+  padding: 0px;
+  margin: 0px;
+}
+
+/*header*/
+
+
+.site-header{
+  background: #1C1C1F url("/assets/img/site/stars4k.jpg") no-repeat center center;
+  background-size: cover;
+  height: 65px;
+  color: white;
+  margin-top: -5px;
+  border-bottom: 2px solid grey;
+
+}
+.site-header .page-link{
+  color: white;
+
+}
+.site-header .site-title{
+  color: lightgrey;
+  width: 220px;
+  text-decoration: none;
+  font-family: Aldrich;
+  font-weight: bold;
+  font-size: 40px;
+  margin-right: 20px;
+  transition: 0.6s;
+
+}
+.site-header .site-title:hover{
+    font-size: 41px;
+    color: white;
+}
+
+.site-header .site-icon{
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  -webkit-animation:spin 12s linear infinite;
+  -moz-animation:spin 12s linear infinite;
+  animation:spin 12s linear infinite;
+}
+.site-header .site-icon:hover{
+
+  -webkit-animation:aspin 0.5s linear 1;
+  -moz-animation:aspin 0.5s linear 1;
+  animation:aspin 0.5s linear 1;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-moz-keyframes aspin { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes aspin { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes aspin { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
+
+
+
+
+/*SKETCHES*/
+.post-item-sketch{
+    height: 200px;
+}
+.topic-head-row{
+  background: rgba(10, 0, 30, 0.6);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+.topic-head{
+
+  width: 90%;
+  margin-right: 0px;
+  min-width: 200px;
+
+}
+.topic-title{
+font-size: 42px;
+
+}
+
+.topic-icon{
+  width: 8%;
+  min-width: 100px;
+  float: right;
+  padding: 20px;
+
+
+}
+.post-item-sketch{
+  background: rgba(0, 0, 5, 0.3);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+}
+.post-item-sketch:hover{
+  background: rgba(0, 0, 5, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}

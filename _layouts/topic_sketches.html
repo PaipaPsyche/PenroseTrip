@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+
+<div class="topic">
+  <div class="topic-head-row row">
+    <div class="topic-icon">
+      <img src="/assets/img/site/icon-sketch.png"/>
+    </div>
+    <div class="topic-head">
+      <h1 class="topic-title"><b>SKETCHES</b></h1>
+      <i>{{content}}</i>
+    </div>
+</div>
+  <ul class="post-list topic-list">
+    {% for post in site.categories.sketch %}
+      <li class="post-item post-item-sketch">
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+
+        <div class="post-desc">
+          {{post.description}}
+          <p class="post-categ">
+            <b>categories:</b> {{post.categories}}
+          </p>
+
+        </div>
+
+      </li>
+    {% endfor %}
+  </ul>
+
+  <!-- <p class="rss-subscribe">subscribe <a href='{{ "/feed.xml" | prepend: site.baseurl }}'>via RSS</a></p> -->
+
+</div>
