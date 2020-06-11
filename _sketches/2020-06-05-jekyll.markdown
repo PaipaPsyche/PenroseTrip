@@ -3,6 +3,7 @@ layout: post
 title:  "Jekyll!"
 date:   2020-05-08 04:14:47 -0300
 description: "post B: this is test B."
+image: "/assets/img/posts/sketch-imferye.png"
 categories: sketch
 ---
 You’ll find this post in your `_posts` directory.

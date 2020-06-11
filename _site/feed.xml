@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Penrose Trip</title>
+    <description>This website is an interactive portal for informative use, which seeks to open a space for the juxtaposition between psychedelia, science, programming and art.
+</description>
+    <link>http://penrosetrip.com/</link>
+    <atom:link href="http://penrosetrip.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 11 Jun 2020 01:21:12 -0300</pubDate>
+    <lastBuildDate>Thu, 11 Jun 2020 01:21:12 -0300</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Penrose Trip: A whole new universe</title>
+        <description>&lt;p&gt;&lt;strong&gt;Penrose Trip&lt;/strong&gt; is a non-profit site whose purpose is to leave &lt;em&gt;interesting questions&lt;/em&gt; loose on the streets of the modern world with the only hope of generating even more doubts. The aim is to touch sensitive fibers regarding the compartmentalization of human thought, since the definition of the line between art and science is challenged. Of course, the strong &lt;strong&gt;psychedelic component&lt;/strong&gt; of this project cannot be ignored, and it is in this context of perpetual hallucination that the aesthetics of artificial intelligence and randomness make sense; in a world &lt;strong&gt;out of focus&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;goodbye-old-penrose&quot;&gt;Goodbye, old Penrose&lt;/h2&gt;
+&lt;p&gt;This project has been carried out only by me since the creation of the page in the free hosting services of Github in 2018. The page’s first approach was as an image gallery, but with the time it became a gallery of my work and, therefore, an interactive portfolio. It had been carried out with simple HTML pages, with poor Javascript and CSS, and to be honest it was not so pretty aesthetically. This was acceptable as long as it was a portal for personal use, but now that it is more open to the public and even serving as a teaching tool for some Hackathon events, it can only mean one thing:&lt;/p&gt;
+
+&lt;div class=&quot;special-ad&quot; align=&quot;center&quot;&gt;
+
+&lt;b style=&quot;font-size:19px&quot;&gt; It is time to migrate to a whole new universe &lt;/b&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;how-to-migrate&quot;&gt;How to migrate?&lt;/h2&gt;
+
+&lt;p&gt;well, using &lt;a href=&quot;https://jekyllrb.com/&quot; target=&quot;_blank&quot;&gt;Jekyll.&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Jekyll is a static site generator. You give it text written in your favorite markup language and it uses layouts to create a static website. You can tweak how you want the site URLs to look, what data gets displayed on the site, and more.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;-Jekyll Website&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Jekyll allows a simple implementation for static pages that allows to segregate posts (like this one) by themes, tags, etc. It is a simple and efficient way to migrate &lt;strong&gt;Penrose Trip&lt;/strong&gt; with enough requirements for online execution and storage.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-future&quot;&gt;The future&lt;/h2&gt;
+
+&lt;p&gt;It’s been almost 3 weeks since the migration started and I’m still getting warm. Much of this time has been me learning jekyll from scratch, and although it is an easy-to-learn site generator, it is difficult to diagram the two-year work again and apply the updates and fixes that have been suggested to me. In the future I hope to have all my work here exposed as well as options so that third parties can leave their contributions to this growing personal project.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 09 Jun 2020 20:15:00 -0300</pubDate>
+        <link>http://penrosetrip.com/information/2020/06/09/penrose-trip-a-whole-new-universe.html</link>
+        <guid isPermaLink="true">http://penrosetrip.com/information/2020/06/09/penrose-trip-a-whole-new-universe.html</guid>
+        
+        <category>information</category>
+        
+        <category>page</category>
+        
+        <category>jekyll</category>
+        
+        
+        <category>information</category>
+        
+      </item>
+    
+      <item>
+        <title>2D Cellular Automata Lab</title>
+        <description>&lt;p&gt;A &lt;strong&gt;cellular automaton&lt;/strong&gt; is a system in which a grid of cells determines its state (ON or OFF) according to rules established on the states of a determined &lt;strong&gt;neighborhood&lt;/strong&gt; of cells in the grid. The system behaves according to a &lt;strong&gt;set of game rules&lt;/strong&gt; that commands each cell in the grid to adopt in the net step a state based on the previous states of the neighbors.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-sketch&quot;&gt;The sketch&lt;/h2&gt;
+
+&lt;p&gt;These Game rules are codified in a structure similar to DNA. Each cell has 8 neighbors, so there are 9 states each cell hast to handle (including own state). As each one of these states are values 0 (OFF) or 1 (ON), the number of different possible neighborhood configurations, or cases, are 2 to the power of 9, or 512. Each configuration has a response ,for example, if the immediate  left neighbor is ON, then this cell turns ON as well. If we assign each one of this states to a position in a 512-length string, and in this string we store the response, the result is a 512-length string of 0’s and 1’s describing the behavior of the system. This might be codified to be expressed as genes in the form of alphanumeric values and colors. This 512-string is called the “rule code”.&lt;/p&gt;
+
+&lt;p&gt;This means that &lt;strong&gt;a single rule code&lt;/strong&gt; describes the &lt;strong&gt;unique behavior&lt;/strong&gt; of a system and, moreover, there exist as much as 2 to the power of 512 possible rule code configurations. In other words, there are more than 10 million million million million . . . (25 times million) . . . million million million possible systems.&lt;/p&gt;
+
+&lt;p&gt;This gene structure was, in a beginning, a way to &lt;strong&gt;store compressed data&lt;/strong&gt; information of the state, but as experimentation went on I realized common behaviors tend to be stored in the same Gene. experimentation with cellular automaton is easy and fun as long as you find &lt;strong&gt;the beauty of the patterns&lt;/strong&gt; made by simple binary rules. These systems are controversial in the study of life emergence and complex systems, for example, you may know the famous &lt;strong&gt;Conway’s Game of Life&lt;/strong&gt; which is an specific rule code for 2D cellular automata that resembles organic movement from simple configurations.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-purpose&quot;&gt;The purpose&lt;/h2&gt;
+
+&lt;h2 id=&quot;the-result&quot;&gt;The result&lt;/h2&gt;
+
+&lt;h2 id=&quot;the-controls&quot;&gt;The controls&lt;/h2&gt;
+</description>
+        <pubDate>Wed, 06 May 2020 02:02:00 -0300</pubDate>
+        <link>http://penrosetrip.com/sketch/2020/05/06/2D-cellular-automata-lab.html</link>
+        <guid isPermaLink="true">http://penrosetrip.com/sketch/2020/05/06/2D-cellular-automata-lab.html</guid>
+        
+        <category>sketch</category>
+        
+        <category>automata</category>
+        
+        <category>p5</category>
+        
+        <category>javascript</category>
+        
+        
+        <category>sketch</category>
+        
+      </item>
+    
+      <item>
+        <title>Solar System Generator</title>
+        <description>&lt;p&gt;In the universe there are &lt;strong&gt;thousands of trillions of stars&lt;/strong&gt;, each with the possibility of having a planetary system that orbits it and, by extension, the tiny possibility of containing an intelligent civilization.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-sketch&quot;&gt;The sketch&lt;/h2&gt;
+&lt;p&gt;In this case, there is no scientific rigor regarding the value of the simulation since it is a &lt;strong&gt;random solar system generator&lt;/strong&gt;. Graphic distances such as the radii of the stars are far from adequate, but only for this time let us indulge in science fiction.&lt;/p&gt;
+
+&lt;p&gt;This is a generator of solar systems based on random numbers; All the solar systems shown are unique and unrepeatable for this very reason. There is the possibility of finding advanced civilizations and their colonies, ruins of those that did not survive, black holes and ringed planets, among other wonders. The system also displays &lt;strong&gt;geological and orbital information&lt;/strong&gt; of the planets as well as relevant information from the star, this in order to provide more context in a universe without any context.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-purpose&quot;&gt;The purpose&lt;/h2&gt;
+&lt;p&gt;The goal with this bunch of messy code is to &lt;strong&gt;propose a mental exercise&lt;/strong&gt; where you can, in some way, have a catalog of the stars of the universe. No matter how far they may be, even if they are outside of our visible universe, they are registered in the catalog as well as the civilizations that are present, if any.&lt;/p&gt;
+
+&lt;p&gt;Beyond providing fictitious data and representing some scientific value, this sketch generates a poetic exercise where anyone can let their imagination run wild. It can be useful for thinkers looking for inspiration for a new creation, or simply a fairly scientific doodle to entertain all audiences.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-result&quot;&gt;The result&lt;/h2&gt;
+
+&lt;p&gt;While the orbit model, distance ratios, and much of the celestial body data are inaccurate, the name generator is an innovation. It generates mostly readable names with hierarchy rules to inherit the name of the system to some of its planets. This is a major achievement considering that it is a purely random and static generator, that is, that they are names that arise from the randomness of letters.&lt;/p&gt;
+
+&lt;p&gt;The creation of fictional civilizations gives an &lt;strong&gt;extra pinch of sci-fi&lt;/strong&gt; theatricality to the sketch, and generating geological data only provides more and more tools for anyone who wants to give a story to each solar system. As for aesthetics, there is not much to say: p5 is a fabulous tool for 2D, and although I know that there are ways to generate 3D visualizations, I wanted this exercise to have a more &lt;strong&gt;minimalist aesthetic&lt;/strong&gt; and similar to a &lt;strong&gt;navigation service&lt;/strong&gt;, like a GPS or a tourist map. Orbits are as elliptical as possible, and without being pretentious I am proud of the aesthetics of Dyson’s black holes and sphere stars.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note.&lt;/strong&gt; I solemnly believe that in the future Dyson’s spheres will not be rigid cage-like structures, but rather &lt;strong&gt;many energy collection and transmission satellites&lt;/strong&gt; forming a synchronized network around the star and sending its energy to the planet with the orbit closest to the star. That is why I designed the Dyson sphere as a set of dots swarming around the circle that I blatantly called &lt;em&gt;“star.”&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-controls&quot;&gt;The controls&lt;/h2&gt;
+&lt;p&gt;The position of the cursor in X determines the direction and advance of time. The position of the cursor in Y dictates the speed with which time advances. The ENTER key aligns the planets and the BACKSPACE key generates a random state of this solar system. To explore a new solar system, just CLICK or simply reload the page.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 18 May 2019 02:19:00 -0300</pubDate>
+        <link>http://penrosetrip.com/sketch/2019/05/18/random-solar-system-generator.html</link>
+        <guid isPermaLink="true">http://penrosetrip.com/sketch/2019/05/18/random-solar-system-generator.html</guid>
+        
+        <category>sketch</category>
+        
+        <category>space</category>
+        
+        <category>p5</category>
+        
+        <category>javascript</category>
+        
+        
+        <category>sketch</category>
+        
+      </item>
+    
+  </channel>
+</rss>
