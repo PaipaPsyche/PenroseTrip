@@ -141,10 +141,14 @@ width: 60%;
 }
 
 
+
 .post-content{
   text-align: justify;
 }
-
+.line-content{
+    border: 1px solid grey;
+    opacity: 0.5;
+}
 .post-content a{
   color: orange;
   text-decoration: none;
