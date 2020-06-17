@@ -3,10 +3,12 @@ layout: post
 title:  "IMFERYE: A quest for legacy"
 date:   2020-03-23 06:03:00 -0300
 description: "I created a game to study how good administration can lead to bad stuff as well"
-categories: sketch
+categories: "sketch"
+type: "sk"
 author: Paipa Psyche
-image: ""
+image: "/assets/img/posts/sketch-imferye.png"
 icon: ""
+link: "/assets/sketches/imferye/imferye.html"
 tags:
   sketch
   javascript
@@ -14,7 +16,7 @@ tags:
   game
   random
 ---
-a group of settlers is left in an unexplored world with the aim of creating a global empire over the years. Explore unexplored terrain, evolve your cities and above all have fun creating an empire as big as you want.
+a group of settlers is left in an unexplored world with the aim of creating a global empire over the years. Name unexplored terrain, evolve your cities and above all have fun creating an empire as big as you want.
 ## The Sketch
 A **random map** is generated using Perlin's Noise including random resource sources in the field. The resource field is also generated using perlin noise but using a detail index more suitable for smaller sports (more detail in noise shape). The game maintains randomness to generate many elements of the game such as events and map conditions among other things, however, other elements such as names depend on a component associated with the immediately previous city.
 
@@ -38,13 +40,20 @@ The name generator was not as outstanding as other processes in the game, since 
 
 ## The Controls
 
-* **CLICK :** create a new settlement on the map.
-*
+
+
 At the beginning you can put a seed corresponding to the point from which your initial tribe will originate, **the initial point HAS to be on a beach**. Each new settlement that is put on the map must be connected to a nearby station, each station will increase its rank as it connects more and more stations to itself. After managing to create 5 metropolis, the game will give more seeds to originate new clans without the need to be connected to other nearby points (this new clans must be used on a beach, far from all other settlements).
+
+* **CLICK :** create a new settlement on the map.
+* **K :** (While hovering the mouse over a settlement) Inflicts damage on the settlement.
+* **A :** Activates auto-exploration. While active random settlements are created near existing ones.
+* **V :** Activates the virus. Random cities will suffer damage while active.
+
+
 
 ### Indicators
 
-* **PROFIT _(Colored vertical bar)_** : Index of wealth in your empire. High Profit means good economical times, negative profit means austerity and may lead to famine. 
+* **PROFIT _(Colored vertical bar)_** : Index of wealth in your empire. High Profit means good economical times, negative profit means austerity and may lead to famine.
 * **Seeds :** How many seeds to start new clans.
 * **Map :** Which map configuration are you watching.
 * **Difficulty :** Map difficulty, a good start is around 60%;
@@ -63,15 +72,26 @@ At the beginning you can put a seed corresponding to the point from which your i
 * **Pop. :** Population of the settlement.
 * **Rank :** Importance of the city. Relevant to evolve cities.
 * **Clan :** Name of the clan that owns the city.
-* **Rate :** Score assigned according city relevance in the empire. negative number imply waste of resources, positive numbers imply generation of goods.
-* **Savings :** Amount of good saved.
+* **Rate :** Score assigned according to city relevance in the empire.
+* **Savings :** Amount of goods saved.
 * **Era :** Period of time in which the empire faces an specific affair.
 
 ### Tips
-* The connectivity range of the stations changes according to their range: larger cities, larger ranges
+* The connectivity range of the stations changes according to their type: larger cities, larger ranges
 * During golden times you are able to build on water
 * The savings will increase faster if your profit is high
 * While building on water, deeper oceanic floor implies higher consume
 * Towns built in mountains may have a higher consume
 * Era changes each 4000 years approximately.
 * Final score depends on empire expansion, legacy and profit history.
+
+
+
+## Latest Release
+<a href="/assets/sketches/imferye/imferye.html" class="link-sketch">
+<span >
+PLAY GAME
+</span>
+</a>
+
+Latest commit : 21  / may / 2019

@@ -8,18 +8,27 @@ layout: withbar
 
   <ul class="post-list">
     {% for post in site.posts %}
-      <li class="post-item">
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+      {% if post.categories contains "sketch" %}
+        <li class="post-item post-item-green">
+          {% include post-item.html %}
+        </li>
+      {% elsif post.categories contains "image" %}
+        <li class="post-item post-item-blue">
+        {% include post-item.html %}
+        </li>
+        {% elsif post.categories contains "media" %}
+          <li class="post-item post-item-red">
+          {% include post-item.html %}
+          </li>
+      {% else %}
+        <li class="post-item post-item-orange">
+        {% include post-item.html %}
+        </li>
+      {% endif %}
 
-        <div class="post-desc">
-          {{post.description}}
-        </div>
 
-      </li>
+
     {% endfor %}
   </ul>
 

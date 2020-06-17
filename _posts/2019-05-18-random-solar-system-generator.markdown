@@ -5,8 +5,9 @@ date:   2019-05-18 02:19:00 -0300
 description: "How many colonized solar systems can fit into a simple javascript sketch?"
 categories: sketch
 author: Paipa Psyche
-image: ""
+image: "/assets/img/posts/sketch-system.png"
 icon: ""
+link: "/assets/sketches/solar-system/solar-system.html"
 tags:
   sketch
   space
@@ -46,3 +47,13 @@ The position of the cursor in the X-axis determines the direction and advance of
 * **BACKSPACE :** Aligns the planets
 * **SHIFT :** Turns the star into a black hole.
 * **CTRL :** Moves randomly planets on their orbits
+
+
+## Latest Release
+<a href="/assets/sketches/solar-system/solar-system.html" class="link-sketch">
+<span >
+TEST SKETCH
+</span>
+</a>
+
+Latest commit : 11  / dec / 2019

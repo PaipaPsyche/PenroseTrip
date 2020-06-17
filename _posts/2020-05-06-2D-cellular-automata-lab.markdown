@@ -3,10 +3,11 @@ layout: post
 title:  "2D Cellular Automata Lab"
 date:   2020-05-06 02:02:00 -0300
 description: "Public interactive laboratory open for 2D cellular automata experimentation and scientific outreach."
-categories: sketch
+categories: "sketch"
 author: Paipa Psyche
-image: ""
+image: "/assets/img/posts/sketch-cellular.png"
 icon: ""
+link: "/assets/sketches/cellular-automata/2d-cellular-automata.html"
 tags:
   sketch
   automata
@@ -51,5 +52,14 @@ When I built this specific gene codification was, in a beginning, a way to **sto
 * **I** : Inverts the value of every cell.
 * **C** : Sets the center Cell to ON.
 * **H / V / D / A** : Sets an alternating pattern along the central (Horizontal / Vertical / Diagonal / Antidiagonal) respectively.
-* **0 / 1** : create arule code with only 0 / 1 respectively (Empty DNA button).
+* **0 / 1** : create a rule code with only 0 / 1 respectively (Empty DNA button).
 * **2/3/4** : Sets a figure of ON cells in the center.
+
+## Latest Release
+<a href="/assets/sketches/cellular-automata/2d-cellular-automata.html" class="link-sketch">
+<span >
+TEST SKETCH
+</span>
+</a>
+
+Latest commit : 09  / may / 2020

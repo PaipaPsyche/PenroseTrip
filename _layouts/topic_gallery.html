@@ -6,18 +6,23 @@ layout: default
 <div class="topic">
   <div class="topic-head-row row">
     <div class="topic-icon">
-      <img src="/assets/img/site/icon-sketch.png"/>
+      <img src="/assets/img/site/icon-gallery.png"/>
     </div>
     <div class="topic-head">
-      <h1 class="topic-title"><b>SKETCHES</b></h1>
+      <h1 class="topic-title"><b>GALLERY</b></h1>
       <i>{{content}}</i>
     </div>
 </div>
-  <ul class="post-list topic-list">
-    {% for post in site.categories.sketch %}
+  <ul class="gallery-list">
+    {% for image in site.categories.image %}
 
-      <li class="post-item post-item-sketch row">
-        <div class="item-sketch-meta">
+      <li class="gallery-post">
+        <div class="gallery-post-content">
+        <a href="{{image.link}}">
+          <img class="gallery-post-img" src="{{image.image}}" alt="{{image.title}}"/>
+        </a>
+        </div>
+        <!-- <div class="item-sketch-meta">
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
         <h2>
@@ -38,7 +43,7 @@ layout: default
         </div>
         <a href="{{post.link}}">
         <img class="item-sketch-img" src = "{{post.image}}"/>
-        </a>
+        </a> -->
 
       </li>
 
