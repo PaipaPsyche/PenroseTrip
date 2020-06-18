@@ -18,7 +18,7 @@ layout: default
 
       <li class="gallery-post">
         <div class="gallery-post-content">
-        <a href="{{image.link}}">
+        <a href="{{ image.url | prepend: site.baseurl }}">
           <img class="gallery-post-img" src="{{image.image}}" alt="{{image.title}}"/>
         </a>
         </div>
