@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+  </header>
+
+  <div class="post-content image-post-content row" itemprop="articleBody">
+    <div class="image-post-cont-img">
+      <a href="{{ page.image | prepend: site.baseurl }}">
+      <img src="{{page.image}}" style="margin-bottom:40px;" class="image-post-mainpic"/>
+      </a>
+      <div class="post-content">
+        <p class="author-content">
+          <b>Computational astrophysicist</b> with affinity for <b>Artificial Intelligence</b> and <b>scientific outreach through art</b>.
+        </p>
+
+        <p class ="author-content">Programmer, visual artist and science communicator based in Bogotá, Colombia, with knowledge in Spanish,
+          English, Portuguese, French and German Languages. I believe that programming is a tool that can be used to
+          link the <b>secret patterns</b> present in nature with the intense mists of <b>human expression</b>.
+        </p>
+      </div>
+    </div>
+    <div class="image-post-cont-cont">
+      {{ content }}
+    </div>
+
+  </div>
+
+</article>

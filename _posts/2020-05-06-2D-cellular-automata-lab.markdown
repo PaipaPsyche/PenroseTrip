@@ -20,7 +20,7 @@ A **cellular automaton** is a system in which a grid of cells determines its sta
 
 These Game rules are codified in a structure similar to DNA. Each cell has 8 neighbors, so there are 9 states each cell hast to handle (including own state). As each one of these states are values 0 (OFF) or 1 (ON), the number of different possible neighborhood configurations, or cases, are 2 to the power of 9, or 512. Each configuration has a response ,for example, if the immediate  left neighbor is ON, then this cell turns ON as well. If we assign each one of this states to a position in a 512-length string, and in this string we store the response, the result is a 512-length string of 0's and 1's describing the behavior of the system. This might be codified to be expressed as genes in the form of alphanumeric values and colors. This 512-string is called the "rule code".
 
-This means that **a single rule code** describes the **unique behavior** of a system and, moreover, there exist as much as 2 to the power of 512 possible rule code configurations. In other words, there are more than 10 million million million million . . . (25 times million) . . . million million million possible systems.
+This means that **a single rule code** describes the **unique behavior** of a system and, moreover, there exist as much as 2<sup>512</sup> possible rule code configurations. In other words, there are more than <abbr title ="An octillion is 10 to the power of 27">10 octillion octillion octillion octillion octillion</abbr> possible systems.
 
 
 

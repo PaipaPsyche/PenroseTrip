@@ -15,7 +15,9 @@ tags: ""
 ## Discussion
 The **success** in facing the daily dilemmas and the occasional unexpected catastrophes that **chance** places in our path depends on our ability to focus our **superior intellect** on the study of our **own being**. Embracing many points of view of the self is a masterful tool for **forging** any new link with the world. The understanding of being is a practice that the 21st century has put aside despite being in these moments of **cultural mishmash** when we most need to look within ourselves.
 
-**Anyone who remains with a single perspective of the world is condemned to wander it on one only path.**
+> **Anyone who remains with a single perspective of the world is condemned to wander it on one only path.**
+
+
 ## Technique
 Manual filter of facial transformation as the main template. The other layers are made up of patterns **added by collage** and Deep Dream patterns added by contrast. The final image was processed **multiple times** by low-enhancing convolutional filters.
 ## From the artist
