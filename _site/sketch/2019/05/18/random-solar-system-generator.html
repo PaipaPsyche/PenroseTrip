@@ -12,10 +12,10 @@
   <title>Solar System Generator</title>
   <meta name="description" content="In the universe there are thousands of trillions of stars, each with the possibility of having a planetary system that orbits it and, by extension, the tiny ...">
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="canonical" href="http://penrosetrip.com/sketch/2019/05/18/random-solar-system-generator.html">
-  <link rel="alternate" type="application/rss+xml" title="Penrose Trip" href="http://penrosetrip.com/feed.xml">
+  <link rel="stylesheet" href="/PenroseTrip/css/main.css">
+  <link rel="stylesheet" href="/PenroseTrip/css/styles.css">
+  <link rel="canonical" href="http://penrosetrip.com/PenroseTrip/sketch/2019/05/18/random-solar-system-generator.html">
+  <link rel="alternate" type="application/rss+xml" title="Penrose Trip" href="http://penrosetrip.com/PenroseTrip/feed.xml">
 </head>
 
 
@@ -25,7 +25,7 @@
 
   <div class="wrapper">
 
-      <a class="site-title" href="/">Penrose Trip</a>
+      <a class="site-title" href="/PenroseTrip/">Penrose Trip</a>
       <img class="site-icon" src="/assets/img/site/eyecon.png">
 
 
@@ -40,24 +40,28 @@
         </svg>
       </a> -->
 
-      <div class="trigger">
+      <div class="trigger" >
         
           
-          <a class="page-link" href="/about/">About</a>
-          
-        
-          
-          <a class="page-link" href="/contact/">Contact</a>
+          <a class="page-link" href="/PenroseTrip/about/"><b>About</b></a>
           
         
           
         
           
+          <a class="page-link" href="/PenroseTrip/gallery/"><b>Gallery</b></a>
+          
+        
+          
         
           
         
           
-          <a class="page-link" href="/sketches/">Sketches</a>
+          <a class="page-link" href="/PenroseTrip/sketches/"><b>Sketches</b></a>
+          
+        
+          
+        
           
         
       </div>
@@ -75,33 +79,58 @@
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">Solar System Generator</h1>
     <p class="post-meta"><time datetime="2019-05-18T02:19:00-03:00" itemprop="datePublished">May 18, 2019</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Paipa Psyche</span></span></p>
-  
+
 
   </header>
 
   <div class="post-content" itemprop="articleBody">
     <p>In the universe there are <strong>thousands of trillions of stars</strong>, each with the possibility of having a planetary system that orbits it and, by extension, the tiny possibility of containing an intelligent civilization.</p>
 
-<h2 id="the-sketch">The sketch</h2>
+<h2 id="the-sketch">The Sketch</h2>
 <p>In this case, there is no scientific rigor regarding the value of the simulation since it is a <strong>random solar system generator</strong>. Graphic distances such as the radii of the stars are far from adequate, but only for this time let us indulge in science fiction.</p>
 
 <p>This is a generator of solar systems based on random numbers; All the solar systems shown are unique and unrepeatable for this very reason. There is the possibility of finding advanced civilizations and their colonies, ruins of those that did not survive, black holes and ringed planets, among other wonders. The system also displays <strong>geological and orbital information</strong> of the planets as well as relevant information from the star, this in order to provide more context in a universe without any context.</p>
 
-<h2 id="the-purpose">The purpose</h2>
+<h2 id="the-purpose">The Purpose</h2>
 <p>The goal with this bunch of messy code is to <strong>propose a mental exercise</strong> where you can, in some way, have a catalog of the stars of the universe. No matter how far they may be, even if they are outside of our visible universe, they are registered in the catalog as well as the civilizations that are present, if any.</p>
 
 <p>Beyond providing fictitious data and representing some scientific value, this sketch generates a poetic exercise where anyone can let their imagination run wild. It can be useful for thinkers looking for inspiration for a new creation, or simply a fairly scientific doodle to entertain all audiences.</p>
 
-<h2 id="the-result">The result</h2>
+<h2 id="the-result">The Result</h2>
 
 <p>While the orbit model, distance ratios, and much of the celestial body data are inaccurate, the name generator is an innovation. It generates mostly readable names with hierarchy rules to inherit the name of the system to some of its planets. This is a major achievement considering that it is a purely random and static generator, that is, that they are names that arise from the randomness of letters.</p>
 
-<p>The creation of fictional civilizations gives an <strong>extra pinch of sci-fi</strong> theatricality to the sketch, and generating geological data only provides more and more tools for anyone who wants to give a story to each solar system. As for aesthetics, there is not much to say: p5 is a fabulous tool for 2D, and although I know that there are ways to generate 3D visualizations, I wanted this exercise to have a more <strong>minimalist aesthetic</strong> and similar to a <strong>navigation service</strong>, like a GPS or a tourist map. Orbits are as elliptical as possible, and without being pretentious I am proud of the aesthetics of Dyson’s black holes and sphere stars.</p>
+<p>The creation of fictional civilizations gives an <strong>extra pinch of sci-fi</strong> theatricality to the sketch, and generating geological data only provides more and more tools for anyone who wants to give a story to each solar system. As for aesthetics, there is not much to say: p5 is a fabulous tool for 2D, and although I know that there are ways to generate 3D visualizations, I wanted this exercise to have a more <strong>minimalist aesthetic</strong> and similar to a <strong>navigation service</strong>, like a GPS or a tourist map. Orbits are as elliptical as possible, and without being pretentious I am proud of the aesthetics of black holes and <a href="https://en.wikipedia.org/wiki/Dyson_sphere" target="_blank">Dyson’s spheres</a>.</p>
 
 <p><strong>Note.</strong> I solemnly believe that in the future Dyson’s spheres will not be rigid cage-like structures, but rather <strong>many energy collection and transmission satellites</strong> forming a synchronized network around the star and sending its energy to the planet with the orbit closest to the star. That is why I designed the Dyson sphere as a set of dots swarming around the circle that I blatantly called <em>“star.”</em></p>
 
-<h2 id="the-controls">The controls</h2>
-<p>The position of the cursor in X determines the direction and advance of time. The position of the cursor in Y dictates the speed with which time advances. The ENTER key aligns the planets and the BACKSPACE key generates a random state of this solar system. To explore a new solar system, just CLICK or simply reload the page.</p>
+<h2 id="the-controls">The Controls</h2>
+<p>The position of the cursor in the X-axis determines the direction and advance of time. The position of the cursor in the Y-axis dictates the speed with which time advances. To explore a new solar system, just CLICK the button in the bottom right. To retrieve the last solar system you saw use the button in the bottom left.</p>
+
+<p>CLICK on a planet or star to display its characteristics.</p>
+
+<ul>
+  <li><strong>ENTER :</strong> Moves to next system</li>
+  <li><strong>BACKSPACE :</strong> Aligns the planets</li>
+  <li><strong>SHIFT :</strong> Turns the star into a black hole.</li>
+  <li><strong>CTRL :</strong> Moves randomly planets on their orbits</li>
+</ul>
+
+<h4 id="mobile">Mobile</h4>
+<ul>
+  <li>TOUCH planets or stars to display characteristics.</li>
+  <li>SHAKE the device to generate a random system.</li>
+  <li>Buttons to access new or previous systems may work as well.</li>
+</ul>
+
+<h2 id="latest-release">Latest Release</h2>
+<p><a href="/assets/sketches/solar-system/solar-system.html" class="link-sketch">
+<span>
+TEST SKETCH
+</span>
+</a></p>
+
+<p>Latest commit : 11  / dec / 2019</p>
 
   </div>
 
