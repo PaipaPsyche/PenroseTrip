@@ -56,7 +56,7 @@ When I built this specific gene codification was, in a beginning, a way to **sto
 * **2/3/4** : Sets a figure of ON cells in the center.
 
 ## Latest Release
-<a href="/assets/sketches/cellular-automata/2d-cellular-automata.html" class="link-sketch">
+<a href="{{site.baseurl}}/assets/sketches/cellular-automata/2d-cellular-automata.html" class="link-sketch">
 <span >
 TEST SKETCH
 </span>

@@ -46,7 +46,7 @@ TOUCH and DRAG through the screen to change relative phase between oscillators
 
 
 ## Latest Release
-<a href="/assets/sketches/wave/wave.html" class="link-sketch">
+<a href="{{site.baseurl}}/assets/sketches/wave/wave.html" class="link-sketch">
 <span >
 TEST SKETCH
 </span>

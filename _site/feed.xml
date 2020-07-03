@@ -4,10 +4,10 @@
     <title>Penrose Trip</title>
     <description>This website is an interactive portal for informative use, which seeks to open a space for the juxtaposition between psychedelia, science, programming and art.
 </description>
-    <link>http://penrosetrip.com/</link>
-    <atom:link href="http://penrosetrip.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 02 Jul 2020 00:26:24 -0300</pubDate>
-    <lastBuildDate>Thu, 02 Jul 2020 00:26:24 -0300</lastBuildDate>
+    <link>http://penrosetrip.com/PenroseTrip/</link>
+    <atom:link href="http://penrosetrip.com/PenroseTrip/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 03 Jul 2020 19:22:15 -0300</pubDate>
+    <lastBuildDate>Fri, 03 Jul 2020 19:22:15 -0300</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -36,8 +36,8 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 10 Jun 2020 20:15:00 -0300</pubDate>
-        <link>http://penrosetrip.com/image/2020/06/10/tentaciones-y-demonios.html</link>
-        <guid isPermaLink="true">http://penrosetrip.com/image/2020/06/10/tentaciones-y-demonios.html</guid>
+        <link>http://penrosetrip.com/PenroseTrip/image/2020/06/10/tentaciones-y-demonios.html</link>
+        <guid isPermaLink="true">http://penrosetrip.com/PenroseTrip/image/2020/06/10/tentaciones-y-demonios.html</guid>
         
         
         <category>image</category>
@@ -73,8 +73,8 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;p&gt;It’s been almost 3 weeks since the migration started and I’m still getting warm. Much of this time has been me learning jekyll from scratch, and although it is an easy-to-learn site generator, it is difficult to diagram the two-year work again and apply the updates and fixes that have been suggested to me. In the future I hope to have all my work here exposed as well as options so that third parties can leave their contributions to this growing personal project.&lt;/p&gt;
 </description>
         <pubDate>Tue, 09 Jun 2020 20:15:00 -0300</pubDate>
-        <link>http://penrosetrip.com/information/2020/06/09/penrose-trip-a-whole-new-universe.html</link>
-        <guid isPermaLink="true">http://penrosetrip.com/information/2020/06/09/penrose-trip-a-whole-new-universe.html</guid>
+        <link>http://penrosetrip.com/PenroseTrip/information/2020/06/09/penrose-trip-a-whole-new-universe.html</link>
+        <guid isPermaLink="true">http://penrosetrip.com/PenroseTrip/information/2020/06/09/penrose-trip-a-whole-new-universe.html</guid>
         
         <category>information</category>
         
@@ -110,8 +110,8 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 23 May 2020 15:23:00 -0300</pubDate>
-        <link>http://penrosetrip.com/image/2020/05/23/agoraphobia.html</link>
-        <guid isPermaLink="true">http://penrosetrip.com/image/2020/05/23/agoraphobia.html</guid>
+        <link>http://penrosetrip.com/PenroseTrip/image/2020/05/23/agoraphobia.html</link>
+        <guid isPermaLink="true">http://penrosetrip.com/PenroseTrip/image/2020/05/23/agoraphobia.html</guid>
         
         
         <category>image</category>
@@ -158,7 +158,7 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;latest-release&quot;&gt;Latest Release&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/assets/sketches/cellular-automata/2d-cellular-automata.html&quot; class=&quot;link-sketch&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;/PenroseTrip/assets/sketches/cellular-automata/2d-cellular-automata.html&quot; class=&quot;link-sketch&quot;&gt;
 &lt;span&gt;
 TEST SKETCH
 &lt;/span&gt;
@@ -167,8 +167,8 @@ TEST SKETCH
 &lt;p&gt;Latest commit : 09  / may / 2020&lt;/p&gt;
 </description>
         <pubDate>Wed, 06 May 2020 02:02:00 -0300</pubDate>
-        <link>http://penrosetrip.com/sketch/2020/05/06/2D-cellular-automata-lab.html</link>
-        <guid isPermaLink="true">http://penrosetrip.com/sketch/2020/05/06/2D-cellular-automata-lab.html</guid>
+        <link>http://penrosetrip.com/PenroseTrip/sketch/2020/05/06/2D-cellular-automata-lab.html</link>
+        <guid isPermaLink="true">http://penrosetrip.com/PenroseTrip/sketch/2020/05/06/2D-cellular-automata-lab.html</guid>
         
         <category>sketch</category>
         
@@ -208,7 +208,7 @@ TEST SKETCH
 
 &lt;p&gt;&lt;em&gt;– Wikipedia&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/sketch-organism-img1.png&quot; alt=&quot;image of boid system&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/PenroseTrip/assets/img/posts/sketch-organism-img1.png&quot; alt=&quot;image of boid system&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;My contribution to the algorithm with which this sketch works consists of special boids that have the ability to change an internal state of normal boids, these special new boids are going to be called &lt;strong&gt;Shifters&lt;/strong&gt;, since they shift their neighbors. There are three types of Shifters:&lt;/p&gt;
 
@@ -239,7 +239,7 @@ heal infected boids (red or blue). They can steal speed from nearby boids.&lt;/p
   &lt;li&gt;Healers may pass through small healthy groups of boids, even using its boids to &lt;strong&gt;catapult themselves forward&lt;/strong&gt; by stealing speed. Bigger groups catch the healers easier and since it &lt;strong&gt;usually swaps speeds&lt;/strong&gt; with his neighbors, having a healer within the group usually &lt;strong&gt;helps keeping boids aligned&lt;/strong&gt; in the same direction. This feature also represents &lt;strong&gt;formation of larger groups&lt;/strong&gt; when there are flockers and healers within the group, since flockers are more likely to separate form the group due to weak aligning.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/sketch-organism.gif&quot; alt=&quot;image of boid system with shifters&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/PenroseTrip/assets/img/posts/sketch-organism.gif&quot; alt=&quot;image of boid system with shifters&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;the-controls&quot;&gt;The Controls&lt;/h2&gt;
 
@@ -258,7 +258,7 @@ heal infected boids (red or blue). They can steal speed from nearby boids.&lt;/p
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;latest-release&quot;&gt;Latest Release&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/assets/sketches/flocking-ecosystem/flocking-ecosystem.html&quot; class=&quot;link-sketch&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;/PenroseTrip/assets/sketches/flocking-ecosystem/flocking-ecosystem.html&quot; class=&quot;link-sketch&quot;&gt;
 &lt;span&gt;
 TEST SKETCH
 &lt;/span&gt;
@@ -267,8 +267,8 @@ TEST SKETCH
 &lt;p&gt;Latest commit : 13  / apr / 2020&lt;/p&gt;
 </description>
         <pubDate>Mon, 13 Apr 2020 04:20:00 -0300</pubDate>
-        <link>http://penrosetrip.com/sketch/2020/04/13/flocking-ecosystem.html</link>
-        <guid isPermaLink="true">http://penrosetrip.com/sketch/2020/04/13/flocking-ecosystem.html</guid>
+        <link>http://penrosetrip.com/PenroseTrip/sketch/2020/04/13/flocking-ecosystem.html</link>
+        <guid isPermaLink="true">http://penrosetrip.com/PenroseTrip/sketch/2020/04/13/flocking-ecosystem.html</guid>
         
         <category>sketch</category>
         
@@ -362,7 +362,7 @@ These spots turned them into islands and eventually continents. From there it wa
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;latest-release&quot;&gt;Latest Release&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/assets/sketches/imferye/imferye.html&quot; class=&quot;link-sketch&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;/PenroseTrip/assets/sketches/imferye/imferye.html&quot; class=&quot;link-sketch&quot;&gt;
 &lt;span&gt;
 PLAY GAME
 &lt;/span&gt;
@@ -371,8 +371,8 @@ PLAY GAME
 &lt;p&gt;Latest commit : 21  / may / 2019&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Mar 2020 06:03:00 -0300</pubDate>
-        <link>http://penrosetrip.com/sketch/2020/03/23/imferye-the-game.html</link>
-        <guid isPermaLink="true">http://penrosetrip.com/sketch/2020/03/23/imferye-the-game.html</guid>
+        <link>http://penrosetrip.com/PenroseTrip/sketch/2020/03/23/imferye-the-game.html</link>
+        <guid isPermaLink="true">http://penrosetrip.com/PenroseTrip/sketch/2020/03/23/imferye-the-game.html</guid>
         
         <category>sketch</category>
         
@@ -411,8 +411,8 @@ PLAY GAME
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 12 Feb 2020 09:26:00 -0300</pubDate>
-        <link>http://penrosetrip.com/image/2020/02/12/eigenvalue-of-myself.html</link>
-        <guid isPermaLink="true">http://penrosetrip.com/image/2020/02/12/eigenvalue-of-myself.html</guid>
+        <link>http://penrosetrip.com/PenroseTrip/image/2020/02/12/eigenvalue-of-myself.html</link>
+        <guid isPermaLink="true">http://penrosetrip.com/PenroseTrip/image/2020/02/12/eigenvalue-of-myself.html</guid>
         
         
         <category>image</category>
@@ -439,8 +439,8 @@ PLAY GAME
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 10 Feb 2020 18:16:00 -0300</pubDate>
-        <link>http://penrosetrip.com/image/2020/02/10/la-pantalla-grande.html</link>
-        <guid isPermaLink="true">http://penrosetrip.com/image/2020/02/10/la-pantalla-grande.html</guid>
+        <link>http://penrosetrip.com/PenroseTrip/image/2020/02/10/la-pantalla-grande.html</link>
+        <guid isPermaLink="true">http://penrosetrip.com/PenroseTrip/image/2020/02/10/la-pantalla-grande.html</guid>
         
         
         <category>image</category>
@@ -480,8 +480,8 @@ PLAY GAME
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 14 Dec 2019 20:32:00 -0300</pubDate>
-        <link>http://penrosetrip.com/image/2019/12/14/persona.html</link>
-        <guid isPermaLink="true">http://penrosetrip.com/image/2019/12/14/persona.html</guid>
+        <link>http://penrosetrip.com/PenroseTrip/image/2019/12/14/persona.html</link>
+        <guid isPermaLink="true">http://penrosetrip.com/PenroseTrip/image/2019/12/14/persona.html</guid>
         
         
         <category>image</category>
@@ -517,7 +517,7 @@ correlated oscillator systems.&lt;/p&gt;
 &lt;p&gt;TOUCH and DRAG through the screen to change relative phase between oscillators&lt;/p&gt;
 
 &lt;h2 id=&quot;latest-release&quot;&gt;Latest Release&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/assets/sketches/wave/wave.html&quot; class=&quot;link-sketch&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;/PenroseTrip/assets/sketches/wave/wave.html&quot; class=&quot;link-sketch&quot;&gt;
 &lt;span&gt;
 TEST SKETCH
 &lt;/span&gt;
@@ -526,8 +526,8 @@ TEST SKETCH
 &lt;p&gt;Latest commit : 07  / oct / 2019&lt;/p&gt;
 </description>
         <pubDate>Mon, 07 Oct 2019 16:23:00 -0300</pubDate>
-        <link>http://penrosetrip.com/sketch/2019/10/07/wave-as-a-phase-effect.html</link>
-        <guid isPermaLink="true">http://penrosetrip.com/sketch/2019/10/07/wave-as-a-phase-effect.html</guid>
+        <link>http://penrosetrip.com/PenroseTrip/sketch/2019/10/07/wave-as-a-phase-effect.html</link>
+        <guid isPermaLink="true">http://penrosetrip.com/PenroseTrip/sketch/2019/10/07/wave-as-a-phase-effect.html</guid>
         
         <category>sketch</category>
         

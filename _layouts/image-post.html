@@ -13,7 +13,7 @@ layout: default
   <div class="post-content image-post-content row" itemprop="articleBody">
     <div class="image-post-cont-img">
       <a href="{{ page.image | prepend: site.baseurl }}">
-      <img src="{{page.image}}" class="image-post-mainpic"/>
+      <img src="{{page.image| prepend: site.baseurl}}" class="image-post-mainpic"/>
       </a>
     </div>
     <div class="image-post-cont-cont">

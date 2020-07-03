@@ -88,7 +88,7 @@ At the beginning you can put a seed corresponding to the point from which your i
 
 
 ## Latest Release
-<a href="/assets/sketches/imferye/imferye.html" class="link-sketch">
+<a href="{{site.baseurl}}/assets/sketches/imferye/imferye.html" class="link-sketch">
 <span >
 PLAY GAME
 </span>

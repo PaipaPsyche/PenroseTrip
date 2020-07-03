@@ -6,7 +6,7 @@ layout: default
 <div class="topic">
   <div class="topic-head-row row">
     <div class="topic-icon">
-      <img src="/assets/img/site/icon-sketch.png"/>
+      <img src="{{site.baseurl}}/assets/img/site/icon-sketch.png"/>
     </div>
     <div class="topic-head">
       <h1 class="topic-title"><b>SKETCHES</b></h1>
@@ -37,8 +37,8 @@ layout: default
 
         </div>
         <div class="post-item-sketch-contimg">
-        <a href="{{post.link}}">
-        <img class="item-sketch-img" alt="{{post.title}}" src = "{{post.image}}"/>
+        <a href="{{ site.baseurl | append:post.link}}">
+        <img class="item-sketch-img" alt="{{post.title}}" src = "{{ site.baseurl | append:post.image }}"/>
         </a>
         </div>
       </li>

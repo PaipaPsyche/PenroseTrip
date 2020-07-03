@@ -37,7 +37,7 @@ This kind of behavior and rules have been studied for decades: it has been studi
 
 *-- Wikipedia*
 
-<img src="/assets/img/posts/sketch-organism-img1.png" alt="image of boid system" class="post-midimage-across"/>
+<img src="{{site.baseurl}}/assets/img/posts/sketch-organism-img1.png" alt="image of boid system" class="post-midimage-across"/>
 
 My contribution to the algorithm with which this sketch works consists of special boids that have the ability to change an internal state of normal boids, these special new boids are going to be called **Shifters**, since they shift their neighbors. There are three types of Shifters:
 
@@ -70,7 +70,7 @@ With the introduction of the new boids, new parameters are added to the simulati
 * Knitters usually stay near the net as an effect of the net static influence, but not always they remain static as trapped boids. They keep moving in the net surroundings until a boid gets near enough to interact and modify the knitter velocity. This perturbation, in addition with the aligning force present in every boid, causes the knitter to stop being *dormant* and 'Hunt' new boids that get stuck in the near net. Sometimes perturbations in a far point in the net are propagated due to the proximity of the *net boids* between them, causing the dormant knitter to react even if the new boid is trapped not so near.
 * Healers may pass through small healthy groups of boids, even using its boids to **catapult themselves forward** by stealing speed. Bigger groups catch the healers easier and since it **usually swaps speeds** with his neighbors, having a healer within the group usually **helps keeping boids aligned** in the same direction. This feature also represents **formation of larger groups** when there are flockers and healers within the group, since flockers are more likely to separate form the group due to weak aligning.
 
-<img src="/assets/img/posts/sketch-organism.gif" alt="image of boid system with shifters" class="post-midimage-across"/>
+<img src="{{site.baseurl}}/assets/img/posts/sketch-organism.gif" alt="image of boid system with shifters" class="post-midimage-across"/>
 
 ## The Controls
 
@@ -85,7 +85,7 @@ DRAG the cursor through the screen to generate new neutral boids pointed in rand
 * SHAKE device to create random shifter in random XY position.
 
 ## Latest Release
-<a href="/assets/sketches/flocking-ecosystem/flocking-ecosystem.html" class="link-sketch">
+<a href="{{site.baseurl}}/assets/sketches/flocking-ecosystem/flocking-ecosystem.html" class="link-sketch">
 <span >
 TEST SKETCH
 </span>

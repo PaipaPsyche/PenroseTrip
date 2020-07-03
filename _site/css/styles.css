@@ -103,7 +103,7 @@ margin: 10px;
 width: 60%;
 }
 .page-content{
-  background: #1C1C1F  url("/assets/img/site/header.jpg") no-repeat center center;
+  background: #1C1C1F  url("/PenroseTrip/assets/img/site/header.jpg") no-repeat center center;
   background-size: cover;
   border: black;
   margin: -1px;
@@ -307,7 +307,7 @@ pre, code {
 
 
 .site-header{
-  background: #1C1C1F url("/assets/img/site/stars4k.jpg") no-repeat center center;
+  background: #1C1C1F url("/PenroseTrip/assets/img/site/stars4k.jpg") no-repeat center center;
   background-size: cover;
   height: 65px;
   color: white;

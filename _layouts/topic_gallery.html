@@ -6,7 +6,7 @@ layout: default
 <div class="topic">
   <div class="topic-head-row row">
     <div class="topic-icon">
-      <img src="/assets/img/site/icon-gallery.png"/>
+      <img src="{{site.baseurl}}/assets/img/site/icon-gallery.png"/>
     </div>
     <div class="topic-head">
       <h1 class="topic-title"><b>GALLERY</b></h1>
@@ -20,7 +20,7 @@ layout: default
         <div class="gallery-post-content">
         <div>
         <a href="{{ image.url | prepend: site.baseurl }}">
-          <img class="gallery-post-img" src="{{image.image}}" alt="{{image.title}}"/>
+          <img class="gallery-post-img" src="{{image.image | prepend: site.baseurl }}" alt="{{image.title}}"/>
         </a>
         </div>
         <div class="gallery-post-detail">

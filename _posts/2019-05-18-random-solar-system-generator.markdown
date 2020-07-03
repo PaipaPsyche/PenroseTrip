@@ -60,7 +60,7 @@ CLICK on a planet or star to display its characteristics.
 
 
 ## Latest Release
-<a href="/assets/sketches/solar-system/solar-system.html" class="link-sketch">
+<a href="{{site.baseurl}}/assets/sketches/solar-system/solar-system.html" class="link-sketch">
 <span >
 TEST SKETCH
 </span>
