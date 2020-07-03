@@ -493,7 +493,7 @@ function get_rand_coords(xx,yy,sd){
 function setup() {
   H = windowHeight;
   W = windowWidth;
-  frameRate(25);
+  frameRate(15);
   add_silabas();
 
   era_change=[d_era+int(randomGaussian(0,0.05*d_era))]
