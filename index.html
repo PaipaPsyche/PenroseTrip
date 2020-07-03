@@ -19,9 +19,9 @@ layout: withbar
       {% if page == paginator.page %}
         <em>{{ page }}</em>
       {% elsif page == 1 %}
-        <a href="{{ '/'}}">{{ page }}</a>
+        <a href="{{ site.baseurl}}">{{ page }}</a>
       {% else %}
-        <a href="{{ site.paginate_path | replace: ':num', page }}">{{ page }}</a>
+        <a href="{{ site.paginate_path | replace: ':num', page |prepend: site.baseurl }}">{{ page }}</a>
       {% endif %}
     {% endfor %}
 
@@ -80,9 +80,9 @@ layout: withbar
     {% if page == paginator.page %}
       <em>{{ page }}</em>
     {% elsif page == 1 %}
-      <a href="{{ '/'}}">{{ page }}</a>
+      <a href="{{ site.baseurl}}">{{ page }}</a>
     {% else %}
-      <a href="{{ site.paginate_path | replace: ':num', page }}">{{ page }}</a>
+      <a href="{{ site.paginate_path | replace: ':num', page |prepend: site.baseurl }}">{{ page }}</a>
     {% endif %}
   {% endfor %}
 
