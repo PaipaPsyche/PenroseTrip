@@ -53,7 +53,7 @@ var savings = 0;
 var era = 0;
 var act_era = [""];
 var era_change = [];
-var d_era = 4000;
+var d_era = 3000;
 
 var cap="";
 
@@ -493,7 +493,7 @@ function get_rand_coords(xx,yy,sd){
 function setup() {
   H = windowHeight;
   W = windowWidth;
-  frameRate(5);
+  frameRate(25);
   add_silabas();
 
   era_change=[d_era+int(randomGaussian(0,0.05*d_era))]
