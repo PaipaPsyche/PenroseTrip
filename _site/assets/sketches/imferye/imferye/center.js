@@ -476,7 +476,7 @@ class centro {
     if(this.T<10){
 
     if(this.is_origin!=0){
-      rect(this.X-this.R,this.Y-this.R,2*this.R,2*this.R)
+      rect(this.X-this.R,this.Y-this.R,1.3*this.R,1.3*this.R)
     }
     else{
 
