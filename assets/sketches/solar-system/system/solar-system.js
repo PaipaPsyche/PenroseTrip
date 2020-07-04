@@ -125,7 +125,7 @@ class button {
     this.X = x;
     this.Y = y;
     this.T = txt;
-    this.R = 20;
+    this.R = 30;
     this.C = c;
     this.F = f;
 
@@ -978,10 +978,10 @@ function draw() {
   background(0);
   for (let s = 0; s < nStars; s++) {
     stroke(STARS[s][3]);
-    let rand = 0;
-    if (random() < 0.0002) {
-      rand = 1
-    };
+    // let rand = 0;
+    // if (random() < 0.0002) {
+    //   rand = 1
+    // };
     strokeWeight(max(STARS[s][2] + rand * randomGaussian(), 0.1));
     point(STARS[s][0], STARS[s][1]);
     noStroke();
