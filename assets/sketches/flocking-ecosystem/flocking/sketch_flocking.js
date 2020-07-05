@@ -11,7 +11,7 @@ function setup() {
     W = windowWidth;
     H = windowHeight;
     createCanvas(W,H);
-    pmut = random(0,0.1);
+    pmut = random(0.05,0.1);
     maxconnect = random([0,1,2,3,4,5,6])
   //createP("Drag the mouse to generate new boids.");
 
@@ -170,7 +170,7 @@ Boid.prototype.cure = function(boid){
   // this.genes["B"]=0;
   this.infected =-1;
   this.maxforce = 0.5;
-  this.maxspeed=4;
+  this.maxspeed=5.2;
   }
 
 
@@ -185,7 +185,7 @@ Boid.prototype.cure = function(boid){
     // this.genes["G"]=0;
     // this.genes["B"]=0;
     this.infected =0;
-    this.maxspeed = random(2,5);    // Maximum speed
+    this.maxspeed = random(2,4);    // Maximum speed
     this.maxforce = 0.08;
     // if(random()<map(2*pflip,0,2,0,0.5)){
     //   this.velocity = this.velocity.mult(-1);
@@ -193,6 +193,10 @@ Boid.prototype.cure = function(boid){
     let vel  = this.velocity.copy();
     this.velocity=boid.velocity.copy();
     boid.velocity=vel;
+    if(random()<0.05){
+      this.velocity.mult(0.3);
+      boid.velocity.mult(2);
+    }
     //this.velocity = createVector(random(-1, 1), random(-1, 1)).mult(2*this.velocity.mag());
     }
 
@@ -286,9 +290,9 @@ Boid.prototype.flock = function(boids) {
 // Method to update location
 Boid.prototype.update = function() {
 
-  if(this.one==1){this.genes["R"]=0;this.genes["G"]=0;this.genes["B"]=255;this.maxforce = 0.2;this.maxspeed=4;}
-  if(this.one==-1){this.genes["R"]=255;this.genes["G"]=0;this.genes["B"]=0;this.maxforce=0.2;this.maxspeed=4;}
-  if(this.one==2){this.genes["R"]=0;this.genes["G"]=255;this.genes["B"]=30;this.maxforce=0.2;this.maxspeed=6;}
+  if(this.one==1){this.genes["R"]=0;this.genes["G"]=0;this.genes["B"]=255;this.maxforce = 0.5;this.maxspeed=5.5;}//KNITTER
+  if(this.one==-1){this.genes["R"]=255;this.genes["G"]=0;this.genes["B"]=0;this.maxforce=0.2;this.maxspeed=5.5;}//FLOCKER
+  if(this.one==2){this.genes["R"]=0;this.genes["G"]=255;this.genes["B"]=30;this.maxforce=0.3;this.maxspeed=5.5;}//HEALER
   //if(random()<pow(pmut,3)/10 & this.infected!=0){this.skip()}
 
   // Update velocity
@@ -410,7 +414,9 @@ Boid.prototype.borders = function() {
 // Separation
 // Method checks for nearby boids and steers away
 Boid.prototype.separate = function(boids) {
-  let desiredseparation = 25.0;
+  let desiredseparation = 20.0;
+  if(this.one==-1||this.one==1 || this.infected==-1){desiredseparation = 15.0 + 3*sin(frameCount/8);}
+  if(this.infected==1){desiredseparation = 25.0;}
   let steer = createVector(0, 0);
   let count = 0;
   // For every boid in the system, check if it's too close
@@ -448,6 +454,8 @@ Boid.prototype.separate = function(boids) {
 // For every nearby boid in the system, calculate the average velocity
 Boid.prototype.align = function(boids) {
   let neighbordist = 50;
+  if(this.infected==-1 || this.one==-1){neighbordist=30;}
+  if(this.one== 1 ){neighbordist=120;}
   let sum = createVector(0,0);
   let count = 0;
   for (let i = 0; i < boids.length; i++) {
@@ -455,7 +463,12 @@ Boid.prototype.align = function(boids) {
     if ((d > 0) && (d < neighbordist)) {
 
       if(boids[i].one!=0 & this.one!=0 & this.one!=boids[i].one){
-        sum.add(createVector(randomGaussian(0,2),randomGaussian(0,2)));
+        if(boids[i].one==2 || this.one==2){
+          sum.add(boids[i].velocity)
+        }else{
+          sum.add(createVector(randomGaussian(0,3),randomGaussian(0,3)));
+        }
+
       }
       else {
         sum.add(boids[i].velocity);
@@ -483,6 +496,8 @@ Boid.prototype.align = function(boids) {
 Boid.prototype.cohesion = function(boids) {
   let n_connect = maxconnect
   let neighbordist = 60;
+  if(this.one==2){neighbordist=200;}
+  if(this.one==1){neighbordist= 250*sin(frameCount/150)**2 ;}
   let sum = createVector(0, 0);   // Start with empty vector to accumulate all locations
   let count = 0;
 

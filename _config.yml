@@ -11,8 +11,8 @@ email: davidpaipa03@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   This website is an interactive portal for informative use,
   which seeks to open a space for the juxtaposition between psychedelia, science, programming and art.
-baseurl: "/PenroseTrip" # the subpath of your site, e.g. /blog
-url: "http://penrosetrip.com" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "penrosetrip.co" # the base hostname & protocol for your site
 twitter_username: PenroseTrip
 github_username:  PaipaPsyche
 paginate: 5 # pagination
