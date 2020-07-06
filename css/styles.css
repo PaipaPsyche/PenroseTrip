@@ -103,7 +103,7 @@ margin: 10px;
 width: 60%;
 }
 .page-content{
-  background: #1C1C1F  url("/assets/img/site/header.jpg") no-repeat center center;
+  background: #1C1C1F  url("/assets/img/site/stars4k.jpg") repeat space;
   background-size: cover;
   border: black;
   margin: -1px;
@@ -306,13 +306,20 @@ pre, code {
 /*header*/
 
 
-.site-header{
-  background: #1C1C1F url("/assets/img/site/stars4k.jpg") no-repeat center center;
+.headbox-wrapper{
+  background: #1C1C1F url("/assets/img/site/header.jpg")  center center;
+
   background-size: cover;
   height: 65px;
-  color: white;
   margin-top: -5px;
   border-bottom: 2px solid grey;
+}
+
+.site-header{
+  height: 65px;
+  color: white;
+  /* backdrop-fil ter: blur(4px); */
+  backdrop-fitler: brightness(50%);
 
 }
 .site-header .page-link{
