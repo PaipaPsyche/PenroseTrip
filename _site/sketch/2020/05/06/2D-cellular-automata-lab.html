@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="shortcut icon" type="image/png" href="/PenroseTrip/assets/img/site/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="/assets/img/site/favicon.png">
   <!-- <link rel="icon" href="/assets/img/site/favicon.png" type="image/x-icon"> -->
 
   <title>2D Cellular Automata Lab</title>
-  <meta name="description" content="A cellular automaton is a system in which a grid of cells determines its state (ON or OFF) according to rules established on the states of a determined neigh...">
+  <meta name="description" content="A cellular automaton is a system in which a grid of cells determines its state (ON or OFF, for example) according to rules established on the states of a det...">
 
-  <link rel="stylesheet" href="/PenroseTrip/css/main.css">
-  <link rel="stylesheet" href="/PenroseTrip/css/styles.css">
-  <link rel="canonical" href="penrosetrip.co/PenroseTrip/sketch/2020/05/06/2D-cellular-automata-lab.html">
-  <link rel="alternate" type="application/rss+xml" title="Penrose Trip" href="penrosetrip.co/PenroseTrip/feed.xml">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="canonical" href="penrosetrip.co/sketch/2020/05/06/2D-cellular-automata-lab.html">
+  <link rel="alternate" type="application/rss+xml" title="Penrose Trip" href="penrosetrip.co/feed.xml">
 </head>
 
 
@@ -26,8 +26,8 @@
 
   <div class="wrapper">
 
-      <a class="site-title" href="/PenroseTrip/">Penrose Trip</a>
-      <img class="site-icon" src="/PenroseTrip/assets/img/site/eyecon.png">
+      <a class="site-title" href="/">Penrose Trip</a>
+      <img class="site-icon" src="/assets/img/site/eyecon.png">
 
 
 
@@ -44,13 +44,13 @@
       <div class="trigger" >
         
           
-          <a class="page-link" href="/PenroseTrip/about/"><b>About</b></a>
+          <a class="page-link" href="/about/"><b>About</b></a>
           
         
           
         
           
-          <a class="page-link" href="/PenroseTrip/gallery/"><b>Gallery</b></a>
+          <a class="page-link" href="/gallery/"><b>Gallery</b></a>
           
         
           
@@ -58,7 +58,7 @@
           
         
           
-          <a class="page-link" href="/PenroseTrip/sketches/"><b>Sketches</b></a>
+          <a class="page-link" href="/sketches/"><b>Sketches</b></a>
           
         
           
@@ -86,18 +86,24 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>A <strong>cellular automaton</strong> is a system in which a grid of cells determines its state (ON or OFF) according to rules established on the states of a determined <strong>neighborhood</strong> of cells in the grid. The system behaves according to a <strong>set of game rules</strong> that commands each cell in the grid to adopt in the net step a state based on the previous states of the neighbors.</p>
+    <p>A <strong>cellular automaton</strong> is a system in which a grid of cells determines its state (<strong>ON</strong> or <strong>OFF</strong>, for example) according to rules established on the states of a determined <strong>neighborhood</strong> of cells in the grid. The system behaves according to a <strong>set of game rules</strong> that commands each cell in the grid to adopt (in the next generation) a state based on the previous states of the neighbors.</p>
 
 <h2 id="the-sketch">The Sketch</h2>
 
-<p>These Game rules are codified in a structure similar to DNA. Each cell has 8 neighbors, so there are 9 states each cell hast to handle (including own state). As each one of these states are values 0 (OFF) or 1 (ON), the number of different possible neighborhood configurations, or cases, are 2 to the power of 9, or 512. Each configuration has a response ,for example, if the immediate  left neighbor is ON, then this cell turns ON as well. If we assign each one of this states to a position in a 512-length string, and in this string we store the response, the result is a 512-length string of 0’s and 1’s describing the behavior of the system. This might be codified to be expressed as genes in the form of alphanumeric values and colors. This 512-string is called the “rule code”.</p>
+<p>These Game rules are codified in a structure similar to DNA. Each cell has 8 neighbors, so there are 9 states each cell hast to handle (including own state). As each one of these states are values 0 (OFF) or 1 (ON), the number of different possible neighborhood configurations, or cases, are 2 to the power of 9, or 512. Each configuration has a response ,for example:</p>
+
+<blockquote>
+  <p>if the immediate  left neighbor is <strong>ON</strong>, then this cell turns <strong>ON</strong> as well.</p>
+</blockquote>
+
+<p>If we assign each one of this states to a position in a 512-length string, and in this string we store the response, the result is a 512-length string of 0’s and 1’s describing the behavior of the system. This might be codified to be expressed as genes in the form of alphanumeric values and colors. This 512-string is called the “rule code”.</p>
 
 <p>This means that <strong>a single rule code</strong> describes the <strong>unique behavior</strong> of a system and, moreover, there exist as much as 2<sup>512</sup> possible rule code configurations. In other words, there are more than <abbr title="An octillion is 10 to the power of 27">10 octillion octillion octillion octillion octillion</abbr> possible systems.</p>
 
 <h2 id="the-purpose">The Purpose</h2>
-<p>In almost all the processes we see in the modern world, the behavior of <strong>organized growth and modularity</strong> seem to be somehow present. But this is not where this concept originates, because even when humanity lived in caves we noticed the patterns that nature followed around us. In the flowers, in the roots, in the clouds, in the butterfly wings, in the thunders, in the swarms: the world is full of patterns that in one way or another can be reduced to simple modules following the same rules over and over time; the phenomenon can be <strong>reduced</strong> to the implementation of cellular automata.</p>
+<p>In almost all the processes we see in the modern world, the behavior of <strong>organized growth and modularity</strong> seem to be somehow present. But this is not where this concept originates, because even when humanity lived in caves we noticed the patterns that nature followed around us. In the flowers, in the roots, in the clouds, in the butterfly wings, in the thunders, in the swarms: the world is full of patterns that in one way or another can be reduced to simple modules following the same rules as the system’s clock ticks; the phenomenon can be <strong>reduced</strong> to the implementation of cellular automata.</p>
 
-<p>Humans are designed to notice patterns even if they are not there, but when they are, we marvel at imagining the reason for their existence. One way in which we were able to explain the reason for many patterns present in nature was to <strong>formulate the problem as a cellular automaton</strong>, a system of individual modules programmed to follow the same rules that may or may not allow interaction between the agents of the system. This way of modeling complex problems serves to compartmentalize complex behaviors and define them as simple rules that are repeated over and over again <strong>out of synchronicity</strong>. A swarm of simple machines that can express complexity from the interaction between themselves, conditioned to <strong>react to their environment</strong> in a pre-defined way.</p>
+<p>Humans are designed to notice patterns even if they are not there, but when they are, we marvel at imagining the reason for their existence. One way in which we were able to explain the reason for many patterns present in nature was to <strong>formulate the problem as a cellular automaton</strong>, a system of individual modules programmed to follow the same rules that may or may not allow interaction between the agents of the system. This way of modeling complex problems is used to split complex behaviors and define them as simple rules that are repeated over and over again <strong>out of synchronicity</strong>. An aggregate of simple machines that can express complexity from the interaction between themselves, conditioned to <strong>react to their environment</strong> in a pre-defined way.</p>
 
 <p>The intention when creating this laboratory was to offer tools to program the behavior of a cellular automaton to <strong>anyone</strong> who is interested in the subject and is <strong>not trained in programming</strong> (Not of all us can be nerds, right?). This laboratory is a simple and <strong>interactive</strong> reduction of what it means to program a cellular automaton and creates an environment of <strong>free experimentation</strong>, allowing to propose new inventions that can be modeled at will or found by chance.</p>
 
@@ -106,6 +112,109 @@
 <h2 id="the-result">The Result</h2>
 
 <p>When I built this specific gene codification was, in a beginning, a way to <strong>store compressed data</strong> information of the state, but as experimentation went on I realized common behaviors tend to be stored in the same Gene. experimentation with cellular automaton is easy and fun as long as you find <strong>the beauty of the patterns</strong> made by simple binary rules. These systems are controversial in the study of life emergence and complex systems, for example, you may know the famous <strong>Conway’s Game of Life</strong> which is an specific rule code for 2D cellular automata that resembles organic movement from simple configurations.</p>
+
+<h3 id="penrosetrip-automata-tissue-classification">PenroseTrip Automata Tissue Classification</h3>
+<p>After playing around with the Automata Lab for a while, I noticed that some rule codes generated systems that grew similarly to an organic or a fabric, as it is impossible to ignore their geometric properties, others only started from compact figures and eventually dissipated. The truth is that I found some common characteristics among the <strong>evolution processes</strong> of different systems and took the opportunity to make an amateur classification of what I could see.</p>
+
+<p>I should mention that this classification is based automata that tend to expand, or that have a very <abbr title="the number of active cells across the board slowly decreases over time">low rate</abbr> of disappearance of active cells.</p>
+
+<p>The approach that I am interested in exploring is seeing <strong>automata as ways of generating fabrics and lattices</strong>.</p>
+
+<h3 id="complexity-and-stability-analysis">complexity and stability analysis</h3>
+<p>According to the complexity of the behavior, the stability of the patterns formed and the recursion in them, I separated the different types of system into 4 possible classifications:</p>
+
+<ul>
+  <li><strong>STABLE</strong></li>
+</ul>
+
+<p>The systems that I classify as stable are all those that tend to <strong>expand</strong> and remain <strong>static</strong> in a given final position. It is important to clarify that there are systems such as the <strong>Conway game of life</strong> that includes static figures or patterns, but  cannot be classified as stable systems since these configurations arise from very specific initial conditions. A stable system must <strong>grow and maintain static conditions</strong> from a more general set of initial conditions, taking into account what is necessary to ensure the growth of the system (neighborhood conditions necessary not to <abbr title="all cells set to 0">extinguish</abbr> the system).</p>
+
+<div class="centered-square">
+  <div class="imgsq">
+    <img src="https://drive.google.com/uc?export=view&amp;id=1H4EHbXa-WZX8G5sX24VWdOQ0JjW9xrrN" class="post-midimage-across" />
+  </div>
+  <div class="txtsq">
+    <p class="imglbl">
+
+      From the initial condition, the system begins to propagate and remains fixed when it can no longer expand.
+      <br />
+      <b>Genome : </b>square
+
+
+    </p>
+  </div>
+</div>
+
+<p>Note that the complexity of the behavior is basic. It is more like a coloring algorithm than an organic behavior. Systems classified as stable tend to have <strong>low complexity</strong> since, to maintain the stability condition, some geometric properties must be met that <strong>do not allow</strong> very dense or complex fabrics. This patterns remain static because the cells that are active continue to meet the conditions to remain active and the cells that are inactive do not meet the necessary conditions to activate. Thus, no cell is deactivated or activated in the already generated tissue.</p>
+
+<ul>
+  <li><strong>SEMI-STABLE</strong></li>
+</ul>
+
+<p>Semi-stable tissues are similar to stable ones, with the difference that their genome allows <strong>blinking</strong> in certain parts of the tissue. This blink can be a <strong>cycle of two alternating states</strong> or a more complex cycle with 3 or more intermediate steps, but eventually returning to the same initial state. This flicker or glitch can only be local, that is, it cannot move through the tissue or spread indefinitely.</p>
+
+<div class="centered-square">
+  <div class="imgsq">
+    <img src="https://drive.google.com/uc?export=view&amp;id=1J4HrzD-704yn9gbxUGuJdibF14ic2VKy" class="post-midimage-across" />
+  </div>
+  <div class="txtsq">
+    <p class="imglbl">
+
+      Once the fabric fills the entire space, there is a sector that keeps blinking near the 4 corners of the square.
+      <br />
+      <b>Genome : </b>maze-gen
+
+
+    </p>
+  </div>
+</div>
+
+<p>In the expansion process I would like to mention two parts of the fabric: the <strong>central tissue</strong> that remains static once it was created and the <strong>outer frontier</strong> that is constantly expanding, generating the static part of the interior according to vicinity present in inner tissue.</p>
+<ul>
+  <li><strong>ORGANIC</strong></li>
+</ul>
+
+<p>how to define an organic behavior? I could say that it is any system that despite being erratic, asymmetric and with irregular density can generate regions with stable, semi-stable and abstract patterns. An example of these systems is the conway game of life, which as its name implies, can be seen as an analogy to the behavior of life itself in terms of the possible configurations achieved by the system. This system can present events of self-replicating, mobile, static or alternating organisms, among others.</p>
+
+<div class="centered-square">
+  <div class="imgsq">
+    <img src="https://drive.google.com/uc?export=view&amp;id=1L7Fv-pLOcPHFcVbfmq1g5QQZj_9G4J8R" class="post-midimage-across" />
+  </div>
+  <div class="txtsq">
+    <p class="imglbl">
+
+      With the advance of time you can see a centered spiral pattern. Static and alternating cells are observed, as well as erratic regions.
+      <br />
+      <b>Genome : </b>tissue
+
+    </p>
+  </div>
+</div>
+
+<p>Another aspect to consider is that these systems can decay (gradually reducing their activity until equilibrium is reached) or become unstable (filling the space without reaching equilibrium). I named the example above <strong>tissue</strong> because with a dense initial condition it amplifies what appears to be an abstract system with a tendency to <em>rotate</em> and which gradually <em>dies</em> (as living tissue) leaving behind a stable or semi-stable system.</p>
+
+<ul>
+  <li><strong>ABSTRACT</strong></li>
+</ul>
+
+<p>I’m talking about systems whose <strong>complexity</strong> and <strong>specificity</strong> increases so much, that they no longer generate geometric patterns or lattices, and have an <strong>apparently random behavior</strong> (although we already know that it is not). Here I classified all the systems whose <strong>patterns are not recognizable</strong> and you cannot see an ordered growth pattern. There are cases, such as the one shown below, where growth is almost unidirectional but still <strong>erratic</strong>.</p>
+
+<div class="centered-square">
+    <div class="imgsq">
+      <img src="https://drive.google.com/uc?export=view&amp;id=1i0kMgLLM2aGmFxhQ7yLoeOaXYWG6wZpr" class="post-midimage-across" />
+    </div>
+    <div class="txtsq">
+      <p class="imglbl">
+
+        You can see the apparently random progress of the system. In this particular case, growth is upwards, since usually the expansion occurs in all directions. A random <abbr title="rule code">genome</abbr> was used.
+        <br />
+        <b>Genome : </b> (random genome)
+
+
+      </p>
+    </div>
+  </div>
+<p>When a genome is randomly generated with 0 or 1 in any of the 512 positions, the behavior obtained is usually erratic, and therefore it is a system of this classification. Although these <strong>highly complex behaviors</strong> could have some very specific utility, the truth is that it is almost certain that any random genome will end up in <strong>noise</strong>. I see this as an insight into the relevance of automata in the approach to life itself: as in life, generating chaos is easy, but generating <strong>structured chaos</strong> is hardly a possibility among billions.</p>
 
 <h2 id="the-controls">The Controls</h2>
 <ul>
@@ -124,7 +233,7 @@
 </ul>
 
 <h2 id="latest-release">Latest Release</h2>
-<p><a href="/PenroseTrip/assets/sketches/cellular-automata/2d-cellular-automata.html" class="link-sketch">
+<p><a href="/assets/sketches/cellular-automata/2d-cellular-automata.html" class="link-sketch">
 <span>
 TEST SKETCH
 </span>

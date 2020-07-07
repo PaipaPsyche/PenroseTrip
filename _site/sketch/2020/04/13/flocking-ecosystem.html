@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="shortcut icon" type="image/png" href="/PenroseTrip/assets/img/site/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="/assets/img/site/favicon.png">
   <!-- <link rel="icon" href="/assets/img/site/favicon.png" type="image/x-icon"> -->
 
   <title>Flocking Ecosystem</title>
   <meta name="description" content="If we reduce life to its most essential components, exploring the multiverse of possible interaction mechanisms becomes more intuitive when viewing each part...">
 
-  <link rel="stylesheet" href="/PenroseTrip/css/main.css">
-  <link rel="stylesheet" href="/PenroseTrip/css/styles.css">
-  <link rel="canonical" href="penrosetrip.co/PenroseTrip/sketch/2020/04/13/flocking-ecosystem.html">
-  <link rel="alternate" type="application/rss+xml" title="Penrose Trip" href="penrosetrip.co/PenroseTrip/feed.xml">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="canonical" href="penrosetrip.co/sketch/2020/04/13/flocking-ecosystem.html">
+  <link rel="alternate" type="application/rss+xml" title="Penrose Trip" href="penrosetrip.co/feed.xml">
 </head>
 
 
@@ -26,8 +26,8 @@
 
   <div class="wrapper">
 
-      <a class="site-title" href="/PenroseTrip/">Penrose Trip</a>
-      <img class="site-icon" src="/PenroseTrip/assets/img/site/eyecon.png">
+      <a class="site-title" href="/">Penrose Trip</a>
+      <img class="site-icon" src="/assets/img/site/eyecon.png">
 
 
 
@@ -44,13 +44,13 @@
       <div class="trigger" >
         
           
-          <a class="page-link" href="/PenroseTrip/about/"><b>About</b></a>
+          <a class="page-link" href="/about/"><b>About</b></a>
           
         
           
         
           
-          <a class="page-link" href="/PenroseTrip/gallery/"><b>Gallery</b></a>
+          <a class="page-link" href="/gallery/"><b>Gallery</b></a>
           
         
           
@@ -58,7 +58,7 @@
           
         
           
-          <a class="page-link" href="/PenroseTrip/sketches/"><b>Sketches</b></a>
+          <a class="page-link" href="/sketches/"><b>Sketches</b></a>
           
         
           
@@ -89,7 +89,7 @@
     <p>If we reduce life to its most <strong>essential components</strong>, exploring the multiverse of possible interaction mechanisms becomes more intuitive when viewing each part of the whole as a simple set of <strong>binary rules</strong>.</p>
 
 <h2 id="the-sketch">The Sketch</h2>
-<p><strong>Swarming behavior</strong> is a pattern with which we are familiar and which we can easily recognize in a flock of birds or in a school of fish, that’s why it’s called <strong>Flocking algorithm</strong>. The truth is that this <strong>complex behavior</strong> can arise from three simple orders that govern each individual of the simulation: a point entity (or <em>Boid</em>) in a 2D space with a velocity vector assigned and is <strong>only aware of its close vicinity</strong>, as well as the velocity vector of its neighbors. These three orders to <em>rule them all</em> are:</p>
+<p><strong>Swarming behavior</strong> is a pattern familiar to everyone with a pair of eyes and which we can easily recognize in a flock of birds or in a school of fish, that’s why it’s called <strong>Flocking algorithm</strong>. The truth is that this <strong>complex behavior</strong> can arise from three simple orders that govern each individual of the simulation: a point entity (or <em>Boid</em>) in a 2D space with a velocity vector assigned and is <strong>only aware of its close vicinity</strong>, as well as the velocity vector of its neighbors. These three orders to <em>rule them all</em> are:</p>
 
 <ul>
   <li><strong>Separation :</strong> Avoid crowding neighbors (short range repulsion)</li>
@@ -109,7 +109,7 @@
 
 <p><em>– Wikipedia</em></p>
 
-<p><img src="/PenroseTrip/assets/img/posts/sketch-organism-img1.png" alt="image of boid system" class="post-midimage-across" /></p>
+<p><img src="/assets/img/posts/sketch-organism-img1.png" alt="image of boid system" class="post-midimage-across" /></p>
 
 <p>My contribution to the algorithm with which this sketch works consists of special boids that have the ability to change an internal state of normal boids, these special new boids are going to be called <strong>Shifters</strong>, since they shift their neighbors. There are three types of Shifters:</p>
 
@@ -140,7 +140,7 @@ heal infected boids (red or blue). They can steal speed from nearby boids.</p>
   <li>Healers may pass through small healthy groups of boids, even using its boids to <strong>catapult themselves forward</strong> by stealing speed. Bigger groups catch the healers easier and since it <strong>usually swaps speeds</strong> with his neighbors, having a healer within the group usually <strong>helps keeping boids aligned</strong> in the same direction. This feature also represents <strong>formation of larger groups</strong> when there are flockers and healers within the group, since flockers are more likely to separate form the group due to weak aligning.</li>
 </ul>
 
-<p><img src="/PenroseTrip/assets/img/posts/sketch-organism.gif" alt="image of boid system with shifters" class="post-midimage-across" /></p>
+<p><img src="/assets/img/posts/sketch-organism.gif" alt="image of boid system with shifters" class="post-midimage-across" /></p>
 
 <h2 id="the-controls">The Controls</h2>
 
@@ -159,7 +159,7 @@ heal infected boids (red or blue). They can steal speed from nearby boids.</p>
 </ul>
 
 <h2 id="latest-release">Latest Release</h2>
-<p><a href="/PenroseTrip/assets/sketches/flocking-ecosystem/flocking-ecosystem.html" class="link-sketch">
+<p><a href="/assets/sketches/flocking-ecosystem/flocking-ecosystem.html" class="link-sketch">
 <span>
 TEST SKETCH
 </span>

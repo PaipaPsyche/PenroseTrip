@@ -103,7 +103,7 @@ margin: 10px;
 width: 60%;
 }
 .page-content{
-  background: #1C1C1F  url("/assets/img/site/stars4k.jpg") repeat space;
+  background: #1C1C1F  url("https://cdn.statically.io/img/free4kwallpapers.com/uploads/originals/2019/03/02/planet-earth-wallpaper.jpg") repeat space;
   background-size: cover;
   border: black;
   margin: -1px;
@@ -307,7 +307,7 @@ pre, code {
 
 
 .headbox-wrapper{
-  background: #1C1C1F url("/assets/img/site/header.jpg")  center center;
+  background: #1C1C1F url("https://img5.goodfon.com/wallpaper/nbig/1/d6/4k-ultra-hd-background-starry-sky-milky-way-stars-space-astr.jpg")  center center;
 
   background-size: cover;
   height: 65px;
@@ -446,8 +446,38 @@ font-size: 42px;
 
 }
 
-@media screen and (max-width:800px) {
+.centered-square{
 
+  width: 70%;
+  margin: 30px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centered-square .imgsq{
+  width: 100%;
+}
+
+.centered-square .txtsq{
+  width: 100%;
+  height: 50px;
+}
+.imglbl{
+  text-align: center;
+  font-size: 16px;
+  color: lightgrey;
+}
+
+
+@media screen and (max-width:800px) {
+  .centered-square{
+    width: 100%;
+    margin: 1px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .link-sketch{

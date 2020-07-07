@@ -4,10 +4,10 @@
     <title>Penrose Trip</title>
     <description>This website is an interactive portal for informative use, which seeks to open a space for the juxtaposition between psychedelia, science, programming and art.
 </description>
-    <link>penrosetrip.co/PenroseTrip/</link>
-    <atom:link href="penrosetrip.co/PenroseTrip/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Jul 2020 02:22:25 -0300</pubDate>
-    <lastBuildDate>Mon, 06 Jul 2020 02:22:25 -0300</lastBuildDate>
+    <link>penrosetrip.co/</link>
+    <atom:link href="penrosetrip.co/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 07 Jul 2020 20:01:58 -0300</pubDate>
+    <lastBuildDate>Tue, 07 Jul 2020 20:01:58 -0300</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -36,8 +36,8 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 10 Jun 2020 20:15:00 -0300</pubDate>
-        <link>penrosetrip.co/PenroseTrip/image/2020/06/10/tentaciones-y-demonios.html</link>
-        <guid isPermaLink="true">penrosetrip.co/PenroseTrip/image/2020/06/10/tentaciones-y-demonios.html</guid>
+        <link>penrosetrip.co/image/2020/06/10/tentaciones-y-demonios.html</link>
+        <guid isPermaLink="true">penrosetrip.co/image/2020/06/10/tentaciones-y-demonios.html</guid>
         
         
         <category>image</category>
@@ -73,8 +73,8 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;p&gt;It’s been almost 3 weeks since the migration started and I’m still getting warm. Much of this time has been me learning jekyll from scratch, and although it is an easy-to-learn site generator, it is difficult to diagram the two-year work again and apply the updates and fixes that have been suggested to me. In the future I hope to have all my work here exposed as well as options so that third parties can leave their contributions to this growing personal project.&lt;/p&gt;
 </description>
         <pubDate>Tue, 09 Jun 2020 20:15:00 -0300</pubDate>
-        <link>penrosetrip.co/PenroseTrip/information/2020/06/09/penrose-trip-a-whole-new-universe.html</link>
-        <guid isPermaLink="true">penrosetrip.co/PenroseTrip/information/2020/06/09/penrose-trip-a-whole-new-universe.html</guid>
+        <link>penrosetrip.co/information/2020/06/09/penrose-trip-a-whole-new-universe.html</link>
+        <guid isPermaLink="true">penrosetrip.co/information/2020/06/09/penrose-trip-a-whole-new-universe.html</guid>
         
         <category>information</category>
         
@@ -110,8 +110,8 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 23 May 2020 15:23:00 -0300</pubDate>
-        <link>penrosetrip.co/PenroseTrip/image/2020/05/23/agoraphobia.html</link>
-        <guid isPermaLink="true">penrosetrip.co/PenroseTrip/image/2020/05/23/agoraphobia.html</guid>
+        <link>penrosetrip.co/image/2020/05/23/agoraphobia.html</link>
+        <guid isPermaLink="true">penrosetrip.co/image/2020/05/23/agoraphobia.html</guid>
         
         
         <category>image</category>
@@ -120,18 +120,24 @@ I would never consider myself as a model that inspires eroticism, but this does 
     
       <item>
         <title>2D Cellular Automata Lab</title>
-        <description>&lt;p&gt;A &lt;strong&gt;cellular automaton&lt;/strong&gt; is a system in which a grid of cells determines its state (ON or OFF) according to rules established on the states of a determined &lt;strong&gt;neighborhood&lt;/strong&gt; of cells in the grid. The system behaves according to a &lt;strong&gt;set of game rules&lt;/strong&gt; that commands each cell in the grid to adopt in the net step a state based on the previous states of the neighbors.&lt;/p&gt;
+        <description>&lt;p&gt;A &lt;strong&gt;cellular automaton&lt;/strong&gt; is a system in which a grid of cells determines its state (&lt;strong&gt;ON&lt;/strong&gt; or &lt;strong&gt;OFF&lt;/strong&gt;, for example) according to rules established on the states of a determined &lt;strong&gt;neighborhood&lt;/strong&gt; of cells in the grid. The system behaves according to a &lt;strong&gt;set of game rules&lt;/strong&gt; that commands each cell in the grid to adopt (in the next generation) a state based on the previous states of the neighbors.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-sketch&quot;&gt;The Sketch&lt;/h2&gt;
 
-&lt;p&gt;These Game rules are codified in a structure similar to DNA. Each cell has 8 neighbors, so there are 9 states each cell hast to handle (including own state). As each one of these states are values 0 (OFF) or 1 (ON), the number of different possible neighborhood configurations, or cases, are 2 to the power of 9, or 512. Each configuration has a response ,for example, if the immediate  left neighbor is ON, then this cell turns ON as well. If we assign each one of this states to a position in a 512-length string, and in this string we store the response, the result is a 512-length string of 0’s and 1’s describing the behavior of the system. This might be codified to be expressed as genes in the form of alphanumeric values and colors. This 512-string is called the “rule code”.&lt;/p&gt;
+&lt;p&gt;These Game rules are codified in a structure similar to DNA. Each cell has 8 neighbors, so there are 9 states each cell hast to handle (including own state). As each one of these states are values 0 (OFF) or 1 (ON), the number of different possible neighborhood configurations, or cases, are 2 to the power of 9, or 512. Each configuration has a response ,for example:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;if the immediate  left neighbor is &lt;strong&gt;ON&lt;/strong&gt;, then this cell turns &lt;strong&gt;ON&lt;/strong&gt; as well.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If we assign each one of this states to a position in a 512-length string, and in this string we store the response, the result is a 512-length string of 0’s and 1’s describing the behavior of the system. This might be codified to be expressed as genes in the form of alphanumeric values and colors. This 512-string is called the “rule code”.&lt;/p&gt;
 
 &lt;p&gt;This means that &lt;strong&gt;a single rule code&lt;/strong&gt; describes the &lt;strong&gt;unique behavior&lt;/strong&gt; of a system and, moreover, there exist as much as 2&lt;sup&gt;512&lt;/sup&gt; possible rule code configurations. In other words, there are more than &lt;abbr title=&quot;An octillion is 10 to the power of 27&quot;&gt;10 octillion octillion octillion octillion octillion&lt;/abbr&gt; possible systems.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-purpose&quot;&gt;The Purpose&lt;/h2&gt;
-&lt;p&gt;In almost all the processes we see in the modern world, the behavior of &lt;strong&gt;organized growth and modularity&lt;/strong&gt; seem to be somehow present. But this is not where this concept originates, because even when humanity lived in caves we noticed the patterns that nature followed around us. In the flowers, in the roots, in the clouds, in the butterfly wings, in the thunders, in the swarms: the world is full of patterns that in one way or another can be reduced to simple modules following the same rules over and over time; the phenomenon can be &lt;strong&gt;reduced&lt;/strong&gt; to the implementation of cellular automata.&lt;/p&gt;
+&lt;p&gt;In almost all the processes we see in the modern world, the behavior of &lt;strong&gt;organized growth and modularity&lt;/strong&gt; seem to be somehow present. But this is not where this concept originates, because even when humanity lived in caves we noticed the patterns that nature followed around us. In the flowers, in the roots, in the clouds, in the butterfly wings, in the thunders, in the swarms: the world is full of patterns that in one way or another can be reduced to simple modules following the same rules as the system’s clock ticks; the phenomenon can be &lt;strong&gt;reduced&lt;/strong&gt; to the implementation of cellular automata.&lt;/p&gt;
 
-&lt;p&gt;Humans are designed to notice patterns even if they are not there, but when they are, we marvel at imagining the reason for their existence. One way in which we were able to explain the reason for many patterns present in nature was to &lt;strong&gt;formulate the problem as a cellular automaton&lt;/strong&gt;, a system of individual modules programmed to follow the same rules that may or may not allow interaction between the agents of the system. This way of modeling complex problems serves to compartmentalize complex behaviors and define them as simple rules that are repeated over and over again &lt;strong&gt;out of synchronicity&lt;/strong&gt;. A swarm of simple machines that can express complexity from the interaction between themselves, conditioned to &lt;strong&gt;react to their environment&lt;/strong&gt; in a pre-defined way.&lt;/p&gt;
+&lt;p&gt;Humans are designed to notice patterns even if they are not there, but when they are, we marvel at imagining the reason for their existence. One way in which we were able to explain the reason for many patterns present in nature was to &lt;strong&gt;formulate the problem as a cellular automaton&lt;/strong&gt;, a system of individual modules programmed to follow the same rules that may or may not allow interaction between the agents of the system. This way of modeling complex problems is used to split complex behaviors and define them as simple rules that are repeated over and over again &lt;strong&gt;out of synchronicity&lt;/strong&gt;. An aggregate of simple machines that can express complexity from the interaction between themselves, conditioned to &lt;strong&gt;react to their environment&lt;/strong&gt; in a pre-defined way.&lt;/p&gt;
 
 &lt;p&gt;The intention when creating this laboratory was to offer tools to program the behavior of a cellular automaton to &lt;strong&gt;anyone&lt;/strong&gt; who is interested in the subject and is &lt;strong&gt;not trained in programming&lt;/strong&gt; (Not of all us can be nerds, right?). This laboratory is a simple and &lt;strong&gt;interactive&lt;/strong&gt; reduction of what it means to program a cellular automaton and creates an environment of &lt;strong&gt;free experimentation&lt;/strong&gt;, allowing to propose new inventions that can be modeled at will or found by chance.&lt;/p&gt;
 
@@ -140,6 +146,109 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;h2 id=&quot;the-result&quot;&gt;The Result&lt;/h2&gt;
 
 &lt;p&gt;When I built this specific gene codification was, in a beginning, a way to &lt;strong&gt;store compressed data&lt;/strong&gt; information of the state, but as experimentation went on I realized common behaviors tend to be stored in the same Gene. experimentation with cellular automaton is easy and fun as long as you find &lt;strong&gt;the beauty of the patterns&lt;/strong&gt; made by simple binary rules. These systems are controversial in the study of life emergence and complex systems, for example, you may know the famous &lt;strong&gt;Conway’s Game of Life&lt;/strong&gt; which is an specific rule code for 2D cellular automata that resembles organic movement from simple configurations.&lt;/p&gt;
+
+&lt;h3 id=&quot;penrosetrip-automata-tissue-classification&quot;&gt;PenroseTrip Automata Tissue Classification&lt;/h3&gt;
+&lt;p&gt;After playing around with the Automata Lab for a while, I noticed that some rule codes generated systems that grew similarly to an organic or a fabric, as it is impossible to ignore their geometric properties, others only started from compact figures and eventually dissipated. The truth is that I found some common characteristics among the &lt;strong&gt;evolution processes&lt;/strong&gt; of different systems and took the opportunity to make an amateur classification of what I could see.&lt;/p&gt;
+
+&lt;p&gt;I should mention that this classification is based automata that tend to expand, or that have a very &lt;abbr title=&quot;the number of active cells across the board slowly decreases over time&quot;&gt;low rate&lt;/abbr&gt; of disappearance of active cells.&lt;/p&gt;
+
+&lt;p&gt;The approach that I am interested in exploring is seeing &lt;strong&gt;automata as ways of generating fabrics and lattices&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;complexity-and-stability-analysis&quot;&gt;complexity and stability analysis&lt;/h3&gt;
+&lt;p&gt;According to the complexity of the behavior, the stability of the patterns formed and the recursion in them, I separated the different types of system into 4 possible classifications:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;STABLE&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The systems that I classify as stable are all those that tend to &lt;strong&gt;expand&lt;/strong&gt; and remain &lt;strong&gt;static&lt;/strong&gt; in a given final position. It is important to clarify that there are systems such as the &lt;strong&gt;Conway game of life&lt;/strong&gt; that includes static figures or patterns, but  cannot be classified as stable systems since these configurations arise from very specific initial conditions. A stable system must &lt;strong&gt;grow and maintain static conditions&lt;/strong&gt; from a more general set of initial conditions, taking into account what is necessary to ensure the growth of the system (neighborhood conditions necessary not to &lt;abbr title=&quot;all cells set to 0&quot;&gt;extinguish&lt;/abbr&gt; the system).&lt;/p&gt;
+
+&lt;div class=&quot;centered-square&quot;&gt;
+  &lt;div class=&quot;imgsq&quot;&gt;
+    &lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1H4EHbXa-WZX8G5sX24VWdOQ0JjW9xrrN&quot; class=&quot;post-midimage-across&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;txtsq&quot;&gt;
+    &lt;p class=&quot;imglbl&quot;&gt;
+
+      From the initial condition, the system begins to propagate and remains fixed when it can no longer expand.
+      &lt;br /&gt;
+      &lt;b&gt;Genome : &lt;/b&gt;square
+
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Note that the complexity of the behavior is basic. It is more like a coloring algorithm than an organic behavior. Systems classified as stable tend to have &lt;strong&gt;low complexity&lt;/strong&gt; since, to maintain the stability condition, some geometric properties must be met that &lt;strong&gt;do not allow&lt;/strong&gt; very dense or complex fabrics. This patterns remain static because the cells that are active continue to meet the conditions to remain active and the cells that are inactive do not meet the necessary conditions to activate. Thus, no cell is deactivated or activated in the already generated tissue.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;SEMI-STABLE&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Semi-stable tissues are similar to stable ones, with the difference that their genome allows &lt;strong&gt;blinking&lt;/strong&gt; in certain parts of the tissue. This blink can be a &lt;strong&gt;cycle of two alternating states&lt;/strong&gt; or a more complex cycle with 3 or more intermediate steps, but eventually returning to the same initial state. This flicker or glitch can only be local, that is, it cannot move through the tissue or spread indefinitely.&lt;/p&gt;
+
+&lt;div class=&quot;centered-square&quot;&gt;
+  &lt;div class=&quot;imgsq&quot;&gt;
+    &lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1J4HrzD-704yn9gbxUGuJdibF14ic2VKy&quot; class=&quot;post-midimage-across&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;txtsq&quot;&gt;
+    &lt;p class=&quot;imglbl&quot;&gt;
+
+      Once the fabric fills the entire space, there is a sector that keeps blinking near the 4 corners of the square.
+      &lt;br /&gt;
+      &lt;b&gt;Genome : &lt;/b&gt;maze-gen
+
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In the expansion process I would like to mention two parts of the fabric: the &lt;strong&gt;central tissue&lt;/strong&gt; that remains static once it was created and the &lt;strong&gt;outer frontier&lt;/strong&gt; that is constantly expanding, generating the static part of the interior according to vicinity present in inner tissue.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;ORGANIC&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;how to define an organic behavior? I could say that it is any system that despite being erratic, asymmetric and with irregular density can generate regions with stable, semi-stable and abstract patterns. An example of these systems is the conway game of life, which as its name implies, can be seen as an analogy to the behavior of life itself in terms of the possible configurations achieved by the system. This system can present events of self-replicating, mobile, static or alternating organisms, among others.&lt;/p&gt;
+
+&lt;div class=&quot;centered-square&quot;&gt;
+  &lt;div class=&quot;imgsq&quot;&gt;
+    &lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1L7Fv-pLOcPHFcVbfmq1g5QQZj_9G4J8R&quot; class=&quot;post-midimage-across&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;txtsq&quot;&gt;
+    &lt;p class=&quot;imglbl&quot;&gt;
+
+      With the advance of time you can see a centered spiral pattern. Static and alternating cells are observed, as well as erratic regions.
+      &lt;br /&gt;
+      &lt;b&gt;Genome : &lt;/b&gt;tissue
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Another aspect to consider is that these systems can decay (gradually reducing their activity until equilibrium is reached) or become unstable (filling the space without reaching equilibrium). I named the example above &lt;strong&gt;tissue&lt;/strong&gt; because with a dense initial condition it amplifies what appears to be an abstract system with a tendency to &lt;em&gt;rotate&lt;/em&gt; and which gradually &lt;em&gt;dies&lt;/em&gt; (as living tissue) leaving behind a stable or semi-stable system.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;ABSTRACT&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I’m talking about systems whose &lt;strong&gt;complexity&lt;/strong&gt; and &lt;strong&gt;specificity&lt;/strong&gt; increases so much, that they no longer generate geometric patterns or lattices, and have an &lt;strong&gt;apparently random behavior&lt;/strong&gt; (although we already know that it is not). Here I classified all the systems whose &lt;strong&gt;patterns are not recognizable&lt;/strong&gt; and you cannot see an ordered growth pattern. There are cases, such as the one shown below, where growth is almost unidirectional but still &lt;strong&gt;erratic&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;centered-square&quot;&gt;
+    &lt;div class=&quot;imgsq&quot;&gt;
+      &lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1i0kMgLLM2aGmFxhQ7yLoeOaXYWG6wZpr&quot; class=&quot;post-midimage-across&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;txtsq&quot;&gt;
+      &lt;p class=&quot;imglbl&quot;&gt;
+
+        You can see the apparently random progress of the system. In this particular case, growth is upwards, since usually the expansion occurs in all directions. A random &lt;abbr title=&quot;rule code&quot;&gt;genome&lt;/abbr&gt; was used.
+        &lt;br /&gt;
+        &lt;b&gt;Genome : &lt;/b&gt; (random genome)
+
+
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;p&gt;When a genome is randomly generated with 0 or 1 in any of the 512 positions, the behavior obtained is usually erratic, and therefore it is a system of this classification. Although these &lt;strong&gt;highly complex behaviors&lt;/strong&gt; could have some very specific utility, the truth is that it is almost certain that any random genome will end up in &lt;strong&gt;noise&lt;/strong&gt;. I see this as an insight into the relevance of automata in the approach to life itself: as in life, generating chaos is easy, but generating &lt;strong&gt;structured chaos&lt;/strong&gt; is hardly a possibility among billions.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-controls&quot;&gt;The Controls&lt;/h2&gt;
 &lt;ul&gt;
@@ -158,7 +267,7 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;latest-release&quot;&gt;Latest Release&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/PenroseTrip/assets/sketches/cellular-automata/2d-cellular-automata.html&quot; class=&quot;link-sketch&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/sketches/cellular-automata/2d-cellular-automata.html&quot; class=&quot;link-sketch&quot;&gt;
 &lt;span&gt;
 TEST SKETCH
 &lt;/span&gt;
@@ -167,8 +276,8 @@ TEST SKETCH
 &lt;p&gt;Latest commit : 09  / may / 2020&lt;/p&gt;
 </description>
         <pubDate>Wed, 06 May 2020 02:02:00 -0300</pubDate>
-        <link>penrosetrip.co/PenroseTrip/sketch/2020/05/06/2D-cellular-automata-lab.html</link>
-        <guid isPermaLink="true">penrosetrip.co/PenroseTrip/sketch/2020/05/06/2D-cellular-automata-lab.html</guid>
+        <link>penrosetrip.co/sketch/2020/05/06/2D-cellular-automata-lab.html</link>
+        <guid isPermaLink="true">penrosetrip.co/sketch/2020/05/06/2D-cellular-automata-lab.html</guid>
         
         <category>sketch</category>
         
@@ -188,7 +297,7 @@ TEST SKETCH
         <description>&lt;p&gt;If we reduce life to its most &lt;strong&gt;essential components&lt;/strong&gt;, exploring the multiverse of possible interaction mechanisms becomes more intuitive when viewing each part of the whole as a simple set of &lt;strong&gt;binary rules&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-sketch&quot;&gt;The Sketch&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Swarming behavior&lt;/strong&gt; is a pattern with which we are familiar and which we can easily recognize in a flock of birds or in a school of fish, that’s why it’s called &lt;strong&gt;Flocking algorithm&lt;/strong&gt;. The truth is that this &lt;strong&gt;complex behavior&lt;/strong&gt; can arise from three simple orders that govern each individual of the simulation: a point entity (or &lt;em&gt;Boid&lt;/em&gt;) in a 2D space with a velocity vector assigned and is &lt;strong&gt;only aware of its close vicinity&lt;/strong&gt;, as well as the velocity vector of its neighbors. These three orders to &lt;em&gt;rule them all&lt;/em&gt; are:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Swarming behavior&lt;/strong&gt; is a pattern familiar to everyone with a pair of eyes and which we can easily recognize in a flock of birds or in a school of fish, that’s why it’s called &lt;strong&gt;Flocking algorithm&lt;/strong&gt;. The truth is that this &lt;strong&gt;complex behavior&lt;/strong&gt; can arise from three simple orders that govern each individual of the simulation: a point entity (or &lt;em&gt;Boid&lt;/em&gt;) in a 2D space with a velocity vector assigned and is &lt;strong&gt;only aware of its close vicinity&lt;/strong&gt;, as well as the velocity vector of its neighbors. These three orders to &lt;em&gt;rule them all&lt;/em&gt; are:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Separation :&lt;/strong&gt; Avoid crowding neighbors (short range repulsion)&lt;/li&gt;
@@ -208,7 +317,7 @@ TEST SKETCH
 
 &lt;p&gt;&lt;em&gt;– Wikipedia&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/PenroseTrip/assets/img/posts/sketch-organism-img1.png&quot; alt=&quot;image of boid system&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/sketch-organism-img1.png&quot; alt=&quot;image of boid system&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;My contribution to the algorithm with which this sketch works consists of special boids that have the ability to change an internal state of normal boids, these special new boids are going to be called &lt;strong&gt;Shifters&lt;/strong&gt;, since they shift their neighbors. There are three types of Shifters:&lt;/p&gt;
 
@@ -239,7 +348,7 @@ heal infected boids (red or blue). They can steal speed from nearby boids.&lt;/p
   &lt;li&gt;Healers may pass through small healthy groups of boids, even using its boids to &lt;strong&gt;catapult themselves forward&lt;/strong&gt; by stealing speed. Bigger groups catch the healers easier and since it &lt;strong&gt;usually swaps speeds&lt;/strong&gt; with his neighbors, having a healer within the group usually &lt;strong&gt;helps keeping boids aligned&lt;/strong&gt; in the same direction. This feature also represents &lt;strong&gt;formation of larger groups&lt;/strong&gt; when there are flockers and healers within the group, since flockers are more likely to separate form the group due to weak aligning.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/PenroseTrip/assets/img/posts/sketch-organism.gif&quot; alt=&quot;image of boid system with shifters&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/sketch-organism.gif&quot; alt=&quot;image of boid system with shifters&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;the-controls&quot;&gt;The Controls&lt;/h2&gt;
 
@@ -258,7 +367,7 @@ heal infected boids (red or blue). They can steal speed from nearby boids.&lt;/p
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;latest-release&quot;&gt;Latest Release&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/PenroseTrip/assets/sketches/flocking-ecosystem/flocking-ecosystem.html&quot; class=&quot;link-sketch&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/sketches/flocking-ecosystem/flocking-ecosystem.html&quot; class=&quot;link-sketch&quot;&gt;
 &lt;span&gt;
 TEST SKETCH
 &lt;/span&gt;
@@ -267,8 +376,8 @@ TEST SKETCH
 &lt;p&gt;Latest commit : 13  / apr / 2020&lt;/p&gt;
 </description>
         <pubDate>Mon, 13 Apr 2020 04:20:00 -0300</pubDate>
-        <link>penrosetrip.co/PenroseTrip/sketch/2020/04/13/flocking-ecosystem.html</link>
-        <guid isPermaLink="true">penrosetrip.co/PenroseTrip/sketch/2020/04/13/flocking-ecosystem.html</guid>
+        <link>penrosetrip.co/sketch/2020/04/13/flocking-ecosystem.html</link>
+        <guid isPermaLink="true">penrosetrip.co/sketch/2020/04/13/flocking-ecosystem.html</guid>
         
         <category>sketch</category>
         
@@ -362,7 +471,7 @@ These spots turned them into islands and eventually continents. From there it wa
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;latest-release&quot;&gt;Latest Release&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/PenroseTrip/assets/sketches/imferye/imferye.html&quot; class=&quot;link-sketch&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/sketches/imferye/imferye.html&quot; class=&quot;link-sketch&quot;&gt;
 &lt;span&gt;
 PLAY GAME
 &lt;/span&gt;
@@ -371,8 +480,8 @@ PLAY GAME
 &lt;p&gt;Latest commit : 21  / may / 2019&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Mar 2020 06:03:00 -0300</pubDate>
-        <link>penrosetrip.co/PenroseTrip/sketch/2020/03/23/imferye-the-game.html</link>
-        <guid isPermaLink="true">penrosetrip.co/PenroseTrip/sketch/2020/03/23/imferye-the-game.html</guid>
+        <link>penrosetrip.co/sketch/2020/03/23/imferye-the-game.html</link>
+        <guid isPermaLink="true">penrosetrip.co/sketch/2020/03/23/imferye-the-game.html</guid>
         
         <category>sketch</category>
         
@@ -411,8 +520,8 @@ PLAY GAME
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 12 Feb 2020 09:26:00 -0300</pubDate>
-        <link>penrosetrip.co/PenroseTrip/image/2020/02/12/eigenvalue-of-myself.html</link>
-        <guid isPermaLink="true">penrosetrip.co/PenroseTrip/image/2020/02/12/eigenvalue-of-myself.html</guid>
+        <link>penrosetrip.co/image/2020/02/12/eigenvalue-of-myself.html</link>
+        <guid isPermaLink="true">penrosetrip.co/image/2020/02/12/eigenvalue-of-myself.html</guid>
         
         
         <category>image</category>
@@ -439,8 +548,8 @@ PLAY GAME
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 10 Feb 2020 18:16:00 -0300</pubDate>
-        <link>penrosetrip.co/PenroseTrip/image/2020/02/10/la-pantalla-grande.html</link>
-        <guid isPermaLink="true">penrosetrip.co/PenroseTrip/image/2020/02/10/la-pantalla-grande.html</guid>
+        <link>penrosetrip.co/image/2020/02/10/la-pantalla-grande.html</link>
+        <guid isPermaLink="true">penrosetrip.co/image/2020/02/10/la-pantalla-grande.html</guid>
         
         
         <category>image</category>
@@ -480,8 +589,8 @@ PLAY GAME
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 14 Dec 2019 20:32:00 -0300</pubDate>
-        <link>penrosetrip.co/PenroseTrip/image/2019/12/14/persona.html</link>
-        <guid isPermaLink="true">penrosetrip.co/PenroseTrip/image/2019/12/14/persona.html</guid>
+        <link>penrosetrip.co/image/2019/12/14/persona.html</link>
+        <guid isPermaLink="true">penrosetrip.co/image/2019/12/14/persona.html</guid>
         
         
         <category>image</category>
@@ -517,7 +626,7 @@ correlated oscillator systems.&lt;/p&gt;
 &lt;p&gt;TOUCH and DRAG through the screen to change relative phase between oscillators&lt;/p&gt;
 
 &lt;h2 id=&quot;latest-release&quot;&gt;Latest Release&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/PenroseTrip/assets/sketches/wave/wave.html&quot; class=&quot;link-sketch&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/sketches/wave/wave.html&quot; class=&quot;link-sketch&quot;&gt;
 &lt;span&gt;
 TEST SKETCH
 &lt;/span&gt;
@@ -526,8 +635,8 @@ TEST SKETCH
 &lt;p&gt;Latest commit : 07  / oct / 2019&lt;/p&gt;
 </description>
         <pubDate>Mon, 07 Oct 2019 16:23:00 -0300</pubDate>
-        <link>penrosetrip.co/PenroseTrip/sketch/2019/10/07/wave-as-a-phase-effect.html</link>
-        <guid isPermaLink="true">penrosetrip.co/PenroseTrip/sketch/2019/10/07/wave-as-a-phase-effect.html</guid>
+        <link>penrosetrip.co/sketch/2019/10/07/wave-as-a-phase-effect.html</link>
+        <guid isPermaLink="true">penrosetrip.co/sketch/2019/10/07/wave-as-a-phase-effect.html</guid>
         
         <category>sketch</category>
         

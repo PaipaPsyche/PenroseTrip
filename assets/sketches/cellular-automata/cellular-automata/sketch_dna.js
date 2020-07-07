@@ -12,7 +12,7 @@ ATTS = {
   bombing:0,
   max_gen:15,
   neigh_check : [1,2,3,4,5,6,7,8,9],
-  n_side :75,
+  n_side :85,
   rect_cells : {
     xo:30,
     yo:40,
@@ -570,8 +570,17 @@ function blank_center(){
 function blank_figure(k){
   //blank()
   let mid = int(ATTS.n_side/2)
-
   if(k=="2"){
+    CELLS[mid-1][mid].set(1)
+    CELLS[mid+1][mid].set(1)
+    CELLS[mid][mid-1].set(1)
+    CELLS[mid][mid+1].set(1)
+    CELLS[mid][mid].set(1)
+    CELLS[mid-2][mid].set(1)
+    CELLS[mid+2][mid].set(1)
+    CELLS[mid][mid-2].set(1)
+    CELLS[mid][mid+2].set(1)
+  }else if(k=="1"){
     CELLS[mid-1][mid].set(1)
     CELLS[mid+1][mid].set(1)
     CELLS[mid][mid-1].set(1)
@@ -712,10 +721,10 @@ function keyPressed(){
   if(key=="0"){
     gen_random_rule("0")
   }
-  if(key=="1"){
+  if(key=="z"){
     gen_random_rule("1")
   }
-  if(key=="2" || key=="3" || key=="4" || key=="5" ) {
+  if(key=="1" || key=="2" || key=="3" || key=="4" || key=="5") {
     blank_figure(key);
   }
 

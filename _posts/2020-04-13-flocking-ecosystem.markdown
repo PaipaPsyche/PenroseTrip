@@ -19,7 +19,7 @@ tags:
 If we reduce life to its most **essential components**, exploring the multiverse of possible interaction mechanisms becomes more intuitive when viewing each part of the whole as a simple set of **binary rules**.
 
 ## The Sketch
-**Swarming behavior** is a pattern with which we are familiar and which we can easily recognize in a flock of birds or in a school of fish, that's why it's called **Flocking algorithm**. The truth is that this **complex behavior** can arise from three simple orders that govern each individual of the simulation: a point entity (or *Boid*) in a 2D space with a velocity vector assigned and is **only aware of its close vicinity**, as well as the velocity vector of its neighbors. These three orders to *rule them all* are:
+**Swarming behavior** is a pattern familiar to everyone with a pair of eyes and which we can easily recognize in a flock of birds or in a school of fish, that's why it's called **Flocking algorithm**. The truth is that this **complex behavior** can arise from three simple orders that govern each individual of the simulation: a point entity (or *Boid*) in a 2D space with a velocity vector assigned and is **only aware of its close vicinity**, as well as the velocity vector of its neighbors. These three orders to *rule them all* are:
 
 * **Separation :** Avoid crowding neighbors (short range repulsion)
 * **Alignment :** Steer towards average heading of neighbors (align the velocity vector)
