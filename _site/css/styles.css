@@ -8,15 +8,18 @@ html{
 .wrapper{
 
   padding: 5px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
 .page-heading{
   font-size: 25px;
 }
-.trigger{
+/* .trigger{
   float: right;
-}
+} */
 
 .pagination a{
   color: orange;
@@ -101,11 +104,13 @@ float: left;
 min-width: 350px;
 margin: 10px;
 width: 60%;
+
 }
+
 .page-content{
-  background: #1C1C1F  url("https://cdn.statically.io/img/free4kwallpapers.com/uploads/originals/2019/03/02/planet-earth-wallpaper.jpg") repeat space;
-  background-size: cover;
+  background: #1C1C1F  url("https://www.hqwalls.com/wp-content/uploads/2011/09/Hubble-telescope-Wallpapers-28.jpeg")  repeat-y;
   border: black;
+
   margin: -1px;
   margin-right: 0px;
   padding: 0px;
@@ -122,15 +127,14 @@ width: 60%;
 /*posts*/
 
 
-.post-list{
-  max-width: 100%;
-}
+
 .post-item{
   background: rgba(0, 0, 10, 0.5);
   height: 150px;
   margin:0px;
   padding: 0px;
   transition: 0.6s;
+  display: block;
 
 }
 .post-item-green{
@@ -160,6 +164,7 @@ width: 60%;
   padding: 5px;
   color: grey;
   height: 10px;
+  display: block;
 }
 .post-item .post-link{
   padding: 5px;
@@ -172,6 +177,7 @@ width: 60%;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 27px;
+  display: block;
 
 }
 
@@ -190,6 +196,7 @@ width: 60%;
   color: lightgrey;
   padding: 5px;
   font-size: 16px;
+  display: block;
 
 }
 
@@ -302,9 +309,43 @@ pre, code {
   color: orange;
   text-decoration: none;
 }
+/*MENU*/
+.menu-list{
+  float: right;
+  line-height: 60px;
+  margin: 0px;
+}
+.menu-list a{
+  margin-left: 5px;
+  margin-right: 5px;
+  transition: 1s;
+}
+.btn-menu-open{
+  float: right;
+}
+.btn-menu-open i{
+  line-height: 60px;
+}
+
+.btn-menu-open, .btn-menu-close{
+  margin: 0px;
+  transition: .5s;
+  cursor: pointer;
+  font-size: 20px;
+  display:none;
+}
+.btn-menu-open:hover, .btn-menu-close:hover{
+  color: orange;
+}
+
+#chk{
+  position: absolute;
+  visibility: hidden;
+  z-index: -1111;
+}
+
 
 /*header*/
-
 
 .headbox-wrapper{
   background: #1C1C1F url("https://img5.goodfon.com/wallpaper/nbig/1/d6/4k-ultra-hd-background-starry-sky-milky-way-stars-space-astr.jpg")  center center;
@@ -318,6 +359,8 @@ pre, code {
 .site-header{
   height: 65px;
   color: white;
+  width: auto;
+  display: flex;
   /* backdrop-fil ter: blur(4px); */
   backdrop-fitler: brightness(50%);
 
@@ -376,6 +419,7 @@ pre, code {
 /*SKETCHES*/
 .post-item-sketch{
     height: 200px;
+    display: block;
     padding: 2px;
 }
 .topic-head-row{
@@ -470,15 +514,7 @@ font-size: 42px;
 }
 
 
-@media screen and (max-width:800px) {
-  .centered-square{
-    width: 100%;
-    margin: 1px;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
+
 
 .link-sketch{
   font-size: 25px;
@@ -540,6 +576,7 @@ font-size: 42px;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
+
 
 
 /* GALLERY */
@@ -685,6 +722,37 @@ font-size: 42px;
 
 
 @media screen and (max-width: 800px) {
+
+  .centered-square{
+    width: 100%;
+    margin: 1px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-menu-open, .btn-menu-close{
+    display: block;
+  }
+  .menu-list{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    right: -100%;
+    top: 0;
+    text-align: center;
+    background: #333;
+    padding: 80px 0;
+    z-index: 1;
+    transition: 0.7s;
+  }
+  #chk:checked ~ .menu-list{
+    right: 0;
+  }
+  .menu-list a{
+    display: block;
+  }
+
   .post-item .post-link{
      font-size: 18px;
   }
@@ -705,7 +773,41 @@ font-size: 42px;
   .post-content h3{
     font-size: 15px;
   }
-  .item-sketch-img {
-      display: none !important;
+  .post-item-sketch-contimg{
+      display: none;
+  }
+
+  .post-item-sketch{
+  height: auto;
+  min-width: 300px;
+  margin: 5px;
+  min-height: 200px;
+  }
+
+  .post-item{
+    position: relative;
+    width: 100%;
+    left: 10px;
+    right: 10px;
+  }
+  .home{
+    position: relative;
+    width: 100%;
+    margin:0;
+  }
+
+  .contentbar{
+    width: 90%;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .sidebar{
+    width: 90%;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .post-item-sketch *{
+  width: 100%;
   }
 }
