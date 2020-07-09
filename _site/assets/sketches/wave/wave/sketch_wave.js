@@ -7,10 +7,10 @@ let H = windowHeight;
 
 
 //variables de objetos
-let Ndiv = 50;
+let Ndiv = 45;
 let dx = (W/Ndiv);
 let dy = (H/Ndiv);
-let R = 3*min(dx,dy)/5;
+let R = 3.6*min(dx,dy)/5;
 
 let RMIN_prop=0.4;
 

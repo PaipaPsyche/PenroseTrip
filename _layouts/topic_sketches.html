@@ -4,6 +4,7 @@ layout: default
 
 
 <div class="topic">
+
   <div class="topic-head-row row">
     <div class="topic-icon">
       <img src="{{site.baseurl}}/assets/img/site/icon-sketch.png"/>
@@ -13,10 +14,13 @@ layout: default
       <i>{{content}}</i>
     </div>
 </div>
+
+
+
   <ul class="post-list topic-list">
     {% for post in site.categories.sketch %}
 
-      <li class="post-item post-item-sketch">
+      <li class="post-item post-item-sketch post-item-green">
         <div class="item-sketch-meta">
           <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 

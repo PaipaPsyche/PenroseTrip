@@ -159,8 +159,8 @@ When a genome is randomly generated with 0 or 1 in any of the 512 positions, the
 * **I** : Inverts the value of every cell.
 * **C** : Sets the center Cell to ON.
 * **H / V / D / A** : Sets an alternating pattern along the central (Horizontal / Vertical / Diagonal / Antidiagonal) respectively.
-* **0 / 1** : create a rule code with only 0 / 1 respectively (Empty DNA button).
-* **2/3/4** : Sets a figure of ON cells in the center.
+* **0 / Z** : create a rule code with only 0 / 1 respectively (Empty DNA button).
+* **1/2/3/4/5** : Sets a figure of ON cells in the center.
 
 ## Latest Release
 <a href="{{site.baseurl}}/assets/sketches/cellular-automata/2d-cellular-automata.html" class="link-sketch">

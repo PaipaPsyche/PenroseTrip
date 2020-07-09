@@ -15,6 +15,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "penrosetrip.co" # the base hostname & protocol for your site
 twitter_username: PenroseTrip
 github_username:  PaipaPsyche
+instagram_username: PenroseTrip
 paginate: 5 # pagination
 paginate_path: /page/:num
 gems: [jekyll-paginate]

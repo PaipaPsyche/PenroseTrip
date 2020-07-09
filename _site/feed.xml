@@ -6,8 +6,8 @@
 </description>
     <link>penrosetrip.co/</link>
     <atom:link href="penrosetrip.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 Jul 2020 01:37:25 -0300</pubDate>
-    <lastBuildDate>Wed, 08 Jul 2020 01:37:25 -0300</lastBuildDate>
+    <pubDate>Thu, 09 Jul 2020 04:21:41 -0300</pubDate>
+    <lastBuildDate>Thu, 09 Jul 2020 04:21:41 -0300</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -262,8 +262,8 @@ I would never consider myself as a model that inspires eroticism, but this does 
   &lt;li&gt;&lt;strong&gt;I&lt;/strong&gt; : Inverts the value of every cell.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;C&lt;/strong&gt; : Sets the center Cell to ON.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;H / V / D / A&lt;/strong&gt; : Sets an alternating pattern along the central (Horizontal / Vertical / Diagonal / Antidiagonal) respectively.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;0 / 1&lt;/strong&gt; : create a rule code with only 0 / 1 respectively (Empty DNA button).&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;2/3/4&lt;/strong&gt; : Sets a figure of ON cells in the center.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;0 / Z&lt;/strong&gt; : create a rule code with only 0 / 1 respectively (Empty DNA button).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;1/2/3/4/5&lt;/strong&gt; : Sets a figure of ON cells in the center.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;latest-release&quot;&gt;Latest Release&lt;/h2&gt;
@@ -342,8 +342,8 @@ heal infected boids (red or blue). They can steal speed from nearby boids.&lt;/p
 &lt;p&gt;With the introduction of the new boids, new parameters are added to the simulation and therefore the behavior grows in complexity. When I did the first experiment I was surprised because, despite not knowing what to expect, I found new behaviors that my human perception was able to recognize and that, unless they are products of my volatile imagination, represent a new way of &lt;strong&gt;adding complexity&lt;/strong&gt; to the system. A few insights of what can be noticed at a glance:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Flockers and healers can each form groups of boids around them, moving as a group that can affect more boids. Despite the fact that flockers and healers cannot interact with each other (and even repel each other a little), certainly the groups formed by these can be brought together in &lt;strong&gt;larger groups&lt;/strong&gt; where boids, flockers and healers &lt;strong&gt;coexist&lt;/strong&gt;, using cohesion with the normal boids as a force that &lt;strong&gt;counteracts&lt;/strong&gt; the aforementioned repulsion. I like to think of this scenario as ca reduced case of &lt;em&gt;symbiosis&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;knitters freeze boids that, if they are very close to other frozen boids, are connected between them with a line (the connection or flata of it does not affect the simulation at all, it is just a visual element). When solitary moving boids (healthy or infected by flockers) pass near these nets they naturally try to react at the speed of their neighbors. These, when stopped or moving very slowly, cause the boid to stop as well, &lt;strong&gt;being trapped&lt;/strong&gt; by the static influence of the network.&lt;/li&gt;
+  &lt;li&gt;Flockers and healers can each form groups of boids around them, moving as a group that can affect more boids. Despite the fact that flockers and healers cannot interact with each other (and even repel each other a little), certainly the groups formed by these can be brought together in &lt;strong&gt;larger groups&lt;/strong&gt; where boids, flockers and healers &lt;strong&gt;coexist&lt;/strong&gt;, using cohesion with the normal boids as a force that &lt;strong&gt;counteracts&lt;/strong&gt; the aforementioned repulsion. I like to think of this scenario as a reduced case of &lt;em&gt;symbiosis&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;knitters freeze boids that, if they are very close to other frozen boids, are connected between them with a line (the connection or lack of it does not affect the simulation at all, it is just a visual element). When solitary moving boids (healthy or infected by flockers) pass near these nets they naturally try to react at the speed of their neighbors. These, when stopped or moving very slowly, cause the boid to stop as well, &lt;strong&gt;being trapped&lt;/strong&gt; by the static influence of the network.&lt;/li&gt;
   &lt;li&gt;Knitters usually stay near the net as an effect of the net static influence, but not always they remain static as trapped boids. They keep moving in the net surroundings until a boid gets near enough to interact and modify the knitter velocity. This perturbation, in addition with the aligning force present in every boid, causes the knitter to stop being &lt;em&gt;dormant&lt;/em&gt; and ‘Hunt’ new boids that get stuck in the near net. Sometimes perturbations in a far point in the net are propagated due to the proximity of the &lt;em&gt;net boids&lt;/em&gt; between them, causing the dormant knitter to react even if the new boid is trapped not so near.&lt;/li&gt;
   &lt;li&gt;Healers may pass through small healthy groups of boids, even using its boids to &lt;strong&gt;catapult themselves forward&lt;/strong&gt; by stealing speed. Bigger groups catch the healers easier and since it &lt;strong&gt;usually swaps speeds&lt;/strong&gt; with his neighbors, having a healer within the group usually &lt;strong&gt;helps keeping boids aligned&lt;/strong&gt; in the same direction. This feature also represents &lt;strong&gt;formation of larger groups&lt;/strong&gt; when there are flockers and healers within the group, since flockers are more likely to separate form the group due to weak aligning.&lt;/li&gt;
 &lt;/ul&gt;
