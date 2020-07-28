@@ -1,0 +1,70 @@
+---
+layout: post
+title:  "B[ORDERS] : Organic behavior in algorithms"
+date:   2020-07-30 20:00:00 -0300
+description: "A Fuzzy Binaires activity where Penrose Trip presented a workshop on visual algorithms."
+categories: information
+author: Paipa Psyche
+permalink: /B-ORDERS/
+image: ""
+icon: ""
+tags:
+  information
+  page
+  jekyll
+  event
+  art
+---
+Welcome traveler! If you have arrived here it is because you are either part of activity B[ORDERS] or you just came across this post out of curiosity. In either case, feel welcome to participate and explore the content of the workshop. **Fuzzy Binaires** is seeking collaboration and community through their own shared practices of open coding, tinkering and making art.
+
+ > B[ORDERS]* is an online interdisciplinary workshop program running from July 26 to August 2 2020 in which an interdisciplinary group will question the relations between **technology, orders and borders**. What can be learned from taking positions that refuse the logic of physical and digital borders?
+
+ -*Fuzzy Binaires*
+
+## The Border
+
+For centuries, the blurred border between the living and the non-living has haunted every corner of the colorful and growing edifice of human knowledge. Since ancient times there have been stories in different religions of how **life arises out of nothing** by divine will and, in some cases, life itself is forged with inert materials. Today we know that inert materials, such as minerals and molecules, constitute life itself, and that the most specific phenomena depend on their **different configurations**. This may have been imagined long before the invention of the microscope, but even now it **is difficult to paint a border** where the inert becomes life.
+
+ But it wasn't until a few decades ago that we began to understand how **complex** the microverse and its rules can be. In the 20th century it was discovered that atoms are not perfect clocks as previously believed, but that they are clouds of probability and that, by construction, they build the **strong link** that exists between the origin of life and the randomness of the quantum world. A completely ordered system cannot give life to life, just as a completely chaotic system cannot maintain it. Creating chaos is simple, but keeping chaos organized and focused is not that easy. I don't know the definition of life, but many of us can agree that it shares the characteristics of an **unstable, growing and emerging system** that combines the diversity of chaos with the coherence of self-organization, leading to **aggregate phoenomena** that increase in complexity.
+
+With the workshop I want to make you question what is your definition of this limit, if it exists, and how computing can open our minds to more deterministic perspectives that can also lead to chaos. I want to contrast the phenomena that can be seen in nature with the behaviors observed in the evolution of simple simulations.
+
+## Observing complexity
+
+In the following case studies, we will approach two recognized algorithms in computing, analyzing them from the perspective of emerging behaviors and experimenting with the infinite possibilities they offer. The exercise is precisely to **explore the endless analogies** that can be built between the natural world and emerging behaviors, that is why in parts of the talk these systems will be discussed as simple algorithms, and sometimes as if they were an organism or living tissue. We are going to **let the imagination fly** a bit and let the patterns become visible through our perception.
+
+## Study cases
+The objective of each case study and how it fits the purpose of the activity will be discussed below, however, the most specific content of each sketch is available on the description site of each one (proportional links).
+### Flocking ecosystem
+The first algorithm that we are going to analyze is the **flocking algorithm**. This is characterized by resembling how birds and fish group together in their **movement through a limited space populated by many individuals**. Although it is an algorithm that has been known for a long time, it is possible to make infinite modifications that undoubtedly make the simulation more interesting, such as the modifications I introduced to do this study. I added agents that create **another level of interaction** between individuals and lead to the appearance of behaviors analogous to those visible in **ecosystems**.
+
+<div class="special-ad" align="center" >
+<a href="https://penrosetrip.co/sketch/2020/04/13/flocking-ecosystem.html">
+<b style="font-size:19px"> FLOCKING ECOSYSTEM SIMULATION </b>
+</a>
+</div>
+
+#### Discussion
+
+- What behaviors can you identify in any region of the simulation that might resemble interaction between species?
+- Do you think this is how some mechanism of biology works?
+- What SIMPLE new behaviors would you introduce in order to diversify behaviors?
+
+
+### 2D Cellular Automata
+It is a laboratory created to teach people with little programming context** how to program simple behaviors** in cellular automata. The granularity of the design allows users to create their own rules for interacting on the 2D grid through a minimal and intuitive graphical interface. It's also a type of system known for decades called a **cellular automaton**, which consists of a grid of cells that change states based on the state of their neighborhood. Defining these interaction rules in each cell of the grid creates a system of many agents that interact with a high tendency to **chaos and complexity**.
+
+<div class="special-ad" align="center" >
+<a href="https://penrosetrip.co/sketch/2020/04/13/flocking-ecosystem.html">
+<b style="font-size:19px"> 2D CELLULAR AUTOMATA LAB </b>
+</a>
+</div>
+
+#### Discussion
+
+- Can you generate a tissue of each type shown in the Lab site?
+- Why do you think the rules for conway and conway-4 are suitable for complex patterns?
+- Which applications can you see for this type of systems?
+
+## Conclusion
+Science tells us that **complex organized behavior can arise out of complete chaos**, as seen at the origin of the universe itself that begins with absolute disorder and gives rise to events like life and matter. With a set of indivisible unit elements that follow definite rules, the universe managed to build something as complex as consciousness, and after millennia of experimentation, it produced intelligent entities with curiosity. These **scenarios** are replicable thanks to modern computing and show macroscopic effects of the interaction between individuals that are difficult to imagine only knowing the initial programming. This leads us to think and ramble on the imaginary border that exists between **programming and biology**, between science and philosophy, between engineering and contemplation.

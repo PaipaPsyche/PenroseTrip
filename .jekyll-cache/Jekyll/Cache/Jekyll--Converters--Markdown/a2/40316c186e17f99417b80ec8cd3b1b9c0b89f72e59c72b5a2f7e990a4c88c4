@@ -1,0 +1,83 @@
+I"6!<p>a group of settlers is left in an unexplored world with the aim of creating a global empire over the years. Name unexplored terrain, evolve your cities and above all have fun creating an empire as big as you want.</p>
+<h2 id="the-sketch">The Sketch</h2>
+<p>A <strong>random map</strong> is generated using Perlin’s Noise including random resource sources in the field. The resource field is also generated using perlin noise but using a detail index more suitable for smaller sports (more detail in noise shape). The game maintains randomness to generate many elements of the game such as events and map conditions among other things, however, other elements such as names depend on a component associated with the immediately previous city.</p>
+
+<p>Each town <strong>consumes</strong> according to its size and is also capable of producing <strong>resources</strong> if it’s on a resource spot The idea of the game is to <strong>expand the empire</strong> as much as possible without being consumed by its own size, taking into account <strong>unexpected events</strong> and quick growth.</p>
+
+<p>Everything, except the creation of new towns, is generated with <strong>random numbers</strong> or has to do with some random value. This is an interesting feature because it allows you to have a <strong>variety of situations</strong> within the framework of the game.</p>
+<h2 id="the-purpose">The Purpose</h2>
+<p>Initially when I created the project I wanted to practice a new concept that I just learned: <a href="https://en.wikipedia.org/wiki/Perlin_noise">Perlin’s noise</a>. An interesting concept for <strong>someone who loves randomness as much as I do</strong>, since it is noise that is <strong>locally consistent</strong> but <strong>globally random</strong>. Putting it to the test I realized that in two dimensions it is easy to create cut points in the magnitude of the noise, thus creating borders on the 2D surface that enclose spots and their size depends on the cut point.
+These spots turned them into islands and eventually continents. From there it was easy to start due to the structure of objects subjected to the random map map generated. The project was refined on several occasions until it became the Imferye that it is now.</p>
+
+<p>I directed the project in this direction because it gave me a bit of morbidity to think about our <strong>history as an intelligent species</strong> on planet earth, and how much of that history we have lost at the hands of violent humanity, unexpected events or even bad luck. <strong>Modeling the legacy</strong> as a way to quantify lost culture seems to me one of the most interesting details of the game: being able to observe the reasons why a civilization can put aside its most historic cities for important reasons and thus losing legacy.</p>
+
+<p>I like to think that the format of the game helps to <strong>pose the growth of a civilization as an expansion</strong> originated in a center, a cancer of roads and houses that expands through unexplored terrain. Based on these ideas, I imagine how the names of cities are established in the legacy of those who founded them, in how tradition and language are <strong>dragged and mutated</strong> by an accelerated expansion to the rhythm of consumption.</p>
+
+<p>For more literary sense that the game has, I also wanted to pose a <strong>management challenge</strong> to anyone who dares to play it. The game puts the player in a situation where  <strong>not always</strong> taking  the most intuitive choices  prevent the empire from falling apart. The game itself is not the great strategy puzzle, but considering that it was done by one person on p5 I can say that I am proud of this work.</p>
+
+<h2 id="the-result">The Result</h2>
+<p>The game ended up being everything I had hoped for: an alive puzzle and a temporary pet. The estimated playing time is <strong>half an hour</strong> and although it is not a lot, it is a game that can give surprises despite its simplicity. That estimated half hour is taking into account that the player manages to keep his civilization alive for <strong>at least 20,000 years</strong>, and in fact it is difficult to do it when there is no defined strategy.</p>
+
+<p>The name generator was not as outstanding as other processes in the game, since the construction of syllables repeatedly produces huge blocks of vowels or consonants that cannot be added to a word without making sense of it. Sure, the <strong>alien context</strong> of the game offers the right environment to ignore linguistic details to a certain extent, but it would be <strong>much more comfortable for the player</strong> to be able to recognize their cities by a name that they can at least pronounce. I promise I will fix it, don’t lose faith in me, anonymous reader.</p>
+
+<h2 id="the-controls">The Controls</h2>
+
+<p>At the beginning you can put a seed corresponding to the point from which your initial tribe will originate, <strong>the initial point HAS to be on a beach</strong>. Each new settlement that is put on the map must be connected to a nearby station, each station will increase its rank as it connects more and more stations to itself. After managing to create 5 metropolis, the game will give more seeds to originate new clans without the need to be connected to other nearby points (this new clans must be used on a beach, far from all other settlements).</p>
+
+<ul>
+  <li><strong>CLICK :</strong> create a new settlement on the map.</li>
+  <li><strong>K :</strong> (While hovering the mouse over a settlement) Inflicts damage on the settlement.</li>
+  <li><strong>A :</strong> Activates auto-exploration. While active random settlements are created near existing ones.</li>
+  <li><strong>V :</strong> Activates the virus. Random cities will suffer damage while active.</li>
+</ul>
+
+<h3 id="indicators">Indicators</h3>
+
+<ul>
+  <li><strong>PROFIT <em>(Colored vertical bar)</em></strong> : Index of wealth in your empire. High Profit means good economical times, negative profit means austerity and may lead to famine.</li>
+  <li><strong>Seeds :</strong> How many seeds to start new clans.</li>
+  <li><strong>Map :</strong> Which map configuration are you watching.</li>
+  <li><strong>Difficulty :</strong> Map difficulty, a good start is around 60%;</li>
+  <li><strong>Growth :</strong> Grow rate of your civilization.</li>
+  <li><strong>Population :</strong> Total number of citizens in your empire.</li>
+  <li><strong>Fuel Production :</strong> Total fuel points production per year.</li>
+  <li><strong>Food Production :</strong> Total food points production per year.</li>
+  <li><strong>Consume :</strong> Total consume per year.</li>
+  <li><strong>Active/Total :</strong> Active cities versus total cities placed.</li>
+  <li><strong>Lost Legacy :</strong> Lost cultural content. Time between your first settlement and your oldest active city.</li>
+  <li><strong>Oldest city :</strong> Oldest active city.</li>
+  <li><strong>Origin :</strong>Age of the fist placed city. Years since the beginning of the game.</li>
+</ul>
+<hr class="line-content" style="width:30%" />
+
+<ul>
+  <li><strong>Type :</strong> Type of settlement according to size and advancement.</li>
+  <li><strong>Age :</strong> Age of the settlement in years.</li>
+  <li><strong>Pop. :</strong> Population of the settlement.</li>
+  <li><strong>Rank :</strong> Importance of the city. Relevant to evolve cities.</li>
+  <li><strong>Clan :</strong> Name of the clan that owns the city.</li>
+  <li><strong>Rate :</strong> Score assigned according to city relevance in the empire.</li>
+  <li><strong>Savings :</strong> Amount of goods saved.</li>
+  <li><strong>Era :</strong> Period of time in which the empire faces an specific affair.</li>
+</ul>
+
+<h3 id="tips">Tips</h3>
+<ul>
+  <li>The connectivity range of the stations changes according to their type: larger cities, larger ranges</li>
+  <li>During golden times you are able to build on water</li>
+  <li>The savings will increase faster if your profit is high</li>
+  <li>While building on water, deeper oceanic floor implies higher consume</li>
+  <li>Towns built in mountains may have a higher consume</li>
+  <li>Era changes each 4000 years approximately.</li>
+  <li>Final score depends on empire expansion, legacy and profit history.</li>
+</ul>
+
+<h2 id="latest-release">Latest Release</h2>
+<p><a href="/assets/sketches/imferye/imferye.html" class="link-sketch">
+<span>
+PLAY GAME
+</span>
+</a></p>
+
+<p>Latest commit : 21  / may / 2019</p>
+:ET

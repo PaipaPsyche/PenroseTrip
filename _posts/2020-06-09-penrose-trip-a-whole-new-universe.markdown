@@ -5,6 +5,7 @@ date:   2020-06-09 20:15:00 -0300
 description: "I did something useful with the extra time that the 2020 pandemic gave me and re-modeled the website with Jekyll."
 categories: information
 author: Paipa Psyche
+permalink: /new-penrose/
 image: ""
 icon: ""
 tags:

@@ -1,0 +1,35 @@
+I"�<p>A 2D wave that turns out to be much more than it seems.</p>
+
+<h2 id="the-sketch">The Sketch</h2>
+<p>When studying oscillatory phenomena, it is important to consider their three most important attributes: their <strong>amplitude</strong>, <strong>frequency</strong>, and <strong>phase</strong>. The amplitude corresponds to the intensity of the wave in terms of <strong>energy</strong>. If the case was a sound wave, the amplitude corresponds to the volume. The frequency measures the <strong>periodicity</strong> of the oscillations, that is, the interval of time it takes for the system to return to its <strong>initial state</strong>. at higher frequency, the oscillator is expected to move faster. And lastly the phase, this is just a small adjustment in the oscillator time response. Since each oscillator changes as a <strong>function of time</strong>, the phase can be seen as slightly delaying or advancing the clock of an oscillator with respect to the proper time of simulation.</p>
+
+<p>The sketch is a set of <strong>circular oscillators</strong> of fixed size, implying <strong>fixed amplitude</strong>, arranged in a grid and whose phase depends on its distance from the <strong>center of the screen</strong>. This induces a change in the position of each oscillator; the further the oscillator is from the center of the screen the more noticeable the desychronization. Despite the fact that all the oscillators move at the <strong>same frequency</strong>, that is, they rotate at the <strong>same speed</strong>, the phase effects generate another <strong>macro wave effect</strong> that is reflected as a circular 2D wave. This effect is due to the modeling of the phase with respect to the distance from the center of the screen and how said distance grows with <strong>radial symmetry</strong> around said center.</p>
+<h2 id="the-purpose">The Purpose</h2>
+<p>Studying the waves one eventually finds that they can be described as <strong>circular static oscillators</strong> with a phase shift associated with their position within the system. This is accomplished with simple mathematical proofs that aim to expose a simple but powerful truth about waves, and that is that they generally do <strong>not</strong> transport matter, but <strong>energy</strong>. This is a concept introduced early in the career of a physicist-in-training: the fact that each wave present in a <strong>composite system</strong> is a generalized effect of out-of-phase oscillations of its elements. In water, for example, the creation of waves can be mathematically expressed as a set of particles that oscillate together and whose offset gives rise to a new oscillation expressed in terms of the <strong>group speed</strong> of said particles.</p>
+
+<p>From my perspective as a novice physicist and artist, all the oscillating movements that are present in nature represent the constant pulse of a universe that allowed itself the whim of having <strong>at least</strong> a temporal dimension. The seasons, the Earth’s orbit, the water cycle, seismic waves, sea waves, gravitational waves, all <strong>linked dependently to time</strong> and without it would have no reason to exist. Life itself responds to a cyclical process that is maintained until the moment of death, and even there, the <strong>natural cycle</strong> continues, returning us to the earth and creating new life from this.</p>
+
+<p>We don’t need to have the latest tools to measure ripples and notice that we are part of an <strong>endless cycle</strong>, that we are secondary gears of a greater mechanism. The <em>bhagavad gita</em> as an ancient text already introduces the idea of the <strong>natural cycle</strong> and the <strong>eternal cycle</strong> of return to which souls are subject and whose effect on earth is <strong>reincarnation</strong>.</p>
+
+<p>Although wave effects are studied from physics and mathematics, waves and cycles represent a deeper link with nature from human experience. They remind us that time is a carriage that does not stop and that, despite that, it is possible to start again.</p>
+<h2 id="the-result">The Result</h2>
+<p>An arrangement of what appear to be colored LEDs that vibrate synchronously, drawing a 2D circular wave as an effect of the phase between them. The result is a <strong>tool to play</strong> with the phase effects in an oscillator system, teaching a little about how this phenomenon arises in
+correlated oscillator systems.</p>
+
+<p>To be honest, with this sketch people will most likely learn more about the limits of their own mind in psychedelics than about waves and cycles.</p>
+
+<h2 id="the-controls">The Controls</h2>
+<p>MOVE the cursor through the window to change relative phase between oscillators (change the amount of phase added relative to position)</p>
+
+<h4 id="mobile">Mobile</h4>
+<p>TOUCH and DRAG through the screen to change relative phase between oscillators</p>
+
+<h2 id="latest-release">Latest Release</h2>
+<p><a href="/assets/sketches/wave/wave.html" class="link-sketch">
+<span>
+TEST SKETCH
+</span>
+</a></p>
+
+<p>Latest commit : 07  / oct / 2019</p>
+:ET

@@ -4,11 +4,11 @@
     <title>Penrose Trip</title>
     <description>This website is an interactive portal for informative use, which seeks to open a space for the juxtaposition between psychedelia, science, programming and art.
 </description>
-    <link>penrosetrip.co/</link>
-    <atom:link href="penrosetrip.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 09 Jul 2020 04:21:41 -0300</pubDate>
-    <lastBuildDate>Thu, 09 Jul 2020 04:21:41 -0300</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 28 Jul 2020 01:53:25 -0500</pubDate>
+    <lastBuildDate>Tue, 28 Jul 2020 01:53:25 -0500</lastBuildDate>
+    <generator>Jekyll v4.1.1</generator>
     
       <item>
         <title>Tentaciones y demonios</title>
@@ -35,9 +35,9 @@ I would never consider myself as a model that inspires eroticism, but this does 
   &lt;li&gt;&lt;em&gt;signorcasaubon&lt;/em&gt; - Marten de Vos-Hell&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Wed, 10 Jun 2020 20:15:00 -0300</pubDate>
-        <link>penrosetrip.co/image/2020/06/10/tentaciones-y-demonios.html</link>
-        <guid isPermaLink="true">penrosetrip.co/image/2020/06/10/tentaciones-y-demonios.html</guid>
+        <pubDate>Wed, 10 Jun 2020 18:15:00 -0500</pubDate>
+        <link>http://localhost:4000/image/2020/06/10/tentaciones-y-demonios.html</link>
+        <guid isPermaLink="true">http://localhost:4000/image/2020/06/10/tentaciones-y-demonios.html</guid>
         
         
         <category>image</category>
@@ -72,9 +72,9 @@ I would never consider myself as a model that inspires eroticism, but this does 
 
 &lt;p&gt;It’s been almost 3 weeks since the migration started and I’m still getting warm. Much of this time has been me learning jekyll from scratch, and although it is an easy-to-learn site generator, it is difficult to diagram the two-year work again and apply the updates and fixes that have been suggested to me. In the future I hope to have all my work here exposed as well as options so that third parties can leave their contributions to this growing personal project.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 09 Jun 2020 20:15:00 -0300</pubDate>
-        <link>penrosetrip.co/information/2020/06/09/penrose-trip-a-whole-new-universe.html</link>
-        <guid isPermaLink="true">penrosetrip.co/information/2020/06/09/penrose-trip-a-whole-new-universe.html</guid>
+        <pubDate>Tue, 09 Jun 2020 18:15:00 -0500</pubDate>
+        <link>http://localhost:4000/new-penrose/</link>
+        <guid isPermaLink="true">http://localhost:4000/new-penrose/</guid>
         
         <category>information</category>
         
@@ -109,9 +109,9 @@ I would never consider myself as a model that inspires eroticism, but this does 
   &lt;li&gt;Pi - my male cat&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Sat, 23 May 2020 15:23:00 -0300</pubDate>
-        <link>penrosetrip.co/image/2020/05/23/agoraphobia.html</link>
-        <guid isPermaLink="true">penrosetrip.co/image/2020/05/23/agoraphobia.html</guid>
+        <pubDate>Sat, 23 May 2020 13:23:00 -0500</pubDate>
+        <link>http://localhost:4000/image/2020/05/23/agoraphobia.html</link>
+        <guid isPermaLink="true">http://localhost:4000/image/2020/05/23/agoraphobia.html</guid>
         
         
         <category>image</category>
@@ -275,9 +275,9 @@ TEST SKETCH
 
 &lt;p&gt;Latest commit : 09  / may / 2020&lt;/p&gt;
 </description>
-        <pubDate>Wed, 06 May 2020 02:02:00 -0300</pubDate>
-        <link>penrosetrip.co/sketch/2020/05/06/2D-cellular-automata-lab.html</link>
-        <guid isPermaLink="true">penrosetrip.co/sketch/2020/05/06/2D-cellular-automata-lab.html</guid>
+        <pubDate>Wed, 06 May 2020 00:02:00 -0500</pubDate>
+        <link>http://localhost:4000/sketch/2020/05/06/2D-cellular-automata-lab.html</link>
+        <guid isPermaLink="true">http://localhost:4000/sketch/2020/05/06/2D-cellular-automata-lab.html</guid>
         
         <category>sketch</category>
         
@@ -375,9 +375,9 @@ TEST SKETCH
 
 &lt;p&gt;Latest commit : 13  / apr / 2020&lt;/p&gt;
 </description>
-        <pubDate>Mon, 13 Apr 2020 04:20:00 -0300</pubDate>
-        <link>penrosetrip.co/sketch/2020/04/13/flocking-ecosystem.html</link>
-        <guid isPermaLink="true">penrosetrip.co/sketch/2020/04/13/flocking-ecosystem.html</guid>
+        <pubDate>Mon, 13 Apr 2020 02:20:00 -0500</pubDate>
+        <link>http://localhost:4000/sketch/2020/04/13/flocking-ecosystem.html</link>
+        <guid isPermaLink="true">http://localhost:4000/sketch/2020/04/13/flocking-ecosystem.html</guid>
         
         <category>sketch</category>
         
@@ -479,9 +479,9 @@ PLAY GAME
 
 &lt;p&gt;Latest commit : 21  / may / 2019&lt;/p&gt;
 </description>
-        <pubDate>Mon, 23 Mar 2020 06:03:00 -0300</pubDate>
-        <link>penrosetrip.co/sketch/2020/03/23/imferye-the-game.html</link>
-        <guid isPermaLink="true">penrosetrip.co/sketch/2020/03/23/imferye-the-game.html</guid>
+        <pubDate>Mon, 23 Mar 2020 04:03:00 -0500</pubDate>
+        <link>http://localhost:4000/sketch/2020/03/23/imferye-the-game.html</link>
+        <guid isPermaLink="true">http://localhost:4000/sketch/2020/03/23/imferye-the-game.html</guid>
         
         <category>sketch</category>
         
@@ -519,9 +519,9 @@ PLAY GAME
   &lt;li&gt;Myself - Paipa Psyche (David Paipa)&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Wed, 12 Feb 2020 09:26:00 -0300</pubDate>
-        <link>penrosetrip.co/image/2020/02/12/eigenvalue-of-myself.html</link>
-        <guid isPermaLink="true">penrosetrip.co/image/2020/02/12/eigenvalue-of-myself.html</guid>
+        <pubDate>Wed, 12 Feb 2020 07:26:00 -0500</pubDate>
+        <link>http://localhost:4000/image/2020/02/12/eigenvalue-of-myself.html</link>
+        <guid isPermaLink="true">http://localhost:4000/image/2020/02/12/eigenvalue-of-myself.html</guid>
         
         
         <category>image</category>
@@ -547,9 +547,9 @@ PLAY GAME
   &lt;li&gt;Mateo Herrera&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Mon, 10 Feb 2020 18:16:00 -0300</pubDate>
-        <link>penrosetrip.co/image/2020/02/10/la-pantalla-grande.html</link>
-        <guid isPermaLink="true">penrosetrip.co/image/2020/02/10/la-pantalla-grande.html</guid>
+        <pubDate>Mon, 10 Feb 2020 16:16:00 -0500</pubDate>
+        <link>http://localhost:4000/image/2020/02/10/la-pantalla-grande.html</link>
+        <guid isPermaLink="true">http://localhost:4000/image/2020/02/10/la-pantalla-grande.html</guid>
         
         
         <category>image</category>
@@ -588,9 +588,9 @@ PLAY GAME
   &lt;li&gt;Aldo G. Dorantes (Ph.)&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Sat, 14 Dec 2019 20:32:00 -0300</pubDate>
-        <link>penrosetrip.co/image/2019/12/14/persona.html</link>
-        <guid isPermaLink="true">penrosetrip.co/image/2019/12/14/persona.html</guid>
+        <pubDate>Sat, 14 Dec 2019 18:32:00 -0500</pubDate>
+        <link>http://localhost:4000/image/2019/12/14/persona.html</link>
+        <guid isPermaLink="true">http://localhost:4000/image/2019/12/14/persona.html</guid>
         
         
         <category>image</category>
@@ -634,9 +634,9 @@ TEST SKETCH
 
 &lt;p&gt;Latest commit : 07  / oct / 2019&lt;/p&gt;
 </description>
-        <pubDate>Mon, 07 Oct 2019 16:23:00 -0300</pubDate>
-        <link>penrosetrip.co/sketch/2019/10/07/wave-as-a-phase-effect.html</link>
-        <guid isPermaLink="true">penrosetrip.co/sketch/2019/10/07/wave-as-a-phase-effect.html</guid>
+        <pubDate>Mon, 07 Oct 2019 14:23:00 -0500</pubDate>
+        <link>http://localhost:4000/sketch/2019/10/07/wave-as-a-phase-effect.html</link>
+        <guid isPermaLink="true">http://localhost:4000/sketch/2019/10/07/wave-as-a-phase-effect.html</guid>
         
         <category>sketch</category>
         

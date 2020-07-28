@@ -1,0 +1,81 @@
+I"�&<p>If we reduce life to its most <strong>essential components</strong>, exploring the multiverse of possible interaction mechanisms becomes more intuitive when viewing each part of the whole as a simple set of <strong>binary rules</strong>.</p>
+
+<h2 id="the-sketch">The Sketch</h2>
+<p><strong>Swarming behavior</strong> is a pattern familiar to everyone with a pair of eyes and which we can easily recognize in a flock of birds or in a school of fish, that’s why it’s called <strong>Flocking algorithm</strong>. The truth is that this <strong>complex behavior</strong> can arise from three simple orders that govern each individual of the simulation: a point entity (or <em>Boid</em>) in a 2D space with a velocity vector assigned and is <strong>only aware of its close vicinity</strong>, as well as the velocity vector of its neighbors. These three orders to <em>rule them all</em> are:</p>
+
+<ul>
+  <li><strong>Separation :</strong> Avoid crowding neighbors (short range repulsion)</li>
+  <li><strong>Alignment :</strong> Steer towards average heading of neighbors (align the velocity vector)</li>
+  <li><strong>Cohesion :</strong> Steer towards average position of neighbors (long range attraction)</li>
+</ul>
+
+<p><em>Steering</em> is applying an acceleration vector, which is a result of polling the positions and velocities of the near neighbors, to the actual velocity of the boid. All the boids follow these instructions in an infinite loop, updating steer, velocity and position values according to their current vicinity.</p>
+
+<p>When dozens of boids are left to wander a 2D space with  <abbr title="what goes out  of one edge, comes in through the opposite edge">periodic conditions</abbr>, they start forming swarm-like groups that move coherently. There can be many swarms in the space and furthermore, these groups are not stable in population since colliding groups or swarms that pass near enough may change the group dynamic.</p>
+
+<p>This kind of behavior and rules have been studied for decades: it has been studied as <em>flocking</em> in multiple scenarios, dimensions and rule variations. The original architecture of the flocking algorithm I used is based on the one developed by <a href="https://natureofcode.com/book/chapter-6-autonomous-agents/" target="_blank">Daniel Shiffman</a> in a <a href="https://www.youtube.com/watch?v=mhjuuHl6qHM" target="_blank">video</a> about it.</p>
+
+<blockquote>
+  <p>Flocking behavior was <a href="https://www.youtube.com/watch?v=86iQiV3-3IA" target="_blank">simulated</a> on a computer in <strong>1987</strong> by <strong>Craig Reynolds</strong> with his simulation program, <strong>Boids</strong>. This program simulates simple agents (boids) that are allowed to move according to a <strong>set of basic rules</strong>. The result is akin to a flock of birds, a school of fish, or a swarm of insects.</p>
+</blockquote>
+
+<p><em>– Wikipedia</em></p>
+
+<p><img src="/assets/img/posts/sketch-organism-img1.png" alt="image of boid system" class="post-midimage-across" /></p>
+
+<p>My contribution to the algorithm with which this sketch works consists of special boids that have the ability to change an internal state of normal boids, these special new boids are going to be called <strong>Shifters</strong>, since they shift their neighbors. There are three types of Shifters:</p>
+
+<p>They freeze boids (or reduce their mobility) and turn them blue, allowing them to create connections with other nearby blue boids. This makes it look like the knitter is knitting a net.
+heal infected boids (red or blue). They can steal speed from nearby boids.</p>
+
+<ul>
+  <li><strong><span style="color:red">Flockers:</span></strong> They infect boids by turning them red and more strongly linked to other red boids. This causes them to behave as a tightly bound unit.</li>
+  <li><strong><span style="color:blue">Knitters:</span></strong> They freeze boids (or reduce their mobility) and turn them blue, allowing them to create connections with other nearby blue boids. This makes it look like the knitter is <em>knitting</em> a net <sub>(pun not intended)</sub>.</li>
+  <li><strong><span style="color:green">Healers:</span></strong> They heal infected boids (red or blue). They can steal speed from nearby boids. They may also switch velocities direction (but not magnitude) with a boid while interacting with it.</li>
+</ul>
+
+<p>Shifters do not like to interact with shifters of different species, but interact normally with same species shifters and other boids. They have a contagion probability associated, which means that not all interactions will result in a contagion.</p>
+
+<h2 id="the-purpose">The Purpose</h2>
+<p>Since I knew what programming is, I have learned a few interesting concepts here and there, but over time and reviewing the development that my sketches have led, I have noticed something quite obvious now: I am low-key obsessed with <strong>random behaviors</strong> and the <strong>emergence of complexity</strong>. The flocking algorithm is characterized because it precisely achieves this task:  to represent an <strong>aggregate, complex and organic behavior</strong> that arises from individuals following simple rules and interacting in the same space. And well, it has been known for a long time that it is beautiful and that it seems like happy little birds and fish moving in a group, but only doing that can not escalate more when it comes to complexity and can not give birth to <strong>unexpected behavior</strong>. The flocking simulation is a wonderful concept in the study of the <strong>reduction of natural phenomena</strong> through programming, but it also leaves you with a mouthful of so many potential uses that just sticking with the original rules would be a waste of time.</p>
+
+<p>I hope that the proposal will generate new discussions around the <strong>organic behavior</strong> of autonomous agents with simple programming. There are perspectives that reconcile programming and logic with nature and all its splendor, and <strong>generating a dialogue</strong> about it is the first step in asking the right questions that point in more <strong>interesting directions</strong>.</p>
+
+<h2 id="the-result">The Result</h2>
+
+<p>With the introduction of the new boids, new parameters are added to the simulation and therefore the behavior grows in complexity. When I did the first experiment I was surprised because, despite not knowing what to expect, I found new behaviors that my human perception was able to recognize and that, unless they are products of my volatile imagination, represent a new way of <strong>adding complexity</strong> to the system. A few insights of what can be noticed at a glance:</p>
+
+<ul>
+  <li>Flockers and healers can each form groups of boids around them, moving as a group that can affect more boids. Despite the fact that flockers and healers cannot interact with each other (and even repel each other a little), certainly the groups formed by these can be brought together in <strong>larger groups</strong> where boids, flockers and healers <strong>coexist</strong>, using cohesion with the normal boids as a force that <strong>counteracts</strong> the aforementioned repulsion. I like to think of this scenario as a reduced case of <em>symbiosis</em>.</li>
+  <li>knitters freeze boids that, if they are very close to other frozen boids, are connected between them with a line (the connection or lack of it does not affect the simulation at all, it is just a visual element). When solitary moving boids (healthy or infected by flockers) pass near these nets they naturally try to react at the speed of their neighbors. These, when stopped or moving very slowly, cause the boid to stop as well, <strong>being trapped</strong> by the static influence of the network.</li>
+  <li>Knitters usually stay near the net as an effect of the net static influence, but not always they remain static as trapped boids. They keep moving in the net surroundings until a boid gets near enough to interact and modify the knitter velocity. This perturbation, in addition with the aligning force present in every boid, causes the knitter to stop being <em>dormant</em> and ‘Hunt’ new boids that get stuck in the near net. Sometimes perturbations in a far point in the net are propagated due to the proximity of the <em>net boids</em> between them, causing the dormant knitter to react even if the new boid is trapped not so near.</li>
+  <li>Healers may pass through small healthy groups of boids, even using its boids to <strong>catapult themselves forward</strong> by stealing speed. Bigger groups catch the healers easier and since it <strong>usually swaps speeds</strong> with his neighbors, having a healer within the group usually <strong>helps keeping boids aligned</strong> in the same direction. This feature also represents <strong>formation of larger groups</strong> when there are flockers and healers within the group, since flockers are more likely to separate form the group due to weak aligning.</li>
+</ul>
+
+<p><img src="/assets/img/posts/sketch-organism.gif" alt="image of boid system with shifters" class="post-midimage-across" /></p>
+
+<h2 id="the-controls">The Controls</h2>
+
+<p>DRAG the cursor through the screen to generate new neutral boids pointed in random directions.</p>
+<ul>
+  <li><strong>F :</strong> Creates Flocker in the cursor current position</li>
+  <li><strong>H :</strong> Creates Healer in the cursor current position</li>
+  <li><strong>K :</strong> Creates Knitter in the cursor current position</li>
+</ul>
+
+<h4 id="mobile">Mobile</h4>
+
+<ul>
+  <li>TOUCH AND DRAG to create new boids.</li>
+  <li>SHAKE device to create random shifter in random XY position.</li>
+</ul>
+
+<h2 id="latest-release">Latest Release</h2>
+<p><a href="/assets/sketches/flocking-ecosystem/flocking-ecosystem.html" class="link-sketch">
+<span>
+TEST SKETCH
+</span>
+</a></p>
+
+<p>Latest commit : 13  / apr / 2020</p>
+:ET

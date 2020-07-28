@@ -108,7 +108,7 @@ width: 60%;
 }
 
 .page-content{
-  background: #1C1C1F  url("https://www.hqwalls.com/wp-content/uploads/2011/09/Hubble-telescope-Wallpapers-28.jpeg")  repeat-y;
+  background: #1C1C1F  url("https://cdn.wallpapersafari.com/6/10/zGM5b2.gif");
   border: black;
 
   margin: -1px;
@@ -129,7 +129,7 @@ width: 60%;
 
 
 .post-item{
-  background: rgba(0, 0, 10, 0.5);
+  background: rgba(0, 0, 10, 0.7);
   height: 150px;
   margin:0px;
   padding: 0px;
@@ -152,8 +152,8 @@ width: 60%;
 .post-item:hover{
   background: rgba(0, 0, 5, 0.8);
   transform: scale(1.01);
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   border-left: 3px solid white;
 }
 
@@ -349,7 +349,7 @@ pre, code {
 /*header*/
 
 .headbox-wrapper{
-  background: #1C1C1F url("https://img5.goodfon.com/wallpaper/nbig/1/d6/4k-ultra-hd-background-starry-sky-milky-way-stars-space-astr.jpg")  center center;
+  background: #1C1C1F url("https://images.hdqwalls.com/wallpapers/spacescapes-4k-p7.jpg")  center center;
 
   background-size: cover;
   height: 65px;
@@ -744,7 +744,8 @@ font-size: 42px;
     right: -100%;
     top: 0;
     text-align: center;
-    background: #333;
+    background: #333 url("https://images.hdqwalls.com/download/galaxy-space-stars-universe-nebula-4k-qw-2160x3840.jpg");
+    background-size: cover;
     padding: 80px 0;
     z-index: 1;
     transition: 0.7s;
@@ -863,4 +864,6 @@ font-size: 42px;
   font-size: 30px;
 
   }
+
+
 }
