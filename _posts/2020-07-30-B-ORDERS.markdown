@@ -67,7 +67,7 @@ The first algorithm that we are going to analyze is the **flocking algorithm**. 
 It is a laboratory created to teach people with little programming context** how to program simple behaviors** in cellular automata. The granularity of the design allows users to create their own rules for interacting on the 2D grid through a minimal and intuitive graphical interface. It's also a type of system known for decades called a **cellular automaton**, which consists of a grid of cells that change states based on the state of their neighborhood. Defining these interaction rules in each cell of the grid creates a system of many agents that interact with a high tendency to **chaos and complexity**.
 
 <div class="special-ad" align="center" >
-<a href="https://penrosetrip.co/sketch/2020/04/13/flocking-ecosystem.html">
+<a href="https://penrosetrip.co/sketch/2020/05/06/2D-cellular-automata-lab.html">
 <b style="font-size:19px"> 2D CELLULAR AUTOMATA LAB </b>
 </a>
 </div>
