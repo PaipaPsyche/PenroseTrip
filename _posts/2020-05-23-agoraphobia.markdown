@@ -20,7 +20,7 @@ The main layer is a style transfer applying a *"where's wally?"* cartoon pattern
 ## From the artist
 The pandemic keeps us alert and waiting for a catastrophe that has taken hundreds of thousands of lives around the world today. The confinement keeps us in captivity and **forces us to be calm** when all the signs we receive from the outside world **invite** us to panic and disagreement.
 
-When it occurred to me to create the image I was thinking about how to represent the **state of alert** from a calm and **contemplative** position. My cat *Pi* was nearby and I saw him observing a feather that fell near the outside sidewalk of the house, in front of the living room window. He was lying on the edge of the back of the sofa, without tension in the muscles, but with his eyes wide open in expectation of any uninvited movement. I found it curious that **despite expressing a state of persecution** with his eyes, *Pi*'s face never stopped being that of a sleepy cat.
+When it occurred to me to create the image I was thinking about how to represent the **state of alert** from a calm and **contemplative** position. My cat *Pi* was nearby and I saw him observing a feather that fell near the outside sidewalk of the house, in front of the living room window. He was lying on the edge of the back of the sofa, without tension in the muscles, but with his eyes wide open in expectation of any uninvited movement. I found it curious that **despite expressing a state of persecution** with his eyes, *Pi*'s pose never stopped being that of a sleepy cat.
 
  I took a photo of him and decided to use it as my main template.
 

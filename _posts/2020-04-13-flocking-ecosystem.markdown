@@ -52,6 +52,54 @@ heal infected boids (red or blue). They can steal speed from nearby boids.
 Shifters do not like to interact with shifters of different species, but interact normally with same species shifters and other boids. They have a contagion probability associated, which means that not all interactions will result in a contagion.
 
 
+<div class="centered-square">
+  <div class="imgsq">
+    <img src="https://drive.google.com/uc?export=view&id=1TxDtJudL1pgXbPRGdMzSQSEQZiVrP-t5" class ="post-midimage-across">
+  </div>
+  <div class ="txtsq">
+    <p class="imglbl">
+
+      Flocker capturing healthy boids, increasing their maximum speed limit.
+      <br>
+      <b>FLocker</b>
+
+
+    </p>
+  </div>
+</div>
+
+<div class="centered-square">
+  <div class="imgsq">
+    <img src="https://drive.google.com/uc?export=view&id=1efg_KjIO0358kGxBfjKGicmZmTF2VMcY" class ="post-midimage-across">
+  </div>
+  <div class ="txtsq">
+    <p class="imglbl">
+
+      Knitter creating a network of static boids.
+      <br>
+      <b>Knitter </b>
+
+
+    </p>
+  </div>
+</div>
+
+<div class="centered-square">
+  <div class="imgsq">
+    <img src="https://drive.google.com/uc?export=view&id=1zkpLejHzpuERPIEFmgfoUZeo6NcHe1y_" class ="post-midimage-across">
+  </div>
+  <div class ="txtsq">
+    <p class="imglbl">
+
+      Healer liberating some boids form a knitter's net.
+      <br>
+      <b>Healer</b>
+
+
+    </p>
+  </div>
+</div>
+
 ## The Purpose
 Since I knew what programming is, I have learned a few interesting concepts here and there, but over time and reviewing the development that my sketches have led, I have noticed something quite obvious now: I am low-key obsessed with **random behaviors** and the **emergence of complexity**. The flocking algorithm is characterized because it precisely achieves this task:  to represent an **aggregate, complex and organic behavior** that arises from individuals following simple rules and interacting in the same space. And well, it has been known for a long time that it is beautiful and that it seems like happy little birds and fish moving in a group, but only doing that can not escalate more when it comes to complexity and can not give birth to **unexpected behavior**. The flocking simulation is a wonderful concept in the study of the **reduction of natural phenomena** through programming, but it also leaves you with a mouthful of so many potential uses that just sticking with the original rules would be a waste of time.
 

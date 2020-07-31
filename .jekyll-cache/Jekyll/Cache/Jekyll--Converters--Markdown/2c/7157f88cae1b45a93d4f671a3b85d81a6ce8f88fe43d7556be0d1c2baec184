@@ -1,4 +1,4 @@
-I"P<p>Welcome traveler! If you have arrived here it is because you are either part of activity B[ORDERS] or you just came across this post out of curiosity. In either case, feel welcome to participate and explore the content of the workshop. <strong>Fuzzy Binaires</strong> is seeking collaboration and community through their own shared practices of open coding, tinkering and making art.</p>
+I"�<p><strong>Welcome traveler!</strong> If you have arrived here it is because you are either part of activity B[ORDERS] or you just came across this post by curiosity. In either case, feel welcome to participate and explore the content of the workshop. <strong>Fuzzy Binaires</strong> is seeking collaboration and community through their own shared practices of open coding, tinkering and making art.</p>
 
 <blockquote>
   <p>B[ORDERS]* is an online interdisciplinary workshop program running from July 26 to August 2 2020 in which an interdisciplinary group will question the relations between <strong>technology, orders and borders</strong>. What can be learned from taking positions that refuse the logic of physical and digital borders?</p>
@@ -17,6 +17,20 @@
 <h2 id="observing-complexity">Observing complexity</h2>
 
 <p>In the following case studies, we will approach two recognized algorithms in computing, analyzing them from the perspective of emerging behaviors and experimenting with the infinite possibilities they offer. The exercise is precisely to <strong>explore the endless analogies</strong> that can be built between the natural world and emerging behaviors, that is why in parts of the talk these systems will be discussed as simple algorithms, and sometimes as if they were an organism or living tissue. We are going to <strong>let the imagination fly</strong> a bit and let the patterns become visible through our perception.</p>
+
+<h3 id="emergent-behaviors">Emergent behaviors</h3>
+
+<p>One of the key points of this workshop is the concept of <strong>emergency</strong>. This corresponds to all the properties that can be evidenced in a system but that are irreducible to its minimal subsystems. The definition that can be easily found on the internet is:</p>
+
+<blockquote>
+  <p>[…] Emergence occurs when an entity is observed to have properties its parts do not have on their own. These properties or behaviors emerge only when the parts interact in a wider whole.</p>
+</blockquote>
+
+<ul>
+  <li>Wikipedia</li>
+</ul>
+
+<p>The success of the workshop lies in our ability to visually explore the systems and intuit which behaviors are not explainable as side effects of each part of the system, but a great consequence of the system’s interaction as a whole.</p>
 
 <h2 id="study-cases">Study cases</h2>
 <p>The objective of each case study and how it fits the purpose of the activity will be discussed below, however, the most specific content of each sketch is available on the description site of each one (proportional links).</p>
@@ -55,4 +69,5 @@
 </ul>
 
 <h2 id="conclusion">Conclusion</h2>
+<p>Science tells us that <strong>complex organized behavior can arise out of complete chaos</strong>, as seen at the origin of the universe itself that begins with absolute disorder and gives rise to events like life and matter. With a set of indivisible unit elements that follow definite rules, the universe managed to build something as complex as consciousness, and after millennia of experimentation, it produced intelligent entities with curiosity. These <strong>scenarios</strong> are replicable thanks to modern computing and show macroscopic effects of the interaction between individuals that are difficult to imagine only knowing the initial programming. This leads us to think and ramble on the imaginary border that exists between <strong>programming and biology</strong>, between science and philosophy, between engineering and contemplation.</p>
 :ET

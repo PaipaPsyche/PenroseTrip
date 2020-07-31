@@ -1,4 +1,4 @@
-I"É&<p>If we reduce life to its most <strong>essential components</strong>, exploring the multiverse of possible interaction mechanisms becomes more intuitive when viewing each part of the whole as a simple set of <strong>binary rules</strong>.</p>
+I"ü*<p>If we reduce life to its most <strong>essential components</strong>, exploring the multiverse of possible interaction mechanisms becomes more intuitive when viewing each part of the whole as a simple set of <strong>binary rules</strong>.</p>
 
 <h2 id="the-sketch">The Sketch</h2>
 <p><strong>Swarming behavior</strong> is a pattern familiar to everyone with a pair of eyes and which we can easily recognize in a flock of birds or in a school of fish, thatâ€™s why itâ€™s called <strong>Flocking algorithm</strong>. The truth is that this <strong>complex behavior</strong> can arise from three simple orders that govern each individual of the simulation: a point entity (or <em>Boid</em>) in a 2D space with a velocity vector assigned and is <strong>only aware of its close vicinity</strong>, as well as the velocity vector of its neighbors. These three orders to <em>rule them all</em> are:</p>
@@ -35,6 +35,54 @@ heal infected boids (red or blue). They can steal speed from nearby boids.</p>
 </ul>
 
 <p>Shifters do not like to interact with shifters of different species, but interact normally with same species shifters and other boids. They have a contagion probability associated, which means that not all interactions will result in a contagion.</p>
+
+<div class="centered-square">
+  <div class="imgsq">
+    <img src="https://drive.google.com/uc?export=view&amp;id=1TxDtJudL1pgXbPRGdMzSQSEQZiVrP-t5" class="post-midimage-across" />
+  </div>
+  <div class="txtsq">
+    <p class="imglbl">
+
+      Flocker capturing healthy boids, increasing their maximum speed limit.
+      <br />
+      <b>FLocker</b>
+
+
+    </p>
+  </div>
+</div>
+
+<div class="centered-square">
+  <div class="imgsq">
+    <img src="https://drive.google.com/uc?export=view&amp;id=1efg_KjIO0358kGxBfjKGicmZmTF2VMcY" class="post-midimage-across" />
+  </div>
+  <div class="txtsq">
+    <p class="imglbl">
+
+      Knitter creating a network of static boids.
+      <br />
+      <b>Knitter </b>
+
+
+    </p>
+  </div>
+</div>
+
+<div class="centered-square">
+  <div class="imgsq">
+    <img src="https://drive.google.com/uc?export=view&amp;id=1zkpLejHzpuERPIEFmgfoUZeo6NcHe1y_" class="post-midimage-across" />
+  </div>
+  <div class="txtsq">
+    <p class="imglbl">
+
+      Healer liberating some boids form a knitter's net.
+      <br />
+      <b>Healer</b>
+
+
+    </p>
+  </div>
+</div>
 
 <h2 id="the-purpose">The Purpose</h2>
 <p>Since I knew what programming is, I have learned a few interesting concepts here and there, but over time and reviewing the development that my sketches have led, I have noticed something quite obvious now: I am low-key obsessed with <strong>random behaviors</strong> and the <strong>emergence of complexity</strong>. The flocking algorithm is characterized because it precisely achieves this task:  to represent an <strong>aggregate, complex and organic behavior</strong> that arises from individuals following simple rules and interacting in the same space. And well, it has been known for a long time that it is beautiful and that it seems like happy little birds and fish moving in a group, but only doing that can not escalate more when it comes to complexity and can not give birth to <strong>unexpected behavior</strong>. The flocking simulation is a wonderful concept in the study of the <strong>reduction of natural phenomena</strong> through programming, but it also leaves you with a mouthful of so many potential uses that just sticking with the original rules would be a waste of time.</p>

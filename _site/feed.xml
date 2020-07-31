@@ -6,9 +6,115 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Jul 2020 01:53:25 -0500</pubDate>
-    <lastBuildDate>Tue, 28 Jul 2020 01:53:25 -0500</lastBuildDate>
+    <pubDate>Fri, 31 Jul 2020 05:21:19 -0500</pubDate>
+    <lastBuildDate>Fri, 31 Jul 2020 05:21:19 -0500</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>B[ORDERS] : Organic behavior in algorithms</title>
+        <description>&lt;p&gt;&lt;strong&gt;Welcome traveler!&lt;/strong&gt; If you have arrived here it is because you are either part of activity B[ORDERS] or you just came across this post by curiosity. In either case, feel welcome to participate and explore the content of the workshop. &lt;strong&gt;Fuzzy Binaires&lt;/strong&gt; is seeking collaboration and community through their own shared practices of open coding, tinkering and making art.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;B[ORDERS]* is an online interdisciplinary workshop program running from July 26 to August 2 2020 in which an interdisciplinary group will question the relations between &lt;strong&gt;technology, orders and borders&lt;/strong&gt;. What can be learned from taking positions that refuse the logic of physical and digital borders?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;-&lt;em&gt;Fuzzy Binaires&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-border&quot;&gt;The Border&lt;/h2&gt;
+
+&lt;p&gt;For centuries, the blurred border between the living and the non-living has haunted every corner of the colorful and growing edifice of human knowledge. Since ancient times there have been stories in different religions of how &lt;strong&gt;life arises out of nothing&lt;/strong&gt; by divine will and, in some cases, life itself is forged with inert materials. Today we know that inert materials, such as minerals and molecules, constitute life itself, and that the most specific phenomena depend on their &lt;strong&gt;different configurations&lt;/strong&gt;. This may have been imagined long before the invention of the microscope, but even now it &lt;strong&gt;is difficult to paint a border&lt;/strong&gt; where the inert becomes life.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;500&quot; src=&quot;https://www.youtube.com/embed/_7wKjTf_RlI&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;But it wasn’t until a few decades ago that we began to understand how &lt;strong&gt;complex&lt;/strong&gt; the microverse and its rules can be. In the 20th century it was discovered that atoms are not perfect clocks as previously believed, but that they are clouds of probability and that, by construction, they build the &lt;strong&gt;strong link&lt;/strong&gt; that exists between the origin of life and the randomness of the quantum world. A completely ordered system cannot give life to life, just as a completely chaotic system cannot maintain it. Creating chaos is simple, but keeping chaos organized and focused is not that easy. I don’t know the definition of life, but many of us can agree that it shares the characteristics of an &lt;strong&gt;unstable, growing and emerging system&lt;/strong&gt; that combines the diversity of chaos with the coherence of self-organization, leading to &lt;strong&gt;aggregate phoenomena&lt;/strong&gt; that increase in complexity.&lt;/p&gt;
+
+&lt;p&gt;With the workshop I want to make you question what is your definition of this limit, if it exists, and how computing can open our minds to more deterministic perspectives that can also lead to chaos. I want to contrast the phenomena that can be seen in nature with the behaviors observed in the evolution of simple simulations.&lt;/p&gt;
+
+&lt;h2 id=&quot;observing-complexity&quot;&gt;Observing complexity&lt;/h2&gt;
+
+&lt;p&gt;In the following case studies, we will approach two recognized algorithms in computing, analyzing them from the perspective of emerging behaviors and experimenting with the infinite possibilities they offer. The exercise is precisely to &lt;strong&gt;explore the endless analogies&lt;/strong&gt; that can be built between the natural world and emerging behaviors, that is why in parts of the talk these systems will be discussed as simple algorithms, and sometimes as if they were an organism or living tissue. We are going to &lt;strong&gt;let the imagination fly&lt;/strong&gt; a bit and let the patterns become visible through our perception.&lt;/p&gt;
+
+&lt;h3 id=&quot;emergent-behaviors&quot;&gt;Emergent behaviors&lt;/h3&gt;
+
+&lt;p&gt;One of the key points of this workshop is the concept of &lt;strong&gt;emergency&lt;/strong&gt;. This corresponds to all the properties that can be evidenced in a system but that are irreducible to its minimal subsystems. The definition that can be easily found on the internet is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;[…] Emergence occurs when an entity is observed to have properties its parts do not have on their own. These properties or behaviors emerge only when the parts interact in a wider whole.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Wikipedia&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The success of the workshop lies in our ability to visually explore the systems and intuit which behaviors are not explainable as side effects of each part of the system, but a great consequence of the system’s interaction as a whole.&lt;/p&gt;
+
+&lt;h2 id=&quot;study-cases&quot;&gt;Study cases&lt;/h2&gt;
+&lt;p&gt;The objective of each case study and how it fits the purpose of the activity will be discussed below, however, the most specific content of each sketch is available on the description site of each one (proportional links).&lt;/p&gt;
+&lt;h3 id=&quot;flocking-ecosystem&quot;&gt;Flocking ecosystem&lt;/h3&gt;
+&lt;p&gt;The first algorithm that we are going to analyze is the &lt;strong&gt;flocking algorithm&lt;/strong&gt;. This is characterized by resembling how birds and fish group together in their &lt;strong&gt;movement through a limited space populated by many individuals&lt;/strong&gt;. Although it is an algorithm that has been known for a long time, it is possible to make infinite modifications that undoubtedly make the simulation more interesting, such as the modifications I introduced to do this study. I added agents that create &lt;strong&gt;another level of interaction&lt;/strong&gt; between individuals and lead to the appearance of behaviors analogous to those visible in &lt;strong&gt;ecosystems&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;special-ad&quot; align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://penrosetrip.co/sketch/2020/04/13/flocking-ecosystem.html&quot;&gt;
+&lt;b style=&quot;font-size:19px&quot;&gt; FLOCKING ECOSYSTEM SIMULATION &lt;/b&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;discussion&quot;&gt;Discussion&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What behaviors can you identify in any region of the simulation that might resemble interaction between species?&lt;/li&gt;
+  &lt;li&gt;Do you think this is how some mechanism of biology works?&lt;/li&gt;
+  &lt;li&gt;What SIMPLE new behaviors would you introduce in order to diversify behaviors?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2d-cellular-automata&quot;&gt;2D Cellular Automata&lt;/h3&gt;
+&lt;p&gt;It is a laboratory created to teach people with little programming context** how to program simple behaviors** in cellular automata. The granularity of the design allows users to create their own rules for interacting on the 2D grid through a minimal and intuitive graphical interface. It’s also a type of system known for decades called a &lt;strong&gt;cellular automaton&lt;/strong&gt;, which consists of a grid of cells that change states based on the state of their neighborhood. Defining these interaction rules in each cell of the grid creates a system of many agents that interact with a high tendency to &lt;strong&gt;chaos and complexity&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;special-ad&quot; align=&quot;center&quot;&gt;
+&lt;a href=&quot;https://penrosetrip.co/sketch/2020/04/13/flocking-ecosystem.html&quot;&gt;
+&lt;b style=&quot;font-size:19px&quot;&gt; 2D CELLULAR AUTOMATA LAB &lt;/b&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;discussion-1&quot;&gt;Discussion&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Can you generate a tissue of each type shown in the Lab site?&lt;/li&gt;
+  &lt;li&gt;Why do you think the rules for conway and conway-4 are suitable for complex patterns?&lt;/li&gt;
+  &lt;li&gt;Which applications can you see for this type of systems?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Science tells us that &lt;strong&gt;complex organized behavior can arise out of complete chaos&lt;/strong&gt;, as seen at the origin of the universe itself that begins with absolute disorder and gives rise to events like life and matter. With a set of indivisible unit elements that follow definite rules, the universe managed to build something as complex as consciousness, and after millennia of experimentation, it produced intelligent entities with curiosity. These &lt;strong&gt;scenarios&lt;/strong&gt; are replicable thanks to modern computing and show macroscopic effects of the interaction between individuals that are difficult to imagine only knowing the initial programming. This leads us to think and ramble on the imaginary border that exists between &lt;strong&gt;programming and biology&lt;/strong&gt;, between science and philosophy, between engineering and contemplation.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;How did this workshop change your way of seeing everyday phenomena?&lt;/li&gt;
+  &lt;li&gt;Has your definition of the boundary between life and non-life changed?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;let-us-know-your-experience&quot;&gt;Let us know your experience&lt;/h2&gt;
+&lt;p&gt;I hope you have learned something new with this workshop, let us learn from you too!&lt;/p&gt;
+
+&lt;iframe name=&quot;embed_readwrite&quot; src=&quot;https://pad.riseup.net/p/B%5BORDERS%5D_-_Organic_algorithms?showControls=true&amp;amp;showChat=true&amp;amp;showLineNumbers=true&amp;amp;useMonospaceFont=false&quot; width=&quot;100%&quot; height=&quot;600&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Thu, 30 Jul 2020 18:00:00 -0500</pubDate>
+        <link>http://localhost:4000/BORDERS/</link>
+        <guid isPermaLink="true">http://localhost:4000/BORDERS/</guid>
+        
+        <category>information</category>
+        
+        <category>page</category>
+        
+        <category>jekyll</category>
+        
+        <category>event</category>
+        
+        <category>art</category>
+        
+        
+        <category>information</category>
+        
+      </item>
     
       <item>
         <title>Tentaciones y demonios</title>
@@ -98,7 +204,7 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;h2 id=&quot;from-the-artist&quot;&gt;From the artist&lt;/h2&gt;
 &lt;p&gt;The pandemic keeps us alert and waiting for a catastrophe that has taken hundreds of thousands of lives around the world today. The confinement keeps us in captivity and &lt;strong&gt;forces us to be calm&lt;/strong&gt; when all the signs we receive from the outside world &lt;strong&gt;invite&lt;/strong&gt; us to panic and disagreement.&lt;/p&gt;
 
-&lt;p&gt;When it occurred to me to create the image I was thinking about how to represent the &lt;strong&gt;state of alert&lt;/strong&gt; from a calm and &lt;strong&gt;contemplative&lt;/strong&gt; position. My cat &lt;em&gt;Pi&lt;/em&gt; was nearby and I saw him observing a feather that fell near the outside sidewalk of the house, in front of the living room window. He was lying on the edge of the back of the sofa, without tension in the muscles, but with his eyes wide open in expectation of any uninvited movement. I found it curious that &lt;strong&gt;despite expressing a state of persecution&lt;/strong&gt; with his eyes, &lt;em&gt;Pi&lt;/em&gt;’s face never stopped being that of a sleepy cat.&lt;/p&gt;
+&lt;p&gt;When it occurred to me to create the image I was thinking about how to represent the &lt;strong&gt;state of alert&lt;/strong&gt; from a calm and &lt;strong&gt;contemplative&lt;/strong&gt; position. My cat &lt;em&gt;Pi&lt;/em&gt; was nearby and I saw him observing a feather that fell near the outside sidewalk of the house, in front of the living room window. He was lying on the edge of the back of the sofa, without tension in the muscles, but with his eyes wide open in expectation of any uninvited movement. I found it curious that &lt;strong&gt;despite expressing a state of persecution&lt;/strong&gt; with his eyes, &lt;em&gt;Pi&lt;/em&gt;’s pose never stopped being that of a sleepy cat.&lt;/p&gt;
 
 &lt;p&gt;I took a photo of him and decided to use it as my main template.&lt;/p&gt;
 
@@ -331,6 +437,54 @@ heal infected boids (red or blue). They can steal speed from nearby boids.&lt;/p
 &lt;/ul&gt;
 
 &lt;p&gt;Shifters do not like to interact with shifters of different species, but interact normally with same species shifters and other boids. They have a contagion probability associated, which means that not all interactions will result in a contagion.&lt;/p&gt;
+
+&lt;div class=&quot;centered-square&quot;&gt;
+  &lt;div class=&quot;imgsq&quot;&gt;
+    &lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1TxDtJudL1pgXbPRGdMzSQSEQZiVrP-t5&quot; class=&quot;post-midimage-across&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;txtsq&quot;&gt;
+    &lt;p class=&quot;imglbl&quot;&gt;
+
+      Flocker capturing healthy boids, increasing their maximum speed limit.
+      &lt;br /&gt;
+      &lt;b&gt;FLocker&lt;/b&gt;
+
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;centered-square&quot;&gt;
+  &lt;div class=&quot;imgsq&quot;&gt;
+    &lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1efg_KjIO0358kGxBfjKGicmZmTF2VMcY&quot; class=&quot;post-midimage-across&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;txtsq&quot;&gt;
+    &lt;p class=&quot;imglbl&quot;&gt;
+
+      Knitter creating a network of static boids.
+      &lt;br /&gt;
+      &lt;b&gt;Knitter &lt;/b&gt;
+
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;centered-square&quot;&gt;
+  &lt;div class=&quot;imgsq&quot;&gt;
+    &lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1zkpLejHzpuERPIEFmgfoUZeo6NcHe1y_&quot; class=&quot;post-midimage-across&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;txtsq&quot;&gt;
+    &lt;p class=&quot;imglbl&quot;&gt;
+
+      Healer liberating some boids form a knitter's net.
+      &lt;br /&gt;
+      &lt;b&gt;Healer&lt;/b&gt;
+
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&quot;the-purpose&quot;&gt;The Purpose&lt;/h2&gt;
 &lt;p&gt;Since I knew what programming is, I have learned a few interesting concepts here and there, but over time and reviewing the development that my sketches have led, I have noticed something quite obvious now: I am low-key obsessed with &lt;strong&gt;random behaviors&lt;/strong&gt; and the &lt;strong&gt;emergence of complexity&lt;/strong&gt;. The flocking algorithm is characterized because it precisely achieves this task:  to represent an &lt;strong&gt;aggregate, complex and organic behavior&lt;/strong&gt; that arises from individuals following simple rules and interacting in the same space. And well, it has been known for a long time that it is beautiful and that it seems like happy little birds and fish moving in a group, but only doing that can not escalate more when it comes to complexity and can not give birth to &lt;strong&gt;unexpected behavior&lt;/strong&gt;. The flocking simulation is a wonderful concept in the study of the &lt;strong&gt;reduction of natural phenomena&lt;/strong&gt; through programming, but it also leaves you with a mouthful of so many potential uses that just sticking with the original rules would be a waste of time.&lt;/p&gt;
@@ -594,64 +748,6 @@ PLAY GAME
         
         
         <category>image</category>
-        
-      </item>
-    
-      <item>
-        <title>2D Waves as an effect of phase in oscillators</title>
-        <description>&lt;p&gt;A 2D wave that turns out to be much more than it seems.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-sketch&quot;&gt;The Sketch&lt;/h2&gt;
-&lt;p&gt;When studying oscillatory phenomena, it is important to consider their three most important attributes: their &lt;strong&gt;amplitude&lt;/strong&gt;, &lt;strong&gt;frequency&lt;/strong&gt;, and &lt;strong&gt;phase&lt;/strong&gt;. The amplitude corresponds to the intensity of the wave in terms of &lt;strong&gt;energy&lt;/strong&gt;. If the case was a sound wave, the amplitude corresponds to the volume. The frequency measures the &lt;strong&gt;periodicity&lt;/strong&gt; of the oscillations, that is, the interval of time it takes for the system to return to its &lt;strong&gt;initial state&lt;/strong&gt;. at higher frequency, the oscillator is expected to move faster. And lastly the phase, this is just a small adjustment in the oscillator time response. Since each oscillator changes as a &lt;strong&gt;function of time&lt;/strong&gt;, the phase can be seen as slightly delaying or advancing the clock of an oscillator with respect to the proper time of simulation.&lt;/p&gt;
-
-&lt;p&gt;The sketch is a set of &lt;strong&gt;circular oscillators&lt;/strong&gt; of fixed size, implying &lt;strong&gt;fixed amplitude&lt;/strong&gt;, arranged in a grid and whose phase depends on its distance from the &lt;strong&gt;center of the screen&lt;/strong&gt;. This induces a change in the position of each oscillator; the further the oscillator is from the center of the screen the more noticeable the desychronization. Despite the fact that all the oscillators move at the &lt;strong&gt;same frequency&lt;/strong&gt;, that is, they rotate at the &lt;strong&gt;same speed&lt;/strong&gt;, the phase effects generate another &lt;strong&gt;macro wave effect&lt;/strong&gt; that is reflected as a circular 2D wave. This effect is due to the modeling of the phase with respect to the distance from the center of the screen and how said distance grows with &lt;strong&gt;radial symmetry&lt;/strong&gt; around said center.&lt;/p&gt;
-&lt;h2 id=&quot;the-purpose&quot;&gt;The Purpose&lt;/h2&gt;
-&lt;p&gt;Studying the waves one eventually finds that they can be described as &lt;strong&gt;circular static oscillators&lt;/strong&gt; with a phase shift associated with their position within the system. This is accomplished with simple mathematical proofs that aim to expose a simple but powerful truth about waves, and that is that they generally do &lt;strong&gt;not&lt;/strong&gt; transport matter, but &lt;strong&gt;energy&lt;/strong&gt;. This is a concept introduced early in the career of a physicist-in-training: the fact that each wave present in a &lt;strong&gt;composite system&lt;/strong&gt; is a generalized effect of out-of-phase oscillations of its elements. In water, for example, the creation of waves can be mathematically expressed as a set of particles that oscillate together and whose offset gives rise to a new oscillation expressed in terms of the &lt;strong&gt;group speed&lt;/strong&gt; of said particles.&lt;/p&gt;
-
-&lt;p&gt;From my perspective as a novice physicist and artist, all the oscillating movements that are present in nature represent the constant pulse of a universe that allowed itself the whim of having &lt;strong&gt;at least&lt;/strong&gt; a temporal dimension. The seasons, the Earth’s orbit, the water cycle, seismic waves, sea waves, gravitational waves, all &lt;strong&gt;linked dependently to time&lt;/strong&gt; and without it would have no reason to exist. Life itself responds to a cyclical process that is maintained until the moment of death, and even there, the &lt;strong&gt;natural cycle&lt;/strong&gt; continues, returning us to the earth and creating new life from this.&lt;/p&gt;
-
-&lt;p&gt;We don’t need to have the latest tools to measure ripples and notice that we are part of an &lt;strong&gt;endless cycle&lt;/strong&gt;, that we are secondary gears of a greater mechanism. The &lt;em&gt;bhagavad gita&lt;/em&gt; as an ancient text already introduces the idea of the &lt;strong&gt;natural cycle&lt;/strong&gt; and the &lt;strong&gt;eternal cycle&lt;/strong&gt; of return to which souls are subject and whose effect on earth is &lt;strong&gt;reincarnation&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Although wave effects are studied from physics and mathematics, waves and cycles represent a deeper link with nature from human experience. They remind us that time is a carriage that does not stop and that, despite that, it is possible to start again.&lt;/p&gt;
-&lt;h2 id=&quot;the-result&quot;&gt;The Result&lt;/h2&gt;
-&lt;p&gt;An arrangement of what appear to be colored LEDs that vibrate synchronously, drawing a 2D circular wave as an effect of the phase between them. The result is a &lt;strong&gt;tool to play&lt;/strong&gt; with the phase effects in an oscillator system, teaching a little about how this phenomenon arises in
-correlated oscillator systems.&lt;/p&gt;
-
-&lt;p&gt;To be honest, with this sketch people will most likely learn more about the limits of their own mind in psychedelics than about waves and cycles.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-controls&quot;&gt;The Controls&lt;/h2&gt;
-&lt;p&gt;MOVE the cursor through the window to change relative phase between oscillators (change the amount of phase added relative to position)&lt;/p&gt;
-
-&lt;h4 id=&quot;mobile&quot;&gt;Mobile&lt;/h4&gt;
-&lt;p&gt;TOUCH and DRAG through the screen to change relative phase between oscillators&lt;/p&gt;
-
-&lt;h2 id=&quot;latest-release&quot;&gt;Latest Release&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/assets/sketches/wave/wave.html&quot; class=&quot;link-sketch&quot;&gt;
-&lt;span&gt;
-TEST SKETCH
-&lt;/span&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Latest commit : 07  / oct / 2019&lt;/p&gt;
-</description>
-        <pubDate>Mon, 07 Oct 2019 14:23:00 -0500</pubDate>
-        <link>http://localhost:4000/sketch/2019/10/07/wave-as-a-phase-effect.html</link>
-        <guid isPermaLink="true">http://localhost:4000/sketch/2019/10/07/wave-as-a-phase-effect.html</guid>
-        
-        <category>sketch</category>
-        
-        <category>visual</category>
-        
-        <category>p5</category>
-        
-        <category>javascript</category>
-        
-        <category>concentric</category>
-        
-        <category>physics</category>
-        
-        
-        <category>sketch</category>
         
       </item>
     

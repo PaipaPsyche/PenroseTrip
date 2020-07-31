@@ -5,7 +5,7 @@ date:   2020-07-30 20:00:00 -0300
 description: "A Fuzzy Binaires activity where Penrose Trip presented a workshop on visual algorithms."
 categories: information
 author: Paipa Psyche
-permalink: /B-ORDERS/
+permalink: /BORDERS/
 image: ""
 icon: ""
 tags:
@@ -15,7 +15,7 @@ tags:
   event
   art
 ---
-Welcome traveler! If you have arrived here it is because you are either part of activity B[ORDERS] or you just came across this post out of curiosity. In either case, feel welcome to participate and explore the content of the workshop. **Fuzzy Binaires** is seeking collaboration and community through their own shared practices of open coding, tinkering and making art.
+**Welcome traveler!** If you have arrived here it is because you are either part of activity B[ORDERS] or you just came across this post by curiosity. In either case, feel welcome to participate and explore the content of the workshop. **Fuzzy Binaires** is seeking collaboration and community through their own shared practices of open coding, tinkering and making art.
 
  > B[ORDERS]* is an online interdisciplinary workshop program running from July 26 to August 2 2020 in which an interdisciplinary group will question the relations between **technology, orders and borders**. What can be learned from taking positions that refuse the logic of physical and digital borders?
 
@@ -25,6 +25,8 @@ Welcome traveler! If you have arrived here it is because you are either part of 
 
 For centuries, the blurred border between the living and the non-living has haunted every corner of the colorful and growing edifice of human knowledge. Since ancient times there have been stories in different religions of how **life arises out of nothing** by divine will and, in some cases, life itself is forged with inert materials. Today we know that inert materials, such as minerals and molecules, constitute life itself, and that the most specific phenomena depend on their **different configurations**. This may have been imagined long before the invention of the microscope, but even now it **is difficult to paint a border** where the inert becomes life.
 
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/_7wKjTf_RlI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
  But it wasn't until a few decades ago that we began to understand how **complex** the microverse and its rules can be. In the 20th century it was discovered that atoms are not perfect clocks as previously believed, but that they are clouds of probability and that, by construction, they build the **strong link** that exists between the origin of life and the randomness of the quantum world. A completely ordered system cannot give life to life, just as a completely chaotic system cannot maintain it. Creating chaos is simple, but keeping chaos organized and focused is not that easy. I don't know the definition of life, but many of us can agree that it shares the characteristics of an **unstable, growing and emerging system** that combines the diversity of chaos with the coherence of self-organization, leading to **aggregate phoenomena** that increase in complexity.
 
 With the workshop I want to make you question what is your definition of this limit, if it exists, and how computing can open our minds to more deterministic perspectives that can also lead to chaos. I want to contrast the phenomena that can be seen in nature with the behaviors observed in the evolution of simple simulations.
@@ -32,6 +34,16 @@ With the workshop I want to make you question what is your definition of this li
 ## Observing complexity
 
 In the following case studies, we will approach two recognized algorithms in computing, analyzing them from the perspective of emerging behaviors and experimenting with the infinite possibilities they offer. The exercise is precisely to **explore the endless analogies** that can be built between the natural world and emerging behaviors, that is why in parts of the talk these systems will be discussed as simple algorithms, and sometimes as if they were an organism or living tissue. We are going to **let the imagination fly** a bit and let the patterns become visible through our perception.
+
+### Emergent behaviors
+
+One of the key points of this workshop is the concept of **emergency**. This corresponds to all the properties that can be evidenced in a system but that are irreducible to its minimal subsystems. The definition that can be easily found on the internet is:
+
+> [...] Emergence occurs when an entity is observed to have properties its parts do not have on their own. These properties or behaviors emerge only when the parts interact in a wider whole.
+
+- Wikipedia
+
+The success of the workshop lies in our ability to visually explore the systems and intuit which behaviors are not explainable as side effects of each part of the system, but a great consequence of the system's interaction as a whole.
 
 ## Study cases
 The objective of each case study and how it fits the purpose of the activity will be discussed below, however, the most specific content of each sketch is available on the description site of each one (proportional links).
@@ -68,3 +80,12 @@ It is a laboratory created to teach people with little programming context** how
 
 ## Conclusion
 Science tells us that **complex organized behavior can arise out of complete chaos**, as seen at the origin of the universe itself that begins with absolute disorder and gives rise to events like life and matter. With a set of indivisible unit elements that follow definite rules, the universe managed to build something as complex as consciousness, and after millennia of experimentation, it produced intelligent entities with curiosity. These **scenarios** are replicable thanks to modern computing and show macroscopic effects of the interaction between individuals that are difficult to imagine only knowing the initial programming. This leads us to think and ramble on the imaginary border that exists between **programming and biology**, between science and philosophy, between engineering and contemplation.
+
+- How did this workshop change your way of seeing everyday phenomena?
+- Has your definition of the boundary between life and non-life changed?
+
+
+## Let us know your experience
+I hope you have learned something new with this workshop, let us learn from you too!
+
+<iframe name="embed_readwrite" src="https://pad.riseup.net/p/B%5BORDERS%5D_-_Organic_algorithms?showControls=true&showChat=true&showLineNumbers=true&useMonospaceFont=false" width="100%" height="600" frameborder="0"></iframe>
