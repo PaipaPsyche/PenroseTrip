@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 31 Jul 2020 05:37:50 -0500</pubDate>
-    <lastBuildDate>Fri, 31 Jul 2020 05:37:50 -0500</lastBuildDate>
+    <pubDate>Tue, 04 Aug 2020 01:53:00 -0500</pubDate>
+    <lastBuildDate>Tue, 04 Aug 2020 01:53:00 -0500</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -499,10 +499,12 @@ heal infected boids (red or blue). They can steal speed from nearby boids.&lt;/p
   &lt;li&gt;Flockers and healers can each form groups of boids around them, moving as a group that can affect more boids. Despite the fact that flockers and healers cannot interact with each other (and even repel each other a little), certainly the groups formed by these can be brought together in &lt;strong&gt;larger groups&lt;/strong&gt; where boids, flockers and healers &lt;strong&gt;coexist&lt;/strong&gt;, using cohesion with the normal boids as a force that &lt;strong&gt;counteracts&lt;/strong&gt; the aforementioned repulsion. I like to think of this scenario as a reduced case of &lt;em&gt;symbiosis&lt;/em&gt;.&lt;/li&gt;
   &lt;li&gt;knitters freeze boids that, if they are very close to other frozen boids, are connected between them with a line (the connection or lack of it does not affect the simulation at all, it is just a visual element). When solitary moving boids (healthy or infected by flockers) pass near these nets they naturally try to react at the speed of their neighbors. These, when stopped or moving very slowly, cause the boid to stop as well, &lt;strong&gt;being trapped&lt;/strong&gt; by the static influence of the network.&lt;/li&gt;
   &lt;li&gt;Knitters usually stay near the net as an effect of the net static influence, but not always they remain static as trapped boids. They keep moving in the net surroundings until a boid gets near enough to interact and modify the knitter velocity. This perturbation, in addition with the aligning force present in every boid, causes the knitter to stop being &lt;em&gt;dormant&lt;/em&gt; and ‘Hunt’ new boids that get stuck in the near net. Sometimes perturbations in a far point in the net are propagated due to the proximity of the &lt;em&gt;net boids&lt;/em&gt; between them, causing the dormant knitter to react even if the new boid is trapped not so near.&lt;/li&gt;
-  &lt;li&gt;Healers may pass through small healthy groups of boids, even using its boids to &lt;strong&gt;catapult themselves forward&lt;/strong&gt; by stealing speed. Bigger groups catch the healers easier and since it &lt;strong&gt;usually swaps speeds&lt;/strong&gt; with his neighbors, having a healer within the group usually &lt;strong&gt;helps keeping boids aligned&lt;/strong&gt; in the same direction. This feature also represents &lt;strong&gt;formation of larger groups&lt;/strong&gt; when there are flockers and healers within the group, since flockers are more likely to separate form the group due to weak aligning.&lt;/li&gt;
-&lt;/ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Healers may pass through small healthy groups of boids, even using its boids to &lt;strong&gt;catapult themselves forward&lt;/strong&gt; by stealing speed. Bigger groups catch the healers easier and since it &lt;strong&gt;usually swaps speeds&lt;/strong&gt; with his neighbors, having a healer within the group usually &lt;strong&gt;helps keeping boids aligned&lt;/strong&gt; in the same direction. This feature also represents &lt;strong&gt;formation of larger groups&lt;/strong&gt; when there are flockers and healers within the group, since flockers are more likely to separate form the group due to weak aligning.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/sketch-organism.gif&quot; alt=&quot;image of boid system with shifters&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1owqoA1obd-6JPDQjLsrc80o5BQHm-nsk&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;the-controls&quot;&gt;The Controls&lt;/h2&gt;
 
@@ -653,6 +655,146 @@ PLAY GAME
       </item>
     
       <item>
+        <title>Coronavirus media propagation: Twitter NLP</title>
+        <description>&lt;h2 id=&quot;outbreak-of-novel-coronavirus-2019-ncov--covid-19&quot;&gt;Outbreak of Novel Coronavirus (2019-nCoV / COVID 19)&lt;/h2&gt;
+
+&lt;p&gt;The year 2020 started with a lot of bad news, including the high political tension between the US and Iran, the monstrous fires that threaten a considerable part of Australia and its fauna, and the topic that I will talk about today. : The spread of the new coronavirus. To make a brief introduction to what this new virus means, I quote some official sources that can better explain the situation.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;2019 Novel Coronavirus (2019-nCoV) is a virus (more specifically, a coronavirus) identified as the cause of an outbreak of respiratory illness first detected in Wuhan, China on 31 December 2019 . Early on, many of the patients in the outbreak in Wuhan, China reportedly had some link to a large seafood and animal market, suggesting animal-to-person spread. However, a growing number of patients reportedly have not had exposure to animal markets, indicating person-to-person spread is occurring. At this time, it’s unclear how easily or sustainably this virus is spreading between people […]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;-Taken from &lt;a href=&quot;https://www.cdc.gov/coronavirus/2019-ncov/about/index.html&quot;&gt;Centres for Disease Control and Prevention&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Coronaviruses (CoV) are a large family of viruses that cause illness ranging from the common cold to more severe diseases such as Middle East Respiratory Syndrome (MERS-CoV) and Severe Acute Respiratory Syndrome (SARS-CoV). A novel coronavirus (nCoV) is a new strain that has not been previously identified in humans.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Coronaviruses are zoonotic, meaning they are transmitted between animals and people. Detailed investigations found that SARS-CoV was transmitted from civet cats to humans and MERS-CoV from dromedary camels to humans. Several known coronaviruses are circulating in animals that have not yet infected humans.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Common signs of infection include respiratory symptoms, fever, cough, shortness of breath and breathing difficulties. In more severe cases, infection can cause pneumonia, severe acute respiratory syndrome, kidney failure and even death.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Standard recommendations to prevent infection spread include regular hand washing, covering mouth and nose when coughing and sneezing, thoroughly cooking meat and eggs. Avoid close contact with anyone showing symptoms of respiratory illness such as coughing and sneezing.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;-Taken from &lt;a href=&quot;https://www.who.int/health-topics/coronavirus&quot;&gt;World Health Organization&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;about-this-study&quot;&gt;About this study&lt;/h2&gt;
+
+&lt;h3 id=&quot;twitter-as-a-global-agent&quot;&gt;Twitter as a Global agent&lt;/h3&gt;
+&lt;p&gt;Twitter is a social network known to almost everyone since, in addition to being a social network with hundreds of millions of users worldwide, it is a of mass dissemination tool for topics as current affairs, news, politics, science, and culture among others.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Twitter is a social networking and microblogging service that allows users to post real time messages, called tweets. Tweets are short messages, restricted to 140 characters in length. Due to the nature of this microblogging service (quick and short messages), people use acronyms, make spelling mistakes, use emoticons and other characters that express special meanings […]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;-Taken from &lt;a href=&quot;https://www.aclweb.org/anthology/W11-0705.pdf&quot;&gt;Sentiment Analysis of Twitter Data&lt;/a&gt;. Agarwal A. ,Xie B., et al.(2011)&lt;/p&gt;
+
+&lt;p&gt;It is important to mention that, for a premature humanity that is learning the power of the Internet, the concept of Twitter is experimental: Express an idea with limited characters and make it available to all the people of the world, literally, if desired. As a social experiment of mass distribution of opinions, Twitter takes the lead in exposing the true face of the Internet and its use as a collective intelligence.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;[…] Individually, most Twitter messages are stupefyingly trivial. But the true value of Twitter — and the similarly mundane Dodgeball, a tool for reporting your real-time location to friends — is cumulative. The power is in the surprising effects that come from receiving thousands of pings from your posse. And this, as it turns out, suggests where the Web is heading&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;-Taken from &lt;a href=&quot;https://www.wired.com/2007/06/st-thompson-4/&quot;&gt;Wired&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;sentiment-analysis-applications&quot;&gt;Sentiment Analysis Applications&lt;/h3&gt;
+
+&lt;p&gt;Natural language processing is, in other terms, an area of ​​study in the development of Artificial Intelligence that tells us about the way in which computers can interpret human language, creating rules between words and characters in order to assign them some syntactic value. In quantifying these properties, it is easy to notice patterns of association between nearby words, very frequent words or the position in which a word is found within a sentence. These patterns are of great value to go one step further in the interpretation of language: meaning. If a machine is taught to relate these patterns to any quantity that quantifies some dimension of human feeling, it will be easy to make semasiological associations since in many cases they are evident. For example, in terms like or dislike for reviews made to products, relationships such as the given score and the appearance of the words “bad” and “excellent” are usually found.&lt;/p&gt;
+
+&lt;h3 id=&quot;study-on-twitter-opinions-about-coronavirus&quot;&gt;Study on Twitter Opinions about Coronavirus&lt;/h3&gt;
+
+&lt;p&gt;One day at work, I started to hear the conversation of two colleagues talking about this new disease caused by coronavirus and I thought: everyone is talking about how the coronavirus is rapidly expanding around the world, but very few actually wonder how it is that They got to talk about the coronavirus in the first place. It would be an interesting proposal to see the coronavirus, a threat of global stature, as a social phenomenon exposed to the globalization of the opinion generated by the internet.&lt;/p&gt;
+
+&lt;p&gt;For this study, the source of information will be Twitter, as a way to reflect the world’s opinion on a subject of great impact such as the Coronavirus. The idea is to draw relevant conclusions about how the world sees this new threat using Sentiment Analysis on Tweets and comparing associated quantities such as the number of likes, retweets and responses. Twitter data is public and extracted using Web Scrappers in Python, they are filtered according to their quality and relevance and then processed by sentiment analysis libraries to quantify properties such as subjectivity and polarity (Positive or negative inclination of Tweet) .&lt;/p&gt;
+
+&lt;p&gt;Under no circumstances are attempts to plagiarize the work of the sources cited or provide false information. The filter stage of the Tweets is still in development and the poor quality of the information may alter the result slightly, to which the study will be constantly updated to provide more accurate and updated information. Any suggestions on how to improve the study are welcome in my e-mail: davidpaipa03@gmail.com&lt;/p&gt;
+
+&lt;p&gt;For some reason I can not extract more than one cap of tweets per day, it is probably a restriction that Twitter has to restrict the use of bots on its platform. In any case, I will try to expose the properties of interest in the best possible way, understanding that a limited population is available.&lt;/p&gt;
+
+&lt;h2 id=&quot;observing-twitter-data&quot;&gt;Observing Twitter Data&lt;/h2&gt;
+
+&lt;p&gt;Making a preliminary exploration of the data, the appearance of the subject is observed as a global trend from the first day of the year 2020. But beyond the frequency with which the tweets appear, the analysis of sentiment throws relevant data on the nature of the tweets.&lt;/p&gt;
+
+&lt;h3 id=&quot;word-frequency&quot;&gt;Word Frequency&lt;/h3&gt;
+
+&lt;p&gt;An analysis of the tweets is executed: initeligible words, grammatical connectors and other filler words are discarded leaving the really important words as a source of information. The effective range is limited to words associated with English, as well as the character dictionary is limited to those alphanumeric in Latin alphabet. Below is a graphic representation of the most frequent words found in the Tweets sample, taking into account that a higher frequency implies greater relevance in the word cloud:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1nWctxStlP2IXLgmjJ8VkRASr8nAHpQV-&quot; alt=&quot;Word Cloud&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The illustration speaks for itself.&lt;/p&gt;
+
+&lt;h3 id=&quot;hashtag-frequency&quot;&gt;Hashtag Frequency&lt;/h3&gt;
+
+&lt;p&gt;From the hashtgas used by people, those used in the least relevant tweets are discarded, likewise, only those that make any sense within the context of the coronavirus are preserved. It is expected that the most used hashtag is #coronavirus, but then the other hastags found within the sample are exposed:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1g43NsHSaESCXvhP8nqnhAd6FB6tsFm_3&quot; alt=&quot;hastag frequency pieplot&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It is important to mention (as you may have suspected) that these are not all of the hashtags retrieved, but are the most relevant (or most frequent) since many of them appeared one time or where written with terrible ortography. The other ignored hashtags correspond to a 12.5% of the total sample, #coronavirus correspond to a 37.2% and the other 50.3% corresponds to the ones here displayed.&lt;/p&gt;
+
+&lt;h3 id=&quot;polarity&quot;&gt;Polarity&lt;/h3&gt;
+
+&lt;p&gt;The polarity analysis is a score that shows the positive and negative effects of keywords within a sentence. The keyword analysis is pre-trained with movie reviews obtained from opinion forums to establish a relationship between common words in the expression of an opinion and the feeling generated. This allows you to classify the Tweets given the words they contain in order to determine a feeling or polarity for each one. Depending on this polarity value, the tweet is classified as “Good” or “Bad” if it has a strong feeling inclined to either of these two polarities. If the feeling is not relevant, it is classified as “not interesting.” Below is how the tweets behaved for a population of approximately 600 users per day who talked about the topic.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=10rw4qPnp5_Mi6du8jXw2NPobaEic7DYk&quot; alt=&quot;count histogram&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;impact-and-resonance&quot;&gt;Impact and Resonance&lt;/h3&gt;
+
+&lt;p&gt;The Resonance analysis is obtained by quantifying the people reached by each tweet. Measuring this effective population reached, Amplifying the polarity according to the Tweet’s objectivity lead to a value called Impact, which talks about the positive or negative impact of the topic in social media.&lt;/p&gt;
+
+&lt;p&gt;A tweet may reach few people, but with an objective approach and a great polarity value it may create a considerable impact. By the other hand, a tweet may reach many people, but if its a subjective Tweet with few sentiment it might not create a great social echo.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1EEspInrOaZ0fE__1J3-J4fyqVGi9p1qy&quot; alt=&quot;Resonance plot&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Take into account that from the action of 600 users a day a reach of almost 120 thousand individuals was achieved. “Coronavirus” is a concept that spreads from public opinion, knowing that this study was conducted without taking into account publications made by official news sources or any scientific source of information.&lt;/p&gt;
+
+&lt;h3 id=&quot;propagation-and-resistance&quot;&gt;Propagation and Resistance&lt;/h3&gt;
+
+&lt;p&gt;We are going to quantify the average number of people reached by tweet for each day. This amount is calculated by taking out the resonance rate achieved by tweets made on the same day, thus obtaining a number greater than or equal to one corresponding to the number of possible replicas achieved on average for each tweet made on the subject; This number is the propagation index.&lt;/p&gt;
+
+&lt;p&gt;Another number of interest is to quantify how many tweets are left behind given their low subjectivity and neutral polarity. Any Tweet of low impact is considered discarded by the social trend movement and its rate with respect to the amount of daily tweets is called the resistance index. This number between zero and one expresses the proportion of tweets that have to be lost from one day to another given their low interest rate. The following shows how these indices behave over time and a trend line associated with their behavior.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1x7Jw9_1MffmQ_KJ6DHaog1tIJFBOIVhl&quot; alt=&quot;Resonance plot&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;subjectivity-analysis&quot;&gt;Subjectivity Analysis&lt;/h3&gt;
+
+&lt;p&gt;The sentiment analysis model recognizes keywords to determine the degree of subjectivity of a statement. This applied to the tweets quantifies how close they are to be a fact or an opinion according to the vocabulary used in their writing. To determine the propagation of opinions and facts, the proportion of subjective tweets, resistance and resonance by date is taken into account. With this, there is a value corresponding to the volume of tweets with transcendence (echo) classified as fact or opinion.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1Eu4VBCw8jUp2jcn13lT3PEIbWi1RN_V0&quot; alt=&quot;Opinion plot&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;By increasing the daily rate of objective tweets using the propagation index and accumulating this value by dates given the persistence in the network of tweets, a new amount arises corresponding to the propagation of objectivity and subjectivity. These amounts correspond to the potential per day of each tweet to generate responses in each of these categories according to objectivity; it is measured in the same units as resonance, as it is also a metric for spreding. Focusing specifically on opinions, one can quantify how many opinions are propagated by each equally propagated fact: this rate is the subjectivity persistence.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=19hRbjw7NC7BRWgD-Ea5RkA0wlv-DWY6x&quot; alt=&quot;Information loss plot&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 09 Mar 2020 20:30:00 -0500</pubDate>
+        <link>http://localhost:4000/coronavirus-twitter-analysis/</link>
+        <guid isPermaLink="true">http://localhost:4000/coronavirus-twitter-analysis/</guid>
+        
+        <category>space</category>
+        
+        <category>python</category>
+        
+        <category>nlp</category>
+        
+        <category>machine</category>
+        
+        <category>learning</category>
+        
+        <category>deep</category>
+        
+        <category>learning</category>
+        
+        
+        <category>topic</category>
+        
+      </item>
+    
+      <item>
         <title>Eigenvalue of myself</title>
         <description>&lt;h2 id=&quot;discussion&quot;&gt;Discussion&lt;/h2&gt;
 &lt;p&gt;The &lt;strong&gt;success&lt;/strong&gt; in facing the daily dilemmas and the occasional unexpected catastrophes that &lt;strong&gt;chance&lt;/strong&gt; places in our path depends on our ability to focus our &lt;strong&gt;superior intellect&lt;/strong&gt; on the study of our &lt;strong&gt;own being&lt;/strong&gt;. Embracing many points of view of the self is a masterful tool for &lt;strong&gt;forging&lt;/strong&gt; any new link with the world. The understanding of being is a practice that the 21st century has put aside despite being in these moments of &lt;strong&gt;cultural mishmash&lt;/strong&gt; when we most need to look within ourselves.&lt;/p&gt;
@@ -704,47 +846,6 @@ PLAY GAME
         <pubDate>Mon, 10 Feb 2020 16:16:00 -0500</pubDate>
         <link>http://localhost:4000/image/2020/02/10/la-pantalla-grande.html</link>
         <guid isPermaLink="true">http://localhost:4000/image/2020/02/10/la-pantalla-grande.html</guid>
-        
-        
-        <category>image</category>
-        
-      </item>
-    
-      <item>
-        <title>Persona</title>
-        <description>&lt;h2 id=&quot;discussion&quot;&gt;Discussion&lt;/h2&gt;
-&lt;p&gt;Today, most of the world’s social interactions occur thanks to &lt;strong&gt;massive information networks&lt;/strong&gt; that allow users to capture their identity on their virtual profile and expose themselves to the eyes of the world. While this often helps the masses &lt;strong&gt;keep up&lt;/strong&gt; with a world that is advancing by leaps and bounds, this lends itself to many unwanted scenarios of deception and false self-esteem.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Sometimes we forget about how important is to be more interesting in real life than whoever you are on the internet.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;When creating a &lt;strong&gt;persona&lt;/strong&gt; in social networks, we rarely stop to think how much we want this new social network to infiltrate our lives. We do not know how much we are willing to &lt;strong&gt;share authentically&lt;/strong&gt; and when we least think about it we are showing our Sunday breakfast to 600 strangers.&lt;/p&gt;
-
-&lt;h2 id=&quot;technique&quot;&gt;Technique&lt;/h2&gt;
-&lt;p&gt;Collage in 32 Layers exposed to Style Transfer, color-filtered and re-processed with CNN to increase resolution.&lt;/p&gt;
-
-&lt;h2 id=&quot;from-the-artist&quot;&gt;From the artist&lt;/h2&gt;
-&lt;p&gt;With this work I wanted to reflect our &lt;strong&gt;innocence and ingenuity&lt;/strong&gt; when facing a tool as powerful on so many levels of our society as the internet is. We are barely intelligent apes that managed to create a &lt;strong&gt;network of shared knowledge&lt;/strong&gt;, and now that we have managed to expand it to all the recesses of our daily life, we tenderly have the &lt;strong&gt;illusion&lt;/strong&gt; of knowing what we are doing and where we are going.&lt;/p&gt;
-
-&lt;p&gt;As a sentient human being and observer of my environment, it is easy for me to notice that, as humankind, we are atrophying. When watching a sunset we prefer to take out the phone and see it through the screen, instead of simply marveling at the sublime vision that is presented to us. Sometimes we make a bigger effort to make a good post on social media than to support a loved one through a crisis. We create fake news to manipulate the masses, when the only effect they have is to confuse and illiterate.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;We choose to ignore how ignorant they have made us.&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The image shows the explorer crossing the threshold of the unknown that, ironically, is also full of gazes. A swirling and diffuse vision of a &lt;strong&gt;multicolored cosmos of possibilities&lt;/strong&gt; that can amaze anyone with a pair of eyes. The innocence of Ikaro flying closer and closer to the sun, not knowing that his ignorance of the situation would cost him everything.&lt;/p&gt;
-
-&lt;h2 id=&quot;models-and-references&quot;&gt;Models and references&lt;/h2&gt;
-
-&lt;h4 id=&quot;models&quot;&gt;Models&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Aldo G. Dorantes (Ph.)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 14 Dec 2019 18:32:00 -0500</pubDate>
-        <link>http://localhost:4000/image/2019/12/14/persona.html</link>
-        <guid isPermaLink="true">http://localhost:4000/image/2019/12/14/persona.html</guid>
         
         
         <category>image</category>

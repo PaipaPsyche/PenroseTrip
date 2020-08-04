@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" type="image/png" href="/assets/img/site/favicon.png">
+
+  <!-- <link rel="shortcut icon" type="image/png" href="/assets/img/site/favicon.png"> -->
+  <!-- <link rel="icon" href="/assets/img/site/favicon.png" type="image/x-icon"> -->
+
+  <title>Coronavirus media propagation: Twitter NLP</title>
+  <meta name="description" content="Outbreak of Novel Coronavirus (2019-nCoV / COVID 19)The year 2020 started with a lot of bad news, including the high political tension between the US and Ira...">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="canonical" href="http://localhost:4000/coronavirus-twitter-analysis/">
+  <link rel="alternate" type="application/rss+xml" title="Penrose Trip" href="http://localhost:4000/feed.xml">
+</head>
+
+
+  <body>
+
+    <div class="headbox-wrapper">
+<header class="site-header">
+
+  <div class="wrapper row">
+
+      <a class="site-title" href="/">Penrose Trip</a>
+      <img class="site-icon" src="/assets/img/site/eyecon.png"/>
+
+
+
+
+
+      <!-- <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a> -->
+
+
+        <!-- 
+          
+          <a class="page-link" href="/about/"><b>About</b></a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/gallery/"><b>Gallery</b></a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/sketches/"><b>Sketches</b></a>
+          
+        
+          
+        
+          
+        
+          
+         -->
+
+        <input type="checkbox" id="chk">
+        <label for="chk" class="btn-menu-open">
+          <i class="fas fa-ellipsis-h" ></i>
+        </label>
+        <ul class="menu-list">
+          
+            
+            <a class="page-link" href="/about/"><b>About</b></a>
+            
+          
+            
+          
+            
+            <a class="page-link" href="/gallery/"><b>Gallery</b></a>
+            
+          
+            
+          
+            
+          
+            
+            <a class="page-link" href="/sketches/"><b>Sketches</b></a>
+            
+          
+            
+          
+            
+          
+            
+          
+          <label for="chk" class="btn-menu-close">
+            <i class="fas fa-times"></i>
+          </label>
+        </ul>
+
+
+
+  </div>
+
+</header>
+</div>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Coronavirus media propagation: Twitter NLP</h1>
+    <p class="post-meta"><time datetime="2020-03-09T20:30:00-05:00" itemprop="datePublished">Mar 9, 2020</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Paipa Psyche</span></span></p>
+
+
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="outbreak-of-novel-coronavirus-2019-ncov--covid-19">Outbreak of Novel Coronavirus (2019-nCoV / COVID 19)</h2>
+
+<p>The year 2020 started with a lot of bad news, including the high political tension between the US and Iran, the monstrous fires that threaten a considerable part of Australia and its fauna, and the topic that I will talk about today. : The spread of the new coronavirus. To make a brief introduction to what this new virus means, I quote some official sources that can better explain the situation.</p>
+
+<blockquote>
+  <p>2019 Novel Coronavirus (2019-nCoV) is a virus (more specifically, a coronavirus) identified as the cause of an outbreak of respiratory illness first detected in Wuhan, China on 31 December 2019 . Early on, many of the patients in the outbreak in Wuhan, China reportedly had some link to a large seafood and animal market, suggesting animal-to-person spread. However, a growing number of patients reportedly have not had exposure to animal markets, indicating person-to-person spread is occurring. At this time, it’s unclear how easily or sustainably this virus is spreading between people […]</p>
+</blockquote>
+
+<p>-Taken from <a href="https://www.cdc.gov/coronavirus/2019-ncov/about/index.html">Centres for Disease Control and Prevention</a></p>
+
+<blockquote>
+  <p>Coronaviruses (CoV) are a large family of viruses that cause illness ranging from the common cold to more severe diseases such as Middle East Respiratory Syndrome (MERS-CoV) and Severe Acute Respiratory Syndrome (SARS-CoV). A novel coronavirus (nCoV) is a new strain that has not been previously identified in humans.</p>
+</blockquote>
+
+<blockquote>
+  <p>Coronaviruses are zoonotic, meaning they are transmitted between animals and people. Detailed investigations found that SARS-CoV was transmitted from civet cats to humans and MERS-CoV from dromedary camels to humans. Several known coronaviruses are circulating in animals that have not yet infected humans.</p>
+</blockquote>
+
+<blockquote>
+  <p>Common signs of infection include respiratory symptoms, fever, cough, shortness of breath and breathing difficulties. In more severe cases, infection can cause pneumonia, severe acute respiratory syndrome, kidney failure and even death.</p>
+</blockquote>
+
+<blockquote>
+  <p>Standard recommendations to prevent infection spread include regular hand washing, covering mouth and nose when coughing and sneezing, thoroughly cooking meat and eggs. Avoid close contact with anyone showing symptoms of respiratory illness such as coughing and sneezing.</p>
+</blockquote>
+
+<p>-Taken from <a href="https://www.who.int/health-topics/coronavirus">World Health Organization</a></p>
+
+<h2 id="about-this-study">About this study</h2>
+
+<h3 id="twitter-as-a-global-agent">Twitter as a Global agent</h3>
+<p>Twitter is a social network known to almost everyone since, in addition to being a social network with hundreds of millions of users worldwide, it is a of mass dissemination tool for topics as current affairs, news, politics, science, and culture among others.</p>
+
+<blockquote>
+  <p>Twitter is a social networking and microblogging service that allows users to post real time messages, called tweets. Tweets are short messages, restricted to 140 characters in length. Due to the nature of this microblogging service (quick and short messages), people use acronyms, make spelling mistakes, use emoticons and other characters that express special meanings […]</p>
+</blockquote>
+
+<p>-Taken from <a href="https://www.aclweb.org/anthology/W11-0705.pdf">Sentiment Analysis of Twitter Data</a>. Agarwal A. ,Xie B., et al.(2011)</p>
+
+<p>It is important to mention that, for a premature humanity that is learning the power of the Internet, the concept of Twitter is experimental: Express an idea with limited characters and make it available to all the people of the world, literally, if desired. As a social experiment of mass distribution of opinions, Twitter takes the lead in exposing the true face of the Internet and its use as a collective intelligence.</p>
+
+<blockquote>
+  <p>[…] Individually, most Twitter messages are stupefyingly trivial. But the true value of Twitter — and the similarly mundane Dodgeball, a tool for reporting your real-time location to friends — is cumulative. The power is in the surprising effects that come from receiving thousands of pings from your posse. And this, as it turns out, suggests where the Web is heading</p>
+</blockquote>
+
+<p>-Taken from <a href="https://www.wired.com/2007/06/st-thompson-4/">Wired</a></p>
+
+<h3 id="sentiment-analysis-applications">Sentiment Analysis Applications</h3>
+
+<p>Natural language processing is, in other terms, an area of ​​study in the development of Artificial Intelligence that tells us about the way in which computers can interpret human language, creating rules between words and characters in order to assign them some syntactic value. In quantifying these properties, it is easy to notice patterns of association between nearby words, very frequent words or the position in which a word is found within a sentence. These patterns are of great value to go one step further in the interpretation of language: meaning. If a machine is taught to relate these patterns to any quantity that quantifies some dimension of human feeling, it will be easy to make semasiological associations since in many cases they are evident. For example, in terms like or dislike for reviews made to products, relationships such as the given score and the appearance of the words “bad” and “excellent” are usually found.</p>
+
+<h3 id="study-on-twitter-opinions-about-coronavirus">Study on Twitter Opinions about Coronavirus</h3>
+
+<p>One day at work, I started to hear the conversation of two colleagues talking about this new disease caused by coronavirus and I thought: everyone is talking about how the coronavirus is rapidly expanding around the world, but very few actually wonder how it is that They got to talk about the coronavirus in the first place. It would be an interesting proposal to see the coronavirus, a threat of global stature, as a social phenomenon exposed to the globalization of the opinion generated by the internet.</p>
+
+<p>For this study, the source of information will be Twitter, as a way to reflect the world’s opinion on a subject of great impact such as the Coronavirus. The idea is to draw relevant conclusions about how the world sees this new threat using Sentiment Analysis on Tweets and comparing associated quantities such as the number of likes, retweets and responses. Twitter data is public and extracted using Web Scrappers in Python, they are filtered according to their quality and relevance and then processed by sentiment analysis libraries to quantify properties such as subjectivity and polarity (Positive or negative inclination of Tweet) .</p>
+
+<p>Under no circumstances are attempts to plagiarize the work of the sources cited or provide false information. The filter stage of the Tweets is still in development and the poor quality of the information may alter the result slightly, to which the study will be constantly updated to provide more accurate and updated information. Any suggestions on how to improve the study are welcome in my e-mail: davidpaipa03@gmail.com</p>
+
+<p>For some reason I can not extract more than one cap of tweets per day, it is probably a restriction that Twitter has to restrict the use of bots on its platform. In any case, I will try to expose the properties of interest in the best possible way, understanding that a limited population is available.</p>
+
+<h2 id="observing-twitter-data">Observing Twitter Data</h2>
+
+<p>Making a preliminary exploration of the data, the appearance of the subject is observed as a global trend from the first day of the year 2020. But beyond the frequency with which the tweets appear, the analysis of sentiment throws relevant data on the nature of the tweets.</p>
+
+<h3 id="word-frequency">Word Frequency</h3>
+
+<p>An analysis of the tweets is executed: initeligible words, grammatical connectors and other filler words are discarded leaving the really important words as a source of information. The effective range is limited to words associated with English, as well as the character dictionary is limited to those alphanumeric in Latin alphabet. Below is a graphic representation of the most frequent words found in the Tweets sample, taking into account that a higher frequency implies greater relevance in the word cloud:</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1nWctxStlP2IXLgmjJ8VkRASr8nAHpQV-" alt="Word Cloud" class="post-midimage-across" /></p>
+
+<p>The illustration speaks for itself.</p>
+
+<h3 id="hashtag-frequency">Hashtag Frequency</h3>
+
+<p>From the hashtgas used by people, those used in the least relevant tweets are discarded, likewise, only those that make any sense within the context of the coronavirus are preserved. It is expected that the most used hashtag is #coronavirus, but then the other hastags found within the sample are exposed:</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1g43NsHSaESCXvhP8nqnhAd6FB6tsFm_3" alt="hastag frequency pieplot" class="post-midimage-across" /></p>
+
+<p>It is important to mention (as you may have suspected) that these are not all of the hashtags retrieved, but are the most relevant (or most frequent) since many of them appeared one time or where written with terrible ortography. The other ignored hashtags correspond to a 12.5% of the total sample, #coronavirus correspond to a 37.2% and the other 50.3% corresponds to the ones here displayed.</p>
+
+<h3 id="polarity">Polarity</h3>
+
+<p>The polarity analysis is a score that shows the positive and negative effects of keywords within a sentence. The keyword analysis is pre-trained with movie reviews obtained from opinion forums to establish a relationship between common words in the expression of an opinion and the feeling generated. This allows you to classify the Tweets given the words they contain in order to determine a feeling or polarity for each one. Depending on this polarity value, the tweet is classified as “Good” or “Bad” if it has a strong feeling inclined to either of these two polarities. If the feeling is not relevant, it is classified as “not interesting.” Below is how the tweets behaved for a population of approximately 600 users per day who talked about the topic.</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=10rw4qPnp5_Mi6du8jXw2NPobaEic7DYk" alt="count histogram" class="post-midimage-across" /></p>
+
+<h3 id="impact-and-resonance">Impact and Resonance</h3>
+
+<p>The Resonance analysis is obtained by quantifying the people reached by each tweet. Measuring this effective population reached, Amplifying the polarity according to the Tweet’s objectivity lead to a value called Impact, which talks about the positive or negative impact of the topic in social media.</p>
+
+<p>A tweet may reach few people, but with an objective approach and a great polarity value it may create a considerable impact. By the other hand, a tweet may reach many people, but if its a subjective Tweet with few sentiment it might not create a great social echo.</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1EEspInrOaZ0fE__1J3-J4fyqVGi9p1qy" alt="Resonance plot" class="post-midimage-across" /></p>
+
+<p>Take into account that from the action of 600 users a day a reach of almost 120 thousand individuals was achieved. “Coronavirus” is a concept that spreads from public opinion, knowing that this study was conducted without taking into account publications made by official news sources or any scientific source of information.</p>
+
+<h3 id="propagation-and-resistance">Propagation and Resistance</h3>
+
+<p>We are going to quantify the average number of people reached by tweet for each day. This amount is calculated by taking out the resonance rate achieved by tweets made on the same day, thus obtaining a number greater than or equal to one corresponding to the number of possible replicas achieved on average for each tweet made on the subject; This number is the propagation index.</p>
+
+<p>Another number of interest is to quantify how many tweets are left behind given their low subjectivity and neutral polarity. Any Tweet of low impact is considered discarded by the social trend movement and its rate with respect to the amount of daily tweets is called the resistance index. This number between zero and one expresses the proportion of tweets that have to be lost from one day to another given their low interest rate. The following shows how these indices behave over time and a trend line associated with their behavior.</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1x7Jw9_1MffmQ_KJ6DHaog1tIJFBOIVhl" alt="Resonance plot" class="post-midimage-across" /></p>
+
+<h3 id="subjectivity-analysis">Subjectivity Analysis</h3>
+
+<p>The sentiment analysis model recognizes keywords to determine the degree of subjectivity of a statement. This applied to the tweets quantifies how close they are to be a fact or an opinion according to the vocabulary used in their writing. To determine the propagation of opinions and facts, the proportion of subjective tweets, resistance and resonance by date is taken into account. With this, there is a value corresponding to the volume of tweets with transcendence (echo) classified as fact or opinion.</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1Eu4VBCw8jUp2jcn13lT3PEIbWi1RN_V0" alt="Opinion plot" class="post-midimage-across" /></p>
+
+<p>By increasing the daily rate of objective tweets using the propagation index and accumulating this value by dates given the persistence in the network of tweets, a new amount arises corresponding to the propagation of objectivity and subjectivity. These amounts correspond to the potential per day of each tweet to generate responses in each of these categories according to objectivity; it is measured in the same units as resonance, as it is also a metric for spreding. Focusing specifically on opinions, one can quantify how many opinions are propagated by each equally propagated fact: this rate is the subjectivity persistence.</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=19hRbjw7NC7BRWgD-Ea5RkA0wlv-DWY6x" alt="Information loss plot" class="post-midimage-across" /></p>
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Penrose Trip</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Penrose Trip ©</li>
+          <li><a href="mailto:davidpaipa03@gmail.com">davidpaipa03@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/penrose_trip/"> @PenroseTrip </a> on instagram</li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/PaipaPsyche"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">PaipaPsyche</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/PenroseTrip"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">PenroseTrip</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p style="text-align: justify;">This website is an interactive portal for informative use, which seeks to open a space for the juxtaposition between psychedelia, science, programming and art.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
