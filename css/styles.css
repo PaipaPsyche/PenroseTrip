@@ -229,11 +229,15 @@ width: 60%;
   border-left: 2px solid orange;
 }
 
-.post-content h3{
+.post-content h3,.post-content h4{
   padding-left: 10px;
   margin-left: 20px;
   border-left: 1px solid orange;
 }
+.post-content h4{
+  border-left: 1px solid grey;
+}
+
 .post-content abbr{
   text-decoration: none;
   border-bottom: 1px groove orange;

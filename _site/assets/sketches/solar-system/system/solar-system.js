@@ -918,7 +918,7 @@ function setup(syst = "") {
     let st = [];
     st[0] = floor(random() * W);
     st[1] = floor(random() * H);
-    st[2] = abs(randomGaussian(1.5, 1));
+    st[2] = abs(randomGaussian(1, 0.2));
     st[3] = [255, 255, 255];
     if (random() < 0.01) {
       st[3] = [180, 0, 0];
@@ -978,7 +978,7 @@ function draw() {
   background(0);
   for (let s = 0; s < nStars; s++) {
     stroke(STARS[s][3]);
-    // let rand = 0;
+     let rand = 0;
     // if (random() < 0.0002) {
     //   rand = 1
     // };

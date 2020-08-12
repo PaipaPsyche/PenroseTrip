@@ -6,9 +6,130 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 04 Aug 2020 01:53:00 -0500</pubDate>
-    <lastBuildDate>Tue, 04 Aug 2020 01:53:00 -0500</lastBuildDate>
+    <pubDate>Wed, 12 Aug 2020 02:15:00 -0500</pubDate>
+    <lastBuildDate>Wed, 12 Aug 2020 02:15:00 -0500</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>Genetic Learning: Smart Rockets</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;For me, the level at which natural selection causes the phenomenon of adaptation is the level of the replicator - the gene.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Richard Dawkins&lt;/p&gt;
+&lt;h2 id=&quot;the-sketch&quot;&gt;The Sketch&lt;/h2&gt;
+&lt;p&gt;In the simulation there are rockets that every certain interval of time are pushed in an arbitrary direction, the objective of these rockets is to reach a target in a specific instant of time. The rockets give a defined number of jumps and must reach the goal just in time, however, they have no information about the position of the target so they must learn how to get there.&lt;/p&gt;
+
+&lt;p&gt;The simulation runs for generations, and it is expected that with each generation the rockets will become more and more precise in their task of hitting the target on time. The rockets have &lt;em&gt;genes&lt;/em&gt; that encode each of the jumps that the rocket does, then at the end of each generation a score is assigned to each rocket and based on this score the rocket has more or less probability of reproducing its genes in the next generation. The genes are in the form of a 2D vector, since in each jump what happens is that a vector is added to the speed that the rocket already had. At the end of each genetic mix, a certain percentage of mutations is generated in the genes in order to diversify the solutions and prevent the system from remaining in dead ends.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-purpose&quot;&gt;The Purpose&lt;/h2&gt;
+&lt;p&gt;The idea of rockets as an example of genetic learning is not new, but that does not make it any less interesting. Machine learning can occur in different ways, but reinforcement learning is based more on experimentation and trial-error dynamics. Other learning methods use more direct ways of adapting the model to learn new tasks (sometimes based on other solutions to the problem in order to learn new ones), but the genetic algorithm is responsible for exploring the solution space based on the experience of the system, without external examples of how to fix the problem.&lt;/p&gt;
+
+&lt;p&gt;In proposing the problem, I wanted to find a way to optimize genetic learning, even when this is already a form of optimization. I wanted to explore ways in which the algorithm can be modified to converge faster and avoid classic genetic learning problems in the case of rockets in particular. This is how I got to the implementation of the adaptive response system (AR) and its use to adjust the learning parameters of the simulation automatically.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-result&quot;&gt;The Result&lt;/h2&gt;
+
+&lt;p&gt;The result is surprising. The rockets manage to learn in &lt;strong&gt;most cases&lt;/strong&gt; a route that allows them to complete the task. Some problems stood out when doing a few experiments, but in general the result obtained was satisfactory.
+Some of the model highlights are:&lt;/p&gt;
+
+&lt;h3 id=&quot;reproduction-method&quot;&gt;Reproduction method&lt;/h3&gt;
+
+&lt;p&gt;The evaluation criterion was defined based on the final distance from the rocket to the target, assigning a score from &lt;strong&gt;1 to 1000&lt;/strong&gt;, 1000 being the case where the rocket finished its journey in the center of the target. With this metric, a reproduction criterion was established in order to &lt;strong&gt;prioritize the reproduction of the highest scores&lt;/strong&gt;: a pool of candidates is generated, from which the parents of the future generation will be selected. The pool is initialized empty, and each rocket of the actual generation adds as many copies of itself as its score indicates, that is, a rocket with a score of 800 contributes 800 copies of itself to the pool. Then, for all the &lt;em&gt;N&lt;/em&gt; rockets needed for the next generation a pair of candidates form the pool are chosen. Their &lt;em&gt;genes&lt;/em&gt; are reproduced using the method mentioned below, and once all &lt;em&gt;N&lt;/em&gt; genetic sets are generated, the simulation starts over.&lt;/p&gt;
+
+&lt;p&gt;Genetic mixing occurs between pairs of rockets and happens by randomly using the following mixing methods:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Mean:&lt;/strong&gt; The vectors of both rockets for each jump are averaged, resulting in a set of vectors of the same length&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Switch:&lt;/strong&gt; The resulting rocket takes in each jump vector XY the X form one parent rocket and Y form the other&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Split:&lt;/strong&gt; The resulting rocket takes the first &lt;em&gt;j&lt;/em&gt; genes from one parent and the rest from the other parent. &lt;em&gt;j&lt;/em&gt; is chosen at random each time.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Random:&lt;/strong&gt; Each gene is chosen randomly from each parent (50/50).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;adaptive-response-system-ar&quot;&gt;Adaptive Response System (AR)&lt;/h3&gt;
+&lt;p&gt;Among the problems that can arise when trying to train genetic algorithms, those that I wanted to deal with with the AR system were two in specific: setting a mutation rate and an effective tolerance range for the target.&lt;/p&gt;
+
+&lt;h4 id=&quot;mutation-rate&quot;&gt;Mutation rate&lt;/h4&gt;
+
+&lt;p&gt;The mutation rate allows to preserve the diversity in the solutions by &lt;strong&gt;introducing random “failures”&lt;/strong&gt; to the genes already generated for the next generation. If this rate is very high, it is impossible for the system to converge to a solution, and if it is very low it is possible that the system normalizes to a false solution without reaching the objective.&lt;/p&gt;
+
+&lt;p&gt;The AR system &lt;strong&gt;gradually reduces the mutation rate&lt;/strong&gt; as the average performance of the population increases. This allows that in the first generations there is much variability while when finding a solution, the system reduces the mutation rate in order to converge more quickly in future generations. The magic of this part of the AR is in reducing the probability of mutation as the system approaches an &lt;strong&gt;apparently viable solution&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;likelihood-normalizer&quot;&gt;Likelihood Normalizer&lt;/h4&gt;
+
+&lt;p&gt;The score is assigned with a function dependent on the distance between the final position of the rocket and the target. This function can be normalized by a number that, when increasing, allows rockets at a greater distance to achieve higher scores. Similarly, reducing this number makes the target’s tolerance area smaller, assigning high scores only to rockets that are really close. This number is called the &lt;strong&gt;Likelihood Normalizer&lt;/strong&gt;. A very large LN allows rockets to gradually find the target when they are far from it, since the score function is visible at a greater distance. When the rockets are close to the target having a large LN is &lt;strong&gt;useless&lt;/strong&gt; as it is more difficult to find noticeable changes in the scoring function with small displacements. On the other hand, when using small LNs it is possible to have better precision to detect the target in the vicinity of the rocket, but consequently it is difficult for rockets that are far away to feel relevant changes in the scoring function to &lt;strong&gt;approach the target&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;issues&quot;&gt;Issues&lt;/h3&gt;
+&lt;p&gt;The system showed that it can learn to find solutions for certain parameters, however there are problems that arise from the same nature of the algorithm and that can be evidenced when trying fairly complex experiments.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The algorithm is good at finding the way to problems with a &lt;strong&gt;single solution&lt;/strong&gt;, however when there are many possible ways the reproduction algorithm generates new candidates that when trying to mix these possible solutions, they obtain a terrible solution. This &lt;strong&gt;slows down the learning algorithm&lt;/strong&gt; for long periods of time as the system converges to just one of the multiple solutions it found.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When the number of jumps is very large, the algorithm has many parameters to train and it also usually takes longer. this was expected as each additional jump must be trained as a consequence of the others. But another effect of having many thrusts is that the algorithm may have to find a &lt;strong&gt;less optimal route&lt;/strong&gt; to reach the goal, as it has many displacement opportunities. In this attempt to &lt;strong&gt;compress&lt;/strong&gt; the jumps or &lt;strong&gt;nullify&lt;/strong&gt; the effects of the extra ones, the algorithm comes up with many possible ways that result in a good solution, which brings us to the previous problem.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If the target is near an edge, rockets that &lt;strong&gt;narrowly miss&lt;/strong&gt; the target when trying to reach it and that could have been good solutions often collide with the edge, &lt;strong&gt;nullifying what could have been a good solution&lt;/strong&gt; only by a very small margin. This is why by default the right border is disabled.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;the-controls&quot;&gt;The Controls&lt;/h2&gt;
+&lt;p&gt;The buttons and sliders of the application allow you to interact with the simulation parameters.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SLIDERS:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Gravity&lt;/strong&gt; defines a vertical acceleration constant. If Gravity is positive then it pulls downwards.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;max. time&lt;/strong&gt; sets the target timer. This defines the time in which rockets have to reach the target.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;# jumps&lt;/strong&gt; sets the number of hops each rocket does. Effective after RESET.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Delay&lt;/strong&gt; is the time delay between jumps of the rockets.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;BUTTONS:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Generation 1&lt;/strong&gt; sets then generation counter to 1. This might be useful in controlled rigorous experiments.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Delete obstacles&lt;/strong&gt; removes all obstacles set in the simulation, without affecting anything else.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;RESET&lt;/strong&gt; reboots all rockets, reboots the simulation but keeps the parameters set by user.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; There are parameters that do not change unless the simulation is restarted (RESET button).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;0 / 1 / 2 / 3 / 4  :&lt;/strong&gt; Set scenario.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;S :&lt;/strong&gt; Creates an squared obstacle centered in the cursor position.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;C :&lt;/strong&gt; Creates a circular obstacle centered in the cursor position.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;T :&lt;/strong&gt; Sets the target location in the cursor position.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;O :&lt;/strong&gt; Sets the rocket origin location in the cursor position.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;latest-release&quot;&gt;Latest Release&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/sketches/genetic-rockets/rockets.html&quot; class=&quot;link-sketch&quot;&gt;
+&lt;span&gt;
+TEST SKETCH
+&lt;/span&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Latest commit : 08  / aug / 2020&lt;/p&gt;
+</description>
+        <pubDate>Sat, 08 Aug 2020 00:08:00 -0500</pubDate>
+        <link>http://localhost:4000/sketch/2020/08/08/genetic-rockets.html</link>
+        <guid isPermaLink="true">http://localhost:4000/sketch/2020/08/08/genetic-rockets.html</guid>
+        
+        <category>sketch</category>
+        
+        <category>javascript</category>
+        
+        <category>p5</category>
+        
+        <category>genetic</category>
+        
+        <category>learning</category>
+        
+        
+        <category>sketch</category>
+        
+      </item>
     
       <item>
         <title>B[ORDERS] : Organic behavior in algorithms</title>
@@ -818,34 +939,6 @@ PLAY GAME
         <pubDate>Wed, 12 Feb 2020 07:26:00 -0500</pubDate>
         <link>http://localhost:4000/image/2020/02/12/eigenvalue-of-myself.html</link>
         <guid isPermaLink="true">http://localhost:4000/image/2020/02/12/eigenvalue-of-myself.html</guid>
-        
-        
-        <category>image</category>
-        
-      </item>
-    
-      <item>
-        <title>La pantalla grande</title>
-        <description>&lt;h2 id=&quot;discussion&quot;&gt;Discussion&lt;/h2&gt;
-&lt;p&gt;When transcending the world involves &lt;strong&gt;capturing an image&lt;/strong&gt; of it and reinterpreting it before the masses, man must turn to art. The performing arts are essentially the way we have found to transport the &lt;strong&gt;great stories&lt;/strong&gt; of the world over time and space, making use of our communicative faculties as &lt;em&gt;homo sapiens sapiens&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;technique&quot;&gt;Technique&lt;/h2&gt;
-&lt;p&gt;Multiple style transfer layers and Deep Dream layers applied to the &lt;strong&gt;same template&lt;/strong&gt; and overlapping them with different contrasts and opacities.&lt;/p&gt;
-
-&lt;h2 id=&quot;from-the-artist&quot;&gt;From the artist&lt;/h2&gt;
-&lt;p&gt;The model in the picture is an old friend who chose to study film and television production. Although we don’t talk to each other very much, we get along very well and whenever we can meet we talk about infinity of topics without any discomfort. He pointed out to me that, as humans, our only real way of &lt;strong&gt;transcending&lt;/strong&gt; is in the image that others have of us.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Telling stories&lt;/strong&gt; with movies and capturing an &lt;strong&gt;emotional footprint&lt;/strong&gt; in people have as a common factor that they can preserve a memory for much longer than the time of an average life. The world is a mix of &lt;strong&gt;unexpected events&lt;/strong&gt; in real time and &lt;strong&gt;projections&lt;/strong&gt; of past memories that we refuse to let die.&lt;/p&gt;
-&lt;h2 id=&quot;models-and-references&quot;&gt;Models and references&lt;/h2&gt;
-
-&lt;h4 id=&quot;models&quot;&gt;Models&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Mateo Herrera&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 10 Feb 2020 16:16:00 -0500</pubDate>
-        <link>http://localhost:4000/image/2020/02/10/la-pantalla-grande.html</link>
-        <guid isPermaLink="true">http://localhost:4000/image/2020/02/10/la-pantalla-grande.html</guid>
         
         
         <category>image</category>

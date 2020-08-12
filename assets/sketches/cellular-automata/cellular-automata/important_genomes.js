@@ -12,5 +12,6 @@ let genomes = {
 "square":"h5nlg5-1n6xdn8-1n6xdn8-nobxvk-1n6xdn8-nobxvk-nobxvk-ndk54w-1n6xdn9-nobxvk-nobxvk-ndk54w-nobxvk-ndk54w-ndk54w-hra0hs",
 "conway-4":"48cd-wct05-wct05-h5nlg4-wct05-h5nlg4-h5nlg4-1n6vyv4-wct05-h5nlg4-h5nlg4-1n6vyv4-h5nlg4-1n6vyv4-1n6vyv4-ndk54w",
 "tissue":"at7jz-5yf3wc-5yf3wc-oew1c0-6iegzg-zihx40-o9vje8-ynhkao-6h5cho-oevc1s-o9vjcw-ynztog-o9vjcw-1y6e8fk-1y4ofeo-1h9u1hc",
-"psychedelic":"wbe81-guvspj-guvspj-1hkq2kd-guvspj-1hkq2kd-1hkq2kd-6imxn8-guvspj-1hkq2kd-1hkq2kd-6imxn8-1hkq2kd-6imxn8-6imxn8-yww75s"
+"psychedelic":"wbe81-guvspj-guvspj-1hkq2kd-guvspj-1hkq2kd-1hkq2kd-6imxn8-guvspj-1hkq2kd-1hkq2kd-6imxn8-1hkq2kd-6imxn8-6imxn8-yww75s",
+"spiral-conway-4":"aqbnh-6iml05-6g51at-ywxlxw-5eok45-ywxlxw-h5nlg4-1n6vyv4-22tfit-h5nlg4-ywxlxw-1n6vyv4-ywxlxw-1n6vyv4-1n6vyv4-ndk54w"
 }
