@@ -13,5 +13,8 @@ let genomes = {
 "conway-4":"48cd-wct05-wct05-h5nlg4-wct05-h5nlg4-h5nlg4-1n6vyv4-wct05-h5nlg4-h5nlg4-1n6vyv4-h5nlg4-1n6vyv4-1n6vyv4-ndk54w",
 "tissue":"at7jz-5yf3wc-5yf3wc-oew1c0-6iegzg-zihx40-o9vje8-ynhkao-6h5cho-oevc1s-o9vjcw-ynztog-o9vjcw-1y6e8fk-1y4ofeo-1h9u1hc",
 "psychedelic":"wbe81-guvspj-guvspj-1hkq2kd-guvspj-1hkq2kd-1hkq2kd-6imxn8-guvspj-1hkq2kd-1hkq2kd-6imxn8-1hkq2kd-6imxn8-6imxn8-yww75s",
-"spiral-conway-4":"aqbnh-6iml05-6g51at-ywxlxw-5eok45-ywxlxw-h5nlg4-1n6vyv4-22tfit-h5nlg4-ywxlxw-1n6vyv4-ywxlxw-1n6vyv4-1n6vyv4-ndk54w"
+"vegetal":"b4g2d-5x41gd-4t4ymt-nodcno-5x3c5x-nodcno-1n6xdn8-nocn5s-essswl-nodcno-nodcno-nobxvk-nodcno-nobxvk-wjyy4g-ndk54w",
+"spiral-conway-4":"aqbnh-6iml05-6g51at-ywxlxw-5eok45-ywxlxw-h5nlg4-1n6vyv4-22tfit-h5nlg4-ywxlxw-1n6vyv4-ywxlxw-1n6vyv4-1n6vyv4-ndk54w",
+"spiral-conway-4-2":"17k8t-6inmxp-5c6b4l-h5nlg4-5eok45-ywxlxw-1yfhmxg-1n6wo5c-eae0ut-h5nlg4-h5nlg4-1n6vyv4-h5nlg4-1n6vyv4-1w2iz40-ndk54w",
+"dspcho":"1qaguf4-zik0zk-0-0-zik0zk-0-0-0-0-0-0-0-0-0-0-2"
 }

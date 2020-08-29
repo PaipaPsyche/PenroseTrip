@@ -4,11 +4,207 @@
     <title>Penrose Trip</title>
     <description>This website is an interactive portal for informative use, which seeks to open a space for the juxtaposition between psychedelia, science, programming and art.
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 12 Aug 2020 02:15:00 -0500</pubDate>
-    <lastBuildDate>Wed, 12 Aug 2020 02:15:00 -0500</lastBuildDate>
+    <link>http://localhost:4001/</link>
+    <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 28 Aug 2020 23:38:01 -0500</pubDate>
+    <lastBuildDate>Fri, 28 Aug 2020 23:38:01 -0500</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>Cellular Battle Royale</title>
+        <description>&lt;h2 id=&quot;the-sketch&quot;&gt;The Sketch&lt;/h2&gt;
+&lt;p&gt;With more experience with genetic algorithms, I decided to experiment with one that involved continuous and more complex behaviors. In my other genetic learning sketches, the genetic algorithm always boils down to a set of discrete values as a possible gene expression, but in this case a much broader spectrum of values and possible alterations is being taken. They are independent cells that react to three external agents: waste, food and other cells. The cells roam in a free space and their genetic expression regulates everything within, from nutrition to movement.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-purpose&quot;&gt;The Purpose&lt;/h2&gt;
+&lt;p&gt;Lately I have been interested in establishing points of comparison between the &lt;strong&gt;perfect chaos&lt;/strong&gt; of nature and the &lt;strong&gt;determinism&lt;/strong&gt; of computing. Addressing complex concepts such as &lt;em&gt;‘evolution’&lt;/em&gt; and &lt;em&gt;‘learning’&lt;/em&gt; with this type of exercise leaves an appetizer for all the mysteries that lie beyond logic and biology.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Playing to be God is not that bad … I mean, what could go wrong?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;the-result&quot;&gt;The Result&lt;/h2&gt;
+&lt;p&gt;The genetic monitor allows to graph the genetic expression of the cell in such a way that it is easy to determine the origin of its affinity to certain behaviors. The cell monitor allows you to track all the vital signs and content of the cell it represents. Both are ways to visualize confusing data in a more attractive and intuitive way.&lt;/p&gt;
+
+&lt;p&gt;Each Genetic code has a unique number to identify itself. Each  code has two parents, each with an &lt;strong&gt;ID number&lt;/strong&gt; as well.&lt;/p&gt;
+
+&lt;div class=&quot;centered-square&quot;&gt;
+  &lt;div class=&quot;imgsq&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/sketch-royale-img1.png&quot; class=&quot;post-midimage-across&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;txtsq&quot;&gt;
+    &lt;p class=&quot;imglbl&quot;&gt;
+
+      Genetic Code and Vital Signs of an arbitrary cell.
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;genetic-slot-monitor&quot;&gt;Genetic Slot Monitor&lt;/h3&gt;
+&lt;p&gt;It is the representation of the genetic code of each cell. This might be useful when comparing different genomes and verifying inheritance properties. You can detail some graphic properties that provide information about genetic expression (left box of the image):&lt;/p&gt;
+&lt;h4 id=&quot;numbers&quot;&gt;Numbers&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;In the lower left corner there is the generation of the given genome.&lt;/li&gt;
+  &lt;li&gt;in the bottom,centered, the name of the genetic id code in format “DAD-ME-MOM”.&lt;/li&gt;
+  &lt;li&gt;When selected in the genetic Slot Monitor, the boxes have the slot number in the top left corner.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;central-core&quot;&gt;Central Core&lt;/h4&gt;
+&lt;p&gt;In the middle of the diagram there is a circle that represents the &lt;strong&gt;sensitivity&lt;/strong&gt;  gene of the cell. The larger the circle, the cell has a greater detection range for food, debris and other cells.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;metabolic rate&lt;/strong&gt; gene of the cell is represented as the speed of the internal clock of this circle. A cell with a slow metabolic rate looks like a slow clock, implying that this cell takes much longer to complete internal processes and make decisions. This metabolic rate can best be compared using a white circular arc that is within the main circle, the length of this arc represents the time between cycles of the cell.&lt;/p&gt;
+
+&lt;h4 id=&quot;top--axis&quot;&gt;Top  axis&lt;/h4&gt;
+&lt;p&gt;This is the &lt;strong&gt;affinity&lt;/strong&gt; axis, where a line extending to the left means a negative value and a line to the right means positive affinity.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The Green gene is the &lt;strong&gt;cell affinity&lt;/strong&gt;, meaning the &lt;em&gt;attraction&lt;/em&gt; to other cells. the extra line segment represent a bias in the mass subtraction in order to react to the other cell’s size.&lt;/li&gt;
+  &lt;li&gt;The Blue gene is the &lt;strong&gt;food affinity&lt;/strong&gt;, meaning attraction to food particles.&lt;/li&gt;
+  &lt;li&gt;The Red gene is the &lt;strong&gt;waste affinity&lt;/strong&gt;, meaning attraction to waste particles.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;bottom--axis&quot;&gt;Bottom  axis&lt;/h4&gt;
+&lt;p&gt;This is the &lt;strong&gt;deterministic&lt;/strong&gt; axis, where a line extending to the left means a deterministic cell behavior and a line to the right means random movement approach.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The top olive gene is the &lt;strong&gt;speed persistence&lt;/strong&gt;, which each cycle determines whether being conservative and keeping the same direction (Right) or changing the movement direction according to other internal and external responses (Left)&lt;/li&gt;
+  &lt;li&gt;The bottom purple gene is the &lt;strong&gt;arbitrary movement&lt;/strong&gt;, which each cycle determines whether taking  a step in a random direction (Right) or to obey to other internal and external responses (Left)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;left--axis&quot;&gt;Left  axis&lt;/h4&gt;
+&lt;p&gt;This is the &lt;strong&gt;exploration&lt;/strong&gt; axis. The longer the line corresponding to a process, it means that the cell uses more energy in that process each cycle.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The cyan gene is for &lt;strong&gt;shield regeneration&lt;/strong&gt;. High values means high energy investment in cellular wall regeneration.&lt;/li&gt;
+  &lt;li&gt;The pink gene is for &lt;strong&gt;movement&lt;/strong&gt;. Higher values represent strong thrusts in cell movement.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;right-axis&quot;&gt;Right axis&lt;/h4&gt;
+&lt;p&gt;This is the &lt;strong&gt;nutrition&lt;/strong&gt; axis. The longer the line corresponding to a process, it means that the cell uses more energy in that process each cycle.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The yellow gene regulates the &lt;strong&gt;energy converter&lt;/strong&gt;. High values means ingested food is rapidly converted into energy, but high conversion rates consume more energy and generate more wastes as well.&lt;/li&gt;
+  &lt;li&gt;The orange gene regulates the  &lt;strong&gt;waste output&lt;/strong&gt;. Higher values in cells means they invest more energy in waste disposal.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cellular-vital-monitor&quot;&gt;Cellular Vital Monitor&lt;/h3&gt;
+&lt;p&gt;This diagram allows to keep an account of the internal processes of the cell as well as the resources it has and its characteristics.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;On top, a white loading bar representing the &lt;strong&gt;metabolic rate&lt;/strong&gt; of the cell. Each time the bar is completed, a new cycle begins.&lt;/li&gt;
+  &lt;li&gt;The exterior cyan circle represents the &lt;strong&gt;shield&lt;/strong&gt; integrity. Once it reaches 0, damage will be taken by the cell’s health.&lt;/li&gt;
+  &lt;li&gt;the inner yellow circle is the &lt;strong&gt;energy&lt;/strong&gt; level. Once 0, energy for completing the cycles will be taken from the cell’s health.&lt;/li&gt;
+  &lt;li&gt;The inner green pie plot is the cell’s &lt;strong&gt;health&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;The purple number is the cell’s &lt;strong&gt;energy reservoir&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;The red number is the &lt;strong&gt;waste&lt;/strong&gt; level inside the cell. Once 100 is reached, each cycle the cell has 100 or more waste it loses health.&lt;/li&gt;
+  &lt;li&gt;The orange number is the number of &lt;strong&gt;unprocessed food&lt;/strong&gt; particles inside the cell.&lt;/li&gt;
+  &lt;li&gt;The bottom left number is the cell’s &lt;strong&gt;mass&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;goals-and-indicators&quot;&gt;Goals and Indicators&lt;/h3&gt;
+
+&lt;h4 id=&quot;main-goal&quot;&gt;MAIN GOAL&lt;/h4&gt;
+
+&lt;p&gt;The &lt;em&gt;main goal&lt;/em&gt; is the scoring method for each cell, giving the cells the chance to reproduce in next generation depending on this score. the different scoring methods evaluate different goals, such as:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;eat :&lt;/strong&gt; eat cells and food.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;food :&lt;/strong&gt; eat as much food as possible.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;size :&lt;/strong&gt; gain mass.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;cycles :&lt;/strong&gt; complete full cycles.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;time :&lt;/strong&gt; survive as long as possible.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;hunting :&lt;/strong&gt; eat other cells.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;berserk :&lt;/strong&gt; eat EVERYTHING.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;die :&lt;/strong&gt; existence is pain. I just want to die fast.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;pick :&lt;/strong&gt; eat as much food and cells (relative to waste) as possible.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;poop :&lt;/strong&gt; eat as much waste as possible.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;cell-indicators&quot;&gt;CELL INDICATORS&lt;/h4&gt;
+
+&lt;p&gt;Each cell has 4 information slots (2 in the upper edge and 2 in the lower edge) where you can display the information you choose:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;health :&lt;/strong&gt; health level.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;score :&lt;/strong&gt; score (according to main goal selection).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;shield :&lt;/strong&gt; shield integrity level.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;energy :&lt;/strong&gt; energy level.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;mass :&lt;/strong&gt; mass index.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;food :&lt;/strong&gt; food particles taken.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;dirt :&lt;/strong&gt; waste particles taken.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;preys :&lt;/strong&gt; cells eaten.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;cycles :&lt;/strong&gt; cycles completed.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;id :&lt;/strong&gt; genetic id.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;dad :&lt;/strong&gt; dad’s genetic id.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;mom :&lt;/strong&gt; mom’s genetic id.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;none :&lt;/strong&gt; display nothing.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;the-controls&quot;&gt;The Controls&lt;/h2&gt;
+&lt;p&gt;The buttons and sliders of the application allow you to interact with the simulation parameters.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SLIDERS:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Viscosity&lt;/strong&gt; defines the resistance the medium has to the movement of cells.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Initial Food&lt;/strong&gt; sets the number of food particles present in the beginning of each generation.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Minimum food&lt;/strong&gt; is the minimum number of food particles that the simulation has. If there are less food particles, the simulation will append new ones to the medium.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;BUTTONS:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Nex Generation&lt;/strong&gt; polls the population score and resets the map, generating a new genetic pool with the previous generation data.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Remove Items&lt;/strong&gt; removes all food and waste particles.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Clear monitors&lt;/strong&gt; blanks all the genetic slots.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Toggle vectors&lt;/strong&gt; switches ON/OFF to display all the cell vectors.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;SELECTORS:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Main Goal&lt;/strong&gt; defines the scoring method for the cells.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CELL INDICATORS&lt;/strong&gt; set the 4 values that each cell has displayed in the upper and lower margins.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;KEYBOARD &amp;amp; MOUSE:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;CLICK :&lt;/strong&gt; operates buttons,selectors and sliders. click on a cell to display its genetic code and its vital signs.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;1 / 2 / 3 / 4 (While hovering a cell):&lt;/strong&gt; displays the cell´s genetic code in genetic slot (1,2,3, or 4) .&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;N :&lt;/strong&gt; Next generation.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;C :&lt;/strong&gt; Creates a new cell in the cursor XY position&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;F :&lt;/strong&gt; Creates a food particle in the cursor XY position.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;W :&lt;/strong&gt; Creates a Waste particle in the cursor XY position.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;X (While hovering a cell):&lt;/strong&gt; Explodes the cell.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;latest-release&quot;&gt;Latest Release&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/sketches/CellRoyale/cell-royale.html&quot; class=&quot;link-sketch&quot;&gt;
+&lt;span&gt;
+TEST SKETCH
+&lt;/span&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Latest commit : 28  / aug / 2020&lt;/p&gt;
+</description>
+        <pubDate>Fri, 28 Aug 2020 20:28:20 -0500</pubDate>
+        <link>http://localhost:4001/sketch/2020/08/28/cellular-battle-royale.html</link>
+        <guid isPermaLink="true">http://localhost:4001/sketch/2020/08/28/cellular-battle-royale.html</guid>
+        
+        <category>sketch</category>
+        
+        <category>javascript</category>
+        
+        <category>p5</category>
+        
+        <category>genetic</category>
+        
+        <category>learning</category>
+        
+        
+        <category>sketch</category>
+        
+      </item>
     
       <item>
         <title>Genetic Learning: Smart Rockets</title>
@@ -113,8 +309,8 @@ TEST SKETCH
 &lt;p&gt;Latest commit : 08  / aug / 2020&lt;/p&gt;
 </description>
         <pubDate>Sat, 08 Aug 2020 00:08:00 -0500</pubDate>
-        <link>http://localhost:4000/sketch/2020/08/08/genetic-rockets.html</link>
-        <guid isPermaLink="true">http://localhost:4000/sketch/2020/08/08/genetic-rockets.html</guid>
+        <link>http://localhost:4001/sketch/2020/08/08/genetic-rockets.html</link>
+        <guid isPermaLink="true">http://localhost:4001/sketch/2020/08/08/genetic-rockets.html</guid>
         
         <category>sketch</category>
         
@@ -219,8 +415,8 @@ TEST SKETCH
 &lt;iframe name=&quot;embed_readwrite&quot; src=&quot;https://pad.riseup.net/p/B%5BORDERS%5D_-_Organic_algorithms?showControls=true&amp;amp;showChat=true&amp;amp;showLineNumbers=true&amp;amp;useMonospaceFont=false&quot; width=&quot;100%&quot; height=&quot;600&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Thu, 30 Jul 2020 18:00:00 -0500</pubDate>
-        <link>http://localhost:4000/BORDERS/</link>
-        <guid isPermaLink="true">http://localhost:4000/BORDERS/</guid>
+        <link>http://localhost:4001/BORDERS/</link>
+        <guid isPermaLink="true">http://localhost:4001/BORDERS/</guid>
         
         <category>information</category>
         
@@ -263,8 +459,8 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 10 Jun 2020 18:15:00 -0500</pubDate>
-        <link>http://localhost:4000/image/2020/06/10/tentaciones-y-demonios.html</link>
-        <guid isPermaLink="true">http://localhost:4000/image/2020/06/10/tentaciones-y-demonios.html</guid>
+        <link>http://localhost:4001/image/2020/06/10/tentaciones-y-demonios.html</link>
+        <guid isPermaLink="true">http://localhost:4001/image/2020/06/10/tentaciones-y-demonios.html</guid>
         
         
         <category>image</category>
@@ -300,8 +496,8 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;p&gt;It’s been almost 3 weeks since the migration started and I’m still getting warm. Much of this time has been me learning jekyll from scratch, and although it is an easy-to-learn site generator, it is difficult to diagram the two-year work again and apply the updates and fixes that have been suggested to me. In the future I hope to have all my work here exposed as well as options so that third parties can leave their contributions to this growing personal project.&lt;/p&gt;
 </description>
         <pubDate>Tue, 09 Jun 2020 18:15:00 -0500</pubDate>
-        <link>http://localhost:4000/new-penrose/</link>
-        <guid isPermaLink="true">http://localhost:4000/new-penrose/</guid>
+        <link>http://localhost:4001/new-penrose/</link>
+        <guid isPermaLink="true">http://localhost:4001/new-penrose/</guid>
         
         <category>information</category>
         
@@ -337,8 +533,8 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 23 May 2020 13:23:00 -0500</pubDate>
-        <link>http://localhost:4000/image/2020/05/23/agoraphobia.html</link>
-        <guid isPermaLink="true">http://localhost:4000/image/2020/05/23/agoraphobia.html</guid>
+        <link>http://localhost:4001/image/2020/05/23/agoraphobia.html</link>
+        <guid isPermaLink="true">http://localhost:4001/image/2020/05/23/agoraphobia.html</guid>
         
         
         <category>image</category>
@@ -503,8 +699,8 @@ TEST SKETCH
 &lt;p&gt;Latest commit : 09  / may / 2020&lt;/p&gt;
 </description>
         <pubDate>Wed, 06 May 2020 00:02:00 -0500</pubDate>
-        <link>http://localhost:4000/sketch/2020/05/06/2D-cellular-automata-lab.html</link>
-        <guid isPermaLink="true">http://localhost:4000/sketch/2020/05/06/2D-cellular-automata-lab.html</guid>
+        <link>http://localhost:4001/sketch/2020/05/06/2D-cellular-automata-lab.html</link>
+        <guid isPermaLink="true">http://localhost:4001/sketch/2020/05/06/2D-cellular-automata-lab.html</guid>
         
         <category>sketch</category>
         
@@ -653,8 +849,8 @@ TEST SKETCH
 &lt;p&gt;Latest commit : 13  / apr / 2020&lt;/p&gt;
 </description>
         <pubDate>Mon, 13 Apr 2020 02:20:00 -0500</pubDate>
-        <link>http://localhost:4000/sketch/2020/04/13/flocking-ecosystem.html</link>
-        <guid isPermaLink="true">http://localhost:4000/sketch/2020/04/13/flocking-ecosystem.html</guid>
+        <link>http://localhost:4001/sketch/2020/04/13/flocking-ecosystem.html</link>
+        <guid isPermaLink="true">http://localhost:4001/sketch/2020/04/13/flocking-ecosystem.html</guid>
         
         <category>sketch</category>
         
@@ -757,8 +953,8 @@ PLAY GAME
 &lt;p&gt;Latest commit : 21  / may / 2019&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Mar 2020 04:03:00 -0500</pubDate>
-        <link>http://localhost:4000/sketch/2020/03/23/imferye-the-game.html</link>
-        <guid isPermaLink="true">http://localhost:4000/sketch/2020/03/23/imferye-the-game.html</guid>
+        <link>http://localhost:4001/sketch/2020/03/23/imferye-the-game.html</link>
+        <guid isPermaLink="true">http://localhost:4001/sketch/2020/03/23/imferye-the-game.html</guid>
         
         <category>sketch</category>
         
@@ -893,8 +1089,8 @@ PLAY GAME
 &lt;p&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=19hRbjw7NC7BRWgD-Ea5RkA0wlv-DWY6x&quot; alt=&quot;Information loss plot&quot; class=&quot;post-midimage-across&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 09 Mar 2020 20:30:00 -0500</pubDate>
-        <link>http://localhost:4000/coronavirus-twitter-analysis/</link>
-        <guid isPermaLink="true">http://localhost:4000/coronavirus-twitter-analysis/</guid>
+        <link>http://localhost:4001/coronavirus-twitter-analysis/</link>
+        <guid isPermaLink="true">http://localhost:4001/coronavirus-twitter-analysis/</guid>
         
         <category>space</category>
         
@@ -912,36 +1108,6 @@ PLAY GAME
         
         
         <category>topic</category>
-        
-      </item>
-    
-      <item>
-        <title>Eigenvalue of myself</title>
-        <description>&lt;h2 id=&quot;discussion&quot;&gt;Discussion&lt;/h2&gt;
-&lt;p&gt;The &lt;strong&gt;success&lt;/strong&gt; in facing the daily dilemmas and the occasional unexpected catastrophes that &lt;strong&gt;chance&lt;/strong&gt; places in our path depends on our ability to focus our &lt;strong&gt;superior intellect&lt;/strong&gt; on the study of our &lt;strong&gt;own being&lt;/strong&gt;. Embracing many points of view of the self is a masterful tool for &lt;strong&gt;forging&lt;/strong&gt; any new link with the world. The understanding of being is a practice that the 21st century has put aside despite being in these moments of &lt;strong&gt;cultural mishmash&lt;/strong&gt; when we most need to look within ourselves.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Anyone who remains with a single perspective of the world is condemned to wander it on one only path.&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;technique&quot;&gt;Technique&lt;/h2&gt;
-&lt;p&gt;Manual filter of facial transformation as the main template. The other layers are made up of patterns &lt;strong&gt;added by collage&lt;/strong&gt; and Deep Dream patterns added by contrast. The final image was processed &lt;strong&gt;multiple times&lt;/strong&gt; by low-enhancing convolutional filters.&lt;/p&gt;
-&lt;h2 id=&quot;from-the-artist&quot;&gt;From the artist&lt;/h2&gt;
-&lt;p&gt;This can be said to be my version of a &lt;em&gt;“self-portrait”&lt;/em&gt;. A purely subjective representation of what I observed when analyzing my position in the world. I like to represent myself with multiple eyes because I associate them with &lt;strong&gt;knowledge&lt;/strong&gt; and &lt;strong&gt;the occult&lt;/strong&gt;. For the latter’s purposes, I also often include in many of my pieces patterns with sacred geometry and ancestral symbology, as well as &lt;strong&gt;semasiological links&lt;/strong&gt; between the myths of tarot, religion and divine science.&lt;/p&gt;
-&lt;h2 id=&quot;models-and-references&quot;&gt;Models and references&lt;/h2&gt;
-
-&lt;h4 id=&quot;models&quot;&gt;Models&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Myself - Paipa Psyche (David Paipa)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 12 Feb 2020 07:26:00 -0500</pubDate>
-        <link>http://localhost:4000/image/2020/02/12/eigenvalue-of-myself.html</link>
-        <guid isPermaLink="true">http://localhost:4000/image/2020/02/12/eigenvalue-of-myself.html</guid>
-        
-        
-        <category>image</category>
         
       </item>
     
