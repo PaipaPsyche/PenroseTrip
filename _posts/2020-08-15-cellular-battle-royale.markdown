@@ -146,6 +146,10 @@ The buttons and sliders of the application allow you to interact with the simula
 * **Clear monitors** blanks all the genetic slots.
 * **Toggle vectors** switches ON/OFF to display all the cell vectors.
 
+* **Enable/Disable auto-experiments** switches ON/OFF the automatic experimentation procedure. Always press **RESET** when beginning a new experiment sequence.
+
+* **RESET** clear all genetic displays, deletes genetic pool and restarts generation counter. It can only be activated if *auto-experiments* are enabled.
+
 **SELECTORS:**
 * **Main Goal** defines the scoring method for the cells.
 * **CELL INDICATORS** set the 4 values that each cell has displayed in the upper and lower margins.
@@ -171,4 +175,4 @@ TEST SKETCH
 </span>
 </a>
 
-Latest commit : 28  / aug / 2020
+Latest commit : 13  / sept / 2020

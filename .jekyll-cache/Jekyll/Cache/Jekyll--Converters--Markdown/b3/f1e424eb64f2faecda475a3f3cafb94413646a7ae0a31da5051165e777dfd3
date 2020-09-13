@@ -1,4 +1,4 @@
-I"5+<h2 id="the-sketch">The Sketch</h2>
+I"�*<h2 id="the-sketch">The Sketch</h2>
 <p>With more experience with genetic algorithms, I decided to experiment with one that involved continuous and more complex behaviors. In my other genetic learning sketches, the genetic algorithm always boils down to a set of discrete values as a possible gene expression, but in this case a much broader spectrum of values and possible alterations is being taken. They are independent cells that react to three external agents: waste, food and other cells. The cells roam in a free space and their genetic expression regulates everything within, from nutrition to movement.</p>
 
 <h2 id="the-purpose">The Purpose</h2>
@@ -77,30 +77,14 @@
 <p>This diagram allows to keep an account of the internal processes of the cell as well as the resources it has and its characteristics.</p>
 
 <ul>
-  <li>
-    <p>On top, a white loading bar representing the <strong>metabolic rate</strong> of the cell. Each time the bar is completed, a new cycle begins.</p>
-  </li>
-  <li>
-    <p>The exterior cyan circle represents the <strong>shield</strong> integrity. Once it reaches 0, damage will be taken by the cell’s health.</p>
-  </li>
-  <li>
-    <p>the inner yellow circle is the <strong>energy</strong> level. Once 0, energy for completing the cycles will be taken from the cell’s health.</p>
-  </li>
-  <li>
-    <p>The inner green pie plot is the cell’s <strong>health</strong>.</p>
-  </li>
-  <li>
-    <p>The purple number is the cell’s <strong>energy reservoir</strong>.</p>
-  </li>
-  <li>
-    <p>The red number is the <strong>waste</strong> level inside the cell. Once 100 is reached, each cycle the cell has 100 or more waste it loses health.</p>
-  </li>
-  <li>
-    <p>The orange number is the number of <strong>unprocessed food</strong> particles inside the cell.</p>
-  </li>
-  <li>
-    <p>The bottom left number is the cell’s <strong>mass</strong>.</p>
-  </li>
+  <li>On top, a white loading bar representing the <strong>metabolic rate</strong> of the cell. Each time the bar is completed, a new cycle begins.</li>
+  <li>The exterior cyan circle represents the <strong>shield</strong> integrity. Once it reaches 0, damage will be taken by the cell’s health.</li>
+  <li>the inner yellow circle is the <strong>energy</strong> level. Once 0, energy for completing the cycles will be taken from the cell’s health.</li>
+  <li>The inner green pie plot is the cell’s <strong>health</strong>.</li>
+  <li>The purple number is the cell’s <strong>energy reservoir</strong>.</li>
+  <li>The red number is the <strong>waste</strong> level inside the cell. Once 100 is reached, each cycle the cell has 100 or more waste it loses health.</li>
+  <li>The orange number is the number of <strong>unprocessed food</strong> particles inside the cell.</li>
+  <li>The bottom left number is the cell’s <strong>mass</strong>.</li>
 </ul>
 
 <h3 id="goals-and-indicators">Goals and Indicators</h3>
@@ -187,5 +171,5 @@ TEST SKETCH
 </span>
 </a></p>
 
-<p>Latest commit : 28  / aug / 2020</p>
+<p>Latest commit : 13  / sept / 2020</p>
 :ET

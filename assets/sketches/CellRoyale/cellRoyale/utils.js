@@ -43,6 +43,17 @@ function make_buttons(xo,yo){
   slider_viscosity.style("height","2px")
 
 
+
+  slider_maxt = createSlider(0,1500,atts.simulation.auto.n_time,50);
+  slider_maxt.position(xo+90,yo+260);
+  slider_maxt.style("width","80px")
+  slider_maxt.style("height","2px")
+
+  slider_ncells = createSlider(0,150,atts.simulation.auto.n_cells,5);
+  slider_ncells.position(xo+90,yo+280);
+  slider_ncells.style("width","80px")
+  slider_ncells.style("height","2px")
+
   //selections
   select_scoring = createSelect();
   select_scoring.style("height","18px")
@@ -130,16 +141,73 @@ function make_buttons(xo,yo){
   butt_togvecs.text = "Toggle vectors"
   butt_togvecs.textSize = 11 ;
   butt_togvecs.textColor = "#FFFFFF";
-  butt_togvecs.color = "#00CC00"
+  butt_togvecs.color = "#FF3333"
   butt_togvecs.onPress = function(){
   atts.display.show_cell_vec = 1-atts.display.show_cell_vec;
     if(atts.display.show_cell_vec==1){
-      butt_togvecs.color = "#00CC00"
-    }else{
       butt_togvecs.color = "#FF3333"
+    }else{
+      butt_togvecs.color = "#00CC00"
     }
   }
   clickables.push(butt_togvecs);
+
+
+  // RESET AUTOEXP
+  butt_resetauto = new Clickable();
+  butt_resetauto.locate(xo+145,400);
+  butt_resetauto.resize(45,15);
+  butt_resetauto.text = "RESET"
+  butt_resetauto.textSize = 11 ;
+  butt_resetauto.textColor = "#FFFFFF";
+  butt_resetauto.color = "#505050"
+  butt_resetauto.onPress = function(){
+    if(atts.simulation.auto.active==1){
+
+      T=1;
+      atts.display.genetic.m1 = null;
+      atts.display.genetic.m2 = null;
+      atts.display.genetic.m3 = null;
+      atts.display.genetic.m4 = null;
+      genetic_display_sel = null;
+      cells = [];
+      actual_pool=[];
+      gen  = 1;
+      last_performance = 0;
+      g_cont = 0;
+      agents = [];
+      set_agents("food",atts.simulation.n_food);
+      random_n_cells(atts.simulation.auto.n_cells);
+
+    }
+
+  }
+  clickables.push(butt_resetauto);
+
+  // TOGGLE AUTO
+  butt_togauto = new Clickable();
+  butt_togauto.locate(xo,400)
+  butt_togauto.resize(140,15);
+  butt_togauto.text = "Enable auto-experiments"
+  butt_togauto.textSize = 11 ;
+  butt_togauto.textColor = "#FFFFFF";
+  butt_togauto.color = "#00CC00"
+  butt_togauto.onPress = function(){
+  atts.simulation.auto.active = 1-atts.simulation.auto.active;
+    if(atts.simulation.auto.active==1){
+      butt_togauto.color = "#FF3333"
+      butt_togauto.text = "Disable auto-experiments"
+      butt_resetauto.color = "#FF7000"
+
+    }else{
+      butt_togauto.color = "#00CC00"
+      butt_togauto.text = "Enable auto-experiments"
+      butt_resetauto.color = "#505050"
+    }
+  }
+  clickables.push(butt_togauto);
+
+
 
   // hide monitors
   butt_hide_m = new Clickable();
@@ -164,6 +232,9 @@ function read_butt_values(){
   atts.simulation.viscosity = slider_viscosity.value();
   atts.simulation.n_food = slider_nfood.value();
   atts.simulation.min_food = slider_minfood.value();
+
+  atts.simulation.auto.n_cells = slider_ncells.value();
+  atts.simulation.auto.n_time = slider_maxt.value();
 }
 
 
@@ -311,10 +382,24 @@ function cell_stats(f){
   }
 }
 
+function random_n_cells(n){
+  let margin = 20;
+  for(let i =0;i<n;i++){
+    let x = random(margin,atts.display.w-margin);
+    let y = random(margin,atts.display.h-margin);
+    cells.push(random_new_cell(x,y));
+  }
+}
 
 
-function random_new_cell(){
-  let new_cell = new cell(mouseX,mouseY);
+function random_new_cell(x=null,y=null){
+  let new_cell;
+  if(x!=null && y!=null){
+    new_cell = new cell(x,y);
+  }else{
+    new_cell = new cell(mouseX,mouseY);
+  }
+
   if(actual_pool.length!=0){
     let new_genes = breed(random(actual_pool),random(actual_pool),atts.simulation.breeding.breed_method);
     new_genes.mutate(atts.simulation.breeding.p_mut);
@@ -327,6 +412,7 @@ function random_new_cell(){
 }
 
 function next_generation(){
+  genetic_display_sel=null;
   last_performance = cell_stats("mean");
   actual_pool  = build_pool(atts.simulation.breeding.score_method);
   cells = [];

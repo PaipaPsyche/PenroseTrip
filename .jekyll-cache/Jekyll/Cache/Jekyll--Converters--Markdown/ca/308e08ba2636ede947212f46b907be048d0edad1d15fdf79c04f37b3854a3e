@@ -1,7 +1,12 @@
-I"K"<h2 id="the-sketch">The Sketch</h2>
+I"V,<h2 id="the-sketch">The Sketch</h2>
 <p>With more experience with genetic algorithms, I decided to experiment with one that involved continuous and more complex behaviors. In my other genetic learning sketches, the genetic algorithm always boils down to a set of discrete values as a possible gene expression, but in this case a much broader spectrum of values and possible alterations is being taken. They are independent cells that react to three external agents: waste, food and other cells. The cells roam in a free space and their genetic expression regulates everything within, from nutrition to movement.</p>
 
 <h2 id="the-purpose">The Purpose</h2>
+<p>Lately I have been interested in establishing points of comparison between the <strong>perfect chaos</strong> of nature and the <strong>determinism</strong> of computing. Addressing complex concepts such as <em>‘evolution’</em> and <em>‘learning’</em> with this type of exercise leaves an appetizer for all the mysteries that lie beyond logic and biology.</p>
+
+<blockquote>
+  <p>Playing to be God is not that bad … I mean, what could go wrong?</p>
+</blockquote>
 
 <h2 id="the-result">The Result</h2>
 <p>The genetic monitor allows to graph the genetic expression of the cell in such a way that it is easy to determine the origin of its affinity to certain behaviors. The cell monitor allows you to track all the vital signs and content of the cell it represents. Both are ways to visualize confusing data in a more attractive and intuitive way.</p>
@@ -72,33 +77,54 @@
 <p>This diagram allows to keep an account of the internal processes of the cell as well as the resources it has and its characteristics.</p>
 
 <ul>
-  <li>
-    <p>On top, a white loading bar representing the <strong>metabolic rate</strong> of the cell. Each time the bar is completed, a new cycle begins.</p>
-  </li>
-  <li>
-    <p>The exterior cyan circle represents the <strong>shield</strong> integrity. Once it reaches 0, damage will be taken by the cell’s health.</p>
-  </li>
-  <li>
-    <p>the inner yellow circle is the <strong>energy</strong> level. Once 0, energy for completing the cycles will be taken from the cell’s health.</p>
-  </li>
-  <li>
-    <p>The inner green pie plot is the cell’s <strong>health</strong>.</p>
-  </li>
-  <li>
-    <p>The purple number is the cell’s <strong>energy reservoir</strong>.</p>
-  </li>
-  <li>
-    <p>The red number is the <strong>waste</strong> level inside the cell. Once 100 is reached, each cycle the cell has 100 or more waste it loses health.</p>
-  </li>
-  <li>
-    <p>The orange number is the number of <strong>unprocessed food</strong> particles inside the cell.</p>
-  </li>
-  <li>
-    <p>The bottom left number is the cell’s <strong>mass</strong>.</p>
-  </li>
+  <li>On top, a white loading bar representing the <strong>metabolic rate</strong> of the cell. Each time the bar is completed, a new cycle begins.</li>
+  <li>The exterior cyan circle represents the <strong>shield</strong> integrity. Once it reaches 0, damage will be taken by the cell’s health.</li>
+  <li>the inner yellow circle is the <strong>energy</strong> level. Once 0, energy for completing the cycles will be taken from the cell’s health.</li>
+  <li>The inner green pie plot is the cell’s <strong>health</strong>.</li>
+  <li>The purple number is the cell’s <strong>energy reservoir</strong>.</li>
+  <li>The red number is the <strong>waste</strong> level inside the cell. Once 100 is reached, each cycle the cell has 100 or more waste it loses health.</li>
+  <li>The orange number is the number of <strong>unprocessed food</strong> particles inside the cell.</li>
+  <li>The bottom left number is the cell’s <strong>mass</strong>.</li>
 </ul>
 
-<h3 id="goals-and-inidicators">Goals and INIDICATORS</h3>
+<h3 id="goals-and-indicators">Goals and Indicators</h3>
+
+<h4 id="main-goal">MAIN GOAL</h4>
+
+<p>The <em>main goal</em> is the scoring method for each cell, giving the cells the chance to reproduce in next generation depending on this score. the different scoring methods evaluate different goals, such as:</p>
+
+<ul>
+  <li><strong>eat :</strong> eat cells and food.</li>
+  <li><strong>food :</strong> eat as much food as possible.</li>
+  <li><strong>size :</strong> gain mass.</li>
+  <li><strong>cycles :</strong> complete full cycles.</li>
+  <li><strong>time :</strong> survive as long as possible.</li>
+  <li><strong>hunting :</strong> eat other cells.</li>
+  <li><strong>berserk :</strong> eat EVERYTHING.</li>
+  <li><strong>die :</strong> existence is pain. I just want to die fast.</li>
+  <li><strong>pick :</strong> eat as much food and cells (relative to waste) as possible.</li>
+  <li><strong>poop :</strong> eat as much waste as possible.</li>
+</ul>
+
+<h4 id="cell-indicators">CELL INDICATORS</h4>
+
+<p>Each cell has 4 information slots (2 in the upper edge and 2 in the lower edge) where you can display the information you choose:</p>
+
+<ul>
+  <li><strong>health :</strong> health level.</li>
+  <li><strong>score :</strong> score (according to main goal selection).</li>
+  <li><strong>shield :</strong> shield integrity level.</li>
+  <li><strong>energy :</strong> energy level.</li>
+  <li><strong>mass :</strong> mass index.</li>
+  <li><strong>food :</strong> food particles taken.</li>
+  <li><strong>dirt :</strong> waste particles taken.</li>
+  <li><strong>preys :</strong> cells eaten.</li>
+  <li><strong>cycles :</strong> cycles completed.</li>
+  <li><strong>id :</strong> genetic id.</li>
+  <li><strong>dad :</strong> dad’s genetic id.</li>
+  <li><strong>mom :</strong> mom’s genetic id.</li>
+  <li><strong>none :</strong> display nothing.</li>
+</ul>
 
 <h2 id="the-controls">The Controls</h2>
 <p>The buttons and sliders of the application allow you to interact with the simulation parameters.</p>
@@ -117,13 +143,19 @@
   <li><strong>Nex Generation</strong> polls the population score and resets the map, generating a new genetic pool with the previous generation data.</li>
   <li><strong>Remove Items</strong> removes all food and waste particles.</li>
   <li><strong>Clear monitors</strong> blanks all the genetic slots.</li>
-  <li><strong>Toggle vectors</strong> switches ON/OFF to display all the cell vectors.</li>
+  <li>
+    <p><strong>Toggle vectors</strong> switches ON/OFF to display all the cell vectors.</p>
+  </li>
+  <li>
+    <p><strong>Enable/Disable auto-experiments</strong> switches ON/OFF the automatic experimentation procedure. Always press <strong>RESET</strong> when beginning a new experiment sequence.</p>
+  </li>
+  <li><strong>RESET</strong> clear all genetic displays, deletes genetic pool and restarts generation counter. It can only be activated if <em>auto-experiments</em> are enabled.</li>
 </ul>
 
 <p><strong>SELECTORS:</strong></p>
 <ul>
   <li><strong>Main Goal</strong> defines the scoring method for the cells.</li>
-  <li><strong>CELL INIDICATORS</strong> set the 4 values that each cell has displayed in the upper and lower margins.</li>
+  <li><strong>CELL INDICATORS</strong> set the 4 values that each cell has displayed in the upper and lower margins.</li>
 </ul>
 
 <p><strong>KEYBOARD &amp; MOUSE:</strong></p>
@@ -145,5 +177,5 @@ TEST SKETCH
 </span>
 </a></p>
 
-<p>Latest commit : 28  / aug / 2020</p>
+<p>Latest commit : 13  / sept / 2020</p>
 :ET

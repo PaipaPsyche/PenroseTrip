@@ -33,6 +33,11 @@ var atts={
       vectorization:"inv-lineal",
       food_per_mass:2
     },
+    auto:{
+      active:0,
+      n_cells:30,
+      n_time:350
+    },
     breeding:{
       n_offs: 15,
       p_mut:0.01,
@@ -64,17 +69,17 @@ var actual_pool=[];
 
 var clickables= [];
 
-var butt_ng,butt_rmitem,butt_togvecs,butt_hide_m;
-var slider_minfood, slider_nfood, slider_viscosity;
+var butt_ng,butt_rmitem,butt_togvecs,butt_hide_m,butt_togauto;
+var slider_minfood, slider_nfood, slider_viscosity,slider_maxt,slider_ncells;
 var select_scoring, select_m1,select_m2,select_m3,select_m4;
 
 var genetic_display_sel=null;
 
 
 
-var gen =1;
-var T = 0;
-var g_cont = 0;
+var gen =1;// generation
+var T = 0; // time
+var g_cont = 0; // genetic identifier ( counter)
 var last_performance = 0;
 
 
@@ -157,6 +162,17 @@ function keyPressed(){
 function draw(){
   background(0);
   read_butt_values()
+  if(atts.simulation.auto.active==1){
+    let tt = T/10;
+    //console.log(tt);
+    //console.log(tt%atts.simulation.auto.n_time)
+    if(tt>=atts.simulation.auto.n_time){
+      //console.log("a")
+      next_generation();
+      random_n_cells(atts.simulation.auto.n_cells);
+      T=1;
+    }
+  }
 
 
   // stats
@@ -262,8 +278,13 @@ function draw(){
   text("Upper",xo,yo+245);
   text("Lower",xo+90,yo+245);
 
+  text("AUTO-EXPERIMENTATION : ",xo,yo+315);
+  text("Max time",xo,yo+335);
+  text("Initial cells",xo,yo+355);
 
 
+  text(slider_maxt.value(),xo+170,yo+335);
+  text(slider_ncells.value(),xo+170,yo+355);
 
 
   pop()
