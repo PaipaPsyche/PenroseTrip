@@ -1,0 +1,43 @@
+I"�<blockquote>
+  <p>Scattering, in physics, is a change in the <em>direction of motion</em> of a particle because of a <strong>collision</strong> with another particle.[…] In probing the interior of the atom, the physicist <a href="https://en.wikipedia.org/wiki/Ernest_Rutherford"><strong>Ernest Rutherford</strong></a> passed a stream of alpha particles through a thin sheet of gold foil. The alpha particles were emitted by a radioactive material and had enough energy to penetrate an atom; although most passed right through the gold foil, some were <em>deflected</em> in a way that indicated that the scattering was produced by a <strong>Coulomb force</strong>.</p>
+</blockquote>
+
+<ul>
+  <li>Taken from <a href="https://www.britannica.com/science/scattering">Britannica Encyclopedia</a></li>
+</ul>
+
+<h2 id="the-sketch">The Sketch</h2>
+
+<p>Particles with mass and charge are created that are subject to a simulation of N bodies where the only given interaction is the coulomb force (Electrostatic). This implies that the force between particles is proportional to the inverse of the square of the distance, and it is also proportional to the charges of the two interacting bodies. Likewise, two charges of opposite sign have attractive force while two charges of similar sign are subject to a repulsive force.</p>
+
+<h2 id="the-purpose">The Purpose</h2>
+<p>Once the behavior of particles that obey Coulomb’s laws in 2D had been simulated, the next step was to formulate an <strong>experiment</strong> that would allow us to see the benefits of said simulation. Particle scattering is a great example to study as it allows us to visualize how <em>small changes</em> in the charges or positions of the particles on the bombarded surface affect the direction of the <em>incident particle beam</em>.</p>
+
+<h2 id="the-result">The Result</h2>
+<p>A simulation consistent with expectations is obtained, at least in terms of the defection of charged particles. This is seen when the <strong>dust</strong> particles (those that make up the incident beam) are repelled or attracted towards the <strong>ions</strong> (particles with a greater charge that take on red or blue colors depending on the sign of said charge) consistently with their distance to said charges. In ion structures, such as those present in the simulation, we can observe how discrete changes in ions distant from the <strong>point of collision</strong> of the beam, manage to deflect it.</p>
+
+<p>An interesting result is to <em>liberate</em> an ion from the fixed position where it is inside the structure, leaving it as another free particle within the simulation. Most of the times, this ion is <em>trapped</em> within the structure in a periodic motion that creates binary oscillations in the deflected beam. These vibrations of the trapped ion manage to create the equivalent of a spectrum in the detector (if any) and only measuring the deflected beam could give indications of these vibrating ions within the structure.</p>
+
+<p>Another result associated with the previous one is associated with the dust particles outside the beam and the <em>inflection points</em>. When the beam passes very close to an ion, it curves the beam considerably, this is expected given the correlation between force and distance in <strong>coulomb’s laws</strong>. I call these events <strong>inflection points</strong>. The interesting thing is that when a particle outside the incident beam disturbs the beam near these points, it manages to create <strong>large disturbances</strong> compared to a particle that disturbs the beam at any other point in its trajectory.</p>
+
+<h2 id="the-controls">The Controls</h2>
+<p>The particle beam enters the screen from the left side. Then it comes across 3 barriers of <em>“ions”</em>, each with a different charge than the previous layer, and then an <em>object</em> with ions of arbitrary charge.</p>
+
+<p>CLICK on an atom to <em>flip</em> its charge. CLICK on an empty space to create a dust particle (same kind of particle present in the incident beam) with velocity to the left.</p>
+
+<ul>
+  <li><strong>P (while hovering an ion):</strong> liberates the ion from its fixed position.</li>
+  <li><strong>F :</strong> flips the charge of a random ion.</li>
+  <li><strong>W :</strong> Moves the origin of the beam UP.</li>
+  <li><strong>S :</strong> Moves the origin of the beam DOWN.</li>
+</ul>
+
+<h2 id="latest-release">Latest Release</h2>
+<p><a href="/assets/sketches/scattering/scattering.html" class="link-sketch">
+<span>
+TEST SIMULATION
+</span>
+</a></p>
+
+<p>Latest commit : 06  / Nov / 2020</p>
+:ET

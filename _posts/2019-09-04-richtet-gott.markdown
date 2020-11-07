@@ -15,7 +15,7 @@ tags: ""
 
 Physics, philosophy, mathematics, psychology, biology. Perhaps they are all faces from the same center where everything starts, the **eternal motor** that gives rise to a whole. It is possible that nature itself has a womb from where everything is born and that we can hardly imagine from our human experience.
 
-**What if** there is a superior being that supervises human progress from the shadows? regardless of whether it is a god, an alien, or a being of another nature. Isn't the idea of being watched by something hidden and ominous a little **disturbing**?
+**What if** there is a superior being that supervises human progress from the shadows? regardless of whether it is a god, an alien, or a being of another nature. Isn't the idea of being watched by something hidden and ominous a little **disturbing**? The idea of Oculus Gea is to represent the watchful *eye of nature* in its maximum expression: as guardian, as judge, as **mother** and as center. The engine of all human and subsequent reasoning is due to the selfless supervision of nature's **perpetual engine**. A reminder that we are as much a part of her as possible and furthermore, that we are not essential to its perpetual clockwork.
 
 
 ## Technique
@@ -30,3 +30,5 @@ It is possible that the feeling that there is **something greater** is a defect 
 
 
 ## Models and references
+#### Models
+* [Fabian Leonardo](https://www.instagram.com/fl.cuellar361/) (Pattern)
