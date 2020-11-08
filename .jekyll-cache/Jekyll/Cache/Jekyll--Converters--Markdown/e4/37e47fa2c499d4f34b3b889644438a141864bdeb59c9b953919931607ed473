@@ -1,0 +1,78 @@
+I"i<p>The peak of the COVID-19 crisis seemed like the perfect opportunity to create an SIR environment to simulate the propagation of an infection within a population.</p>
+
+<h2 id="the-sketch">The Sketch</h2>
+<p>The simulation is based on <strong>individual agents</strong> that walk randomly through the simulation space (Brownian motion), these agents can be in one of 3 possible states: <strong>Susceptible</strong>, <strong>Infected</strong> and <strong>Recovered</strong>.
+The <strong>(S)usceptible</strong> agents are those who have not contracted the disease and have the potential to acquire it, within the simulation they are represented with the color white. The <strong>(I)nfected</strong> are represented with the color red, and they are those who carry the disease and are capable of transmitting it to susceptible agents, this state changes after a few days. Finally, the <strong>(R)ecovered</strong> agents are those that were infected and, after a certain amount of time, lose their potential to infect and become infected. The latter are reflected in two cases within the simulation: those that die and disappear from the simulation, and those that survive the virus and acquire immunity, turning blue.</p>
+
+<p>The simulation has a set of parameters that can be played with and the important thing is to see <strong>how these changes can affect the spread of a disease</strong> within a toy population. You can play with attributes of the disease, such as days of incubation or percentage of mortality, as well as possible containment strategies. all within the framework of a fixed population that may (or may not) obey the standards of containment that are established.</p>
+
+<h2 id="the-purpose">The Purpose</h2>
+<p>Given the current <strong>global emergency situation</strong>, where a virus threatens to attack the most susceptible, it is important to be aware of how the virus attacks us to know how to respond accordingly. Many governments have opted for <strong>radical health measures</strong> that have managed to <strong>contain the spread</strong> of the virus in a remarkable way, but it is also true that some governments also have more ignorant leaders who ignore the situation and in some cases promote misinformation in this regard.</p>
+
+<p>It seems important to me that people can <strong>experiment</strong> with these types of simulations so that they realize the importance of complying with sanitary measures, such as hand washing and social distancing, and see for themselves <strong>the effects of small daily decisions</strong>. The problem in these countries with stubborn leaders is that they blindly trust a false promise of security, when a simple simulation like the one I did can show that sanitary measures are, in fact, our <strong>best weapon against a catastrophe</strong> of such magnitude.</p>
+
+<h2 id="the-result">The Result</h2>
+
+<p>The simulation responds well to the parameters and the changes made to them. In other words, expected results are obtained by, for example, increasing the contagion rate or introducing restrictive measures, seeing these changes reflected in the <strong>contagion curve</strong> and the mortality rate.
+An added value is the line defined by the <strong>health coverage</strong> present in the simulation: it is a value defined in favor of <em>“how many infected people can the public health system treat?”</em>. When this number is exceeded, fatal cases increase considerably, this factor being relevant to determine the lethality of the virus. A simulation where sanitation can only handle a small number of infected usually has many more deaths than one with a higher percentage of coverage. In real life, the number of patients that can be cared for in <em>intensive care units</em> is a relevant parameter to determine the impact of the virus on the population.</p>
+
+<h2 id="the-controls">The Controls</h2>
+<p>The buttons of the application allow you to interact with the simulation parameters.</p>
+
+<p><strong>PARAMETERS:</strong></p>
+
+<p><strong>ABOUT THE CONTEXT:</strong></p>
+
+<ul>
+  <li><strong>Dispersion Index</strong> is the mean speed of the agents moving through the simulation space.</li>
+  <li><strong>Collaboration Rate</strong> sets the rate of agents that will obey the sanitary measures. The percentage is constant in the simulation, but the agents that disobey change once in a while.</li>
+  <li><strong>Population</strong> sets the number of agents in the simulation.</li>
+  <li><strong>Medical Coverage</strong> is the percentage of population that can be in UCIs at the same time.</li>
+  <li><strong>RESET button</strong> resets the simulation with the parameters that are set at the moment of pressing the button.</li>
+</ul>
+
+<p><strong>ABOUT THE DISEASE:</strong></p>
+
+<ul>
+  <li><strong>Incubation period</strong> is the average of day that the infected carry the sickness before recovering or dying.</li>
+  <li><strong>mortality</strong> is the probability of dying once infected. This may increase with the exceeding of medical coverage.</li>
+  <li><strong>Contagion rate</strong> determines the probability of getting the disease if a Susceptible spends one whole day with an Infected.</li>
+</ul>
+
+<p><strong>ABOUT THE SANITARY RESTRICTIONS:</strong></p>
+
+<ul>
+  <li><strong>Movement restriction</strong> sets the obeying agents to be static. Similar to a confinement measure.</li>
+  <li><strong>Washing hands</strong> reduces the contagion rate in a half.</li>
+  <li><strong>Social distancing</strong> makes the movement slow and reduces the radius of contagion.</li>
+  <li><strong>Closed experiment</strong> sets the simulation in a closed box, or one with open borders. When borders are open, all agents that exit one side of the box, enters by the opposite side.</li>
+</ul>
+
+<p><strong>INDICATORS:</strong></p>
+
+<ul>
+  <li><strong>P(I)</strong> observed probability of being infected.</li>
+  <li><strong>Growth</strong> percentage of the healthy population of last day that got infected today.</li>
+  <li><strong>P(D)</strong> observed probability of dying once infected.</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>**AVG</td>
+          <td>MIR</td>
+          <td>MI** AVG is the average contagion rate given the ones already infected until the last day and the total number of agents. The MI is the most number of agents an infected agent has infected directly. The MIR is the MI divided by the number of days this agent was considered infectious.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h2 id="latest-release">Latest Release</h2>
+<p><a href="/assets/sketches/sir-simulation/SIR-simulation.html" class="link-sketch">
+<span>
+TEST SKETCH
+</span>
+</a></p>
+
+<p>Latest commit : 02  / may / 2020</p>
+:ET
