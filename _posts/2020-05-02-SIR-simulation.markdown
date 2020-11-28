@@ -8,7 +8,7 @@ type: ""
 author: Paipa Psyche
 image: "/assets/img/posts/sketch-sir.png"
 icon: ""
-link: "/assets/sketches/sir-simulation/sir-simulation.html"
+link: "/assets/sketches/sir-simulation/SIR-simulation.html"
 tags:
   sketch
   javascript
