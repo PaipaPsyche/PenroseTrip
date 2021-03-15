@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 Mar 2021 00:27:14 +0100</pubDate>
-    <lastBuildDate>Tue, 16 Mar 2021 00:27:14 +0100</lastBuildDate>
+    <pubDate>Tue, 16 Mar 2021 00:35:30 +0100</pubDate>
+    <lastBuildDate>Tue, 16 Mar 2021 00:35:30 +0100</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -175,8 +175,8 @@ TEST SIMULATION
 &lt;p&gt;My &lt;a href=&quot;https://github.com/PaipaPsyche/SuperClusterCharacterization/blob/master/FinalDocument.pdf&quot; target=&quot;_blank&quot;&gt;undergraduate thesis work&lt;/a&gt; was focused on studying the &lt;strong&gt;statistical relevance&lt;/strong&gt; of superclusters with  characteristics similar to the ones observed by &lt;a href=&quot;https://arxiv.org/abs/1409.0880&quot; target=&quot;_blank&quot;&gt;Tully et al.&lt;/a&gt; in our local supercluster &lt;strong&gt;Laniakea&lt;/strong&gt;. This was made by comparing these characteristics with the ones observed in supercluster formation in cosmological simulations. My method consisted on first identifying the supercluster formation using &lt;strong&gt;velocity divergence fields&lt;/strong&gt; and later, using the watershed algorithm, making a segmentation of the simulated space in superclusters. Over the observed superclusters I analyzed properties such as &lt;strong&gt;density, mass, volume and shape&lt;/strong&gt; arriving to the conclusion that obtaining a supercluster similar to Laniakea was an event of &lt;strong&gt;very low probability&lt;/strong&gt;, implying that &lt;strong&gt;Laniakea is atypical&lt;/strong&gt; in the context of cosmological simulations.&lt;/p&gt;
 </description>
         <pubDate>Mon, 02 Nov 2020 02:15:00 +0100</pubDate>
-        <link>http://localhost:4000/new-penrose/</link>
-        <guid isPermaLink="true">http://localhost:4000/new-penrose/</guid>
+        <link>http://localhost:4000/MNRAS-publication-superclusters/</link>
+        <guid isPermaLink="true">http://localhost:4000/MNRAS-publication-superclusters/</guid>
         
         <category>information</category>
         

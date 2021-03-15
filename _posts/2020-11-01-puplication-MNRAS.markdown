@@ -5,7 +5,7 @@ date:   2020-11-01 22:15:00 -0300
 description: "Superclusters from velocity divergence fields"
 categories: information
 author: Paipa Psyche
-permalink: /new-penrose/
+permalink: /MNRAS-publication-superclusters/
 image: ""
 icon: ""
 tags:
