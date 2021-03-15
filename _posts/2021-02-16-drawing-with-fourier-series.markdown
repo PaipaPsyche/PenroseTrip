@@ -5,7 +5,7 @@ date:   2021-02-15 22:23:00 -0300
 description: "There is an alternate reality living in the space of frequencies"
 categories: sketch
 author: Paipa Psyche
-image: "/assets/img/posts/sketch-wave.gif"
+image: "/assets/img/posts/sketch-fourier.png"
 icon: ""
 link: "/assets/sketches/fourier2D/fourierDrawing.html"
 tags:
