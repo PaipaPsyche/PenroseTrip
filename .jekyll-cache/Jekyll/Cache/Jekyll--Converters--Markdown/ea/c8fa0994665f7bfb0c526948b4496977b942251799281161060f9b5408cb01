@@ -1,0 +1,25 @@
+I"Ð<h2 id="the-sketch">The Sketch</h2>
+
+<h2 id="the-purpose">The Purpose</h2>
+
+<h2 id="the-result">The Result</h2>
+
+<h2 id="the-controls">The Controls</h2>
+<p>First, draw a figure in the Big left blackboard by <strong>pressing and dragging the left mouse click</strong>. In order to obtain a good example of Fourier decomposition it is <strong>important</strong> that the drawing is a <abbr title="the drawing is a continuous line that finishes where it started"><strong>closed figure</strong></abbr>, with no interruptions and ideally drawn slowly so the drawing has enough data points. Drawing fast may give few data points and generate sudden changes in direction, which is an interesting study case too.</p>
+
+<p>Once your drawing is done, press <strong>Save Board</strong> in order to store your drawing in memory (Upper smaller board) and then <strong>Transform</strong> to generate the Fourier decomposition. If you donâ€™t like what is in the blackboard you can press <strong>Blank Board</strong> to delete the points in the left blackboard.</p>
+
+<p>Once the Fourier decomposition is done, you can <strong>control the number of principal frequencies</strong>  used in the drawing with the <strong>slider</strong> under the left blackboard. If you want the machine to start drawing again from the beginning you can press <strong>Reset Drawing</strong> to reset the machine (with your drawing still in memory).</p>
+
+<h4 id="mobile">Mobile</h4>
+<p>This version may not work in mobile devices. But if it does, the controls are the same.</p>
+
+<h2 id="latest-release">Latest Release</h2>
+<p><a href="/assets/sketches/fourier2D/fourierDrawing.html" class="link-sketch">
+<span>
+TEST SKETCH
+</span>
+</a></p>
+
+<p>Latest commit : 07  / oct / 2019</p>
+:ET

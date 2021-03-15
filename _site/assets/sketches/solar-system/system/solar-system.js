@@ -573,7 +573,7 @@ class system {
 
       fill(0);
 
-      circle(Xcenter, Ycenter, 1.2 * (this.Rsun + 0.1 * this.DR * sin(this.Wsun * T)));
+      circle(Xcenter, Ycenter, 1.7 * (this.Rsun + 0.1 * this.DR * sin(this.Wsun * T)));
 
       // noFill();
       // strokeWeight(0.3);

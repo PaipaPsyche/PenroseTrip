@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" type="image/png" href="/assets/img/site/favicon.png">
+
+  <!-- <link rel="shortcut icon" type="image/png" href="/assets/img/site/favicon.png"> -->
+  <!-- <link rel="icon" href="/assets/img/site/favicon.png" type="image/x-icon"> -->
+
+  <title>Drawing With Fourier Series</title>
+  <meta name="description" content="  Profound study of nature is the most fertile source of mathematical discoveries.Jean Baptiste Joseph FourierThe SketchThe sketch is a didactic representati...">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="canonical" href="http://localhost:4000/sketch/2021/02/16/drawing-with-fourier-series.html">
+  <link rel="alternate" type="application/rss+xml" title="Penrose Trip" href="http://localhost:4000/feed.xml">
+</head>
+
+
+  <body>
+
+    <div class="headbox-wrapper">
+<header class="site-header">
+
+  <div class="wrapper row">
+
+      <a class="site-title" href="/">Penrose Trip</a>
+      <img class="site-icon" src="/assets/img/site/eyecon.png"/>
+
+
+
+
+
+      <!-- <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a> -->
+
+
+        <!-- 
+          
+          <a class="page-link" href="/about/"><b>About</b></a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/gallery/"><b>Gallery</b></a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/sketches/"><b>Sketches</b></a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+         -->
+
+        <input type="checkbox" id="chk">
+        <label for="chk" class="btn-menu-open">
+          <i class="fas fa-ellipsis-h" ></i>
+        </label>
+        <ul class="menu-list">
+          
+            
+            <a class="page-link" href="/about/"><b>About</b></a>
+            
+          
+            
+          
+            
+            <a class="page-link" href="/gallery/"><b>Gallery</b></a>
+            
+          
+            
+          
+            
+          
+            
+            <a class="page-link" href="/sketches/"><b>Sketches</b></a>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          <label for="chk" class="btn-menu-close">
+            <i class="fas fa-times"></i>
+          </label>
+        </ul>
+
+
+
+  </div>
+
+</header>
+</div>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Drawing With Fourier Series</h1>
+    <p class="post-meta"><time datetime="2021-02-16T02:23:00+01:00" itemprop="datePublished">Feb 16, 2021</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Paipa Psyche</span></span></p>
+    <!-- LATEX -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <blockquote>
+  <p>Profound study of nature is the most fertile source of mathematical discoveries.</p>
+</blockquote>
+
+<p>Jean Baptiste Joseph Fourier</p>
+
+<h2 id="the-sketch">The Sketch</h2>
+<p>The sketch is a didactic representation of what <strong>Fourier series</strong> and a <strong>Discrete Fourier Transform (DFT)</strong> represent when decomposing data into frequencies.The <a href="https://en.wikipedia.org/wiki/Discrete_Fourier_transform#Definition" target="_blank">definition</a> of the DFT is given by a function that takes in <strong>N</strong> data points \(X_n\) and create <strong>N</strong> new <em>complex numbers</em> \(\tilde{X}_k\). This resulting coefficients encode data of frequency, phase and amplitude for the decomposed signal. But what does this mean? Well, let me explain briefly the <strong>GENIALITY</strong> of Fourier’s proposition.</p>
+
+<p>This model works under the hypothesis that <strong>any signal can be decomposed in a summation of sine and cosine waves</strong>, with different frequencies and amplitudes. A useful analogy is to think of the ripples in the sea as the result of big slow waves caused by the tide, median waves (quicker this time) caused by nearby boats, and small ripples caused by breeze and the fishes under the surface. If we know the magnitude (Amplitude) of each one of these sources, their speed (Frequency) and where they are originated (Phase), we can deduce the state of the sea <em>in any given point</em>. With a signal is the same: we assume that it is a sum of many cosine and sine waves of different frequencies and magnitudes, and that these coefficients (Frequency, magnitude and phase) can be inferred from the original signal. <strong>This is crazy!</strong> In the analogy of the sea, this is the equivalent of observing the waves for a finite period of time and, based on the observation, being able to tell the characteristics of <strong>every source</strong> of movement affecting the sea, from the tide caused by the moon to the tiny perturbations caused by the wind. This is the magic of the <strong>Fourier Series!</strong></p>
+
+<p>There’s also <a href="https://en.wikipedia.org/wiki/Discrete_Fourier_transform#Inverse_transform" target="_blank">defined</a> an  <strong>Inverse Discrete Fourier Transform (IDFT)</strong> which takes the \(\tilde{X}_k\) values and return the \(X_n\) points of the original signal. An important remark is that while the original signal data is in the <strong>time space</strong> (data points with different intensities distributed in time) the DFT-generated points are in the <strong>frequency space</strong> and they represent a <strong>fundamental frequency</strong> of the system for <strong>all</strong> the duration of the signal. This means that each Fourier Coefficient \(\tilde{X}_k\) depends on every data point \(X_n\) and viceversa.</p>
+
+<p>Now, with a known set of frequencies and amplitudes, you can certainly tell more about the signal you have. With this information you can tell which are the <strong>main frequencies</strong> of the signal and how relevant each of these frequencies are. This is useful, for example, when you want to extract <strong>periodic behaviors in financial data</strong> or extracting which frequencies are relevant and which are associated with <strong>noise</strong>. In this last case identifying noise, if you take the frequencies with the smallest intensities (frequencies that are not that relevant: noise) and <strong>set their amplitudes to Zero</strong> (in the frequency space), when doing the IDFT to the modified \(\tilde{X}_k\) you obtain a the original signal with <strong>suppressed noise</strong>. You can suppress or amplify frequencies as you wish in the frequency space by tunning amplitudes, so that when the Transformation is reversed the signal is modified as requested. This is a basic principle of DFT that is commonly used when cleaning noise from signals and modifying sound data with tools such as <strong>autotune</strong> or <strong>bass amplifers</strong> (which amplify low frequencies).</p>
+
+<h2 id="the-purpose">The Purpose</h2>
+<p>The aim is to develop a better intuition on what all these summations and complex coefficients mean when reconstructing a discrete succession of points distributed in time (a signal) from frequency information. When learning about the Fourier transform (and Series) sometimes is difficult to picture how a complex exponential can be used as a <em>magic wand</em> to extract the frequencies of a signal and what this tells us about the signal itself. Off course there are many good teachers and classic examples one can learn form, but I think a good way to learn is to play around with the concept and learn by yourself the consequences of changing every little thing in the model. I created this sketch to learn better the implications of DFT and to show the amazing concept it hides in a simple complex equation.</p>
+<h2 id="the-result">The Result</h2>
+<p>Doing the transformation of a signal is not that <em>magical</em> in a computer: inserting a set of numbers and extracting other set of numbers is not a remarkable concept for a learner. But a concept that escapes to the mind when having a set of sines and cosines are that they can be related to the rotation of a circle. Furthermore, when using the DFT we are dealing with frequencies, amplitudes and phases, and these can be translated (using trigonometry) to the state of a point going around a circle of specific size (Amplitude) at an specific speed (frequency) and starting in an specific angle (phase). Using this two powerful ideas, DFT and complex exponentials as spinning vectors, is that this sketch is made.</p>
+
+<p>The program allows you to make a drawing  (a continuous line in 2D) and this can be translated as a set of points with coordinates (x,y). This set of points can also be seen as two different 1D signals, one for X and one for Y, which is convenient since each 1D signal can be analyzed through DFT. When concluding the Transformations we are left with two DFT points in the frequency space ,one for X and one for Y. Now, since <strong>the signal is a summation of the effects of each fundamental frequency</strong> (each one associated with a \(\tilde{X}_k\)) and each one of these can be expressed as a spinning vector, <strong>we can express X as a sum of vectors spinning with different amplitudes and frequencies</strong>, each one starting where the previous vector finished (the same goes for Y). The <strong>initial</strong> angle at which each vector starts spinning <strong>is given by the phase</strong>.</p>
+
+<p>The total signal is a consequence of all frequencies summed, so <strong>it doesn’t matter the order</strong> in which they are added (the order in which the vectors are stacked) <strong>as long as they are all taken into account</strong>. A useful way to order these vector is in <strong>decreasing order of amplitude</strong>, drawing first the most relevant frequencies (associated with circles of big radius) and the least ones at last (tiny circles). This is useful because if you choose to draw only the first <strong>M</strong> circles (vectors), the signal is going to be pretty similar to the original one but with <strong>less details</strong>. These details are given by the coefficients of smaller magnitude you chose not to draw. So basically when choosing to draw only the first <strong>M</strong> main frequencies you are creating a <strong>filter</strong> over the signal, filtering out all the non-relevant details.</p>
+
+<p>In the sketch you can choose this number <strong>M</strong> and on each axis you can see a plot representation of the main frequencies (the <strong>M</strong> that are drawn) in magnitude (length of the colored bar), phase (blue-red coloring of the bar) and frequency (White dot paired with each bar flashes every time a cycle of that frequency is completed.The faster it flashes, higher the frequency). Each bar is associated with a circle, so that a long bar might be related to a big circle on that axis.</p>
+
+<h2 id="the-controls">The Controls</h2>
+<p>First, draw a figure in the Big left blackboard by <strong>pressing and dragging the left mouse click</strong>. In order to obtain a good example of Fourier decomposition it is <strong>important</strong> that the drawing is a <abbr title="the drawing is a continuous line that finishes where it started"><strong>closed figure</strong></abbr>, with no interruptions and ideally drawn slowly so the drawing has enough data points. Drawing fast may give few data points and generate sudden changes in direction, which is an interesting study case too.</p>
+
+<p>Once your drawing is done, press <strong>Save Board</strong> in order to store your drawing in memory (Upper smaller board) and then <strong>Transform</strong> to generate the Fourier decomposition. If you don’t like what is in the blackboard you can press <strong>Blank Board</strong> to delete the points in the left blackboard.</p>
+
+<p>Once the Fourier decomposition is done, you can <strong>control the number of principal frequencies</strong>  used in the drawing with the <strong>slider</strong> under the left blackboard. If you want the machine to start drawing again from the beginning you can press <strong>Reset Drawing</strong> to reset the machine (with your drawing still in memory).</p>
+
+<h4 id="mobile">Mobile</h4>
+<p>This version may not work in mobile devices. But if it does, the controls are the same.</p>
+
+<h2 id="latest-release">Latest Release</h2>
+<p><a href="/assets/sketches/fourier2D/fourierDrawing.html" class="link-sketch">
+<span>
+TEST SKETCH
+</span>
+</a></p>
+
+<p>Latest commit : 15  / mar / 2021</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Penrose Trip</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Penrose Trip ©</li>
+          <li><a href="mailto:davidpaipa03@gmail.com">davidpaipa03@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/penrose_trip/"> @PenroseTrip </a> on instagram</li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/PaipaPsyche"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">PaipaPsyche</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/PenroseTrip"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">PenroseTrip</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p style="text-align: justify;">This website is an interactive portal for informative use, which seeks to open a space for the juxtaposition between psychedelia, science, programming and art.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

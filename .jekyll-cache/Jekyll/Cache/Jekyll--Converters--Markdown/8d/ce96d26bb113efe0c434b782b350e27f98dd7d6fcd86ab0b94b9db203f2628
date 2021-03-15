@@ -1,0 +1,38 @@
+I"�<blockquote>
+  <p>Profound study of nature is the most fertile source of mathematical discoveries.</p>
+</blockquote>
+
+<p>Jean Baptiste Joseph Fourier</p>
+
+<h2 id="the-sketch">The Sketch</h2>
+<p>The sketch is a didactic representation of what <strong>Fourier series</strong> and a <strong>Discrete Fourier Transform (DFT)</strong> represent when decomposing data into frequencies.The <a href="https://en.wikipedia.org/wiki/Discrete_Fourier_transform#Definition" target="_blank">definition</a> of the DFT is given by a function that takes in <strong>N</strong> data points \(X_n\) and create <strong>N</strong> new <em>complex numbers</em> \(\tilde{X}_k\). This resulting coefficients encode data of frequency, phase and amplitude for the decomposed signal. But what does this mean? Well, let me explain briefly the <strong>GENIALITY</strong> of Fourier’s proposition.</p>
+
+<p>This model works under the hypothesis that <strong>any signal can be decomposed in a summation of sine and cosine waves</strong>, with different frequencies and amplitudes. A useful analogy is to think of the ripples in the sea as the result of big slow waves caused by the tide, median waves (quicker this time) caused by nearby boats, and small ripples caused by breeze and the fishes under the surface. If we know the magnitude (Amplitude) of each one of these sources, their speed (Frequency) and where they are originated (Phase), we can deduce the state of the sea <em>in any given point</em>. With a signal is the same: we assume that it is a sum of many cosine and sine waves of different frequencies and magnitudes, and that these coefficients (Frequency, magnitude and phase) can be inferred from the original signal. <strong>This is crazy!</strong> In the analogy of the sea, this is the equivalent of observing the waves for a finite period of time and, based on the observation, being able to tell the characteristics of <strong>every source</strong> of movement affecting the sea, from the tide caused by the moon to the tiny perturbations caused by the wind. This is the magic of the <strong>Fourier Series!</strong></p>
+
+<p>There’s also the  <strong>Inverse Discrete Fourier Transform (IDFT)</strong> which takes the \(\tilde{X}_k\) values and return the \(X_n\) points of the original signal. An important remark is that while the original signal data is in the <strong>time space</strong> (data points with different intensities distributed in time) the DFT-generated points are in the <strong>frequency space</strong> and they represent a <strong>fundamental frequency</strong> of the system for <strong>all</strong> the duration of the signal. This means that each Fourier Coefficient \(\tilde{X}_k\) depends on every data point \(X_n\) and viceversa.</p>
+
+<p>Now, with a known set of frequencies and amplitudes, you can certainly tell more about the signal you have. With this information you can tell which are the <strong>main frequencies</strong> of the signal and how relevant each of these frequencies are. This is useful, for example, when you want to extract <strong>periodic behaviors in financial data</strong> or extracting which frequencies are relevant and which are associated with <strong>noise</strong>. In this last case identifying noise, if you take the frequencies with the smallest intensities (frequencies that are not that relevant: noise) and <strong>set their amplitudes to Zero</strong> (in the frequency space), when doing the IDFT to the modified \(\tilde{X}_k\) you obtain a the original signal with <strong>suppressed noise</strong>. You can suppress or amplify frequencies as you wish in the frequency space by tunning amplitudes, so that when the Transformation is reversed the signal is modified as requested. This is a basic principle of DFT that is commonly used when cleaning noise from signals and modifying sound data with tools such as <strong>autotune</strong> or <strong>bass amplifers</strong> (which amplify low frequencies).</p>
+
+<h2 id="the-purpose">The Purpose</h2>
+<p>The aim is to develop a better intuition on what all these summations and complex coefficients mean when reconstructing a discrete succession of points distributed in time (a signal) from frequency information. When learning the Fourier transform (and Series) sometimes is difficult to picture how a complex exponential can be used as a magic wand to extract the frquencies</p>
+<h2 id="the-result">The Result</h2>
+
+<h2 id="the-controls">The Controls</h2>
+<p>First, draw a figure in the Big left blackboard by <strong>pressing and dragging the left mouse click</strong>. In order to obtain a good example of Fourier decomposition it is <strong>important</strong> that the drawing is a <abbr title="the drawing is a continuous line that finishes where it started"><strong>closed figure</strong></abbr>, with no interruptions and ideally drawn slowly so the drawing has enough data points. Drawing fast may give few data points and generate sudden changes in direction, which is an interesting study case too.</p>
+
+<p>Once your drawing is done, press <strong>Save Board</strong> in order to store your drawing in memory (Upper smaller board) and then <strong>Transform</strong> to generate the Fourier decomposition. If you don’t like what is in the blackboard you can press <strong>Blank Board</strong> to delete the points in the left blackboard.</p>
+
+<p>Once the Fourier decomposition is done, you can <strong>control the number of principal frequencies</strong>  used in the drawing with the <strong>slider</strong> under the left blackboard. If you want the machine to start drawing again from the beginning you can press <strong>Reset Drawing</strong> to reset the machine (with your drawing still in memory).</p>
+
+<h4 id="mobile">Mobile</h4>
+<p>This version may not work in mobile devices. But if it does, the controls are the same.</p>
+
+<h2 id="latest-release">Latest Release</h2>
+<p><a href="/assets/sketches/fourier2D/fourierDrawing.html" class="link-sketch">
+<span>
+TEST SKETCH
+</span>
+</a></p>
+
+<p>Latest commit : 15  / mar / 2021</p>
+:ET

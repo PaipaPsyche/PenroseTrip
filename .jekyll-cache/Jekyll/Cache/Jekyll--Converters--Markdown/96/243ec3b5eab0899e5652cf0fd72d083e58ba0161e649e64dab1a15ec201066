@@ -1,0 +1,28 @@
+I"g<h2 id="link-to-the-paper">Link to the paper</h2>
+<p>Published in <strong>Monthly Notices of the Royal Astronomical Society: Letters</strong> the <em>31 October 2020</em>.</p>
+
+<ul>
+  <li>
+    <p><a href="https://academic.oup.com/mnrasl/advance-article-abstract/doi/10.1093/mnrasl/slaa177/5948101?redirectedFrom=fulltext">Link</a> to <strong>MNRAS Letters</strong> site publication.</p>
+  </li>
+  <li>
+    <p><a href="https://arxiv.org/abs/2010.05160">Link</a> to arxiv.org site.</p>
+  </li>
+  <li>
+    <p><a href="https://arxiv.org/pdf/2010.05160">DOWNLOAD PDF</a> form  arxiv.org</p>
+  </li>
+</ul>
+
+<h2 id="co-autor-of-a-publication">Co-autor of a publication!</h2>
+<p><strong>Finally!</strong> the work of my undergraduate thesis contributed to the study of the formation of <strong>superclusters in cosmological simulations</strong>. In recent days my thesis advisor together with another undergraduate student wrote a paper where they consolidate the work of some students, including me, in the study of galactic superclusters and their formation in contemporary cosmological simulations (large simulations of structure formation in the universe ) that take into account the cosmology in which we believe our universe unfolds: The <strong>lambda-CDM cosmology</strong>.</p>
+
+<h2 id="whats-in-the-paper">what’s in the paper?</h2>
+<blockquote>
+  <p>Superclusters are a convenient way to partition and characterize the large scale structure of the Universe. In this Letter we explore the advantages of defining superclusters as watershed basins in the divergence velocity field. We apply this definition on diverse datasets generated from linear theory and N-body simulations, with different grid sizes, smoothing scales and types of tracers. From this framework emerges a linear scaling relation between the average supercluster size and the autocorrelation length in the divergence field, a result that holds for one order of magnitude from 10 Mpc/h up to 100 Mpc/h. These results suggest that the divergence-based definition provides a robust context to quantitatively compare results across different observational or computational frameworks. Through its connection with linear theory, it can also facilitate the exploration of how supercluster properties depend on cosmological parameters, paving the way to use superclusters as cosmological probes.</p>
+</blockquote>
+
+<p>Paper’s abstract</p>
+
+<h2 id="my-thesis">My thesis</h2>
+<p>My undergraduate thesis work was focused on studying the <strong>statistical relevance</strong> of superclusters with  characteristics similar to the ones observed by <a href="https://arxiv.org/abs/1409.0880" target="_blank">Tully et al.</a> in our local supercluster <strong>Laniakea</strong>. This was made by comparing these characteristics with the ones observed in supercluster formation in cosmological simulations. My method consisted on first identifying the supercluster formation using <strong>velocity divergence fields</strong> and later, using the watershed algorithm, making a segmentation of the simulated space in superclusters. Over the observed superclusters I analyzed properties such as <strong>density, mass, volume and shape</strong> arriving to the conclusion that obtaining a supercluster similar to Laniakea was an event of <strong>very low probability</strong>, implying that <strong>Laniakea is atypical</strong> in the context of cosmological simulations.</p>
+:ET

@@ -4,11 +4,79 @@
     <title>Penrose Trip</title>
     <description>This website is an interactive portal for informative use, which seeks to open a space for the juxtaposition between psychedelia, science, programming and art.
 </description>
-    <link>http://localhost:4001/</link>
-    <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 08 Nov 2020 18:39:20 +0100</pubDate>
-    <lastBuildDate>Sun, 08 Nov 2020 18:39:20 +0100</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 16 Mar 2021 00:27:14 +0100</pubDate>
+    <lastBuildDate>Tue, 16 Mar 2021 00:27:14 +0100</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>Drawing With Fourier Series</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Profound study of nature is the most fertile source of mathematical discoveries.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Jean Baptiste Joseph Fourier&lt;/p&gt;
+
+&lt;h2 id=&quot;the-sketch&quot;&gt;The Sketch&lt;/h2&gt;
+&lt;p&gt;The sketch is a didactic representation of what &lt;strong&gt;Fourier series&lt;/strong&gt; and a &lt;strong&gt;Discrete Fourier Transform (DFT)&lt;/strong&gt; represent when decomposing data into frequencies.The &lt;a href=&quot;https://en.wikipedia.org/wiki/Discrete_Fourier_transform#Definition&quot; target=&quot;_blank&quot;&gt;definition&lt;/a&gt; of the DFT is given by a function that takes in &lt;strong&gt;N&lt;/strong&gt; data points \(X_n\) and create &lt;strong&gt;N&lt;/strong&gt; new &lt;em&gt;complex numbers&lt;/em&gt; \(\tilde{X}_k\). This resulting coefficients encode data of frequency, phase and amplitude for the decomposed signal. But what does this mean? Well, let me explain briefly the &lt;strong&gt;GENIALITY&lt;/strong&gt; of Fourier’s proposition.&lt;/p&gt;
+
+&lt;p&gt;This model works under the hypothesis that &lt;strong&gt;any signal can be decomposed in a summation of sine and cosine waves&lt;/strong&gt;, with different frequencies and amplitudes. A useful analogy is to think of the ripples in the sea as the result of big slow waves caused by the tide, median waves (quicker this time) caused by nearby boats, and small ripples caused by breeze and the fishes under the surface. If we know the magnitude (Amplitude) of each one of these sources, their speed (Frequency) and where they are originated (Phase), we can deduce the state of the sea &lt;em&gt;in any given point&lt;/em&gt;. With a signal is the same: we assume that it is a sum of many cosine and sine waves of different frequencies and magnitudes, and that these coefficients (Frequency, magnitude and phase) can be inferred from the original signal. &lt;strong&gt;This is crazy!&lt;/strong&gt; In the analogy of the sea, this is the equivalent of observing the waves for a finite period of time and, based on the observation, being able to tell the characteristics of &lt;strong&gt;every source&lt;/strong&gt; of movement affecting the sea, from the tide caused by the moon to the tiny perturbations caused by the wind. This is the magic of the &lt;strong&gt;Fourier Series!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;There’s also &lt;a href=&quot;https://en.wikipedia.org/wiki/Discrete_Fourier_transform#Inverse_transform&quot; target=&quot;_blank&quot;&gt;defined&lt;/a&gt; an  &lt;strong&gt;Inverse Discrete Fourier Transform (IDFT)&lt;/strong&gt; which takes the \(\tilde{X}_k\) values and return the \(X_n\) points of the original signal. An important remark is that while the original signal data is in the &lt;strong&gt;time space&lt;/strong&gt; (data points with different intensities distributed in time) the DFT-generated points are in the &lt;strong&gt;frequency space&lt;/strong&gt; and they represent a &lt;strong&gt;fundamental frequency&lt;/strong&gt; of the system for &lt;strong&gt;all&lt;/strong&gt; the duration of the signal. This means that each Fourier Coefficient \(\tilde{X}_k\) depends on every data point \(X_n\) and viceversa.&lt;/p&gt;
+
+&lt;p&gt;Now, with a known set of frequencies and amplitudes, you can certainly tell more about the signal you have. With this information you can tell which are the &lt;strong&gt;main frequencies&lt;/strong&gt; of the signal and how relevant each of these frequencies are. This is useful, for example, when you want to extract &lt;strong&gt;periodic behaviors in financial data&lt;/strong&gt; or extracting which frequencies are relevant and which are associated with &lt;strong&gt;noise&lt;/strong&gt;. In this last case identifying noise, if you take the frequencies with the smallest intensities (frequencies that are not that relevant: noise) and &lt;strong&gt;set their amplitudes to Zero&lt;/strong&gt; (in the frequency space), when doing the IDFT to the modified \(\tilde{X}_k\) you obtain a the original signal with &lt;strong&gt;suppressed noise&lt;/strong&gt;. You can suppress or amplify frequencies as you wish in the frequency space by tunning amplitudes, so that when the Transformation is reversed the signal is modified as requested. This is a basic principle of DFT that is commonly used when cleaning noise from signals and modifying sound data with tools such as &lt;strong&gt;autotune&lt;/strong&gt; or &lt;strong&gt;bass amplifers&lt;/strong&gt; (which amplify low frequencies).&lt;/p&gt;
+
+&lt;h2 id=&quot;the-purpose&quot;&gt;The Purpose&lt;/h2&gt;
+&lt;p&gt;The aim is to develop a better intuition on what all these summations and complex coefficients mean when reconstructing a discrete succession of points distributed in time (a signal) from frequency information. When learning about the Fourier transform (and Series) sometimes is difficult to picture how a complex exponential can be used as a &lt;em&gt;magic wand&lt;/em&gt; to extract the frequencies of a signal and what this tells us about the signal itself. Off course there are many good teachers and classic examples one can learn form, but I think a good way to learn is to play around with the concept and learn by yourself the consequences of changing every little thing in the model. I created this sketch to learn better the implications of DFT and to show the amazing concept it hides in a simple complex equation.&lt;/p&gt;
+&lt;h2 id=&quot;the-result&quot;&gt;The Result&lt;/h2&gt;
+&lt;p&gt;Doing the transformation of a signal is not that &lt;em&gt;magical&lt;/em&gt; in a computer: inserting a set of numbers and extracting other set of numbers is not a remarkable concept for a learner. But a concept that escapes to the mind when having a set of sines and cosines are that they can be related to the rotation of a circle. Furthermore, when using the DFT we are dealing with frequencies, amplitudes and phases, and these can be translated (using trigonometry) to the state of a point going around a circle of specific size (Amplitude) at an specific speed (frequency) and starting in an specific angle (phase). Using this two powerful ideas, DFT and complex exponentials as spinning vectors, is that this sketch is made.&lt;/p&gt;
+
+&lt;p&gt;The program allows you to make a drawing  (a continuous line in 2D) and this can be translated as a set of points with coordinates (x,y). This set of points can also be seen as two different 1D signals, one for X and one for Y, which is convenient since each 1D signal can be analyzed through DFT. When concluding the Transformations we are left with two DFT points in the frequency space ,one for X and one for Y. Now, since &lt;strong&gt;the signal is a summation of the effects of each fundamental frequency&lt;/strong&gt; (each one associated with a \(\tilde{X}_k\)) and each one of these can be expressed as a spinning vector, &lt;strong&gt;we can express X as a sum of vectors spinning with different amplitudes and frequencies&lt;/strong&gt;, each one starting where the previous vector finished (the same goes for Y). The &lt;strong&gt;initial&lt;/strong&gt; angle at which each vector starts spinning &lt;strong&gt;is given by the phase&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The total signal is a consequence of all frequencies summed, so &lt;strong&gt;it doesn’t matter the order&lt;/strong&gt; in which they are added (the order in which the vectors are stacked) &lt;strong&gt;as long as they are all taken into account&lt;/strong&gt;. A useful way to order these vector is in &lt;strong&gt;decreasing order of amplitude&lt;/strong&gt;, drawing first the most relevant frequencies (associated with circles of big radius) and the least ones at last (tiny circles). This is useful because if you choose to draw only the first &lt;strong&gt;M&lt;/strong&gt; circles (vectors), the signal is going to be pretty similar to the original one but with &lt;strong&gt;less details&lt;/strong&gt;. These details are given by the coefficients of smaller magnitude you chose not to draw. So basically when choosing to draw only the first &lt;strong&gt;M&lt;/strong&gt; main frequencies you are creating a &lt;strong&gt;filter&lt;/strong&gt; over the signal, filtering out all the non-relevant details.&lt;/p&gt;
+
+&lt;p&gt;In the sketch you can choose this number &lt;strong&gt;M&lt;/strong&gt; and on each axis you can see a plot representation of the main frequencies (the &lt;strong&gt;M&lt;/strong&gt; that are drawn) in magnitude (length of the colored bar), phase (blue-red coloring of the bar) and frequency (White dot paired with each bar flashes every time a cycle of that frequency is completed.The faster it flashes, higher the frequency). Each bar is associated with a circle, so that a long bar might be related to a big circle on that axis.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-controls&quot;&gt;The Controls&lt;/h2&gt;
+&lt;p&gt;First, draw a figure in the Big left blackboard by &lt;strong&gt;pressing and dragging the left mouse click&lt;/strong&gt;. In order to obtain a good example of Fourier decomposition it is &lt;strong&gt;important&lt;/strong&gt; that the drawing is a &lt;abbr title=&quot;the drawing is a continuous line that finishes where it started&quot;&gt;&lt;strong&gt;closed figure&lt;/strong&gt;&lt;/abbr&gt;, with no interruptions and ideally drawn slowly so the drawing has enough data points. Drawing fast may give few data points and generate sudden changes in direction, which is an interesting study case too.&lt;/p&gt;
+
+&lt;p&gt;Once your drawing is done, press &lt;strong&gt;Save Board&lt;/strong&gt; in order to store your drawing in memory (Upper smaller board) and then &lt;strong&gt;Transform&lt;/strong&gt; to generate the Fourier decomposition. If you don’t like what is in the blackboard you can press &lt;strong&gt;Blank Board&lt;/strong&gt; to delete the points in the left blackboard.&lt;/p&gt;
+
+&lt;p&gt;Once the Fourier decomposition is done, you can &lt;strong&gt;control the number of principal frequencies&lt;/strong&gt;  used in the drawing with the &lt;strong&gt;slider&lt;/strong&gt; under the left blackboard. If you want the machine to start drawing again from the beginning you can press &lt;strong&gt;Reset Drawing&lt;/strong&gt; to reset the machine (with your drawing still in memory).&lt;/p&gt;
+
+&lt;h4 id=&quot;mobile&quot;&gt;Mobile&lt;/h4&gt;
+&lt;p&gt;This version may not work in mobile devices. But if it does, the controls are the same.&lt;/p&gt;
+
+&lt;h2 id=&quot;latest-release&quot;&gt;Latest Release&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/sketches/fourier2D/fourierDrawing.html&quot; class=&quot;link-sketch&quot;&gt;
+&lt;span&gt;
+TEST SKETCH
+&lt;/span&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Latest commit : 15  / mar / 2021&lt;/p&gt;
+</description>
+        <pubDate>Tue, 16 Feb 2021 02:23:00 +0100</pubDate>
+        <link>http://localhost:4000/sketch/2021/02/16/drawing-with-fourier-series.html</link>
+        <guid isPermaLink="true">http://localhost:4000/sketch/2021/02/16/drawing-with-fourier-series.html</guid>
+        
+        <category>sketch</category>
+        
+        <category>visual</category>
+        
+        <category>p5</category>
+        
+        <category>javascript</category>
+        
+        <category>math</category>
+        
+        <category>physics</category>
+        
+        
+        <category>sketch</category>
+        
+      </item>
     
       <item>
         <title>Scatering Simulation</title>
@@ -56,8 +124,8 @@ TEST SIMULATION
 &lt;p&gt;Latest commit : 06  / Nov / 2020&lt;/p&gt;
 </description>
         <pubDate>Fri, 06 Nov 2020 05:00:01 +0100</pubDate>
-        <link>http://localhost:4001/sketch/2020/11/06/scattering-simulation.html</link>
-        <guid isPermaLink="true">http://localhost:4001/sketch/2020/11/06/scattering-simulation.html</guid>
+        <link>http://localhost:4000/sketch/2020/11/06/scattering-simulation.html</link>
+        <guid isPermaLink="true">http://localhost:4000/sketch/2020/11/06/scattering-simulation.html</guid>
         
         <category>sketch</category>
         
@@ -97,14 +165,18 @@ TEST SIMULATION
 &lt;p&gt;&lt;strong&gt;Finally!&lt;/strong&gt; the work of my undergraduate thesis contributed to the study of the formation of &lt;strong&gt;superclusters in cosmological simulations&lt;/strong&gt;. In recent days my thesis advisor together with another undergraduate student wrote a paper where they consolidate the work of some students, including me, in the study of galactic superclusters and their formation in contemporary cosmological simulations (large simulations of structure formation in the universe ) that take into account the cosmology in which we believe our universe unfolds: The &lt;strong&gt;lambda-CDM cosmology&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;whats-in-the-paper&quot;&gt;what’s in the paper?&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Superclusters are a convenient way to partition and characterize the large scale structure of the Universe. In this Letter we explore the advantages of defining superclusters as watershed basins in the divergence velocity field. We apply this definition on diverse datasets generated from linear theory and N-body simulations, with different grid sizes, smoothing scales and types of tracers. From this framework emerges a linear scaling relation between the average supercluster size and the autocorrelation length in the divergence field, a result that holds for one order of magnitude from 10 Mpc/h up to 100 Mpc/h. These results suggest that the divergence-based definition provides a robust context to quantitatively compare results across different observational or computational frameworks. Through its connection with linear theory, it can also facilitate the exploration of how supercluster properties depend on cosmological parameters, paving the way to use superclusters as cosmological probes.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Paper’s abstract&lt;/p&gt;
 
 &lt;h2 id=&quot;my-thesis&quot;&gt;My thesis&lt;/h2&gt;
-
-&lt;h2 id=&quot;the-context&quot;&gt;The context&lt;/h2&gt;
+&lt;p&gt;My &lt;a href=&quot;https://github.com/PaipaPsyche/SuperClusterCharacterization/blob/master/FinalDocument.pdf&quot; target=&quot;_blank&quot;&gt;undergraduate thesis work&lt;/a&gt; was focused on studying the &lt;strong&gt;statistical relevance&lt;/strong&gt; of superclusters with  characteristics similar to the ones observed by &lt;a href=&quot;https://arxiv.org/abs/1409.0880&quot; target=&quot;_blank&quot;&gt;Tully et al.&lt;/a&gt; in our local supercluster &lt;strong&gt;Laniakea&lt;/strong&gt;. This was made by comparing these characteristics with the ones observed in supercluster formation in cosmological simulations. My method consisted on first identifying the supercluster formation using &lt;strong&gt;velocity divergence fields&lt;/strong&gt; and later, using the watershed algorithm, making a segmentation of the simulated space in superclusters. Over the observed superclusters I analyzed properties such as &lt;strong&gt;density, mass, volume and shape&lt;/strong&gt; arriving to the conclusion that obtaining a supercluster similar to Laniakea was an event of &lt;strong&gt;very low probability&lt;/strong&gt;, implying that &lt;strong&gt;Laniakea is atypical&lt;/strong&gt; in the context of cosmological simulations.&lt;/p&gt;
 </description>
         <pubDate>Mon, 02 Nov 2020 02:15:00 +0100</pubDate>
-        <link>http://localhost:4001/new-penrose/</link>
-        <guid isPermaLink="true">http://localhost:4001/new-penrose/</guid>
+        <link>http://localhost:4000/new-penrose/</link>
+        <guid isPermaLink="true">http://localhost:4000/new-penrose/</guid>
         
         <category>information</category>
         
@@ -299,8 +371,8 @@ TEST SKETCH
 &lt;p&gt;Latest commit : 13  / sept / 2020&lt;/p&gt;
 </description>
         <pubDate>Sat, 29 Aug 2020 03:28:20 +0200</pubDate>
-        <link>http://localhost:4001/sketch/2020/08/29/cellular-battle-royale.html</link>
-        <guid isPermaLink="true">http://localhost:4001/sketch/2020/08/29/cellular-battle-royale.html</guid>
+        <link>http://localhost:4000/sketch/2020/08/29/cellular-battle-royale.html</link>
+        <guid isPermaLink="true">http://localhost:4000/sketch/2020/08/29/cellular-battle-royale.html</guid>
         
         <category>sketch</category>
         
@@ -420,8 +492,8 @@ TEST SKETCH
 &lt;p&gt;Latest commit : 08  / aug / 2020&lt;/p&gt;
 </description>
         <pubDate>Sat, 08 Aug 2020 07:08:00 +0200</pubDate>
-        <link>http://localhost:4001/sketch/2020/08/08/genetic-rockets.html</link>
-        <guid isPermaLink="true">http://localhost:4001/sketch/2020/08/08/genetic-rockets.html</guid>
+        <link>http://localhost:4000/sketch/2020/08/08/genetic-rockets.html</link>
+        <guid isPermaLink="true">http://localhost:4000/sketch/2020/08/08/genetic-rockets.html</guid>
         
         <category>sketch</category>
         
@@ -509,8 +581,8 @@ TEST SKETCH
 &lt;p&gt;Latest commit : 02  / may / 2020&lt;/p&gt;
 </description>
         <pubDate>Sat, 08 Aug 2020 07:08:00 +0200</pubDate>
-        <link>http://localhost:4001/sketch/2020/08/08/SIR-simulation.html</link>
-        <guid isPermaLink="true">http://localhost:4001/sketch/2020/08/08/SIR-simulation.html</guid>
+        <link>http://localhost:4000/sketch/2020/08/08/SIR-simulation.html</link>
+        <guid isPermaLink="true">http://localhost:4000/sketch/2020/08/08/SIR-simulation.html</guid>
         
         <category>sketch</category>
         
@@ -613,8 +685,8 @@ TEST SKETCH
 &lt;iframe name=&quot;embed_readwrite&quot; src=&quot;https://pad.riseup.net/p/B%5BORDERS%5D_-_Organic_algorithms?showControls=true&amp;amp;showChat=true&amp;amp;showLineNumbers=true&amp;amp;useMonospaceFont=false&quot; width=&quot;100%&quot; height=&quot;600&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Fri, 31 Jul 2020 01:00:00 +0200</pubDate>
-        <link>http://localhost:4001/BORDERS/</link>
-        <guid isPermaLink="true">http://localhost:4001/BORDERS/</guid>
+        <link>http://localhost:4000/BORDERS/</link>
+        <guid isPermaLink="true">http://localhost:4000/BORDERS/</guid>
         
         <category>information</category>
         
@@ -657,8 +729,8 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 11 Jun 2020 01:15:00 +0200</pubDate>
-        <link>http://localhost:4001/image/2020/06/11/tentaciones-y-demonios.html</link>
-        <guid isPermaLink="true">http://localhost:4001/image/2020/06/11/tentaciones-y-demonios.html</guid>
+        <link>http://localhost:4000/image/2020/06/11/tentaciones-y-demonios.html</link>
+        <guid isPermaLink="true">http://localhost:4000/image/2020/06/11/tentaciones-y-demonios.html</guid>
         
         
         <category>image</category>
@@ -694,8 +766,8 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;p&gt;It’s been almost 3 weeks since the migration started and I’m still getting warm. Much of this time has been me learning jekyll from scratch, and although it is an easy-to-learn site generator, it is difficult to diagram the two-year work again and apply the updates and fixes that have been suggested to me. In the future I hope to have all my work here exposed as well as options so that third parties can leave their contributions to this growing personal project.&lt;/p&gt;
 </description>
         <pubDate>Wed, 10 Jun 2020 01:15:00 +0200</pubDate>
-        <link>http://localhost:4001/new-penrose/</link>
-        <guid isPermaLink="true">http://localhost:4001/new-penrose/</guid>
+        <link>http://localhost:4000/new-penrose/</link>
+        <guid isPermaLink="true">http://localhost:4000/new-penrose/</guid>
         
         <category>information</category>
         
@@ -731,185 +803,11 @@ I would never consider myself as a model that inspires eroticism, but this does 
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 23 May 2020 20:23:00 +0200</pubDate>
-        <link>http://localhost:4001/image/2020/05/23/agoraphobia.html</link>
-        <guid isPermaLink="true">http://localhost:4001/image/2020/05/23/agoraphobia.html</guid>
+        <link>http://localhost:4000/image/2020/05/23/agoraphobia.html</link>
+        <guid isPermaLink="true">http://localhost:4000/image/2020/05/23/agoraphobia.html</guid>
         
         
         <category>image</category>
-        
-      </item>
-    
-      <item>
-        <title>2D Cellular Automata Lab</title>
-        <description>&lt;p&gt;A &lt;strong&gt;cellular automaton&lt;/strong&gt; is a system in which a grid of cells determines its state (&lt;strong&gt;ON&lt;/strong&gt; or &lt;strong&gt;OFF&lt;/strong&gt;, for example) according to rules established on the states of a determined &lt;strong&gt;neighborhood&lt;/strong&gt; of cells in the grid. The system behaves according to a &lt;strong&gt;set of game rules&lt;/strong&gt; that commands each cell in the grid to adopt (in the next generation) a state based on the previous states of the neighbors.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-sketch&quot;&gt;The Sketch&lt;/h2&gt;
-
-&lt;p&gt;These Game rules are codified in a structure similar to DNA. Each cell has 8 neighbors, so there are 9 states each cell hast to handle (including own state). As each one of these states are values 0 (OFF) or 1 (ON), the number of different possible neighborhood configurations, or cases, are 2 to the power of 9, or 512. Each configuration has a response ,for example:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;if the immediate  left neighbor is &lt;strong&gt;ON&lt;/strong&gt;, then this cell turns &lt;strong&gt;ON&lt;/strong&gt; as well.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;If we assign each one of this states to a position in a 512-length string, and in this string we store the response, the result is a 512-length string of 0’s and 1’s describing the behavior of the system. This might be codified to be expressed as genes in the form of alphanumeric values and colors. This 512-string is called the “rule code”.&lt;/p&gt;
-
-&lt;p&gt;This means that &lt;strong&gt;a single rule code&lt;/strong&gt; describes the &lt;strong&gt;unique behavior&lt;/strong&gt; of a system and, moreover, there exist as much as 2&lt;sup&gt;512&lt;/sup&gt; possible rule code configurations. In other words, there are more than &lt;abbr title=&quot;An octillion is 10 to the power of 27&quot;&gt;10 octillion octillion octillion octillion octillion&lt;/abbr&gt; possible systems.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-purpose&quot;&gt;The Purpose&lt;/h2&gt;
-&lt;p&gt;In almost all the processes we see in the modern world, the behavior of &lt;strong&gt;organized growth and modularity&lt;/strong&gt; seem to be somehow present. But this is not where this concept originates, because even when humanity lived in caves we noticed the patterns that nature followed around us. In the flowers, in the roots, in the clouds, in the butterfly wings, in the thunders, in the swarms: the world is full of patterns that in one way or another can be reduced to simple modules following the same rules as the system’s clock ticks; the phenomenon can be &lt;strong&gt;reduced&lt;/strong&gt; to the implementation of cellular automata.&lt;/p&gt;
-
-&lt;p&gt;Humans are designed to notice patterns even if they are not there, but when they are, we marvel at imagining the reason for their existence. One way in which we were able to explain the reason for many patterns present in nature was to &lt;strong&gt;formulate the problem as a cellular automaton&lt;/strong&gt;, a system of individual modules programmed to follow the same rules that may or may not allow interaction between the agents of the system. This way of modeling complex problems is used to split complex behaviors and define them as simple rules that are repeated over and over again &lt;strong&gt;out of synchronicity&lt;/strong&gt;. An aggregate of simple machines that can express complexity from the interaction between themselves, conditioned to &lt;strong&gt;react to their environment&lt;/strong&gt; in a pre-defined way.&lt;/p&gt;
-
-&lt;p&gt;The intention when creating this laboratory was to offer tools to program the behavior of a cellular automaton to &lt;strong&gt;anyone&lt;/strong&gt; who is interested in the subject and is &lt;strong&gt;not trained in programming&lt;/strong&gt; (Not of all us can be nerds, right?). This laboratory is a simple and &lt;strong&gt;interactive&lt;/strong&gt; reduction of what it means to program a cellular automaton and creates an environment of &lt;strong&gt;free experimentation&lt;/strong&gt;, allowing to propose new inventions that can be modeled at will or found by chance.&lt;/p&gt;
-
-&lt;p&gt;In the day to day the idea of ​​cellular automaton grazes our heads and many times &lt;strong&gt;we do not stop to observe enough&lt;/strong&gt; to formulate an idea. Cellular automata are interesting concepts that challenge the imagination and logic without the need to go exclusively into the mathematical field. This universality of applications makes this study area to be full of surprises for those who decide to venture into the dynamic world of modularity and the emergence of complex behaviors.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-result&quot;&gt;The Result&lt;/h2&gt;
-
-&lt;p&gt;When I built this specific gene codification was, in a beginning, a way to &lt;strong&gt;store compressed data&lt;/strong&gt; information of the state, but as experimentation went on I realized common behaviors tend to be stored in the same Gene. experimentation with cellular automaton is easy and fun as long as you find &lt;strong&gt;the beauty of the patterns&lt;/strong&gt; made by simple binary rules. These systems are controversial in the study of life emergence and complex systems, for example, you may know the famous &lt;strong&gt;Conway’s Game of Life&lt;/strong&gt; which is an specific rule code for 2D cellular automata that resembles organic movement from simple configurations.&lt;/p&gt;
-
-&lt;h3 id=&quot;penrosetrip-automata-tissue-classification&quot;&gt;PenroseTrip Automata Tissue Classification&lt;/h3&gt;
-&lt;p&gt;After playing around with the Automata Lab for a while, I noticed that some rule codes generated systems that grew similarly to an organic or a fabric, as it is impossible to ignore their geometric properties, others only started from compact figures and eventually dissipated. The truth is that I found some common characteristics among the &lt;strong&gt;evolution processes&lt;/strong&gt; of different systems and took the opportunity to make an amateur classification of what I could see.&lt;/p&gt;
-
-&lt;p&gt;I should mention that this classification is based automata that tend to expand, or that have a very &lt;abbr title=&quot;the number of active cells across the board slowly decreases over time&quot;&gt;low rate&lt;/abbr&gt; of disappearance of active cells.&lt;/p&gt;
-
-&lt;p&gt;The approach that I am interested in exploring is seeing &lt;strong&gt;automata as ways of generating fabrics and lattices&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;complexity-and-stability-analysis&quot;&gt;complexity and stability analysis&lt;/h3&gt;
-&lt;p&gt;According to the complexity of the behavior, the stability of the patterns formed and the recursion in them, I separated the different types of system into 4 possible classifications:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;STABLE&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The systems that I classify as stable are all those that tend to &lt;strong&gt;expand&lt;/strong&gt; and remain &lt;strong&gt;static&lt;/strong&gt; in a given final position. It is important to clarify that there are systems such as the &lt;strong&gt;Conway game of life&lt;/strong&gt; that includes static figures or patterns, but  cannot be classified as stable systems since these configurations arise from very specific initial conditions. A stable system must &lt;strong&gt;grow and maintain static conditions&lt;/strong&gt; from a more general set of initial conditions, taking into account what is necessary to ensure the growth of the system (neighborhood conditions necessary not to &lt;abbr title=&quot;all cells set to 0&quot;&gt;extinguish&lt;/abbr&gt; the system).&lt;/p&gt;
-
-&lt;div class=&quot;centered-square&quot;&gt;
-  &lt;div class=&quot;imgsq&quot;&gt;
-    &lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1H4EHbXa-WZX8G5sX24VWdOQ0JjW9xrrN&quot; class=&quot;post-midimage-across&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;txtsq&quot;&gt;
-    &lt;p class=&quot;imglbl&quot;&gt;
-
-      From the initial condition, the system begins to propagate and remains fixed when it can no longer expand.
-      &lt;br /&gt;
-      &lt;b&gt;Genome : &lt;/b&gt;square
-
-
-    &lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Note that the complexity of the behavior is basic. It is more like a coloring algorithm than an organic behavior. Systems classified as stable tend to have &lt;strong&gt;low complexity&lt;/strong&gt; since, to maintain the stability condition, some geometric properties must be met that &lt;strong&gt;do not allow&lt;/strong&gt; very dense or complex fabrics. This patterns remain static because the cells that are active continue to meet the conditions to remain active and the cells that are inactive do not meet the necessary conditions to activate. Thus, no cell is deactivated or activated in the already generated tissue.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;SEMI-STABLE&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Semi-stable tissues are similar to stable ones, with the difference that their genome allows &lt;strong&gt;blinking&lt;/strong&gt; in certain parts of the tissue. This blink can be a &lt;strong&gt;cycle of two alternating states&lt;/strong&gt; or a more complex cycle with 3 or more intermediate steps, but eventually returning to the same initial state. This flicker or glitch can only be local, that is, it cannot move through the tissue or spread indefinitely.&lt;/p&gt;
-
-&lt;div class=&quot;centered-square&quot;&gt;
-  &lt;div class=&quot;imgsq&quot;&gt;
-    &lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1J4HrzD-704yn9gbxUGuJdibF14ic2VKy&quot; class=&quot;post-midimage-across&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;txtsq&quot;&gt;
-    &lt;p class=&quot;imglbl&quot;&gt;
-
-      Once the fabric fills the entire space, there is a sector that keeps blinking near the 4 corners of the square.
-      &lt;br /&gt;
-      &lt;b&gt;Genome : &lt;/b&gt;maze-gen
-
-
-    &lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;In the expansion process I would like to mention two parts of the fabric: the &lt;strong&gt;central tissue&lt;/strong&gt; that remains static once it was created and the &lt;strong&gt;outer frontier&lt;/strong&gt; that is constantly expanding, generating the static part of the interior according to vicinity present in inner tissue.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;ORGANIC&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;how to define an organic behavior? I could say that it is any system that despite being erratic, asymmetric and with irregular density can generate regions with stable, semi-stable and abstract patterns. An example of these systems is the conway game of life, which as its name implies, can be seen as an analogy to the behavior of life itself in terms of the possible configurations achieved by the system. This system can present events of self-replicating, mobile, static or alternating organisms, among others.&lt;/p&gt;
-
-&lt;div class=&quot;centered-square&quot;&gt;
-  &lt;div class=&quot;imgsq&quot;&gt;
-    &lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1L7Fv-pLOcPHFcVbfmq1g5QQZj_9G4J8R&quot; class=&quot;post-midimage-across&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;txtsq&quot;&gt;
-    &lt;p class=&quot;imglbl&quot;&gt;
-
-      With the advance of time you can see a centered spiral pattern. Static and alternating cells are observed, as well as erratic regions.
-      &lt;br /&gt;
-      &lt;b&gt;Genome : &lt;/b&gt;tissue
-
-    &lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Another aspect to consider is that these systems can decay (gradually reducing their activity until equilibrium is reached) or become unstable (filling the space without reaching equilibrium). I named the example above &lt;strong&gt;tissue&lt;/strong&gt; because with a dense initial condition it amplifies what appears to be an abstract system with a tendency to &lt;em&gt;rotate&lt;/em&gt; and which gradually &lt;em&gt;dies&lt;/em&gt; (as living tissue) leaving behind a stable or semi-stable system.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;ABSTRACT&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I’m talking about systems whose &lt;strong&gt;complexity&lt;/strong&gt; and &lt;strong&gt;specificity&lt;/strong&gt; increases so much, that they no longer generate geometric patterns or lattices, and have an &lt;strong&gt;apparently random behavior&lt;/strong&gt; (although we already know that it is not). Here I classified all the systems whose &lt;strong&gt;patterns are not recognizable&lt;/strong&gt; and you cannot see an ordered growth pattern. There are cases, such as the one shown below, where growth is almost unidirectional but still &lt;strong&gt;erratic&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;centered-square&quot;&gt;
-    &lt;div class=&quot;imgsq&quot;&gt;
-      &lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1i0kMgLLM2aGmFxhQ7yLoeOaXYWG6wZpr&quot; class=&quot;post-midimage-across&quot; /&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;txtsq&quot;&gt;
-      &lt;p class=&quot;imglbl&quot;&gt;
-
-        You can see the apparently random progress of the system. In this particular case, growth is upwards, since usually the expansion occurs in all directions. A random &lt;abbr title=&quot;rule code&quot;&gt;genome&lt;/abbr&gt; was used.
-        &lt;br /&gt;
-        &lt;b&gt;Genome : &lt;/b&gt; (random genome)
-
-
-      &lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;p&gt;When a genome is randomly generated with 0 or 1 in any of the 512 positions, the behavior obtained is usually erratic, and therefore it is a system of this classification. Although these &lt;strong&gt;highly complex behaviors&lt;/strong&gt; could have some very specific utility, the truth is that it is almost certain that any random genome will end up in &lt;strong&gt;noise&lt;/strong&gt;. I see this as an insight into the relevance of automata in the approach to life itself: as in life, generating chaos is easy, but generating &lt;strong&gt;structured chaos&lt;/strong&gt; is hardly a possibility among billions.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-controls&quot;&gt;The Controls&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;ENTER&lt;/strong&gt; : Runs/Stops the simulation .&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;R&lt;/strong&gt; : Create random rule code (Random DNA button).&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;E&lt;/strong&gt; : Evolves a single step (Step button).&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;X&lt;/strong&gt; : Toogles bombing (switch random cell every generation).&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;M&lt;/strong&gt; : Mutates a random gene.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;P&lt;/strong&gt; : Switches the state of a random cell.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;B&lt;/strong&gt; : Sets all cells to OFF (Blank button).&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;I&lt;/strong&gt; : Inverts the value of every cell.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;C&lt;/strong&gt; : Sets the center Cell to ON.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;H / V / D / A&lt;/strong&gt; : Sets an alternating pattern along the central (Horizontal / Vertical / Diagonal / Antidiagonal) respectively.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;0 / Z&lt;/strong&gt; : create a rule code with only 0 / 1 respectively (Empty DNA button).&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;1/2/3/4/5&lt;/strong&gt; : Sets a figure of ON cells in the center.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;latest-release&quot;&gt;Latest Release&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/assets/sketches/cellular-automata/2d-cellular-automata.html&quot; class=&quot;link-sketch&quot;&gt;
-&lt;span&gt;
-TEST SKETCH
-&lt;/span&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Latest commit : 09  / may / 2020&lt;/p&gt;
-</description>
-        <pubDate>Wed, 06 May 2020 07:02:00 +0200</pubDate>
-        <link>http://localhost:4001/sketch/2020/05/06/2D-cellular-automata-lab.html</link>
-        <guid isPermaLink="true">http://localhost:4001/sketch/2020/05/06/2D-cellular-automata-lab.html</guid>
-        
-        <category>sketch</category>
-        
-        <category>automata</category>
-        
-        <category>p5</category>
-        
-        <category>javascript</category>
-        
-        
-        <category>sketch</category>
         
       </item>
     
