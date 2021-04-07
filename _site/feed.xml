@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 Mar 2021 00:43:35 +0100</pubDate>
-    <lastBuildDate>Tue, 16 Mar 2021 00:43:35 +0100</lastBuildDate>
+    <pubDate>Wed, 07 Apr 2021 02:37:05 +0200</pubDate>
+    <lastBuildDate>Wed, 07 Apr 2021 02:37:05 +0200</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -548,7 +548,8 @@ An added value is the line defined by the &lt;strong&gt;health coverage&lt;/stro
 &lt;p&gt;&lt;strong&gt;ABOUT THE DISEASE:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Incubation period&lt;/strong&gt; is the average of day that the infected carry the sickness before recovering or dying.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Incubation period&lt;/strong&gt; is the average of days that the infected carry the sickness before recovering or dying.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Immunity duration&lt;/strong&gt; is the average time in days to lose immunity after an “infection and recovery” cycle.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;mortality&lt;/strong&gt; is the probability of dying once infected. This may increase with the exceeding of medical coverage.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Contagion rate&lt;/strong&gt; determines the probability of getting the disease if a Susceptible spends one whole day with an Infected.&lt;/li&gt;
 &lt;/ul&gt;
@@ -559,6 +560,7 @@ An added value is the line defined by the &lt;strong&gt;health coverage&lt;/stro
   &lt;li&gt;&lt;strong&gt;Movement restriction&lt;/strong&gt; sets the obeying agents to be static. Similar to a confinement measure.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Washing hands&lt;/strong&gt; reduces the contagion rate in a half.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Social distancing&lt;/strong&gt; makes the movement slow and reduces the radius of contagion.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Impunity Loss&lt;/strong&gt; determines if the immunity is temporal or definitive.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Closed experiment&lt;/strong&gt; sets the simulation in a closed box, or one with open borders. When borders are open, all agents that exit one side of the box, enters by the opposite side.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -578,7 +580,7 @@ TEST SKETCH
 &lt;/span&gt;
 &lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Latest commit : 02  / may / 2020&lt;/p&gt;
+&lt;p&gt;Latest commit : 07  / apr / 2021&lt;/p&gt;
 </description>
         <pubDate>Sat, 08 Aug 2020 07:08:00 +0200</pubDate>
         <link>http://localhost:4000/sketch/2020/08/08/SIR-simulation.html</link>

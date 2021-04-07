@@ -50,7 +50,8 @@ The buttons of the application allow you to interact with the simulation paramet
 
 **ABOUT THE DISEASE:**
 
-* **Incubation period** is the average of day that the infected carry the sickness before recovering or dying.
+* **Incubation period** is the average of days that the infected carry the sickness before recovering or dying.
+* **Immunity duration** is the average time in days to lose immunity after an "infection and recovery" cycle.
 * **mortality** is the probability of dying once infected. This may increase with the exceeding of medical coverage.
 * **Contagion rate** determines the probability of getting the disease if a Susceptible spends one whole day with an Infected.
 
@@ -61,6 +62,7 @@ The buttons of the application allow you to interact with the simulation paramet
 * **Movement restriction** sets the obeying agents to be static. Similar to a confinement measure.
 * **Washing hands** reduces the contagion rate in a half.
 * **Social distancing** makes the movement slow and reduces the radius of contagion.
+* **Impunity Loss** determines if the immunity is temporal or definitive.
 * **Closed experiment** sets the simulation in a closed box, or one with open borders. When borders are open, all agents that exit one side of the box, enters by the opposite side.
 
 **INDICATORS:**
@@ -79,4 +81,4 @@ TEST SKETCH
 </span>
 </a>
 
-Latest commit : 02  / may / 2020
+Latest commit : 07  / apr / 2021

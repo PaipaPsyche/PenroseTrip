@@ -63,6 +63,7 @@ class plot {
         noStroke()
         textAlign(CENTER, CENTER)
         textSize(8);
+        if(len_d<20 || (len_d<=100 && d["n"]%5==0) || (len_d>100 && d["n"]%20==0))
         text(d["n"], (i + 0.5) * dx_day, this.position.y - 25);
 
 

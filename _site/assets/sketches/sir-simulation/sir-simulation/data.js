@@ -98,7 +98,18 @@ let att_butt_days = {
   "butt_rad": 0.4
 }
 
-
+let att_butt_imune = {
+  "key": "days_imune",
+  "text": "Immunity duration in days",
+  "dval": 1,
+  "low": 1,
+  "high": 200,
+  "init": 30,
+  "W": 160,
+  "H": 35,
+  "dtype": "i",
+  "butt_rad": 0.4
+}
 
 
 
@@ -161,7 +172,18 @@ let att_butt_closed = {
   "dtype": "i",
   "butt_rad": 0.25
 }
-
+let att_butt_desi = {
+  "key": "desimunization",
+  "text": "Immunity loss",
+  "dval": 1,
+  "low": 0,
+  "high": 1,
+  "init": 0,
+  "W": 160,
+  "H": 20,
+  "dtype": "i",
+  "butt_rad": 0.25
+}
 
 
 var att_butt_set = {

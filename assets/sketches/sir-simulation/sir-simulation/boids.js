@@ -12,6 +12,7 @@ class boid {
     this.state = {
       "state": "suceptible",
       "days_infected": 0,
+      "days_imune":0,
       "infected":0
 
     }
@@ -62,6 +63,13 @@ class boid {
           this.state["state"] = "cured"
         }
       }
+    }else if (this.state["state"] == "cured") {
+      if(this.state["days_imune"]>=atts_sim["days_imune"] && atts_sim["desimunization"]==1 && random()>0.5){
+        this.state["state"]="suceptible";
+        this.state["days_imune"]=0;
+      }else{
+      this.state["days_imune"] = this.state["days_imune"] +1;
+    }
     }
   }
 

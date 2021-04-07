@@ -34,13 +34,15 @@ let atts_sim = {
   "wash": 0,
   "restriction": 0,
   "distancing": 0,
+  "desimunization":0,
   "r_distancing": 100,
   "f_distancing": 0.5,
   "days_tolerance": 19,
+  "days_imune":30,
   "min_days": 7,
   "p_death": 0.5,
   "margin": 18,
-  "plt_max_days": 80,
+  "plt_max_days": 400,
   "coverage_rate": 0.1,
   "lim_width": 850,
   "closed":1,
@@ -57,12 +59,14 @@ let butt_n;
 let butt_covrg;
 let butt_mort;
 let butt_days;
+let butt_imune;
 
 
 let butt_wash;
 let butt_rest;
 let butt_dist;
 let butt_closed;
+let butt_desi;
 
 let butt_set;
 
@@ -111,6 +115,9 @@ function setup() {
   butt_days = new slider_val(xo, yo + 260, att_butt_days);
   buttons[butt_days.atts["key"]] = butt_days
 
+  butt_imune = new slider_val(xo, yo + 315, att_butt_imune);
+  buttons[butt_imune.atts["key"]] = butt_imune
+
 
   butt_rest = new toogle(xo + 200, yo + 150, att_butt_rest);
   buttons[butt_rest.atts["key"]] = butt_rest
@@ -126,6 +133,10 @@ function setup() {
 
   butt_set = new press(xo, H - 30, att_butt_set);
   buttons[butt_set.atts["key"]] = butt_set
+
+  butt_desi = new toogle(xo + 200, yo + 290, att_butt_desi);
+  buttons[butt_desi.atts["key"]] = butt_desi
+
 
   butt_keys = Object.keys(buttons)
 
@@ -187,6 +198,8 @@ function reset() {
   att_butt_dist["init"] = get_val("distancing");
   att_butt_days["init"] = get_val("days_tolerance");
   att_butt_closed["init"] = get_val("closed");
+  att_butt_desi["init"] = get_val("desimunization");
+  att_butt_imune["init"] = get_val("days_imune");
   atts_sim["day"] = 0;
   atts_sim["ended"] = 0;
   atts_sim["active"] = 1;
