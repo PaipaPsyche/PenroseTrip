@@ -6,7 +6,7 @@ var particle_atts ={
     m:5e3, //ev
     q:2,
     c:2,
-    hlt:1e-15,
+    hlt:1e-14,
     key:"P",
     discovered:[false,true],
     radiation:false,
@@ -112,7 +112,7 @@ var particle_atts ={
     q:2,
     c:-1,
     hlt:1,
-    key:"k",
+    key:"K",
     discovered:[false,false],
     radiation:true,
     colors:{
@@ -173,6 +173,20 @@ let allowed_groups={
     plus:"pluson",
     minus:"minon",
     scale:5,
+    n_scale:6,
+    exclusive:true
+  },
+  "μ":{
+    plus:"antijaudion",
+    minus:"minon",
+    scale:6,
+    n_scale:6,
+    exclusive:true
+  },
+  "α":{
+    plus:"antijaudion",
+    minus:"anurion",
+    scale:6,
     n_scale:6,
     exclusive:true
   },
@@ -352,7 +366,7 @@ let allowed_interactions_n = {
   ]
   },
   "pluson-antiminon":{
-    proba:0.00001,
+    proba:0.0001,
     final:[
     { value: ["anurino",1], weight: 12},
 

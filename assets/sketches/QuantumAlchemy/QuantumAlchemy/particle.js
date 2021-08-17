@@ -31,10 +31,10 @@ class particle{
       this.properties.r_r = this.properties.r*(1+sim.int_r*Math.abs(this.properties.q))
       this.properties.r_n = this.properties.r*(1+sim.int_n*Math.abs(this.properties.c))
 
-      this.serial_id = id_counter;
+      this.serial_id = id_counter
       id_counter = id_counter+1;
 
-      particle_atts[this.type].discovered[(sym+1)/2]=true
+      particle_atts[this.type].discovered[(this.sym+1)/2]=true
   }
   get_properties(){
     let prop = {}
@@ -129,10 +129,13 @@ class particle{
       let amp = sim.const_n*this.properties.c*p.properties.c*multip/(nrm_d**3)//(Math.sqrt(d+1))
       let log_amp = 1/(1+exp(-amp/1e34))
       //console.log(log_amp)
-      push()
-      stroke(0,255,255,50*(log_amp**2))
-      line(this.pos.x+pl.pos.x,this.pos.y+pl.pos.y,p.pos.x+pl.pos.x,p.pos.y+pl.pos.y)
-      pop()
+      if(sim.lines==1){
+        push()
+        stroke(0,255,255,20*(log_amp))
+        line(this.pos.x+pl.pos.x,this.pos.y+pl.pos.y,p.pos.x+pl.pos.x,p.pos.y+pl.pos.y)
+        pop()
+      }
+
       amp = amp*sim.dt
       let new_mom = f_dir.copy().mult(amp)
       this.add_momentum(new_mom)

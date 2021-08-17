@@ -6,16 +6,18 @@ var sim = {
   c : 5e8, // m/s
   int_r:50,
   int_n:3,
-  ticks:10,
+  ticks:17,
   const_r:1e36,
   const_n:1e35,
   step_interact:1,
   bounded:"walls",
-  tags:true,
+  tags:1,
+  lines:1,
   display_mode:1,
   display_sym:1,
   v_th:0.8,
-  n_reactions:25,
+  n_reactions:35,
+  unlocked:false,
   discovered:{
     total : 0,
     disc : 0
@@ -33,7 +35,7 @@ function setup(){
   createCanvas(W,H);
   frameRate(30)
   make_buttons(930,350)
-  pl1 = new plane(20,20,H-40,H-40,150,150)
+  pl1 = new plane(20,20,H-40,H-40,170,170)
   //pl1.add_particle(new particle(220,230,"pluson"))
   //pl1.add_particle(new particle(250,290,"anurion"))
   //pl1.add_particle(new particle(350,300,"nuon",1))
@@ -114,7 +116,8 @@ function add_reaction(parts_in,parts_out,type,disc){
   if(reactions.length==sim.n_reactions){
     reactions.shift();
   }
-  reactions.push([txt,type,disc])
+  let t_stamp = round(time*sim.dt/10e-21,3)+" zs"
+  reactions.push([txt,type,disc,t_stamp])
 }
 
 // Define function used to find weights.
@@ -159,46 +162,55 @@ function give_counts(arr){
 }
 
 function mouseClicked(){
-  if(mouseX<pl1.pos.x+pl1.size.x && mouseX>pl1.pos.x && mouseY<pl1.pos.y+pl1.size.y && mouseY>pl1.pos.y){
-  pl1.create([["pluson",-1],["pluson",1]],1e75,createVector(0,0),mouseX,mouseY,40)
+  //console.log(pl1.check_pair_cases())
+  if(mouseX<pl1.pos.x+pl1.size.x && mouseX>pl1.pos.x && mouseY<pl1.pos.y+pl1.size.y && mouseY>pl1.pos.y && pl1.check_pair_cases().length>0){
+    let pair_ = random(pl1.check_pair_cases())
+
+  pl1.create([[pair_,-1],[pair_,1]],1e75,createVector(0,0),mouseX,mouseY,40)
   }
   //["rhoton",-1],["rhoton",1],["rhoton",-1],["rhoton",1]
 }
 
 function plane_add(pl,part,x,y){
- let  particle_ = new particle(x-pl.pos.x,y-pl.pos.y,part[0])
- if(part[1]==-1){particle_ .anti()}
+ let  particle_ = new particle(x-pl.pos.x,y-pl.pos.y,part[0],part[1])
+
   pl.add_particle(particle_)
 }
 
 function keyPressed(){
+  //console.log(keyCode)
   if(mouseX<pl1.pos.x+pl1.size.x && mouseX>pl1.pos.x && mouseY<pl1.pos.y+pl1.size.y && mouseY>pl1.pos.y){
-    if(key=="p"){
-      plane_add(pl1,["pluson",sim.display_sym],mouseX,mouseY)
-      //pl1.add_particle(new particle(mouseX-pl1.pos.x,mouseY-pl1.pos.y,"pluson"))
-    }else if(key=="m"){
-      plane_add(pl1,["minon",sim.display_sym],mouseX,mouseY)
-    }else if(key=="g"){
-      plane_add(pl1,["glion",sim.display_sym],mouseX,mouseY)
+    for(let part of Object.keys(particle_atts)){
+      if(key == particle_atts[part].key.toLowerCase() && (sim.unlocked==true || particle_atts[part].discovered[(sim.display_sym+1)/2])){
+        plane_add(pl1,[part,sim.display_sym],mouseX,mouseY)
+      }
     }
-    else if(key=="v"){
-      plane_add(pl1,["vuon",sim.display_sym],mouseX,mouseY)
-    }
-    else if(key=="r"){
-      plane_add(pl1,["rhoton",sim.display_sym],mouseX,mouseY)
-    }else if(key=="n"){
-      plane_add(pl1,["nuon",sim.display_sym],mouseX,mouseY)
-    }else if(key=="a"){
-      plane_add(pl1,["anurion",sim.display_sym],mouseX,mouseY)
-    }else if(key=="s"){
-      plane_add(pl1,["anurino",sim.display_sym],mouseX,mouseY)
-    }else if(key=="j"){
-      plane_add(pl1,["jaudion",sim.display_sym],mouseX,mouseY)
-    }else if(key=="k"){
-      plane_add(pl1,["jaudino",sim.display_sym],mouseX,mouseY)
-    }else if(key=="f"){
-      plane_add(pl1,["fixon",sim.display_sym],mouseX,mouseY)
-    }
+    // if(key=="p"){
+    //   plane_add(pl1,["pluson",sim.display_sym],mouseX,mouseY)
+    //   //pl1.add_particle(new particle(mouseX-pl1.pos.x,mouseY-pl1.pos.y,"pluson"))
+    // }else if(key=="m"){
+    //   plane_add(pl1,["minon",sim.display_sym],mouseX,mouseY)
+    // }else if(key=="g"){
+    //   plane_add(pl1,["glion",sim.display_sym],mouseX,mouseY)
+    // }
+    // else if(key=="v"){
+    //   plane_add(pl1,["vuon",sim.display_sym],mouseX,mouseY)
+    // }
+    // else if(key=="r"){
+    //   plane_add(pl1,["rhoton",sim.display_sym],mouseX,mouseY)
+    // }else if(key=="n"){
+    //   plane_add(pl1,["nuon",sim.display_sym],mouseX,mouseY)
+    // }else if(key=="a"){
+    //   plane_add(pl1,["anurion",sim.display_sym],mouseX,mouseY)
+    // }else if(key=="s"){
+    //   plane_add(pl1,["anurino",sim.display_sym],mouseX,mouseY)
+    // }else if(key=="j"){
+    //   plane_add(pl1,["jaudion",sim.display_sym],mouseX,mouseY)
+    // }else if(key=="k"){
+    //   plane_add(pl1,["jaudino",sim.display_sym],mouseX,mouseY)
+    // }else if(key=="f"){
+    //   plane_add(pl1,["fixon",sim.display_sym],mouseX,mouseY)
+    // }
 
 
   }
@@ -241,10 +253,27 @@ function keyPressed(){
   clickables.push(butt_togvecs);
 
 
+  butt_toglines = new Clickable();
+  butt_toglines.locate(x+90,y+20)
+  butt_toglines.resize(90,15);
+  butt_toglines.text = "Toggle Lines"
+  butt_toglines.textSize = 11 ;
+  butt_toglines.textColor = "#FFFFFF";
+  butt_toglines.color = "#00AA00"
+  butt_toglines.onPress = function(){
 
+    if(sim.lines==0){
+      sim.lines =1 ;
+      butt_toglines.color = "#00AA00"
+    }else{
+      sim.lines = 0;
+      butt_toglines.color = "#222222"
+    }
+  }
+  clickables.push(butt_toglines);
 
   butt_clean = new Clickable();
-  butt_clean.locate(x+90,y+20)
+  butt_clean.locate(x+90,y+130)
   butt_clean.resize(90,15);
   butt_clean.text = "Clean Lab"
   butt_clean.textSize = 11 ;

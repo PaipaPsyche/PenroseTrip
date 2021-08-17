@@ -45,6 +45,17 @@ class plane{
   }
 
 
+  check_pair_cases(){
+    let n_pairs=[]
+    for(let par of Object.keys(particle_atts)){
+      if(particle_atts[par].discovered[0] && particle_atts[par].discovered[1] && par!="rhoton"){
+        n_pairs.push(par)
+      }
+    }
+    return n_pairs
+  }
+
+
   create(out_particles,total_k_energy,cm_momentum,x,y,r){
     let part_array=[]
     let p_tot = createVector(0,0)
@@ -147,7 +158,9 @@ class plane{
     if(sim.display_mode==1){
       text("Mass  "+particle_atts[type].m.toExponential()+" eV", x+w/2, y+h-32)
     }else if(sim.display_mode==2){
-    if(sim.display_sym!=sym){fill(30)}
+    if(sim.display_sym!=sym){ fill(30)}
+      ad_ = sym==-1?"¯":""
+      text("Symbol      "+particle_atts[type].id+ad_, x+w/2, y+h-32)
 
     }
 
@@ -266,6 +279,14 @@ class plane{
     let hh = 70
     let yy = 10
 
+    let ddx = xo+3*ww+70
+    fill(30)
+    if(sim.display_sym==1){
+    rect(xo-5,yy-5,3*ww+45,4*hh+55)
+    }else{
+      rect(ddx-5,yy-5,3*ww+35,4*hh+45)
+    }
+
     this.paint_card("pluson",1,xo,yy,ww,hh)
     this.paint_card("glion",1,xo+ww+10,yy,ww,hh)
     this.paint_card("minon",1,xo,yy+hh+10,ww,hh)
@@ -282,14 +303,16 @@ class plane{
 
 
 
-    let ddx = xo+3*ww+70
+
+
+
     textSize(10)
     fill(150)
     textAlign(CENTER)
     text("press SHIFT to see keys",ddx+150,yy+4*hh+50)
-    if(sim.display_mode==2){
+
       text("press Q to change click between matter and antimatter",ddx-130,yy+4*hh+50)
-    }
+
     this.paint_card("pluson",-1,ddx,yy,ww,hh)
     this.paint_card("glion",-1,ddx+ww+10,yy,ww,hh)
     this.paint_card("minon",-1,ddx,yy+hh+10,ww,hh)
@@ -314,25 +337,31 @@ class plane{
       let reac = reactions[reactions.length-1-r]
       if(reac[2]==true){
         fill(255)
-        circle(90+xx,yy+20*r,5)
+        circle(120+xx,yy+15*r,4)
       }
       for(let i=0;i<reac[0].length;i++){
         let col = reac[0][i][1]
-
+        textSize(11)
         fill(col)
-        text(reac[0][i][0],100+xx+i*9,yy+20*r)
+        text(reac[0][i][0],125+xx+i*8,yy+15*r)
 
 
 
       }
 
-
+       textSize(10)
        let col = [255,255,255]
        let type = reac[1]
        if(type=="reaction"){col=[0,255,0]}
        if(type=="decay"){col=[255,255,0]}
        fill(col)
-       text(type.toUpperCase(),xx,yy+20*r)
+       text(type.toUpperCase(),xx+45,yy+15*r)
+       fill(80)
+       if(reac[2]==true){
+         fill(255)
+       }
+       textSize(9)
+       text(reac[3],xx,yy+15*r)
     }
   }
   paint(){
@@ -355,7 +384,7 @@ class plane{
       noStroke()
       fill(255)
       textSize(8)
-      text(round(i*dry,1)+" fm",this.pos.x-20,this.pos.y+i*dy)
+      text(round(i*dry,1),this.pos.x-12,this.pos.y+i*dy)
       text(round(i*drx,1)+" fm",this.pos.x+i*dx,this.pos.y-10)
     }
     textSize(9)

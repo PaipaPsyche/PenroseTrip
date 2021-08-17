@@ -2,11 +2,11 @@
 layout: post
 title:  "Quantum Alchemy"
 date:   2021-07-27 02:38:20 -0300
-description: "Gee! My first fictional particle physics Lab..."
+description: "Gee ! My first fictional particle physics Lab..."
 categories: "sketch"
 type: ""
 author: Paipa Psyche
-image: "/assets/img/posts/sketch-cell-royale.png"
+image: "/assets/img/posts/sketch-quantumalchemy.png"
 icon: ""
 link: "/assets/sketches/QuantumAlchemy/QuantumAlchemy.html"
 tags:
@@ -37,4 +37,4 @@ TEST SKETCH
 </span>
 </a>
 
-Latest commit : 28  / july / 2020
+Latest commit : 17  / Aug / 2020
