@@ -358,13 +358,7 @@ let allowed_interactions_n = {
 
   ]
   },
-  "pluson-glion":{
-    proba:0.1,
-    final:[
-    { value: ["anurion",-1], weight: 12},
 
-  ]
-  },
   "pluson-antiminon":{
     proba:0.0001,
     final:[
