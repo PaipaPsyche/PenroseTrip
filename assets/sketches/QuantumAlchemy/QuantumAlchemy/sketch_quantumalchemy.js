@@ -16,8 +16,10 @@ var sim = {
   display_mode:1,
   display_sym:1,
   v_th:0.8,
+  absorption:1,
+  abs_rate:0.1,
   n_reactions:35,
-  unlocked:false,
+  unlocked:true,
   discovered:{
     total : 0,
     disc : 0
@@ -291,6 +293,7 @@ function keyPressed(){
   select_bound.position(x+110,y+80)
   select_bound.option("walls")
   select_bound.option("absorb")
+  select_bound.option("open")
   select_bound.option("periodic")
   select_bound.selected("walls")
   select_bound.changed(function(){
@@ -301,7 +304,7 @@ function keyPressed(){
   slider_time.position(x+110,y+120);
   slider_time.style("width","70px")
   slider_time.style("height","2px")
-  slider_time.input(function(){sim.dt=10**(map(slider_time.value(),22,24,-23.2,-22.8))})
+  slider_time.input(function(){sim.dt=10**(map(slider_time.value(),22,24,-23.1,-22.9))})
 
 
   // slider_time = createSlider(22,24,-Math.log10(sim.dt),0.1);

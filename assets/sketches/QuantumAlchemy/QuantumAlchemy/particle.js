@@ -248,16 +248,16 @@ class particle{
       if(this.pos.x+radius > pl.size.x ){
         this.pos.x = radius
       }
-      if(this.pos.x-radius < 0 ){
+      else if(this.pos.x-radius < 0 ){
         this.pos.x = pl.size.x-radius
       }
       if(this.pos.y+radius > pl.size.y ){
         this.pos.y = radius
       }
-      if(this.pos.y-radius < 0 ){
+      else if(this.pos.y-radius < 0 ){
         this.pos.y = pl.size.y-radius
       }
-    }else if(sim.bounded=="absorb"){
+    }else if(sim.bounded=="absorb" || sim.bounded=="open"){
       let abs_ = false
       if(this.pos.x+radius > pl.size.x ){
         abs_ = true
@@ -265,7 +265,7 @@ class particle{
         this.vel.x = -this.vel.x
 
       }
-      if(this.pos.x-radius < 0 ){
+      else if(this.pos.x-radius < 0 ){
         abs_ = true
         this.pos.x = radius
         this.vel.x = -this.vel.x
@@ -275,12 +275,12 @@ class particle{
         this.pos.y = pl.size.y-radius
         this.vel.y = -this.vel.y
       }
-      if(this.pos.y-radius < 0 ){
+      else if(this.pos.y-radius < 0 ){
         abs_ = true
         this.pos.y = radius
         this.vel.y = -this.vel.y
       }
-      if (abs_ && this.properties.radiation){
+      if (abs_ && ((this.properties.radiation && sim.bounded=="absorb") || (sim.bounded=="open"))){
         this.active=false
       }
     }

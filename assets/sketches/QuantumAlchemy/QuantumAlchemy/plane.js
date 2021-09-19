@@ -30,8 +30,12 @@ class plane{
             if(distance<=(p1.properties.r+p2.properties.r) && p1.properties.q!=0  && p2.type=="rhoton" && p2.sym ==1){
               //p1.absorb(p2,this);
               p1.check_case(p2);
-              p1.add_momentum(p2.give_momentum().copy())
-              p2.active=false
+              if(random()<sim.absorption*sim.abs_rate){
+                p1.add_momentum(p2.give_momentum().copy())
+                p2.active=false
+              }
+
+
             }
 
 

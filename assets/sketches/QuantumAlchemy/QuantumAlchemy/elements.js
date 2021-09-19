@@ -457,7 +457,7 @@ let allowed_interactions_n = {
   ]
   },
   "antianurion-antirhoton":{
-    proba:0.05,
+    proba:0.1,
     final:[
     { value: ["glion",1], weight: 12},
 
