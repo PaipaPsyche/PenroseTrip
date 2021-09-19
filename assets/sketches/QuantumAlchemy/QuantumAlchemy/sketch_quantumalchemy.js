@@ -19,7 +19,7 @@ var sim = {
   absorption:1,
   abs_rate:0.1,
   n_reactions:35,
-  unlocked:true,
+  unlocked:false,
   discovered:{
     total : 0,
     disc : 0
