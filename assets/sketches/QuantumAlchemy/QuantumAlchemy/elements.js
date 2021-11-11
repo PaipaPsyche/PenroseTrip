@@ -6,7 +6,7 @@ var particle_atts ={
     m:5e3, //ev
     q:2,
     c:2,
-    hlt:1e-14,
+    hlt:1e-15,
     key:"P",
     discovered:[false,true],
     radiation:false,
@@ -21,7 +21,7 @@ var particle_atts ={
     m:1e3, //ev
     q:-1,
     c:1,
-    hlt:1e-12,
+    hlt:1e-13,
     key:"M",
     discovered:[false,true],
     radiation:false,
@@ -351,20 +351,14 @@ let allowed_interactions_n = {
 
   ]
   },
-  "pluson-antirhoton":{
-    proba:0.001,
-    final:[
-    { value: ["fixon",-1], weight: 12},
 
-  ]
-  },
 
-  "pluson-antiminon":{
-    proba:0.0001,
-    final:[
-    { value: ["anurino",1], weight: 12},
-
-  ]
+  // "pluson-antiminon":{
+  //   proba:0.0001,
+  //   final:[
+  //   { value: ["anurino",1], weight: 12},
+  //
+  // ]
   },
   "anurion-glion":{
     proba:0.5,

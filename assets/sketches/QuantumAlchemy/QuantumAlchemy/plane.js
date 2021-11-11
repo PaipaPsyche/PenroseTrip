@@ -270,7 +270,7 @@ class plane{
       text(totals.q,xo+2*dx+30,yo-dy/2+yo2+2*dy+50)
       let cc=totals.c%4
       text(totals.c+" ("+["+","-"][int(cc%2==1)]+")",xo+2*dx+30,yo-dy/2+yo2+2*dy+70)
-      text(totals.m.toExponential(),xo+2*dx+30,yo-dy/2+yo2+2*dy+90)
+      text(totals.m.toExponential()+"eV",xo+2*dx+30,yo-dy/2+yo2+2*dy+90)
 
 
       pop()
