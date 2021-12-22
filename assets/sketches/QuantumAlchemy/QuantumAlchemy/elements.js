@@ -363,7 +363,7 @@ let allowed_interactions_n = {
   "anurion-glion":{
     proba:0.5,
     final:[
-    { value: ["rhoton",1], weight: 12},
+    { value: ["rhoton",-1], weight: 12},
 
   ]
   },
