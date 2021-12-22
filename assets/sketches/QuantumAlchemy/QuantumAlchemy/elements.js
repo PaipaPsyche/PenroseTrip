@@ -359,7 +359,7 @@ let allowed_interactions_n = {
   //   { value: ["anurino",1], weight: 12},
   //
   // ]
-  },
+  //},
   "anurion-glion":{
     proba:0.5,
     final:[
