@@ -26,7 +26,8 @@ ATTS = {
   orders:[],
 
   fr:60,
-  info:1
+  info:1,
+  border_thick:5
 }
 
 //CONSTANTS
@@ -569,92 +570,106 @@ function blank_center(){
 
 function blank_figure(k){
   //blank()
-  let mid = int(ATTS.n_side/2)
+  let midx = int(ATTS.n_side/2)
+  let midy = int(ATTS.n_side/2)
+
+  let cx, cy
+
+  let idx = inmouserange_indexes()
+  if(idx.length>0){
+    cx = idx[0]
+    cy = idx[1]}
+  else{
+    cx = midx
+    cy = midy
+  }
+
+
   if(k=="2"){
-    CELLS[mid-1][mid].set(1)
-    CELLS[mid+1][mid].set(1)
-    CELLS[mid][mid-1].set(1)
-    CELLS[mid][mid+1].set(1)
-    CELLS[mid][mid].set(1)
-    CELLS[mid-2][mid].set(1)
-    CELLS[mid+2][mid].set(1)
-    CELLS[mid][mid-2].set(1)
-    CELLS[mid][mid+2].set(1)
+    CELLS[cx-1][cy].set(1)
+    CELLS[cx+1][cy].set(1)
+    CELLS[cx][cy-1].set(1)
+    CELLS[cx][cy+1].set(1)
+    CELLS[cx][cy].set(1)
+    CELLS[cx-2][cy].set(1)
+    CELLS[cx+2][cy].set(1)
+    CELLS[cx][cy-2].set(1)
+    CELLS[cx][cy+2].set(1)
   }else if(k=="1"){
-    CELLS[mid-1][mid].set(1)
-    CELLS[mid+1][mid].set(1)
-    CELLS[mid][mid-1].set(1)
-    CELLS[mid][mid+1].set(1)
-    CELLS[mid][mid].set(1)
+    CELLS[cx-1][cy].set(1)
+    CELLS[cx+1][cy].set(1)
+    CELLS[cx][cy-1].set(1)
+    CELLS[cx][cy+1].set(1)
+    CELLS[cx][cy].set(1)
   }else if(k=="3"){
     blank_figure("2")
 
 
-    CELLS[mid-2][mid+1].set(1)
-    CELLS[mid-2][mid-1].set(1)
-    CELLS[mid+2][mid-1].set(1)
-    CELLS[mid+2][mid+1].set(1)
+    CELLS[cx-2][cy+1].set(1)
+    CELLS[cx-2][cy-1].set(1)
+    CELLS[cx+2][cy-1].set(1)
+    CELLS[cx+2][cy+1].set(1)
 
 
-    CELLS[mid-1][mid+2].set(1)
-    CELLS[mid-1][mid-2].set(1)
-    CELLS[mid+1][mid-2].set(1)
-    CELLS[mid+1][mid+2].set(1)
+    CELLS[cx-1][cy+2].set(1)
+    CELLS[cx-1][cy-2].set(1)
+    CELLS[cx+1][cy-2].set(1)
+    CELLS[cx+1][cy+2].set(1)
 
 
   }
   else if(k=="4"){
     blank_figure("3")
 
-    CELLS[mid-3][mid].set(1)
-    CELLS[mid+3][mid].set(1)
-    CELLS[mid][mid-3].set(1)
-    CELLS[mid][mid+3].set(1)
+    CELLS[cx-3][cy].set(1)
+    CELLS[cx+3][cy].set(1)
+    CELLS[cx][cy-3].set(1)
+    CELLS[cx][cy+3].set(1)
 
 
-    CELLS[mid-4][mid+1].set(1)
-    CELLS[mid-4][mid-1].set(1)
-    CELLS[mid+4][mid-1].set(1)
-    CELLS[mid+4][mid+1].set(1)
+    CELLS[cx-4][cy+1].set(1)
+    CELLS[cx-4][cy-1].set(1)
+    CELLS[cx+4][cy-1].set(1)
+    CELLS[cx+4][cy+1].set(1)
 
 
-    CELLS[mid-1][mid+4].set(1)
-    CELLS[mid-1][mid-4].set(1)
-    CELLS[mid+1][mid-4].set(1)
-    CELLS[mid+1][mid+4].set(1)
+    CELLS[cx-1][cy+4].set(1)
+    CELLS[cx-1][cy-4].set(1)
+    CELLS[cx+1][cy-4].set(1)
+    CELLS[cx+1][cy+4].set(1)
 
 
   }
   else if(k=="5"){
-    CELLS[mid][mid].set(1)
-    CELLS[mid][mid-1].set(1)
-    CELLS[mid][mid+1].set(1)
-    CELLS[mid][mid-2].set(1)
-    CELLS[mid][mid+2].set(1)
-    CELLS[mid-1][mid].set(1)
-    CELLS[mid+1][mid].set(1)
-    CELLS[mid-2][mid].set(1)
-    CELLS[mid+2][mid].set(1)
-    CELLS[mid][mid-3].set(1)
-    CELLS[mid][mid+3].set(1)
-    CELLS[mid-3][mid].set(1)
-    CELLS[mid+3][mid].set(1)
+    CELLS[cx][cy].set(1)
+    CELLS[cx][cy-1].set(1)
+    CELLS[cx][cy+1].set(1)
+    CELLS[cx][cy-2].set(1)
+    CELLS[cx][cy+2].set(1)
+    CELLS[cx-1][cy].set(1)
+    CELLS[cx+1][cy].set(1)
+    CELLS[cx-2][cy].set(1)
+    CELLS[cx+2][cy].set(1)
+    CELLS[cx][cy-3].set(1)
+    CELLS[cx][cy+3].set(1)
+    CELLS[cx-3][cy].set(1)
+    CELLS[cx+3][cy].set(1)
 
 
-    CELLS[mid-2][mid+2].set(1)
-    CELLS[mid+2][mid-2].set(1)
-    CELLS[mid-2][mid-2].set(1)
-    CELLS[mid+2][mid+2].set(1)
+    CELLS[cx-2][cy+2].set(1)
+    CELLS[cx+2][cy-2].set(1)
+    CELLS[cx-2][cy-2].set(1)
+    CELLS[cx+2][cy+2].set(1)
 
-    CELLS[mid-3][mid+1].set(1)
-    CELLS[mid+3][mid-1].set(1)
-    CELLS[mid-3][mid-1].set(1)
-    CELLS[mid+3][mid+1].set(1)
+    CELLS[cx-3][cy+1].set(1)
+    CELLS[cx+3][cy-1].set(1)
+    CELLS[cx-3][cy-1].set(1)
+    CELLS[cx+3][cy+1].set(1)
 
-    CELLS[mid-1][mid+3].set(1)
-    CELLS[mid+1][mid-3].set(1)
-    CELLS[mid-1][mid-3].set(1)
-    CELLS[mid+1][mid+3].set(1)
+    CELLS[cx-1][cy+3].set(1)
+    CELLS[cx+1][cy-3].set(1)
+    CELLS[cx-1][cy-3].set(1)
+    CELLS[cx+1][cy+3].set(1)
 
 
 
@@ -668,23 +683,47 @@ function blank_figure(k){
 
 function blank_border(dir){
   //blank()
-  let mid = int(ATTS.n_side/2)
-  for(let i = 0;i<ATTS.n_side;i++){
+  let midx = int(ATTS.n_side/2)
+  let midy = int(ATTS.n_side/2)
+  let thick = ATTS.border_thick
+
+  let cx, cy
+
+  let idx = inmouserange_indexes()
+  if(idx.length>0){
+    cx = idx[0]
+    cy = idx[1]}
+  else{
+    cx = midx
+    cy = midy
+  }
 
     if(dir=="h"){
-      CELLS[i][mid].set(i%2)
+      let top = cy+thick
+      let bot = cy-thick
+      for(let i = 0; i < ATTS.n_side;i++){
+        for(let j = bot; j<=top;j++){
+          CELLS[i][j].set(0)
+        }
+      }
     }
     else if(dir=="v"){
-      CELLS[mid][i].set(i%2)
+      let ls = cx-thick
+      let rs = cx+thick
+      for(let i = ls; i <= rs;i++){
+        for(let j = 0; j<ATTS.n_side;j++){
+          CELLS[i][j].set(0)
+        }
+      }
     }
-    else if(dir=="a"){
-      CELLS[ATTS.n_side-1-i][i].set(i%2)
-    }
-    else if(dir=="d"){
-      CELLS[i][i].set(i%2)
-    }
+    // else if(dir=="a"){
+    //   CELLS[ATTS.n_side-1-i][i].set(i%2)
+    // }
+    // else if(dir=="d"){
+    //   CELLS[i][i].set(i%2)
+    // }
 
-  }
+
 
 }
 
@@ -728,7 +767,7 @@ function keyPressed(){
     blank_figure(key);
   }
 
-  if(keyCode==SHIFT){
+  if(keyCode=="r"){
     gen_random_rule()
   }
   if(keyCode==ENTER){
@@ -760,22 +799,40 @@ function mouseDragged(){
   }
 }
 
+function inmouserange_indexes(){
+  for(let i = 0;i<ATTS.n_side;i++){
+    for(let j = 0;j<ATTS.n_side;j++){
+      if(CELLS[i][j].mouseInRange()){
+        CELLS[i][j].switch()
+        return [i,j]
+      }
+
+    }
+  }
+  return []
+}
+
 function mouseClicked(){
 
 
   for(let c of clickable){
     c.click()
   }
-
-  for(let i = 0;i<ATTS.n_side;i++){
-    for(let j = 0;j<ATTS.n_side;j++){
-      if(CELLS[i][j].mouseInRange()){
-        CELLS[i][j].switch()
-        return;
-      }
-
-    }
+  let idx = inmouserange_indexes()
+  if(idx.length >0){
+    CELLS[idx[0]][idx[1]].switch()
   }
+
+
+  // for(let i = 0;i<ATTS.n_side;i++){
+  //   for(let j = 0;j<ATTS.n_side;j++){
+  //     if(CELLS[i][j].mouseInRange()){
+  //       CELLS[i][j].switch()
+  //       return;
+  //     }
+  //
+  //   }
+  // }
 }
 
 
