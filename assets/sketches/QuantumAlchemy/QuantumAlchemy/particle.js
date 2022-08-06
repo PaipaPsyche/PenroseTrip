@@ -6,35 +6,35 @@ var id_counter=1
 
 class particle{
   constructor(x,y,type,sym=1){
-      this.pos = createVector(x,y)
-      this.vel = p5.Vector.random2D();
-      this.type = type;
-      this.sym = 1
-      this.time=0
+    this.pos = createVector(x,y)
+    this.vel = p5.Vector.random2D();
+    this.type = type;
+    this.sym = 1
+    this.time=0
 
 
-      this.last_interact={
-        "over_n":[],
-        "n":[],
-        "d":[]
-      }
+    this.last_interact={
+      "over_n":[],
+      "n":[],
+      "d":[]
+    }
 
-      this.active = true;
-      this.properties =this.get_properties()
-      if(sym==-1){
-        this.anti()
-      }
-      this.properties.mode =1e6;
-      if(this.properties.m==0){
-        this.properties.mode = random(1e6,1e7)
-      }
-      this.properties.r_r = this.properties.r*(1+sim.int_r*Math.abs(this.properties.q))
-      this.properties.r_n = this.properties.r*(1+sim.int_n*Math.abs(this.properties.c))
+    this.active = true;
+    this.properties =this.get_properties()
+    if(sym==-1){
+      this.anti()
+    }
+    this.properties.mode =1e6;
+    if(this.properties.m==0){
+      this.properties.mode = random(1e6,1e7)
+    }
+    this.properties.r_r = this.properties.r*(1+sim.int_r*Math.abs(this.properties.q))
+    this.properties.r_n = this.properties.r*(1+sim.int_n*Math.abs(this.properties.c))
 
-      this.serial_id = id_counter
-      id_counter = id_counter+1;
+    this.serial_id = id_counter
+    id_counter = id_counter+1;
 
-      particle_atts[this.type].discovered[(this.sym+1)/2]=true
+    particle_atts[this.type].discovered[(this.sym+1)/2]=true
   }
   get_properties(){
     let prop = {}
@@ -64,9 +64,9 @@ class particle{
       this.active = false;
       p.active = false;
       //if(this.type=="rhoton"){continue}
-    //  console.log("Anihilation")
-    //  console.log("  ",this.give_name())
-    //  console.log("  ",p.give_name())
+      //  console.log("Anihilation")
+      //  console.log("  ",this.give_name())
+      //  console.log("  ",p.give_name())
 
       let tot_c = (p.properties.c+this.properties.c)%4
       //console.log(tot_c,this.give_name(),this.properties.c,p.give_name(),p.properties.c)
@@ -92,18 +92,18 @@ class particle{
     }
   }
   decay(){
-  //  console.log("Decay ", this.give_name())
+    //  console.log("Decay ", this.give_name())
     if(Object.keys(decay_modes).includes(this.give_name())){
       let entry = decay_modes[this.give_name()]
 
       //console.log(entry)
-        //console.log("a")
+      //console.log("a")
       this.active = false;
 
       let mom = this.give_momentum().copy()
       let  opt = chooseWeighted(entry.final)
       let tote = this.give_energy()
-        pl1.create(opt,tote,mom,this.pos.x,this.pos.y,1.5*this.properties.r_n)
+      pl1.create(opt,tote,mom,this.pos.x,this.pos.y,1.5*this.properties.r_n)
       add_reaction([[this.type,this.sym]],opt,"decay",update_discovered())
 
 
@@ -158,14 +158,14 @@ class particle{
     amp = amp*sim.dt
     this.add_momentum(f_dir.copy().mult(amp))
     if(d<=min(this.properties.r_n,p.properties.r_n)){
-    if(this.serial_id<p.serial_id){
-    //if(this.properties.m<=p.properties.m &&this.serial_id<p.serial_id){
+      if(this.serial_id<p.serial_id){
+        //if(this.properties.m<=p.properties.m &&this.serial_id<p.serial_id){
         this.last_interact["n"][this.last_interact["n"].length] =p.give_name()
         this.last_interact["d"][this.last_interact["d"].length]=d+p.properties.r/2
-    }else{
-      this.last_interact["over_n"][0]=p.give_name()
+      }else{
+        this.last_interact["over_n"][0]=p.give_name()
+      }
     }
-  }
   }
 
 
@@ -198,8 +198,8 @@ class particle{
       let vel_add = p.copy().mult(1/this.properties.m)
       let coeff = 1/(1+(this.vel.mag()*vel_add.mag()/(sim.c*sim.c)))
       if(this.vel.mag()<sim.v_th*sim.c){coeff=1}
-    let newvel = this.vel.copy().add(vel_add).mult(coeff);
-    this.vel = newvel.copy()
+      let newvel = this.vel.copy().add(vel_add).mult(coeff);
+      this.vel = newvel.copy()
     }
   }
 
@@ -224,7 +224,7 @@ class particle{
 
 
 
-  // bounded
+    // bounded
     if(sim.bounded=="walls"){
       if(this.pos.x+radius > pl.size.x ){
         this.pos.x = pl.size.x-radius
@@ -350,63 +350,71 @@ class particle{
 
 
   paint(pl){
-  this.move(pl)
-  let radius = pl.scale.x*this.properties.r
-  let xx = pl.pos.x+this.pos.x
-  let yy = pl.pos.y+this.pos.y
-  push()
-  let col  = this.properties.colors.normal;
-  if(this.sym==-1){col = this.properties.colors.anti}
-  col = color(col)
-  col.setAlpha(180)
-  fill(col)
-  let indeter= Math.log10(1+this.properties.m*sim.dx/(sim.dt*sim.c))/4
-  circle(xx+randomGaussian(0,indeter),yy+randomGaussian(0,indeter),radius)
-  pop()
-  this.time = this.time+1;
-  let tau  = (this.time*sim.dt/this.properties.hlt)
-  tau = map(1/(1+exp(-tau)),0.5,1,0,1);
-  //console.log(this.properties.id,tau)
-  if(random()<tau && Object.keys(decay_modes).includes(this.give_name())){
-    this.active=false
-    this.decay()
-  }
-  //frameCount%sim.step_interact==0&&
-  //console.log(this.last_interact["n"],this.type,this.last_interact["over_n"].length==0 , this.last_interact["n"].length>0 )
-
-  //this.determine_group("pluson","pluson","Φ+",20/pl.scale.x,xx,yy)
-  //this.determine_group("minon","minon","Φ-",20/pl.scale.x,xx,yy)
-  if(frameCount%(sim.step_interact)==0){
-    this.group_search(xx,yy,pl.scale.x)
-
-    // this.determine_group("pluson","minon","Λ",5+5/pl.scale.x,xx,yy,true)
-    // this.determine_group("pluson","vuon","Δ",5+5/pl.scale.x,xx,yy,true)
-    // this.determine_group("pluson","anurion","η+",5+5/pl.scale.x,xx,yy,true)
-    // this.determine_group("antianurion","antipluson","η-",5+5/pl.scale.x,xx,yy,true)
-    // this.determine_group("antijaudion","antipluson","π",5+5/pl.scale.x,xx,yy,true)
-    //   this.determine_group("antijaudion","minon","μ",5+5/pl.scale.x,xx,yy,true)
-    // this.determine_group("antianurion","minon","Φ+",5+5/pl.scale.x,xx,yy,true)
-    //   this.determine_group("antiminon","anurion","Φ-",5+5/pl.scale.x,xx,yy,true)
-
-}
-for(let np of Object.keys(this.last_interact)){
-
-  this.last_interact[np]=[];
-}
-
-  if(sim.tags){
+    
+    this.move(pl)
+    let radius = pl.scale.x*this.properties.r
+    let xx = pl.pos.x+this.pos.x
+    let yy = pl.pos.y+this.pos.y
     push()
-    textAlign(CENTER,CENTER);
-    fill(255);
-    textSize(8)
-    text(this.properties.id,xx,yy-radius/2-5)
-    //let beta = this.vel.mag()/sim.c;
-    //let gamma  = 1/sqrt(1-(this.vel.mag()**2/sim.c**2))
-    //text(round(beta,2),xx,yy+radius/2+5)
-    if(this.sym==-1){
-      text("_",xx,yy-radius/2-18)
+    let col  = this.properties.colors.normal;
+    if(this.sym==-1){col = this.properties.colors.anti}
+    col = color(col)
+    col.setAlpha(180)
+    fill(col)
+    let indeter= Math.log10(1+this.properties.m*sim.dx/(sim.dt*sim.c))/4
+
+    let cxx = xx
+    let cyy = yy
+    if(sim.brownian_motion){
+      cxx = cxx + randomGaussian(0,indeter)
+      cyy = cyy + randomGaussian(0,indeter)
     }
+    circle(cxx,cyy,radius)
     pop()
+    this.time = this.time+1;
+    let tau  = (this.time*sim.dt/this.properties.hlt)
+    tau = map(1/(1+exp(-tau)),0.5,1,0,1);
+    //console.log(this.properties.id,tau)
+    if(random()<tau && Object.keys(decay_modes).includes(this.give_name())){
+      this.active=false
+      this.decay()
+    }
+    //frameCount%sim.step_interact==0&&
+    //console.log(this.last_interact["n"],this.type,this.last_interact["over_n"].length==0 , this.last_interact["n"].length>0 )
+
+    //this.determine_group("pluson","pluson","Φ+",20/pl.scale.x,xx,yy)
+    //this.determine_group("minon","minon","Φ-",20/pl.scale.x,xx,yy)
+    if(frameCount%(sim.step_interact)==0 && sim.groups==1){
+      this.group_search(xx,yy,pl.scale.x)
+
+      // this.determine_group("pluson","minon","Λ",5+5/pl.scale.x,xx,yy,true)
+      // this.determine_group("pluson","vuon","Δ",5+5/pl.scale.x,xx,yy,true)
+      // this.determine_group("pluson","anurion","η+",5+5/pl.scale.x,xx,yy,true)
+      // this.determine_group("antianurion","antipluson","η-",5+5/pl.scale.x,xx,yy,true)
+      // this.determine_group("antijaudion","antipluson","π",5+5/pl.scale.x,xx,yy,true)
+      //   this.determine_group("antijaudion","minon","μ",5+5/pl.scale.x,xx,yy,true)
+      // this.determine_group("antianurion","minon","Φ+",5+5/pl.scale.x,xx,yy,true)
+      //   this.determine_group("antiminon","anurion","Φ-",5+5/pl.scale.x,xx,yy,true)
+
+    }
+    for(let np of Object.keys(this.last_interact)){
+
+      this.last_interact[np]=[];
+    }
+
+    if(sim.tags){
+      push()
+      textAlign(CENTER,CENTER);
+      fill(255);
+      textSize(8)
+      text(this.properties.id,xx,yy-radius/2-5)
+      //let beta = this.vel.mag()/sim.c;
+      //let gamma  = 1/sqrt(1-(this.vel.mag()**2/sim.c**2))
+      //text(round(beta,2),xx,yy+radius/2+5)
+      if(this.sym==-1){
+        text("_",xx,yy-radius/2-18)
+      }
+      pop()
+    }
   }
-}
 }

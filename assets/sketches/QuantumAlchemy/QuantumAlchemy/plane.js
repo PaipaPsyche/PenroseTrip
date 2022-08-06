@@ -95,15 +95,15 @@ class plane{
         let mmag =sqrt(2*m*total_k_energy/out_particles.length)
         //console.log(mmag)
         let p_part = mom.copy().mult(mmag)
-      //  console.log("p",m,p_part,mmag)
+        //  console.log("p",m,p_part,mmag)
         p_tot.add(p_part)
         part_array[part_array.length-1].add_momentum(p_part.copy().mult(1))
       }else{
         part_array[part_array.length-1].add_momentum(p_tot.copy().mult(-1))
       }
       part_array[part_array.length-1].pos.add(mom.copy().mult(r/2))
-    //  circle(x+this.pos.x,y+this.pos.y,r)
-     part_array[part_array.length-1].add_momentum(cm_momentum)
+      //  circle(x+this.pos.x,y+this.pos.y,r)
+      part_array[part_array.length-1].add_momentum(cm_momentum)
     }
 
     for(let p of part_array){
@@ -162,7 +162,7 @@ class plane{
     if(sim.display_mode==1){
       text("Mass  "+particle_atts[type].m.toExponential()+" eV", x+w/2, y+h-32)
     }else if(sim.display_mode==2){
-    if(sim.display_sym!=sym){ fill(30)}
+      if(sim.display_sym!=sym){ fill(30)}
       ad_ = sym==-1?"¯":""
       text("Symbol      "+particle_atts[type].id+ad_, x+w/2, y+h-32)
 
@@ -172,12 +172,33 @@ class plane{
   }
 
 
-  paint_UI(xo=this.pos.x+this.size.x+20,yo=this.pos.y+15){
-    let i = 0
-    let dx = 150
-    let dy = 15
-    let yo2 = 330
+  paint_UI(xo=this.pos.x+this.size.x+interf.margin,yo=this.pos.y+interf.margin){
 
+
+
+
+    //for cards
+    let ww = int(interf.proportions[1]/7)//60
+    let hh = int(7*ww/6)//int(interf.proportions[0]/2)/5//70
+    let yy = yo-10
+    let ddx = xo+3*ww+hh
+
+
+
+    // starting ppoints
+    let dx = interf.proportions[1]/2 // panel width (L-R)
+    let dy = interf.margin-6
+    let i = 0
+
+    // particle count bars
+    let yo2 = yy+4*hh+40//interf.proportions[0]/2
+    let bars_y_bias = -dy/2+2*dy+120
+
+
+
+
+
+    //sums
     let totals = {
       c:0,
       q:0,
@@ -185,110 +206,14 @@ class plane{
       rad:0,
       antimatter:0
     }
-    // particle bars
-    for(let c of Object.keys(this.counts)){
-      let entry = this.counts[c]
-      let cnu =entry["atts"][4]
-      //console.log(c,cnu)
-      totals.c = totals.c + cnu*entry["counts"]
-      totals.q = totals.q + entry["atts"][3]*entry["counts"]
-      totals.m = totals.m + particle_atts[entry["atts"][0]].m*entry["counts"]
-      totals.rad = totals.rad + int(particle_atts[entry["atts"][0]].radiation)*entry["counts"]
-      if(entry["atts"][2]==-1){
-        totals.antimatter = totals.antimatter+entry["counts"]
-      }
-
-      push()
-      noStroke()
-      let col = entry["atts"][2]==-1?particle_atts[entry["atts"][0]].colors.anti:particle_atts[entry["atts"][0]].colors.normal
-      fill(col)
-      textAlign(CENTER,CENTER)
-      let txt = entry["atts"][1]
-      textSize(11)
-      text(txt,xo,yo+i*dy+yo2)
-      if(entry["atts"][2]==-1){
-        stroke(col)
-        line(xo-3,yo+i*dy-8+yo2,xo+3,yo+i*dy-8+yo2)
-        noStroke()
-      }
-      fill(col)
-
-      rect(xo+10,yo+i*dy-dy/2+yo2,entry["counts"]*dx/this.particles.length,dy/2)
-      textAlign(LEFT,CENTER)
-
-      text(entry["counts"],xo+15+entry["counts"]*dx/this.particles.length,yo+i*dy+yo2-dy/4)
-      pop()
-      i++
-    }
-    // symetry
-
-    //antimatter
-    if(this.particles.length != 0){
-
-      push()
-      stroke(255)
-      line(xo+dx+30+dx/2,yo-dy/2+yo2+2*dy+25,xo+dx+30+dx/2,yo-dy+yo2)
-      let cut = 1-(totals.antimatter/this.particles.length)
-      noStroke()
-      fill([255,0,0])
-      rect(xo+dx+30,yo-dy/2+yo2,cut*dx,dy/2)
-      textSize(9)
-      textAlign(LEFT)
-      text("MATTER",xo+dx+30,yo+yo2+dy)
-      fill([0,255,255])
-      textAlign(RIGHT)
-      text("ANTIMATTER",xo+2*dx+30,yo+yo2+dy)
-      rect(xo+dx+30+cut*dx,yo-dy/2+yo2,(1-cut)*dx,dy/2)
-      pop()
-
-
-
-
-      // radiation
-      push()
-      //console.log(totals.rad)
-      cut = 1-(totals.rad/this.particles.length)
-
-      fill(200,0,200)
-      textSize(9)
-      textAlign(LEFT)
-      text("MATTER",xo+dx+30,yo-dy/2+yo2+2*dy+30)
-      rect(xo+dx+30,yo-dy/2+yo2+dy+20,cut*dx,dy/2)
-
-      fill([255,255,255])
-      textSize(11)
-      text("ρ-charge",xo+dx+30,yo-dy/2+yo2+2*dy+50)
-      text("𝜈-charge",xo+dx+30,yo-dy/2+yo2+2*dy+70)
-      text("mass",xo+dx+30,yo-dy/2+yo2+2*dy+90)
-      textAlign(RIGHT)
-      text("RADIATION",xo+2*dx+30,yo-dy/2+yo2+2*dy+30)
-      rect(xo+dx+30+cut*dx,yo-dy/2+yo2+dy+20,(1-cut)*dx,dy/2)
-
-
-
-      textSize(12)
-      text(totals.q,xo+2*dx+30,yo-dy/2+yo2+2*dy+50)
-      let cc=totals.c%4
-      text(totals.c+" ("+["+","-"][int(cc%2==1)]+")",xo+2*dx+30,yo-dy/2+yo2+2*dy+70)
-      text(totals.m.toExponential()+"eV",xo+2*dx+30,yo-dy/2+yo2+2*dy+90)
-
-
-      pop()
-    }
-
-
 
     //cards
-    let ww = 60
-    let hh = 70
-    let yy = 10
 
-    let ddx = xo+3*ww+70
-    fill(30)
+    fill(255,255,255,10)
     if(sim.display_sym==1){
-    rect(xo-5,yy-5,3*ww+45,4*hh+55)
+      rect(xo-5,yy-5,3*ww+hh/2,4*hh+ww)
     }else{
-      rect(ddx-5,yy-5,3*ww+35,4*hh+45)
+      rect(ddx-5,yy-5,3*ww+hh/2,4*hh+ww)
     }
 
     this.paint_card("pluson",1,xo,yy,ww,hh)
@@ -315,7 +240,7 @@ class plane{
     textAlign(CENTER)
     text("press SHIFT to see keys",ddx+150,yy+4*hh+50)
 
-      text("press Q to change click between matter and antimatter",ddx-130,yy+4*hh+50)
+    text("press Q to change click between matter and antimatter",ddx-130,yy+4*hh+50)
 
     this.paint_card("pluson",-1,ddx,yy,ww,hh)
     this.paint_card("glion",-1,ddx+ww+10,yy,ww,hh)
@@ -331,9 +256,114 @@ class plane{
     this.paint_card("anurino",-1,ddx,yy+3*hh+40,ww,hh)
     this.paint_card("jaudino",-1,ddx+ww+10,yy+3*hh+40,ww,hh)
 
+
+
+
+    // particle bars
+
+
+    for(let c of Object.keys(this.counts)){
+      let entry = this.counts[c]
+      let cnu =entry["atts"][4]
+      //console.log(c,cnu)
+      totals.c = totals.c + cnu*entry["counts"]
+      totals.q = totals.q + entry["atts"][3]*entry["counts"]
+      totals.m = totals.m + particle_atts[entry["atts"][0]].m*entry["counts"]
+      totals.rad = totals.rad + int(particle_atts[entry["atts"][0]].radiation)*entry["counts"]
+      if(entry["atts"][2]==-1){
+        totals.antimatter = totals.antimatter+entry["counts"]
+      }
+
+      push()
+      noStroke()
+      let col = entry["atts"][2]==-1?particle_atts[entry["atts"][0]].colors.anti:particle_atts[entry["atts"][0]].colors.normal
+      fill(col)
+      textAlign(CENTER,CENTER)
+      let txt = entry["atts"][1]
+      textSize(11)
+      text(txt,xo,yo+i*dy+yo2+bars_y_bias)
+      if(entry["atts"][2]==-1){
+        stroke(col)
+        line(xo-3,yo+i*dy-8+yo2+bars_y_bias,xo+3,yo+i*dy-8+yo2+bars_y_bias)
+        noStroke()
+      }
+      fill(col)
+
+      rect(xo+10,yo+i*dy-dy/2+yo2+bars_y_bias,entry["counts"]*dx/this.particles.length,dy/2)
+      textAlign(LEFT,CENTER)
+
+      text(entry["counts"],xo+15+entry["counts"]*dx/this.particles.length,yo+i*dy+yo2-dy/4+bars_y_bias)
+      pop()
+      i++
+    }
+    // symetry
+
+    //antimatter
+    if(this.particles.length != 0){
+
+      push()
+      stroke(255)
+      line(xo+dx/2,yo-dy/2+yo2+2*dy+25,xo+dx/2,yo-dy+yo2)
+      let cut = 1-(totals.antimatter/this.particles.length)
+      noStroke()
+      fill([255,0,0])
+      rect(xo,yo-dy/2+yo2,cut*dx,dy/2)
+      textSize(9)
+      textAlign(LEFT)
+      text("MATTER",xo,yo+yo2+dy)
+      fill([0,255,255])
+      textAlign(RIGHT)
+      text("ANTIMATTER",xo+dx,yo+yo2+dy)
+      rect(xo+cut*dx,yo-dy/2+yo2,(1-cut)*dx,dy/2)
+      pop()
+
+
+
+
+      // radiation
+      push()
+      //console.log(totals.rad)
+      cut = 1-(totals.rad/this.particles.length)
+
+      fill(200,0,200)
+      textSize(9)
+      textAlign(LEFT)
+      text("MATTER",xo,yo-dy/2+yo2+2*dy+30)
+      rect(xo,yo-dy/2+yo2+dy+20,cut*dx,dy/2)
+
+      fill([255,255,255])
+      textSize(11)
+      text("ρ-charge",xo,yo-dy/2+yo2+2*dy+50)
+      text("𝜈-charge",xo,yo-dy/2+yo2+2*dy+70)
+      text("mass",xo,yo-dy/2+yo2+2*dy+90)
+      textAlign(RIGHT)
+      text("RADIATION",xo+dx,yo-dy/2+yo2+2*dy+30)
+      rect(xo+cut*dx,yo-dy/2+yo2+dy+20,(1-cut)*dx,dy/2)
+
+
+
+      textSize(12)
+      text(totals.q,xo+dx,yo-dy/2+yo2+2*dy+50)
+      let cc=totals.c%4
+      text(totals.c+" ("+["+","-"][int(cc%2==1)]+")",xo+dx,yo-dy/2+yo2+2*dy+70)
+      text(totals.m.toExponential()+"eV",xo+dx,yo-dy/2+yo2+2*dy+90)
+
+
+      pop()
+    }
+
+
+
+
+
+
+
+    //observed phenomena
+
+
     textSize(11)
     textAlign(LEFT)
-    let xx = ddx+3*ww+40
+    let xx = interf.proportions[0]+interf.proportions[1]+interf.margin * 5//ddx+3*ww+40
     fill(255)
     text("OBSERVED PHENOMENA",xx,yy)
     yy=yy+17
@@ -353,19 +383,19 @@ class plane{
 
       }
 
-       textSize(10)
-       let col = [255,255,255]
-       let type = reac[1]
-       if(type=="reaction"){col=[0,255,0]}
-       if(type=="decay"){col=[255,255,0]}
-       fill(col)
-       text(type.toUpperCase(),xx+45,yy+15*r)
-       fill(80)
-       if(reac[2]==true){
-         fill(255)
-       }
-       textSize(9)
-       text(reac[3],xx,yy+15*r)
+      textSize(10)
+      let col = [255,255,255]
+      let type = reac[1]
+      if(type=="reaction"){col=[0,255,0]}
+      if(type=="decay"){col=[255,255,0]}
+      fill(col)
+      text(type.toUpperCase(),xx+45,yy+15*r)
+      fill(80)
+      if(reac[2]==true){
+        fill(255)
+      }
+      textSize(9)
+      text(reac[3],xx,yy+15*r)
     }
   }
   paint(){
@@ -398,7 +428,7 @@ class plane{
     if(frameCount%sim.step_interact==0){
       this.check_inter()
     }
-
+    
     let new_p = [];
     this.counts = {};
     for(let p of this.particles){
