@@ -103,7 +103,7 @@ class particle{
       let mom = this.give_momentum().copy()
       let  opt = chooseWeighted(entry.final)
       let tote = this.give_energy()
-      pl1.create(opt,tote,mom,this.pos.x,this.pos.y,1.5*this.properties.r_n)
+      pl1.create(opt,tote,mom,this.pos.x,this.pos.y,1.2*this.properties.r_n)
       add_reaction([[this.type,this.sym]],opt,"decay",update_discovered())
 
 
@@ -225,20 +225,29 @@ class particle{
 
 
     // bounded
+
+
+    let off_bounds = false
+
     if(sim.bounded=="walls"){
       if(this.pos.x+radius > pl.size.x ){
+        off_bounds = true
         this.pos.x = pl.size.x-radius
         this.vel.x = -this.vel.x
+
       }
       if(this.pos.x-radius < 0 ){
+        off_bounds = true
         this.pos.x = radius
         this.vel.x = -this.vel.x
       }
       if(this.pos.y+radius > pl.size.y ){
+        off_bounds = true
         this.pos.y = pl.size.y-radius
         this.vel.y = -this.vel.y
       }
       if(this.pos.y-radius < 0 ){
+        off_bounds = true
         this.pos.y = radius
         this.vel.y = -this.vel.y
       }
@@ -246,43 +255,54 @@ class particle{
     // open
     else if(sim.bounded=="periodic"){
       if(this.pos.x+radius > pl.size.x ){
+        off_bounds = true
         this.pos.x = radius
       }
       else if(this.pos.x-radius < 0 ){
+        off_bounds = true
         this.pos.x = pl.size.x-radius
       }
       if(this.pos.y+radius > pl.size.y ){
+        off_bounds = true
         this.pos.y = radius
       }
       else if(this.pos.y-radius < 0 ){
+        off_bounds = true
         this.pos.y = pl.size.y-radius
       }
-    }else if(sim.bounded=="absorb" || sim.bounded=="open"){
-      let abs_ = false
+
+    }else if(sim.bounded=="open"){
+
       if(this.pos.x+radius > pl.size.x ){
-        abs_ = true
+        off_bounds = true
         this.pos.x = pl.size.x-radius
         this.vel.x = -this.vel.x
 
       }
       else if(this.pos.x-radius < 0 ){
-        abs_ = true
+        off_bounds = true
         this.pos.x = radius
         this.vel.x = -this.vel.x
       }
       if(this.pos.y+radius > pl.size.y ){
-        abs_ = true
+        off_bounds = true
         this.pos.y = pl.size.y-radius
         this.vel.y = -this.vel.y
       }
       else if(this.pos.y-radius < 0 ){
-        abs_ = true
+        off_bounds = true
         this.pos.y = radius
         this.vel.y = -this.vel.y
       }
-      if (abs_ && ((this.properties.radiation && sim.bounded=="absorb") || (sim.bounded=="open"))){
+      if (off_bounds){
         this.active=false
       }
+    }
+    if (off_bounds && ((this.properties.radiation && sim.bound_absorb_radiation))){
+      this.active=false
+    }
+    if (off_bounds && ((!this.properties.radiation && sim.bound_absorb_matter))){
+      this.active=false
     }
   }
 
@@ -290,7 +310,11 @@ class particle{
 
   group_search(xx,yy,scale){
     for(let letter of Object.keys(allowed_groups)){
-      if(allowed_groups[letter].minus==this.give_name() || allowed_groups[letter].plus==this.give_name()){
+      let group= allowed_groups[letter]
+      let plus = group.plus
+      let minus = group.minus
+      let allp = plus.concat(minus)
+      if( allp.includes(this.give_name()) ) {
         this.determine_group(letter,xx,yy,scale)
       }
     }
@@ -298,30 +322,45 @@ class particle{
 
 
   determine_group(letter,xx,yy,scale){
-    let only = allowed_groups[letter].exclusive
-    let plus = allowed_groups[letter].plus
-    let minus = allowed_groups[letter].minus
-    let mag = 5 +allowed_groups[letter].scale/scale
-    let mag_n = allowed_groups[letter].n_scale/scale
-    //console.log(only,plus,minus,mag)
-    let cond1 = only?containsOnly([minus,plus],this.last_interact["n"]):containsSome([minus,plus],this.last_interact["n"])
-    if([plus,minus].includes(this.give_name()) && this.last_interact["over_n"].length==0 && this.last_interact["n"].length>0 && cond1){
-      let cts = give_counts(this.last_interact["n"])
-      cts[this.give_name()]=cts[this.give_name()]?cts[this.give_name()]+1:1;
-      let c_m = cts[minus]?cts[minus]:0
-      let c_p = cts[plus]?cts[plus]:0
+    let group= allowed_groups[letter]
+    let only = group.exclusive
 
-      if(c_m*c_p==0){return}
-      //if(plus==minus){c_m=0,c_p=c_p/2}
+    let plus = group.plus
+    let minus = group.minus
+    let allp = plus.concat(minus)
+
+
+    let mag = 5 +group.scale/scale
+    let mag_n = group.n_scale/scale
+
+
+    //console.log(only,plus,minus,mag)
+    let cond1 = only?containsOnly(allp,this.last_interact["n"]):containsSome(allp,this.last_interact["n"])
+    if(allp.includes(this.give_name()) && this.last_interact["over_n"].length==0 && this.last_interact["n"].length>0 && cond1){
+      let cts = give_counts(this.last_interact["n"].concat(this.give_name()))
+
+      let rho_charge = cts["rho_charge"]
+      let nu_charge = cts["nu_charge"]
+      let m = cts["mass"]
+
+      for(let p of allp){
+        if(!cts[p]){return}
+      }
+      // let c_m = cts[minus]?cts[minus]:0
+      // let c_p = cts[plus]?cts[plus]:0
+      //
+      // if(c_m*c_p==0){return}
+      // //if(plus==minus){c_m=0,c_p=c_p/2}
 
 
       push()
       noFill()
 
-      let t_charge =(((c_p-c_m)/(c_p+c_m))+1)/2
+      //let t_charge =(((c_p-c_m)/(c_p+c_m))+1)/2
+      let t_charge = constrain(map(rho_charge,-20,20,0,1),0,1)
       let col = 255
-      if(c_p!=c_m){
-        if(c_p>c_m){
+      if(rho_charge!=0){
+        if(rho_charge>0){
           col=[255,100+155*(1-t_charge),100+155*(1-t_charge)]
         }else{
           col=[100+155*(1-t_charge),100+155*(1-t_charge),255]
@@ -329,7 +368,7 @@ class particle{
 
       }
       stroke(col)
-      let r_bound =constrain(max(this.last_interact["d"])*mag,20,220)+5+mag_n*2*((c_m+c_p))
+      let r_bound =constrain(max(this.last_interact["d"])*mag,20,220)+5+mag_n*2*Math.log10(m)
       circle(xx,yy,r_bound)
       fill(0,200,0)
       noStroke()
@@ -337,21 +376,37 @@ class particle{
       //letter
       let dy = -14-r_bound/2
       textSize(15)
-      text(letter,xx,yy+dy)
+      text(letter,xx+2,yy+dy)
       //up number
       textSize(10)
-      text(c_p,xx-14,yy+dy-7)
+      let txtchrg = rho_charge>0?"+"+rho_charge:rho_charge
+      text(txtchrg,xx-16,yy+dy-7)
       // down number
-      text(c_m,xx-14,yy+dy+5)
+      //text(c_m,xx-16,yy+dy+5)
       //text((-c_m)+(c_p),xx,yy+7+r_bound/2)
+
+      for (var i = 0; i < allp.length; i++) {
+        let ccol = give_p_color(allp[i])
+        textSize(11)
+        fill(ccol)
+        text(cts[allp[i]],xx-dy+5,yy-15*(i-1))
+      }
+
+
+
+
       pop()
     }
   }
 
 
   paint(pl){
-    
-    this.move(pl)
+
+    if(sim.stop==false){
+      this.move(pl)
+    }
+
+
     let radius = pl.scale.x*this.properties.r
     let xx = pl.pos.x+this.pos.x
     let yy = pl.pos.y+this.pos.y
@@ -371,6 +426,8 @@ class particle{
     }
     circle(cxx,cyy,radius)
     pop()
+
+    if(sim.stop==false){
     this.time = this.time+1;
     let tau  = (this.time*sim.dt/this.properties.hlt)
     tau = map(1/(1+exp(-tau)),0.5,1,0,1);
@@ -401,6 +458,8 @@ class particle{
 
       this.last_interact[np]=[];
     }
+
+  }
 
     if(sim.tags){
       push()

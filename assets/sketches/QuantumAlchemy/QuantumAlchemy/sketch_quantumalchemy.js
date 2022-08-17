@@ -5,24 +5,30 @@ var sim = {
   dc:1,
   c : 5e8, // m/s
   int_r:50,
-  int_n:5,
+  int_n:3,
   ticks:15,
   const_r:1e36,
   const_n:1e35,
   step_interact:1,
   bounded:"walls",
+  keymode:"shoot",
+  shootcount:1,
   tags:0,
   lines:0,
-  groups:0,
+  groups:1,
   display_mode:1,
   display_sym:1,
-  v_th:0.8,
+  v_th:0.95,
   absorption:1,
   abs_rate:0.1,
-  n_reactions:35,
+  n_reactions:100,
   unlocked:true,
-  brownian_motion:true,
+  activesources:true,
+  brownian_motion:false,
+  bound_absorb_radiation:false,
+  bound_absorb_matter:false,
   stop:false,
+  cursor:true,
   discovered:{
     total : 0,
     disc : 0
@@ -33,7 +39,9 @@ let interf = {
   w_phenomena: 380,
   margin:20,
   proportions:[0,0,0],
-  proportions_but:[0,0]
+  proportions_but:[0,0],
+  particle_lim:150,
+  onlynewreactions:false
 
 }
 
@@ -185,19 +193,58 @@ function containsSome(array1, array2){
 function containsOnly(array1, array2){
   return array2.every(elem => array1.includes(elem))
 }
-function give_counts(arr){
-  var counts = {};
+function search_attributes_particle(name){
+  return [name.replace("anti",""),name.startsWith("anti")?-1:1]
+}
+function give_p_color(p){
+  p = search_attributes_particle(p)
+  let particle = p[0]
+  let sym = p[1]
+  let atts_=particle_atts[particle]
+  return sym==1?atts_.colors.normal:atts_.colors.anti
+}
+function give_counts(particle_arr){
+  var counts = {
+    nu_charge:0,
+    rho_charge:0,
+    mass:0
+  };
+  for (var i = 0; i < particle_arr.length; i++) {
+    var part = particle_arr[i];
+    counts[part] = counts[part] ? counts[part] + 1 : 1;
 
-  for (var i = 0; i < arr.length; i++) {
-    var num = arr[i];
-    counts[num] = counts[num] ? counts[num] + 1 : 1;
+    let atts_ = search_attributes_particle(part)
+    let sym_ = atts_[1]
+    let name_ = atts_[0]
+
+    let rho_charge = sym_==-1?-particle_atts[name_].q :particle_atts[name_].q
+    let nu_charge = sym_==-1?(particle_atts[name_].c + 2)%4:particle_atts[name_].c
+    let mass_ = particle_atts[name_].m
+
+    counts.nu_charge = counts.nu_charge+nu_charge
+    counts.rho_charge = counts.rho_charge+rho_charge
+    counts.mass = counts.mass+mass_
+
+
   }
+
   return counts
 }
 
+
+
+function mouse_in_plane(pl){
+  if(mouseX<pl.pos.x+pl.size.x && mouseX>pl.pos.x && mouseY<pl.pos.y+pl.size.y && mouseY>pl.pos.y ){
+    return true
+  }
+  return false
+}
+
+
+
 function mouseClicked(){
   //console.log(pl1.check_pair_cases())
-  if(mouseX<pl1.pos.x+pl1.size.x && mouseX>pl1.pos.x && mouseY<pl1.pos.y+pl1.size.y && mouseY>pl1.pos.y && pl1.check_pair_cases().length>0){
+  if(mouse_in_plane(pl1) && pl1.check_pair_cases().length>0){
     let pair_ = random(pl1.check_pair_cases())
 
     pl1.create([[pair_,-1],[pair_,1]],1e75,createVector(0,0),mouseX,mouseY,40)
@@ -213,10 +260,40 @@ function plane_add(pl,part,x,y){
 
 function keyPressed(){
   //console.log(keyCode)
-  if(mouseX<pl1.pos.x+pl1.size.x && mouseX>pl1.pos.x && mouseY<pl1.pos.y+pl1.size.y && mouseY>pl1.pos.y){
+
+  if(keyCode==ENTER){
+    console.log("a");
+    sim.stop = !sim.stop
+  }
+  if(keyCode==SHIFT){
+    if(sim.display_mode==1){
+      sim.display_mode = 2
+    }
+    else{
+      sim.display_mode = 1
+    }
+
+  }
+  if(key=="q"){
+    //console.log("s")
+    sim.display_sym=-sim.display_sym
+
+  }
+  if(mouse_in_plane(pl1)){
     for(let part of Object.keys(particle_atts)){
       if(key == particle_atts[part].key.toLowerCase() && (sim.unlocked==true || particle_atts[part].discovered[(sim.display_sym+1)/2])){
-        plane_add(pl1,[part,sim.display_sym],mouseX,mouseY)
+        if(sim.keymode=="shoot"){
+          for(let ii=0;ii<sim.shootcount;ii++){
+            plane_add(pl1,[part,sim.display_sym],mouseX,mouseY)
+          }
+        }else if (sim.keymode =="source") {
+        part[0],part[1]
+          let srce = new particle_source(mouseX-pl1.pos.x,mouseY-pl1.pos.y,part,sim.shootcount)
+          pl1.add_source
+        }
+
+
+
       }
     }
     // if(key=="p"){
@@ -248,20 +325,7 @@ function keyPressed(){
 
 
   }
-  if(keyCode==SHIFT){
-    if(sim.display_mode==1){
-      sim.display_mode = 2
-    }
-    else{
-      sim.display_mode = 1
-    }
 
-  }
-  if(key=="q"){
-    //console.log("s")
-    sim.display_sym=-sim.display_sym
-
-  }
 
 }
 
@@ -270,8 +334,8 @@ function make_buttons(x,y){
 
   // TOGGLE VECS
 
-  let but_w = 0.15*(interf.proportions_but[0]-interf.proportions[1])
-  console.log("z",but_w);
+  let but_w = 0.1*(interf.proportions_but[0]-interf.proportions[1])
+
   butt_togvecs = new Clickable();
   butt_togvecs.locate(x+2*interf.margin,y)
   butt_togvecs.resize(but_w,18);
@@ -318,7 +382,7 @@ function make_buttons(x,y){
   butt_toggroups.text = "Groups"
   butt_toggroups.textSize = 12 ;
   butt_toggroups.textColor = "#FFFFFF";
-  butt_toggroups.color = "#222222"
+  butt_toggroups.color = "#00AA00"
   butt_toggroups.onPress = function(){
 
     if(sim.groups==0){
@@ -335,57 +399,184 @@ function make_buttons(x,y){
   butt_togbrown = new Clickable();
   butt_togbrown.locate(x+2*interf.margin + but_w + 10,y)
   butt_togbrown.resize(but_w,18);
-  butt_togbrown.text = "Wiggle"
+  butt_togbrown.text = "cursor"
   butt_togbrown.textSize = 12 ;
   butt_togbrown.textColor = "#FFFFFF";
   butt_togbrown.color = "#00AA00"
   butt_togbrown.onPress = function(){
 
-    if(sim.brownian_motion==false){
-      sim.brownian_motion =true ;
+    if(sim.cursor==false){
+      sim.cursor =true ;
       butt_togbrown.color = "#00AA00"
     }else{
-      sim.brownian_motion = false;
+      sim.cursor = false;
       butt_togbrown.color = "#222222"
     }
   }
   clickables.push(butt_togbrown);
 
 
+  butt_togabsorb = new Clickable();
+  butt_togabsorb.locate(x+2*interf.margin + but_w + 10,y+90)
+  butt_togabsorb.resize(but_w,16);
+  butt_togabsorb.text = "Radiation"
+  butt_togabsorb.textSize = 12 ;
+  butt_togabsorb.textColor = "#FFFFFF";
+  butt_togabsorb.color = "#222222"
+  butt_togabsorb.onPress = function(){
+
+    if(sim.bound_absorb_radiation==false){
+      sim.bound_absorb_radiation =true ;
+      butt_togabsorb.color = "#FF2200"
+    }else{
+      sim.bound_absorb_radiation = false;
+      butt_togabsorb.color = "#222222"
+    }
+  }
+  clickables.push(butt_togabsorb);
+
+
+  butt_togabsorb_matter = new Clickable();
+  butt_togabsorb_matter.locate(x+2*interf.margin + but_w + 10,y+70)
+  butt_togabsorb_matter.resize(but_w,16);
+  butt_togabsorb_matter.text = "Matter"
+  butt_togabsorb_matter.textSize = 12 ;
+  butt_togabsorb_matter.textColor = "#FFFFFF";
+  butt_togabsorb_matter.color = "#222222"
+  butt_togabsorb_matter.onPress = function(){
+
+    if(sim.bound_absorb_matter==false){
+      sim.bound_absorb_matter =true ;
+      butt_togabsorb_matter.color = "#FF2200"
+    }else{
+      sim.bound_absorb_matter = false;
+      butt_togabsorb_matter.color = "#222222"
+    }
+  }
+  clickables.push(butt_togabsorb_matter);
+
+
+
+  butt_onlynewreactions = new Clickable();
+  butt_onlynewreactions.locate(windowWidth-2*interf.margin - but_w - 45,interf.margin )
+  butt_onlynewreactions.resize(but_w,16);
+  butt_onlynewreactions.text = "only new"
+  butt_onlynewreactions.textSize = 12 ;
+  butt_onlynewreactions.textColor = "#FFFFFF";
+  butt_onlynewreactions.color = "#222222"
+  butt_onlynewreactions.onPress = function(){
+
+    if(interf.onlynewreactions==false){
+      interf.onlynewreactions =true ;
+      butt_onlynewreactions.color = "#FF2200"
+    }else{
+      interf.onlynewreactions = false;
+      butt_onlynewreactions.color = "#222222"
+    }
+  }
+  clickables.push(butt_onlynewreactions);
+
+  butt_resetevents = new Clickable();
+  butt_resetevents.locate(windowWidth-2*interf.margin - 40,interf.margin )
+  butt_resetevents.resize(but_w-10,16);
+  butt_resetevents.text = "reset"
+  butt_resetevents.textSize = 12 ;
+  butt_resetevents.textColor = "#FFFFFF";
+  butt_resetevents.color = "#AA0000"
+  butt_resetevents.onPress = function(){
+    reactions=[]
+    time=0
+    }
+
+  clickables.push(butt_resetevents);
 
   butt_clean = new Clickable();
   butt_clean.locate(x+2*interf.margin,windowHeight-50)
   butt_clean.resize(2*but_w,20);
-  butt_clean.text = "Clean Lab"
+  butt_clean.text = "Delete ALL"
   butt_clean.textSize = 15 ;
   butt_clean.textColor = "#FFFFFF";
   butt_clean.color = "#AA0000"
   butt_clean.onPress = function(){
     pl1.particles=[]
+    pl1.sources=[]
   }
   clickables.push(butt_clean);
 
 
-  butt_reset = new Clickable();
-  butt_reset.locate(x+2*interf.margin,windowHeight-80)
-  butt_reset.resize(2*but_w,20);
-  butt_reset.text = "Reset events"
-  butt_reset.textSize = 15 ;
-  butt_reset.textColor = "#FFFFFF";
-  butt_reset.color = "#AA0000"
-  butt_reset.onPress = function(){
-    reactions=[]
-    time=0
+
+
+    butt_cleansources = new Clickable();
+    butt_cleansources.locate(x+2*interf.margin,windowHeight-80)
+    butt_cleansources.resize(2*but_w,20);
+    butt_cleansources.text = "Delete sources"
+    butt_cleansources.textSize = 15 ;
+    butt_cleansources.textColor = "#FFFFFF";
+    butt_cleansources.color = "#AA0000"
+    butt_cleansources.onPress = function(){
+      pl1.sources=[]
+    }
+    clickables.push(butt_cleansources);
+
+
+
+
+
+  // butt_reset = new Clickable();
+  // butt_reset.locate(x+2*interf.margin,windowHeight-80)
+  // butt_reset.resize(2*but_w,20);
+  // butt_reset.text = "Reset events"
+  // butt_reset.textSize = 15 ;
+  // butt_reset.textColor = "#FFFFFF";
+  // butt_reset.color = "#AA0000"
+  // butt_reset.onPress = function(){
+  //
+  // }
+  // clickables.push(butt_reset);
+
+  butt_delsources = new Clickable();
+  butt_delsources.locate(x+2*interf.margin,windowHeight-110)
+  butt_delsources.resize(2*but_w,20);
+  butt_delsources.text = "Pause sources"
+  butt_delsources.textSize = 15 ;
+  butt_delsources.textColor = "#FFFFFF";
+  butt_delsources.color = "#222222"
+  butt_delsources.onPress = function(){
+      if(sim.activesources==false){
+        sim.activesources =true ;
+        butt_delsources.color = "#222222"
+      }else{
+        sim.activesources = false;
+        butt_delsources.color = "#FF2200"
+      }
   }
-  clickables.push(butt_reset);
+  clickables.push(butt_delsources);
+
+
+  //
+  // butt_reset = new Clickable();
+  // butt_reset.locate(x+2*interf.margin,windowHeight-80)
+  // butt_reset.resize(2*but_w,20);
+  // butt_reset.text = "Reset"
+  // butt_reset.textSize = 15 ;
+  // butt_reset.textColor = "#FFFFFF";
+  // butt_reset.color = "#AA0000"
+  // butt_reset.onPress = function(){
+  //   reactions=[]
+  //   time=0
+  // }
+  // clickables.push(butt_reset);
+
+
+
+
 
 
 
   select_bound = createSelect();
-  select_bound.style("height","18px")
-  select_bound.position(x+110,y+80)
+  select_bound.style("height","25px")
+  select_bound.position(x+2*interf.margin,y+80)
   select_bound.option("walls")
-  select_bound.option("absorb")
   select_bound.option("open")
   select_bound.option("periodic")
   select_bound.selected("walls")
@@ -393,9 +584,26 @@ function make_buttons(x,y){
     sim.bounded = select_bound.value()
   })
 
-  slider_time = createSlider(22,24,-Math.log10(sim.dt),0.1);
-  slider_time.position(x+110,y+120);
-  slider_time.style("width","70px")
+
+
+  select_keymode = createSelect();
+  select_keymode.style("height","25px")
+  select_keymode.position(x+2*interf.margin + but_w + 10,y+140)
+  select_keymode.option("shoot")
+  select_keymode.option("source")
+  select_keymode.selected("shoot")
+  select_keymode.changed(function(){
+    sim.keymode = select_keymode.value()
+  })
+  slider_shootcount = createSlider(1,10,1,1);
+  slider_shootcount.position(x+2*interf.margin + but_w + 10,y+180);
+  slider_shootcount.style("width","50px")
+  slider_shootcount.style("height","2px")
+  slider_shootcount.input(function(){sim.shootcount=slider_shootcount.value()})
+
+  slider_time = createSlider(21.5,24.5,-Math.log10(sim.dt),0.1);
+  slider_time.position(x+45,y+150);
+  slider_time.style("width","50px")
   slider_time.style("height","2px")
   slider_time.input(function(){sim.dt=10**(map(slider_time.value(),22,24,-23.1,-22.9))})
 
@@ -417,9 +625,11 @@ function draw_buttons(){
   push()
   fill(255)
   noStroke()
-  textAlign(CENTER)
-  text("Boundaries",textx,interf.proportions_but[1]+55)
-  text("Simulation speed",textx,interf.proportions_but[1]+105)
+  textAlign(LEFT)
+  text("Display settings",interf.proportions_but[0],interf.proportions_but[1]-15)
+  text("Boundaries",interf.proportions_but[0],interf.proportions_but[1]+55)
+  text("Speed",interf.proportions_but[0],interf.proportions_but[1]+125)
+  text(sim.shootcount,interf.proportions_but[0]+145,interf.proportions_but[1]+175)
 
 
   push()
@@ -427,8 +637,13 @@ function draw_buttons(){
   circle(interf.proportions_but[0],interf.proportions_but[1],5)
   pop()
 
-  textSize(9)
-  text("slower         faster",textx,interf.proportions_but[1]+125)
+  // textSize(10)
+  //text("slower         faster",interf.proportions_but[0],interf.proportions_but[1]+135)
+
+  textSize(11)
+  textAlign(LEFT)
+  text("Absorb",interf.proportions_but[0]+100,interf.proportions_but[1]+55)
+  text("Key mode",interf.proportions_but[0]+80,interf.proportions_but[1]+125)
   pop()
 }
 

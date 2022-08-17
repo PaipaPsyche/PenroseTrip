@@ -7,10 +7,14 @@ class plane{
     this.c_scale = sim.c*sim.dt/sim.dx*w/r_w
     this.particles = []
     this.counts ={}
+    this.sources=[]
   }
 
   add_particle(p){
     this.particles[this.particles.length] = p
+  }
+  add_source(s){
+    this.sources[this.sources.length] = s
   }
 
 
@@ -192,7 +196,7 @@ class plane{
 
     // particle count bars
     let yo2 = yy+4*hh+40//interf.proportions[0]/2
-    let bars_y_bias = -dy/2+2*dy+120
+    let bars_y_bias = -dy/2+2*dy+170//120
 
 
 
@@ -235,12 +239,6 @@ class plane{
 
 
 
-    textSize(10)
-    fill(150)
-    textAlign(CENTER)
-    text("press SHIFT to see keys",ddx+150,yy+4*hh+50)
-
-    text("press Q to change click between matter and antimatter",ddx-130,yy+4*hh+50)
 
     this.paint_card("pluson",-1,ddx,yy,ww,hh)
     this.paint_card("glion",-1,ddx+ww+10,yy,ww,hh)
@@ -256,6 +254,11 @@ class plane{
     this.paint_card("anurino",-1,ddx,yy+3*hh+40,ww,hh)
     this.paint_card("jaudino",-1,ddx+ww+10,yy+3*hh+40,ww,hh)
 
+    textSize(12)
+    fill(180)
+    textAlign(LEFT)
+    text("[SHIFT] to see commands",xo,interf.margin)
+    text("[Q] to change between matter and antimatter",ddx-20,interf.margin)
 
 
 
@@ -350,6 +353,18 @@ class plane{
 
 
       pop()
+
+      push()
+      textSize(15)
+      fill(255)
+      text(this.particles.length+" PARTICLES",xo,yo+yo2+bars_y_bias-50)
+
+      if(this.particles.length>interf.particle_lim){
+        textSize(12)
+        fill(255,10,10)
+        text("Careful! Too many particles",xo,yo+yo2+bars_y_bias-30)
+      }
+      pop()
     }
 
 
@@ -367,19 +382,21 @@ class plane{
     fill(255)
     text("OBSERVED PHENOMENA",xx,yy)
     yy=yy+17
-    for(let r =0;r<reactions.length;r++){
-      let reac = reactions[reactions.length-1-r]
+    let r = 0
+    for(let counter =0;counter<reactions.length;counter++){
+      let reac = reactions[reactions.length-1-counter]
+
+      if(interf.onlynewreactions==false ||(reac[2]==true && interf.onlynewreactions)){
       if(reac[2]==true){
         fill(255)
         circle(120+xx,yy+15*r,4)
       }
       for(let i=0;i<reac[0].length;i++){
-        let col = reac[0][i][1]
-        textSize(11)
-        fill(col)
-        text(reac[0][i][0],125+xx+i*8,yy+15*r)
 
-
+          let col = reac[0][i][1]
+          textSize(11)
+          fill(col)
+          text(reac[0][i][0],125+xx+i*8,yy+15*r)
 
       }
 
@@ -396,6 +413,8 @@ class plane{
       }
       textSize(9)
       text(reac[3],xx,yy+15*r)
+      r= r+1
+    }
     }
   }
   paint(){
@@ -425,10 +444,10 @@ class plane{
     text(round(time*sim.dt/10e-21,2)+" zeptoseconds (10e-21)",this.pos.x+50,this.pos.y+this.size.y+15)
     pop()
 
-    if(frameCount%sim.step_interact==0){
+    if(frameCount%sim.step_interact==0 && sim.stop==false){
       this.check_inter()
     }
-    
+
     let new_p = [];
     this.counts = {};
     for(let p of this.particles){
@@ -453,8 +472,44 @@ class plane{
       }
 
     }
+
     this.particles = [];
     this.particles = new_p;
+
+    if(sim.stop){
+      push()
+      fill(255)
+      textSize(15)
+      textAlign(LEFT,TOP)
+      text("PAUSED",this.pos.x+10,this.pos.y+20)
+      pop()
+    }
+    // PAINT CURSOR
+    if(sim.cursor && mouse_in_plane(pl1)){
+      push()
+      fill(85)
+      stroke(85)
+      strokeWeight(0.5)
+      line(mouseX,this.pos.y,mouseX,this.pos.y+this.size.y)
+      line(this.pos.x,mouseY,this.pos.x+this.size.x,mouseY)
+      fill(200,200,0)
+      circle(this.pos.x,mouseY,5)
+      circle(mouseX,this.pos.y,5)
+      pop()
+    }
+
+    let new_sources = []
+    for(let ss of this.sources){
+      if(ss.active){
+        ss.run()
+        ss.paint()
+        new_sources[new_sources.length] = ss
+      }
+    }
+    this.sources = []
+    this.sources = new_sources
+
+
     this.paint_UI()
   }
 }
