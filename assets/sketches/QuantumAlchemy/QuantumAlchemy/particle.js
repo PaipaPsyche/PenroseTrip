@@ -5,12 +5,15 @@ var id_counter=1
 
 
 class particle{
-  constructor(x,y,type,sym=1){
+  constructor(x,y,type,sym=1,cancreate=false){
     this.pos = createVector(x,y)
     this.vel = p5.Vector.random2D();
     this.type = type;
     this.sym = 1
     this.time=0
+
+    //rhoton can create pair
+    this.can_create=cancreate
 
 
     this.last_interact={
@@ -24,9 +27,9 @@ class particle{
     if(sym==-1){
       this.anti()
     }
-    this.properties.mode =1e6;
-    if(this.properties.m==0){
-      this.properties.mode = random(1e6,1e7)
+    this.properties.mode =1e8;
+    if(this.type=="rhoton"){
+      this.properties.mode = 10**random(3,8)
     }
     this.properties.r_r = this.properties.r*(1+sim.int_r*Math.abs(this.properties.q))
     this.properties.r_n = this.properties.r*(1+sim.int_n*Math.abs(this.properties.c))
@@ -73,7 +76,7 @@ class particle{
       let mom = this.give_momentum().copy().add(p.give_momentum())
       let  opt = tot_c==2?[["rhoton",-1]]:[["rhoton",1]]
       let tote = this.give_energy()+p.give_energy()
-      pl1.create(opt,tote,mom,this.pos.x,this.pos.y,3*particle_atts["nuon"].r)
+      pl1.create(opt,tote,mom,this.pos.x,this.pos.y,3*particle_atts["nuon"].r,true)
       add_reaction([[this.type,this.sym],[p.type,p.sym]],opt,"anihilation",update_discovered())
     }else if(Object.keys(allowed_interactions_n).includes(this.give_name()+"-"+p.give_name())){
       let entry = allowed_interactions_n[this.give_name()+"-"+p.give_name()]
@@ -85,12 +88,15 @@ class particle{
         let mom = this.give_momentum().copy().add(p.give_momentum())
         let  opt = chooseWeighted(entry.final)
         let tote = this.give_energy()+p.give_energy()
-        pl1.create([opt],tote,mom,this.pos.x,this.pos.y,this.properties.r_n)
+        pl1.create([opt],tote,mom,this.pos.x,this.pos.y,this.properties.r_n,true)
         add_reaction([[this.type,this.sym],[p.type,p.sym]],[opt],"reaction",update_discovered())
       }
 
     }
   }
+
+
+
   decay(){
     //  console.log("Decay ", this.give_name())
     if(Object.keys(decay_modes).includes(this.give_name())){
@@ -157,6 +163,10 @@ class particle{
 
     amp = amp*sim.dt
     this.add_momentum(f_dir.copy().mult(amp))
+
+
+
+
     if(d<=min(this.properties.r_n,p.properties.r_n)){
       if(this.serial_id<p.serial_id){
         //if(this.properties.m<=p.properties.m &&this.serial_id<p.serial_id){
@@ -203,7 +213,44 @@ class particle{
     }
   }
 
+
+  rhoton_create(){
+    let limit_m = this.give_energy()/(2*sim.c*sim.c)
+    let candidates = []
+
+    if(this.type=="rhoton" && this.can_create){
+
+
+      for(let p of Object.keys(particle_atts)){
+        let nu =particle_atts[p].c
+        let anti_nu = (particle_atts[p].c+2)%4
+        let summ = (nu+anti_nu)%4
+        let pairs = pl1.check_pair_cases()
+        if(particle_atts[p].m<limit_m && summ==this.properties.c && p!="rhoton" && pairs.includes(p)){
+          candidates.push(p)
+          console.log(p);
+        }
+      }
+
+    }else{return}
+    if(candidates.length!=0){
+      console.log(limit_m,candidates);
+      this.active = false
+
+      let part = random(candidates)
+      let k_e = this.give_energy()-(2*particle_atts[part].m*sim.c*sim.c)
+
+      let p1 = [part,1]
+      let p2 = [part,-1]
+
+      let prad = pl1.scale.x * 5 * particle_atts[part].r
+
+      pl1.create([p1,p2],k_e,this.give_momentum(),this.pos.x,this.pos.y,prad)
+    }
+  }
   move(pl){
+
+
 
     let radius = pl.scale.x*this.properties.r/2
     if(this.properties.m==0){
@@ -363,20 +410,20 @@ class particle{
         if(rho_charge>0){
           col=[255,100+155*(1-t_charge),100+155*(1-t_charge)]
         }else{
-          col=[100+155*(1-t_charge),100+155*(1-t_charge),255]
+          col=[100+155*(t_charge),100+155*(t_charge),255]
         }
 
       }
       stroke(col)
       let r_bound =constrain(max(this.last_interact["d"])*mag,20,220)+5+mag_n*2*Math.log10(m)
       circle(xx,yy,r_bound)
-      fill(0,200,0)
+      fill(200)
       noStroke()
       textAlign(CENTER,CENTER)
       //letter
       let dy = -14-r_bound/2
-      textSize(15)
-      text(letter,xx+2,yy+dy)
+      textSize(16)
+      text(letter,xx+8,yy+dy)
       //up number
       textSize(10)
       let txtchrg = rho_charge>0?"+"+rho_charge:rho_charge
@@ -404,6 +451,15 @@ class particle{
 
     if(sim.stop==false){
       this.move(pl)
+      if(sim.fieldactive){
+        let mom_field = createVector(1,0).rotate(sim.fielddirection)
+        let fmag = 10**map(sim.fieldmagnitude,0,1,32,39)
+        let amp_field = this.properties.q * sim.fieldmagnitude * fmag
+
+        mom_field = mom_field.setMag(amp_field*sim.dt)
+        console.log(mom_field);
+        this.add_momentum(mom_field)
+      }
     }
 
 
@@ -427,14 +483,18 @@ class particle{
     circle(cxx,cyy,radius)
     pop()
 
-    if(sim.stop==false){
+    if(sim.stop==false && this.active){
     this.time = this.time+1;
     let tau  = (this.time*sim.dt/this.properties.hlt)
     tau = map(1/(1+exp(-tau)),0.5,1,0,1);
     //console.log(this.properties.id,tau)
-    if(random()<tau && Object.keys(decay_modes).includes(this.give_name())){
-      this.active=false
-      this.decay()
+    if(random()<tau){
+      this.rhoton_create()
+      if(Object.keys(decay_modes).includes(this.give_name())&&this.active){
+        this.active=false
+        this.decay()
+    }
+
     }
     //frameCount%sim.step_interact==0&&
     //console.log(this.last_interact["n"],this.type,this.last_interact["over_n"].length==0 , this.last_interact["n"].length>0 )

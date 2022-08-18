@@ -14,7 +14,7 @@ var particle_atts ={
       normal:[255,0,0],
       anti:[0,255,255]
     },
-    r:2 //fm
+    r:2.5 //fm
   },
   "minon":{
     id:"M",
@@ -104,7 +104,7 @@ var particle_atts ={
       normal:[250,50,250],
       anti:[50,250,50]
     },
-    r:5 //fm
+    r:3 //fm
   },
   "jaudino":{
     id:"j",
@@ -126,7 +126,7 @@ var particle_atts ={
     m:0, //ev
     q:0,
     c:0,
-    hlt:1e-10,
+    hlt:5e-18,
     key:"R",
     discovered:[false,false],
     radiation:true,
@@ -149,7 +149,7 @@ var particle_atts ={
       normal:[250,150,250],
       anti:[150,250,150]
     },
-    r:7 //fm
+    r:6 //fm
   },
   "fixon":{
     id:"F",
@@ -176,6 +176,13 @@ let allowed_groups={
     n_scale:6,
     exclusive:true
   },
+  "Π*":{
+    plus:["antijaudion"],
+    minus:["antipluson","anurion"],
+    scale:5,
+    n_scale:6,
+    exclusive:true
+  },
   "T":{
     plus:["antijaudion"],
     minus:["antiglion"],
@@ -183,16 +190,23 @@ let allowed_groups={
     n_scale:6,
     exclusive:true
   },
-  "Δ+":{
+  "U":{
     plus:["antivuon"],
     minus:["minon"],
     scale:5,
     n_scale:6,
     exclusive:true
   },
-  "Δo":{
+  "Δ+":{
     plus:["antivuon"],
     minus:["antipluson"],
+    scale:5,
+    n_scale:6,
+    exclusive:true
+  },
+  "Δ-":{
+    plus:["vuon"],
+    minus:["pluson"],
     scale:5,
     n_scale:6,
     exclusive:true
@@ -283,9 +297,23 @@ let allowed_groups={
     n_scale:5,
     exclusive:true
   },
+  "H+":{
+    plus:["pluson","antiminon"],
+    minus:["anurion"],
+    scale:5,
+    n_scale:5,
+    exclusive:true
+  },
   "η-":{
     plus:["antianurion"],
     minus:["antipluson"],
+    scale:5,
+    n_scale:5,
+    exclusive:true
+  },
+  "H-":{
+    plus:["antianurion"],
+    minus:["antipluson","minon"],
     scale:5,
     n_scale:5,
     exclusive:true

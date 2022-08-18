@@ -18,6 +18,7 @@ class plane{
   }
 
 
+
   check_inter(){
     for(let p1 of this.particles){
       for(let p2 of this.particles){
@@ -64,7 +65,7 @@ class plane{
   }
 
 
-  create(out_particles,total_k_energy,cm_momentum,x,y,r){
+  create(out_particles,total_k_energy,cm_momentum,x,y,r,rhoton_create=false){
     let part_array=[]
     let p_tot = createVector(0,0)
     let e_k = total_k_energy
@@ -93,6 +94,10 @@ class plane{
 
       part_array[part_array.length]=new particle(x,y,part,sym)
       part_array[part_array.length-1].vel=createVector(0,0)
+
+      if(rhoton_create && part=="rhoton"){
+        part_array[part_array.length-1].can_create=true
+      }
 
 
       if(part_array.length!=out_particles.length){

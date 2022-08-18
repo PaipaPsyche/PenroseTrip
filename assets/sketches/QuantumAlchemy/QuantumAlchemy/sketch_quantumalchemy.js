@@ -4,8 +4,8 @@ var sim = {
   dq:1,
   dc:1,
   c : 5e8, // m/s
-  int_r:50,
-  int_n:3,
+  int_r:60, //50
+  int_n:3, //3
   ticks:15,
   const_r:1e36,
   const_n:1e35,
@@ -13,6 +13,12 @@ var sim = {
   bounded:"walls",
   keymode:"shoot",
   shootcount:1,
+  shootrandom:true,
+  shootdirection:0,
+  shootstatic:true,
+  fieldactive:false,
+  fielddirection:0,
+  fieldmagnitude:0,
   tags:0,
   lines:0,
   groups:1,
@@ -284,12 +290,26 @@ function keyPressed(){
       if(key == particle_atts[part].key.toLowerCase() && (sim.unlocked==true || particle_atts[part].discovered[(sim.display_sym+1)/2])){
         if(sim.keymode=="shoot"){
           for(let ii=0;ii<sim.shootcount;ii++){
-            plane_add(pl1,[part,sim.display_sym],mouseX,mouseY)
+
+
+            if(sim.shootstatic){
+              plane_add(pl1,[part,sim.display_sym],mouseX,mouseY)
+            }else{
+              let newdir = createVector(1,0)
+
+              if (sim.shootrandom){
+                  newdir.rotate(2*PI*random())
+              }else{newdir.rotate(sim.shootdirection)}
+              newdir.normalize().setMag(1e75)
+              pl1.create([[part,sim.display_sym]],1e75,newdir,mouseX-pl1.pos.x,mouseY-pl1.pos.y,5)
+            }
+
+
+
           }
         }else if (sim.keymode =="source") {
         part[0],part[1]
-          let srce = new particle_source(mouseX-pl1.pos.x,mouseY-pl1.pos.y,part,sim.shootcount)
-          pl1.add_source
+          let srce = new particle_source(mouseX-pl1.pos.x,mouseY-pl1.pos.y,part,sim.shootcount,direction=sim.shootdirection,israndom=sim.shootrandom)
         }
 
 
@@ -328,6 +348,9 @@ function keyPressed(){
 
 
 }
+
+
+
 
 function make_buttons(x,y){
 
@@ -454,6 +477,66 @@ function make_buttons(x,y){
     }
   }
   clickables.push(butt_togabsorb_matter);
+
+  butt_tograndomshoot = new Clickable();
+  butt_tograndomshoot.locate(x+2*interf.margin + but_w + 10,y+290)
+  butt_tograndomshoot.resize(but_w,16);
+  butt_tograndomshoot.text = "random"
+  butt_tograndomshoot.textSize = 12 ;
+  butt_tograndomshoot.textColor = "#FFFFFF";
+  butt_tograndomshoot.color = "#FF2200"
+  butt_tograndomshoot.onPress = function(){
+
+    if(sim.shootrandom==false){
+      sim.shootrandom =true ;
+      butt_tograndomshoot.color = "#FF2200"
+    }else{
+      sim.shootrandom = false;
+      butt_tograndomshoot.color = "#222222"
+    }
+  }
+  clickables.push(butt_tograndomshoot);
+
+
+  butt_togstaticshoot = new Clickable();
+  butt_togstaticshoot.locate(x+2*interf.margin + but_w + 10,y+310)
+  butt_togstaticshoot.resize(but_w,16);
+  butt_togstaticshoot.text = "static"
+  butt_togstaticshoot.textSize = 12 ;
+  butt_togstaticshoot.textColor = "#FFFFFF";
+  butt_togstaticshoot.color = "#FF2200"
+  butt_togstaticshoot.onPress = function(){
+
+    if(sim.shootstatic==false){
+      sim.shootstatic =true ;
+      butt_togstaticshoot.color = "#FF2200"
+    }else{
+      sim.shootstatic = false;
+      butt_togstaticshoot.color = "#222222"
+    }
+  }
+  clickables.push(butt_togstaticshoot);
+
+
+  butt__togfieldactive = new Clickable();
+  butt__togfieldactive.locate(x+2*interf.margin ,y+290)
+  butt__togfieldactive.resize(but_w,16);
+  butt__togfieldactive.text = "active"
+  butt__togfieldactive.textSize = 12 ;
+  butt__togfieldactive.textColor = "#FFFFFF";
+  butt__togfieldactive.color = "#222222"
+  butt__togfieldactive.onPress = function(){
+
+    if(sim.fieldactive==false){
+      sim.fieldactive =true ;
+      butt__togfieldactive.color = "#00AA00"
+    }else{
+      sim.fieldactive = false;
+      butt__togfieldactive.color = "#222222"
+    }
+  }
+  clickables.push(butt__togfieldactive);
+
 
 
 
@@ -588,7 +671,7 @@ function make_buttons(x,y){
 
   select_keymode = createSelect();
   select_keymode.style("height","25px")
-  select_keymode.position(x+2*interf.margin + but_w + 10,y+140)
+  select_keymode.position(x+2*interf.margin + but_w + 10,y+160)
   select_keymode.option("shoot")
   select_keymode.option("source")
   select_keymode.selected("shoot")
@@ -596,7 +679,7 @@ function make_buttons(x,y){
     sim.keymode = select_keymode.value()
   })
   slider_shootcount = createSlider(1,10,1,1);
-  slider_shootcount.position(x+2*interf.margin + but_w + 10,y+180);
+  slider_shootcount.position(x+2*interf.margin + but_w + 10,y+200);
   slider_shootcount.style("width","50px")
   slider_shootcount.style("height","2px")
   slider_shootcount.input(function(){sim.shootcount=slider_shootcount.value()})
@@ -607,6 +690,36 @@ function make_buttons(x,y){
   slider_time.style("height","2px")
   slider_time.input(function(){sim.dt=10**(map(slider_time.value(),22,24,-23.1,-22.9))})
 
+  slider_angle = createSlider(0,2*PI,0,2*PI/16);
+  slider_angle.position(x+2*interf.margin + but_w + 30,y+280);
+  slider_angle.style("width","50px")
+  slider_angle.style("height","2px")
+  slider_angle.input(function(){sim.shootdirection=slider_angle.value()})
+
+
+  slider_fielddirection = createSlider(0,2*PI,0,2*PI/16);
+  slider_fielddirection.position(x+2*interf.margin+10,y+280);
+  slider_fielddirection.style("width","50px")
+  slider_fielddirection.style("height","2px")
+  slider_fielddirection.input(function(){sim.fielddirection=slider_fielddirection.value()})
+
+
+
+  slider_fieldmagnitude = createSlider(0,1,0,0.005);
+  slider_fieldmagnitude.position(x-10,y+240);
+  slider_fieldmagnitude.style("width","80px")
+  slider_fieldmagnitude.style("height","2px")
+  slider_fieldmagnitude.style("transform", "rotate(-90deg)");
+  slider_fieldmagnitude.input(function(){sim.fieldmagnitude=slider_fieldmagnitude.value()})
+
+
+  //slider.style("transform", "rotate(-90deg)");
+
+
+
+
+
+
 
   // slider_time = createSlider(22,24,-Math.log10(sim.dt),0.1);
   // slider_time.position(x+250,y+70);
@@ -616,11 +729,15 @@ function make_buttons(x,y){
   //
 
 }
-
 function draw_buttons(){
   for(let bt of clickables){
     bt.draw();
   }
+
+
+
+
+
   let textx = interf.proportions_but[0]+100
   push()
   fill(255)
@@ -629,7 +746,62 @@ function draw_buttons(){
   text("Display settings",interf.proportions_but[0],interf.proportions_but[1]-15)
   text("Boundaries",interf.proportions_but[0],interf.proportions_but[1]+55)
   text("Speed",interf.proportions_but[0],interf.proportions_but[1]+125)
-  text(sim.shootcount,interf.proportions_but[0]+145,interf.proportions_but[1]+175)
+  text("ρ - Field",interf.proportions_but[0]-10,interf.proportions_but[1]+185)
+  text(sim.keymode,interf.proportions_but[0]+80,interf.proportions_but[1]+125)
+  text(sim.shootcount,interf.proportions_but[0]+145,interf.proportions_but[1]+195)
+  push()
+  let c_col = 255
+  if(sim.shootrandom){c_col=55}
+  fill(c_col)
+  textSize(12)
+  text(round(map(sim.shootdirection,0,2*PI,0,360))+"°",interf.proportions_but[0]+145,interf.proportions_but[1]+235)
+
+
+  push()
+  noFill()
+  // SHOOT
+  let x_circ = interf.proportions_but[0]+110
+  let y_circ = interf.proportions_but[1]+235
+  let r_circ = 25
+
+  stroke(55)
+  circle(x_circ,y_circ,2*r_circ)
+
+  stroke(255)
+
+  let x2circ = x_circ+r_circ*Math.cos(sim.shootdirection)
+  let y2circ = y_circ+r_circ*Math.sin(sim.shootdirection)
+  line(x_circ,y_circ,x2circ,y2circ)
+  circle(x2circ,y2circ,5)
+
+ // FIELD
+  x_circ = interf.proportions_but[0]+25
+  y_circ = interf.proportions_but[1]+235
+  r_circ = 25
+
+  stroke(55)
+  circle(x_circ,y_circ,2*r_circ)
+  line(x_circ,y_circ,x_circ+r_circ*Math.cos(sim.fielddirection),y_circ+r_circ*Math.sin(sim.fielddirection))
+
+
+  stroke(255)
+
+  x2circ = x_circ+sim.fieldmagnitude*r_circ*Math.cos(sim.fielddirection)
+  y2circ = y_circ+sim.fieldmagnitude*r_circ*Math.sin(sim.fielddirection)
+  line(x_circ,y_circ,x2circ,y2circ)
+  circle(x2circ,y2circ,5)
+
+
+
+  pop()
+
+  c_col = 55
+  if(sim.fieldactive){c_col=255}
+  fill(c_col)
+  text(round(map(sim.fielddirection,0,2*PI,0,360))+"°",interf.proportions_but[0]+55,interf.proportions_but[1]+235)
+
+
+  pop()
 
 
   push()
@@ -643,9 +815,12 @@ function draw_buttons(){
   textSize(11)
   textAlign(LEFT)
   text("Absorb",interf.proportions_but[0]+100,interf.proportions_but[1]+55)
-  text("Key mode",interf.proportions_but[0]+80,interf.proportions_but[1]+125)
+
   pop()
 }
+
+
+
 
 function draw(){
   background(20)
