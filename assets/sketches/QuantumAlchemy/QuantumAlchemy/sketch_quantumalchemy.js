@@ -19,6 +19,7 @@ var sim = {
   fieldactive:false,
   fielddirection:0,
   fieldmagnitude:0,
+  fieldrange:[31,40],
   tags:0,
   lines:0,
   groups:1,

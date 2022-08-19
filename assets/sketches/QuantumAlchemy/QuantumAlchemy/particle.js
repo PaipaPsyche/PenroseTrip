@@ -453,7 +453,7 @@ class particle{
       this.move(pl)
       if(sim.fieldactive){
         let mom_field = createVector(1,0).rotate(sim.fielddirection)
-        let fmag = 10**map(sim.fieldmagnitude,0,1,32,39)
+        let fmag = 10**map(sim.fieldmagnitude,0,1,sim.fieldrange[0],sim.fieldrange[1])
         let amp_field = this.properties.q * sim.fieldmagnitude * fmag
 
         mom_field = mom_field.setMag(amp_field*sim.dt)
