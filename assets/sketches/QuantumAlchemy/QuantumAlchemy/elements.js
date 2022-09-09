@@ -597,7 +597,7 @@ let allowed_interactions_n = {
     proba:0.0005,
     final:[
       { value: ["vuon",-1], weight: 12},
-      { value: ["jaudion",-1], weight:2 }
+      { value: ["pluson",1], weight:1 }
     ]
   },
   "antirhoton-antirhoton":{
