@@ -29,7 +29,7 @@ var sim = {
   absorption:1,
   abs_rate:0.1,
   n_reactions:100,
-  unlocked:true,
+  unlocked:false,
   activesources:true,
   brownian_motion:false,
   bound_absorb_radiation:false,
