@@ -27,7 +27,8 @@ ATTS = {
 
   fr:60,
   info:1,
-  border_thick:5
+  border_thick:5,
+  fill:0
 }
 
 //CONSTANTS
@@ -675,6 +676,32 @@ function blank_figure(k){
 
 
   }
+  else if(k=="6"){
+
+    blank_figure("5")
+    CELLS[cx][cy-4].set(1)
+    CELLS[cx][cy+4].set(1)
+    CELLS[cx-4][cy].set(1)
+    CELLS[cx+4][cy].set(1)
+
+    CELLS[cx][cy-5].set(1)
+    CELLS[cx][cy+5].set(1)
+    CELLS[cx-5][cy].set(1)
+    CELLS[cx+5][cy].set(1)
+
+    CELLS[cx+1][cy-6].set(1)
+    CELLS[cx+1][cy+6].set(1)
+    CELLS[cx-6][cy+1].set(1)
+    CELLS[cx+6][cy+1].set(1)
+    CELLS[cx-1][cy-6].set(1)
+    CELLS[cx-1][cy+6].set(1)
+    CELLS[cx-6][cy-1].set(1)
+    CELLS[cx+6][cy-1].set(1)
+
+
+
+
+  }
 
 
 }
@@ -686,6 +713,7 @@ function blank_border(dir){
   let midx = int(ATTS.n_side/2)
   let midy = int(ATTS.n_side/2)
   let thick = ATTS.border_thick
+  let fill = ATTS.fill
 
   let cx, cy
 
@@ -703,7 +731,7 @@ function blank_border(dir){
       let bot = cy-thick
       for(let i = 0; i < ATTS.n_side;i++){
         for(let j = bot; j<=top;j++){
-          CELLS[i][j].set(0)
+          CELLS[i][j].set(fill)
         }
       }
     }
@@ -712,7 +740,18 @@ function blank_border(dir){
       let rs = cx+thick
       for(let i = ls; i <= rs;i++){
         for(let j = 0; j<ATTS.n_side;j++){
-          CELLS[i][j].set(0)
+          CELLS[i][j].set(fill)
+        }
+      }
+    }
+    else if(dir=="o"){
+      for(let i = 0; i <ATTS.n_side;i++){
+        for(let j = 0; j<ATTS.n_side;j++){
+          xx = cx - i
+          yy = cy - j
+          if(sqrt((xx*xx)+(yy*yy))<=thick){
+              CELLS[i][j].set(fill)
+          }
         }
       }
     }
