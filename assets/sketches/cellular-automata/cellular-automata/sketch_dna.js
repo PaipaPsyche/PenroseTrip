@@ -817,8 +817,9 @@ function keyPressed(){
   }
   if(key=="v"){
     blank_border("v")
-    if(key=="o"){
-      blank_border("o")
+  }
+  if(key=="o"){
+    blank_border("o")
   }
   if(key=="d"){
     blank_border("d")
@@ -829,7 +830,9 @@ function keyPressed(){
   if(key=="f"){
     if(ATTS.fill ==0){
       ATTS.fill=1
-    }else{ATTS.fill=0}
+    }else{
+      ATTS.fill=0
+    }
   }
 }
 
