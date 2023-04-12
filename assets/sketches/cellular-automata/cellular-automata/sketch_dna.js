@@ -749,7 +749,7 @@ function blank_border(dir){
         for(let j = 0; j<ATTS.n_side;j++){
           xx = cx - i
           yy = cy - j
-          if(sqrt((xx*xx)+(yy*yy))<=thick){
+          if(sqrt((xx*xx)+(yy*yy))<=(2*thick)){
               CELLS[i][j].set(fill)
           }
         }
@@ -802,7 +802,7 @@ function keyPressed(){
   if(key=="z"){
     gen_random_rule("1")
   }
-  if(key=="1" || key=="2" || key=="3" || key=="4" || key=="5") {
+  if(key=="1" || key=="2" || key=="3" || key=="4" || key=="5"|| key=="6") {
     blank_figure(key);
   }
 
