@@ -7,7 +7,7 @@ categories: information
 type: ""
 author: Paipa Psyche
 image: ""
-permalink: "/hacktivity-bogota/",
+permalink: "/hacktivity-bogota/"
 icon: ""
 tags:
   information
